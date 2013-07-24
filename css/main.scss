@@ -19,7 +19,7 @@
   margin: 0;
   padding: 0;
   @include box-sizing(border-box);
-  -webkit-transform: translate3d(0,0,0);
+  
 }
 html,body{
   width:100%;
@@ -393,6 +393,7 @@ html.midCPU section{
   @include transition (all, 0s, ease);
 }
 #index{
+  -webkit-transform: translate3d(0,0,0);
   .bg{
     position:absolute;
     top:0;
@@ -803,13 +804,13 @@ html.mobile.lowCPU{
 #detail .bg-slide{
   width:100%;
   height:100%;
-  //background-image:url(../img/ps_neutral.png);
+  //background-color
 }
-/*[data-id="macys"],[data-id="ciroc"],[data-id="citizen"]{
+[data-id="macys"],[data-id="ciroc"],[data-id="citizen"]{
   .bg-slide{
     @include background-gradient(#bbb, #fff);
   }
-}*/
+}
 
 
 aside{
@@ -1046,6 +1047,9 @@ h3{
 @media only screen and (max-width:680px){
 
   $mobileRadius: 5px;
+  #about .fb-like{
+    display:none;
+  }
   .alert { font-size:115%; 
            padding:10px;
          }
