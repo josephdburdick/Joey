@@ -231,6 +231,60 @@ body{
     display:block;
   }
 }
+.button{
+  padding:10px 20px;
+  border:1px solid $accentColor1;
+  @include border-radius(5px);
+}
+
+.alert{
+  position: fixed;
+  height:100%;
+  right:0;
+  top:0;
+  width:100%;
+  left:0;
+  display:none;
+  padding:50px;
+  z-index:10;
+  background:rgba(0,0,0,.95);
+  font-size:150%;
+  text-align: center;
+  @include transition (opacity, .5s, ease);
+  z-index: 9999;
+  overflow:auto;
+  -webkit-overflow-scrolling: touch;
+  
+  &.active{
+    display:block;
+  }
+  article{
+    position: relative;
+    margin:40px auto;
+    width:70%;
+    max-width: 800px;
+    h3{
+      color:#ccc;
+    }
+    p{
+      color:#ccc;
+    }
+    i{
+      font-size: 300%;
+      color:#ccc;
+    }
+  }
+  .button{
+    border-color:#ccc;
+    color:#ccc;
+    @include transition(all, .2s ease);
+    &:hover,&:active{
+      border-color:#eee;
+      color:#eee;
+    }
+  }
+}
+
 #nav-main{
   width:$menuWidthSmall;
   height:100%;
@@ -313,26 +367,31 @@ html.mobile{
    ———————————————
 */
 section{
+  
   position: relative;
   width:100%;
   height:100%;
   overflow:hidden;
-  z-index:0;
-  @include transition (opacity, $pageTransitionSpeed, ease);
+  @include transition (all, $pageTransitionSpeed, ease-in);
+  -webkit-backface-visibility: hidden;
+  z-index:-1;
   @include opacity(0);
   &.active{
-    z-index:1;
-    @include opacity(1);
     overflow-x:hidden;
     overflow-y:auto;
+    //overflow:auto;
     -webkit-overflow-scrolling: touch;
+    z-index:1;
+    @include opacity(1);
   }
 }
 .mobile #index.active{
   overflow-x:hidden;
   overflow-y:scroll;
 }
-
+html.midCPU section{
+  @include transition (all, 0s, ease);
+}
 #index{
   .bg{
     position:absolute;
@@ -987,7 +1046,9 @@ h3{
 @media only screen and (max-width:680px){
 
   $mobileRadius: 5px;
-  
+  .alert { font-size:115%; 
+           padding:10px;
+         }
   #about{
     padding:0px;
     
@@ -1115,6 +1176,14 @@ h3{
 }
 
 @media only screen and (max-width:480px){
+  .alert{
+    font-size:80%;
+
+    article{
+      margin:20px 0;
+      width:100%;
+    }
+  }
   #index .project{
     height:250px;
   }

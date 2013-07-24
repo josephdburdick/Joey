@@ -34,7 +34,7 @@ Use: vertically centered object by measuring height after DOM loads.
                     position:'absolute',
                     top:'50%', 
                     marginTop: -(tH)+'px',
-                    textAlign: settings.textAlign
+                    textAlign: settings.textAlign,
                 });
                 if (settings.cssWidth == true){
                     $this.css({

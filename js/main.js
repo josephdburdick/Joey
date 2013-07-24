@@ -58,7 +58,7 @@ function mobile(){
     if (windowWidth() <= 1024){
       $('html').addClass('midCPU');
     }
-    if (windowWidth() <= 680){
+    else if (windowWidth() <= 680){
       $('html').addClass('lowCPU');
     }
   } else {
@@ -177,15 +177,13 @@ function processRoute(page, project){
       
         setTimeout(function(){
           slideshow();
-          setTimeout(function(){
-            sectionIndex.css('opacity', 0);
-          },500)
         },500);
-
         setTimeout(function(){
-          sectionIndex.removeClass('active');
+            sectionIndex.removeClass('active');
+        },1000);
+        setTimeout(function(){
           sectionDetail.addClass('active');
-        },3000);
+        },1000);
         
     }, "json")
     .fail(function(){
@@ -238,7 +236,10 @@ function hashLoad(newUrl){
 }
 
 function loadIndex(currentSection){
-  slider = $('#slideshow').royalSlider('data');
+  if ($.cookie('behaviorAlert') != "OK"){
+    $('.alert').addClass('active');
+  } else {
+    slider = $('#slideshow').royalSlider('data');
   if ($('.rsSlide').length > 0){
     $('#slideshow').royalSlider('destroy');
     //console.log("Slideshow destroyed.")
@@ -249,12 +250,10 @@ function loadIndex(currentSection){
   btnAbout.addClass('active');
 
   setTimeout(function(){
-    $('section.active').css('opacity', 0); 
+    $('section.active').removeClass('active'); 
     setTimeout(function(){
-      $('section.active').removeClass('active');
-      sectionIndex.css('opacity', 1);
+      sectionIndex.addClass('active');
       setTimeout(function(){
-        sectionIndex.addClass('active');
         $('.project.active').removeClass('active').siblings('.project').removeClass('not-active').end().find('.project-link')
           .html('<i class="icon-angle-down"></i> View Project <i class="icon-angle-down"></i>');
       },1500);
@@ -262,6 +261,8 @@ function loadIndex(currentSection){
   },1000);
 
   window.location.hash = '';
+  }
+  
 }
 function windowWidth(){
   var wW = $(window).width();
@@ -312,6 +313,12 @@ function interfaces(){
   });
   faceMask.on('click',function(){
     btnDetail.click();
+  });
+  $('.cookie').on('click',function(event){
+    console.log('what')
+    $.cookie('behaviorAlert', 'OK', { expires: 7 });
+    $('.alert').removeClass('active');
+    event.preventDefault;
   });
 
   function navTimer(){

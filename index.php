@@ -95,11 +95,11 @@ include "inc/nav.php";
         I’ve tinkered with computers for 15 years; got my start on a Tandy back in the 80's
         and webpages on 
         Angelfire in the 90's, after moving a brazillion times with my family I ended up with a degree in Mass Communications, 
-        focusing on Creative Advertising from Virginia Commonwealth University and continue learning new ways to grab 
+        focusing on Creative Advertising from Virginia Commonwealth University. I continue learning new ways to grab 
         people’s attention on the Web, wherever the Web happens to be. 
       </p>
       <p>
-        When I'm not learning random facts on the Net I'm riding around on my bike, dropping the bass, drawing fine arts, and 
+        When I'm not learning random facts on the Net I'm riding around on my bike, DJing, drawing fine arts, and 
         maxxin' out with my homies.
       </p>
 
@@ -111,13 +111,30 @@ include "inc/nav.php";
           and the logic decides what data to show and where from. <br><br>
 
           <a href="https://github.com/josephdburdick/JOEY-2013">View the source in Github.</a>
-
+ 
         </small>
       </p>
     </article>
   </section>
 
-  <div id="loader"></div>
+  <div class="alert">
+   
+    <article>
+      <i class="icon-warning-sign"></i>
+      <hr>
+      <p>
+        On laptops and desktops please scroll up and down with your mouse/trackpad to pan 
+        through all projects.
+      </p>
+      <p>
+        On touch devices simply swipe to pan through all projects.
+      </p>
+      <br>
+        <a href="#" class="cookie button" data-cookie="OK">OK, GOT IT</a>
+      
+    </article>
+  </div>
+
 </div><!-- /.container -->
 
 <?php include "inc/footer.php"; ?>
