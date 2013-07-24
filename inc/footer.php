@@ -9,7 +9,7 @@
     <script src="js/vendor/jquery.easing-1.3.js"></script>
     <script src="js/vendor/jquery.royalslider.min.js"></script>
     <script src="js/vendor/vertCenter-ck.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main-ck.js"></script>
 
 
     <script>
