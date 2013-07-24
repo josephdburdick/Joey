@@ -38,40 +38,6 @@ $projects["macys"] = array(
                   )
 );
 
-$projects["citizen"] = array(
-   "id"       =>  "citizen",
-   "name"     =>  "Citizen",
-   "agency"   =>  "Studiografica",
-   "year"     =>  2013,
-   "tags"     =>  array("Web App", "Project Management", "Front-end Development", ".NET implementation", "Touch Sensitive"),
-   "details"  =>  "<p>
-                     Focusing on Citizen's Eco-Drive line, Studiografica created a touch-interactive presentation for Citizen's digital 
-                     campaigns to organize and showcase Citizen's outdoor, in-store, direct and digital advertising.
-                  </p>
-                  <p>
-                     This web app was specialized for the Windows Surface Pro and presented high definition videos, 
-                     touch-sensitive 3D image rotators, and front/back ad flipping animations.
-                     Built using extending Jquery Mobile, customizing a CSS3/JS touch slider, and copious amounts of Fig Newtons.
-                  </p>
-                     ",
-   "slides"   =>  array(
-                     
-                     "<img width=\"264\" height=\"184\" class=\"vertical-center\" src=\"projects/citizen/logo.png\" alt=\"Citizen\">",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-0.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-1.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-2.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-3.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-4.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-5.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-6.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-7.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-8.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-9.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-10.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-11.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-12.png\"></div>"
-                  )
-);
 
 $projects["ciroc"] = array(
    "id"       =>  "ciroc",
@@ -125,7 +91,75 @@ $projects["g-shock"] = array(
                      "<img class=\"rsImg\" src=\"projects/g-shock/slide-5.png\">"
                   )
 );
+$projects["tambaran"] = array(
+   "id"       =>  "tambaran",
+   "name"     =>  "Tambaran",
+   "agency"   =>  "JOEY",
+   "year"     =>  "2010 — 2013",
+   "tags"     =>  array("Project Management", "Custom E-Blasts", "User Interface", "User Experience", "Front-end Development"),
+   "details"  =>  "
+                  <p>
+                     As project manager I brought on visual designer <a target=\"_blank\" href=\"http://josephmueller.net\">Joseph Mueller</a> 
+                     and web developer <a target=\"_blank\" href=\"http://efrat.me\">Efrat Weidberg</a> to create 
+                     a site for Maureen Zarember using Joomla that was easy to look at and use for potential tribal art buyers. 
+                     The site features a buyers-only section where Ms. Zarember can control what potential buyers see.
+                     I continue to handle work for Tambaran for front-end changes to the site and custom e-blasts for art festivals and gallery shows.
+                  </p>
+                  <h3>Credits</h3>
+                  <p><small>
+                     Tambaran.com Visual Designer<br><a target=\"_blank\" href=\"http://josephmueller.net\">Joseph Mueller</a><br>
+                     Tambaran.com Back-end Developer<br><a target=\"_blank\" href=\"http://efrat.me\">Efrat Weidberg</a>
+                     </small>
+                  </p>",
+   "slides"   =>  array(
+                     "<div class=\"vertical-center\"><img src=\"projects/tambaran/logo.png\" alt=\"TAMBARAN\" width=\"300\" height=\"\"></div>",
+                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-0.png\">",
+                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-1.png\">",
+                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-2.png\">",
+                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-3.png\">",
+                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-4.png\">",
+                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-5.png\">",
+                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-8.png\">",
+                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-9.png\">",
+                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-10.png\">",
+                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-12.png\">"
+                  )
+);
 
+$projects["citizen"] = array(
+   "id"       =>  "citizen",
+   "name"     =>  "Citizen",
+   "agency"   =>  "Studiografica",
+   "year"     =>  2013,
+   "tags"     =>  array("Web App", "Project Management", "Front-end Development", ".NET implementation", "Touch Sensitive"),
+   "details"  =>  "<p>
+                     Focusing on Citizen's Eco-Drive line, Studiografica created a touch-interactive presentation for Citizen's digital 
+                     campaigns to organize and showcase Citizen's outdoor, in-store, direct and digital advertising.
+                  </p>
+                  <p>
+                     This web app was specialized for the Windows Surface Pro and presented high definition videos, 
+                     touch-sensitive 3D image rotators, and front/back ad flipping animations.
+                     Built using extending Jquery Mobile, customizing a CSS3/JS touch slider, and copious amounts of Fig Newtons.
+                  </p>
+                     ",
+   "slides"   =>  array(
+                     
+                     "<img width=\"264\" height=\"184\" class=\"vertical-center\" src=\"projects/citizen/logo.png\" alt=\"Citizen\">",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-0.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-1.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-2.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-3.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-4.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-5.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-6.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-7.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-8.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-9.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-10.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-11.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-12.png\"></div>"
+                  )
+);
 $projects["davids-bridal"] = array(
    "id"       =>  "davids-bridal",
    "name"     =>  "David's Bridal",
@@ -190,42 +224,6 @@ $projects["wwglass"] = array(
                      "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-4-1.png\"></div>",
                      "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-5.png\"></div>",
                      "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-6.png\"></div>"
-                  )
-);
-
-
-$projects["tambaran"] = array(
-   "id"       =>  "tambaran",
-   "name"     =>  "Tambaran",
-   "agency"   =>  "JOEY",
-   "year"     =>  "2010 — 2013",
-   "tags"     =>  array("Project Management", "Custom E-Blasts", "User Interface", "User Experience", "Front-end Development"),
-   "details"  =>  "
-                  <p>
-                     As project manager I brought on visual designer <a target=\"_blank\" href=\"http://josephmueller.net\">Joseph Mueller</a> 
-                     and web developer <a target=\"_blank\" href=\"http://efrat.me\">Efrat Weidberg</a> to create 
-                     a site for Maureen Zarember using Joomla that was easy to look at and use for potential tribal art buyers. 
-                     The site features a buyers-only section where Ms. Zarember can control what potential buyers see.
-                     I continue to handle work for Tambaran for front-end changes to the site and custom e-blasts for art festivals and gallery shows.
-                  </p>
-                  <h3>Credits</h3>
-                  <p><small>
-                     Tambaran.com Visual Designer<br><a target=\"_blank\" href=\"http://josephmueller.net\">Joseph Mueller</a><br>
-                     Tambaran.com Back-end Developer<br><a target=\"_blank\" href=\"http://efrat.me\">Efrat Weidberg</a>
-                     </small>
-                  </p>",
-   "slides"   =>  array(
-                     "<div class=\"vertical-center\"><img src=\"projects/tambaran/logo.png\" alt=\"TAMBARAN\" width=\"300\" height=\"\"></div>",
-                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-0.png\">",
-                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-1.png\">",
-                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-2.png\">",
-                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-3.png\">",
-                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-4.png\">",
-                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-5.png\">",
-                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-8.png\">",
-                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-9.png\">",
-                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-10.png\">",
-                     "<img class=\"rsImg\" src=\"projects/tambaran/slide-12.png\">"
                   )
 );
 $projects["hard"] = array(

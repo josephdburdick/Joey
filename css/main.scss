@@ -492,7 +492,7 @@ html.midCPU section{
           @include transition(all, $pageTransitionSpeed/2, ease);
           footer{
             a{
-              color:saturate($accentColor1,20%);
+              color:lighten($accentColor1,20%);
               -webkit-animation: greenBgPulse 2s infinite; 
               -moz-animation:    greenBgPulse 2s infinite; 
               -o-animation:      greenBgPulse 2s infinite; 
@@ -705,7 +705,7 @@ html.mobile.lowCPU{
   background:#ddd;
   padding:5px 10px;
   margin: 1px 1px 1px 0;
-  text-shadow:0 1px 2px rgba(255,255,255,1);
+  //text-shadow:0 1px 2px rgba(255,255,255,1);
   @include border-radius(5px);
 
 }

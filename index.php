@@ -76,7 +76,7 @@ include "inc/nav.php";
         <a target="_blank" href="https://github.com/josephdburdick"><i class="icon-github-sign"></i> Github</a>
         <a target="_blank" href="http://www.linkedin.com/in/joeburdick"><i class="icon-linkedin-sign"></i> LinkedIn</a>
         <a target="_blank" href="http://j0e.me"><i class="icon-tumblr-sign"></i> Tumblr</a>
-        <a target="_blank" href="http://fb.me/joeburdick"><i class="icon-thumbs-down-alt"></i> Facebook</a>
+        <a target="_blank" href="http://fb.me/joeburdick"><i class="icon-facebook-sign"></i> Facebook</a>
         <a target="_blank" href="http://instagram.com/josephdburdick/"><i class="icon-instagram"></i> Instagram</a>
         <a class="last" target="_blank" href="https://twitter.com/jftf"><i class="icon-twitter"></i> Twitter</a>
       </nav>
