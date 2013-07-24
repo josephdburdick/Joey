@@ -2,6 +2,31 @@
 /*
 
 
+                 ___           ___                 
+    ___         /\  \         /\__\                
+   /\__\       /::\  \       /:/ _/_         ___   
+  /:/__/      /:/\:\  \     /:/ /\__\       /|  |  
+ /::\  \     /:/  \:\  \   /:/ /:/ _/_     |:|  |  
+ \/\:\  \   /:/__/ \:\__\ /:/_/:/ /\__\    |:|  |  
+  ~~\:\  \  \:\  \ /:/  / \:\/:/ /:/  /  __|:|__|  
+     \:\__\  \:\  /:/  /   \::/_/:/  /  /::::\  \  
+     /:/  /   \:\/:/  /     \:\/:/  /   ~~~~\:\  \ 
+    /:/  /     \::/  /       \::/  /         \:\__\
+    \/__/       \/__/         \/__/           \/__/   
+  
+
+
+
+
+ Made in Brooklyn, New York.
+
+  Joey
+  UX, DEV, DESIGN
+
+  - j0e.me
+  - jb@joeylabs.com
+  - fb.me/joeburdick
+  - 646 481 1065
 
 
 */
@@ -58,9 +83,7 @@ function changeView(linkUrl, project){
 }
 
 function slideshow(){
-  $('#slideshow').royalSlider('destroy');
-  if (!Modernizr.touch){
-    $('#slideshow').royalSlider({
+  var sliderOptions = ({
       loop: true,
       imageAlignCenter: true,
       autoScaleSlider: false,
@@ -70,24 +93,22 @@ function slideshow(){
       arrowsNav: false,
       slidesSpacing: 0,
       keyboardNavEnabled: true
-    });
-    var slider = $("#slideshow").data('royalSlider');
-    $('#slideshow').find('.vertical-center').vertCenter({cssWidth: true});
-  } else {
-    $('#slideshow').royalSlider({
-      loop: true,
-      imageAlignCenter: true,
-      autoScaleSlider: false,
-      imageScalePadding: 10,
-      transitionType: 'move',
-      height: $(window).height(),
-      arrowsNav: false,
-      slidesSpacing: 0,
+  });
+  $('#slideshow').royalSlider('destroy');
+  if (!Modernizr.touch){
+    sliderOptions = ({      
+      transitionType: 'fade',
       keyboardNavEnabled: true
     });
-    var slider = $("#slideshow").data('royalSlider');
-    $('#slideshow').find('.vertical-center').vertCenter({cssWidth: true});
+  } else {
+    sliderOptions = ({      
+      transitionType: 'move',
+      keyboardNavEnabled: false
+    });
   }
+  $('#slideshow').royalSlider(sliderOptions);
+  var slider = $("#slideshow").data('royalSlider');
+  $('#slideshow').find('.vertical-center').vertCenter({cssWidth: true});
 }
 
 function processRoute(page, project){
@@ -153,7 +174,6 @@ function processRoute(page, project){
           sectionDetail.addClass('active');
         },1000);
         
-
     }, "json")
     .fail(function(){
       alert('Section '+page+' failed to load. Please check your Internet connection and that the path is correct.');

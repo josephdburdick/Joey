@@ -112,6 +112,7 @@ include "inc/nav.php";
 
           <a href="https://github.com/josephdburdick/JOEY-2013">View the source in Github.</a>
 
+          <br>
           <h5>DISCLAIMER:</h5>
           I code for IE but did not bother for this site.
         </small>
