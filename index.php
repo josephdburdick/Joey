@@ -126,12 +126,8 @@ include "inc/nav.php";
         On laptops and desktops please scroll up and down with your mouse/trackpad to pan 
         through all projects.
       </p>
-      <p>
-        On touch devices simply swipe to pan through all projects.
-      </p>
       <br>
         <a href="#" class="cookie button" data-cookie="OK">OK, GOT IT</a>
-      
     </article>
   </div>
 

@@ -236,7 +236,7 @@ function hashLoad(newUrl){
 }
 
 function loadIndex(currentSection){
-  if ($.cookie('behaviorAlert') != "OK"){
+  if (mobile() == false && ($.cookie('behaviorAlert') != "OK")){
     $('.alert').addClass('active');
   }
   slider = $('#slideshow').royalSlider('data');
