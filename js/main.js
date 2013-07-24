@@ -238,8 +238,8 @@ function hashLoad(newUrl){
 function loadIndex(currentSection){
   if ($.cookie('behaviorAlert') != "OK"){
     $('.alert').addClass('active');
-  } else {
-    slider = $('#slideshow').royalSlider('data');
+  }
+  slider = $('#slideshow').royalSlider('data');
   if ($('.rsSlide').length > 0){
     $('#slideshow').royalSlider('destroy');
     //console.log("Slideshow destroyed.")
@@ -261,8 +261,6 @@ function loadIndex(currentSection){
   },1000);
 
   window.location.hash = '';
-  }
-  
 }
 function windowWidth(){
   var wW = $(window).width();
@@ -318,6 +316,7 @@ function interfaces(){
     console.log('what')
     $.cookie('behaviorAlert', 'OK', { expires: 7 });
     $('.alert').removeClass('active');
+    loadIndex();
     event.preventDefault;
   });
 
