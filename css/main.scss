@@ -358,8 +358,8 @@ html.mobile{
   position: relative;
   width:100%;
   height:100%;
-  //overflow: auto;
-  background:#222;
+  background:#222 url(../img/pw_maze_black.png);
+
 }
 /* ———————————————
 
@@ -1246,11 +1246,11 @@ h3{
     only screen and (-o-min-device-pixel-ratio: 3/2),
     only screen and (min--moz-device-pixel-ratio: 1.5),
     only screen and (min-device-pixel-ratio: 1.5) {
-        //.bg-slide {background-image:url(../img/ps_neutral_@2X.png);}
+        .container {background-image:url(../img/pw_maze_black_@2X.png);}
+
         #about-logo{
           background-image:url(../img/JOEY_LOGO@2x.png);
           background-size: 50%;
-          
         }
 }
 
