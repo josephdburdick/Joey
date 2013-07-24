@@ -326,10 +326,6 @@ section{
     overflow-x:hidden;
     overflow-y:auto;
     -webkit-overflow-scrolling: touch;
-    &#index{
-      overflow-y:hidden;
-      overflow-x:scroll;
-    }
   }
 }
 .mobile #index.active{
@@ -407,25 +403,10 @@ section{
       background-image:url('../projects/aoa-ny/bg.jpg');
     }
   }
-  /*#index-casio-projector{
-    background:green;
-    .bg{
-      background-image:url('http://placehold.it/350x150');
-    }
-  }
-  #index-music-gear{
-    background: darkred;
-    .bg{
-      background-image:url('http://placehold.it/350x150');
-    }
-  }*/
-
-
 .scroll-horizontal{
   position:absolute;
   padding-left:$menuWidthSmall;
   height:100%;
-  -webkit-overflow-scrolling: touch;
 
   & > ul{
     width:100%;
@@ -546,7 +527,24 @@ section{
     }
   }
 }
-
+html.mobile.lowCPU{
+  #index .project a{
+    -webkit-animation: none; 
+    -moz-animation:    none; 
+    -o-animation:      none; 
+    animation:         none; 
+    color: darken($accentColor1,20%);
+    background:saturate($accentColor1,5%);
+    &:hover{
+      -webkit-animation: none; 
+      -moz-animation:    none; 
+      -o-animation:      none; 
+      animation:         none; 
+      color: darken($accentColor1,10%);
+      background:saturate($accentColor1,20%);
+    }
+  }
+}
 .vertical-block{
   
   .bg{
@@ -613,8 +611,6 @@ section{
       .project-tag{
           margin: 1px 1px 0px 0;
       }
-      
-  
     }
     footer{
       position: absolute;
@@ -748,7 +744,7 @@ section{
 #detail .bg-slide{
   width:100%;
   height:100%;
-  background-image:url(../img/ps_neutral.png);
+  //background-image:url(../img/ps_neutral.png);
 }
 /*[data-id="macys"],[data-id="ciroc"],[data-id="citizen"]{
   .bg-slide{
@@ -1181,7 +1177,7 @@ h3{
     only screen and (-o-min-device-pixel-ratio: 3/2),
     only screen and (min--moz-device-pixel-ratio: 1.5),
     only screen and (min-device-pixel-ratio: 1.5) {
-        .bg-slide {background-image:url(../img/ps_neutral_@2X.png);}
+        //.bg-slide {background-image:url(../img/ps_neutral_@2X.png);}
         #about-logo{
           background-image:url(../img/JOEY_LOGO@2x.png);
           background-size: 50%;

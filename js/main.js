@@ -53,37 +53,46 @@ jQuery.rsCSS3Easing.easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';
 
 function mobile(){
   var mobile;
-  if ($('html').hasClass('mobile'))
+  if ($('html').hasClass('mobile')){
     mobile = true;
-  else
+    if (windowWidth() <= 1024){
+      $('html').addClass('midCPU');
+    }
+    if (windowWidth() <= 680){
+      $('html').addClass('lowCPU');
+    }
+  } else {
     mobile = false;
+  }
   return mobile;
 }
 
 function changeView(linkUrl, project){
-  console.log("Executing changeView.")
+  //console.log("Executing changeView.")
   var urlHash = location.hash.replace(/^#!\//,"");
   if (urlHash == "" || undefined )
     urlHash = undefined;
 
   if (urlHash != undefined){
     if (project != undefined){
-      console.log('Change View. Project found. linkUrl: ' + linkUrl+ '. Project: ' +project);
+      //console.log('Change View. Project found. linkUrl: ' + linkUrl+ '. Project: ' +project);
       processRoute(linkUrl, project);
     } else {
-      console.log('Change View. Project not found. linkUrl: ' + linkUrl +'.');  
+      //console.log('Change View. Project not found. linkUrl: ' + linkUrl +'.');  
       btnAbout.removeClass('active');
       processRoute(linkUrl);
     }
   } else {
-    console.log('Both linkUrl and project are undefined. Load index page.');
+    //console.log('Both linkUrl and project are undefined. Load index page.');
     loadIndex();
   } 
-  
 }
 
 function slideshow(){
-  var sliderOptions = ({
+  var sliderOptions;
+  $('#slideshow').royalSlider('destroy');
+  if (!Modernizr.touch){
+    sliderOptions = ({      
       loop: true,
       imageAlignCenter: true,
       autoScaleSlider: false,
@@ -93,16 +102,17 @@ function slideshow(){
       arrowsNav: false,
       slidesSpacing: 0,
       keyboardNavEnabled: true
-  });
-  $('#slideshow').royalSlider('destroy');
-  if (!Modernizr.touch){
-    sliderOptions = ({      
-      transitionType: 'fade',
-      keyboardNavEnabled: true
     });
   } else {
     sliderOptions = ({      
+      loop: true,
+      imageAlignCenter: true,
+      autoScaleSlider: false,
+      imageScalePadding: 10,
       transitionType: 'move',
+      height: $(window).height(),
+      arrowsNav: false,
+      slidesSpacing: 0,
       keyboardNavEnabled: false
     });
   }
@@ -112,7 +122,7 @@ function slideshow(){
 }
 
 function processRoute(page, project){
-  console.log("Processing route...")
+  //console.log("Processing route...")
 
   if (project != undefined){
     $('#index-'+project).addClass('active').siblings('.project').addClass('not-active').end().find('.project-link').html('<i class="icon-spinner spin"></i> Loading Project...');
@@ -132,12 +142,11 @@ function processRoute(page, project){
         if ((mobile() == true && $(window).width() <= 680)){
           if (i != 0){
             loFi = loFi.replace(/(.png)/g,'-lofi.png')
-            
             loFi = $.parseJSON(loFi);
             item = loFi;
           }
         }
-        console.log(item);
+        //console.log(item);
         projectImages += "<div class=\"slide-container\">" + item + "</div>";
 
       });
@@ -167,12 +176,16 @@ function processRoute(page, project){
         },500);
       
         setTimeout(function(){
-          sectionIndex.removeClass('active');
           slideshow();
+          setTimeout(function(){
+            sectionIndex.css('opacity', 0);
+          },500)
         },500);
+
         setTimeout(function(){
+          sectionIndex.removeClass('active');
           sectionDetail.addClass('active');
-        },1000);
+        },3000);
         
     }, "json")
     .fail(function(){
@@ -181,7 +194,7 @@ function processRoute(page, project){
     });
 
   } else {
-    console.log('Not loading a project page. Load the following section: '+ page);
+    //console.log('Not loading a project page. Load the following section: '+ page);
     if (!$(page).length > 0){
       alert('Section '+page+' not found. Please check that the path is correct.');
       $(btnClose).removeClass('active');
@@ -201,24 +214,24 @@ function processRoute(page, project){
 }
 
 function hashLoad(newUrl){
-  console.log("Changing hash...");
+  //console.log("Changing hash...");
   if ("onhashchange" in window){ //initial load
-    console.log("Determining whether URL initially includes hash...")
+    //console.log("Determining whether URL initially includes hash...")
     if (location.hash){
       var urlHash = location.hash.replace(/^#!\//,"");
       if (urlHash.indexOf('=') == -1){
-        console.log('Route found.')
+        //console.log('Route found.')
         changeView(urlHash);  
       } else {
-        console.log('Route and project found.')
+        //console.log('Route and project found.')
         var urlSplit = urlHash.split('=');
-        console.log(urlSplit);
+        //console.log(urlSplit);
         changeView(urlSplit[0],urlSplit[1]);
       }  
     } else {
-      console.log('No hash detected. Loading Index.');
+      //console.log('No hash detected. Loading Index.');
       loadIndex();
-      console.log('Index loaded.')
+      //console.log('Index loaded.')
       btnClose.removeClass('active');
     }
   }
@@ -228,31 +241,25 @@ function loadIndex(currentSection){
   slider = $('#slideshow').royalSlider('data');
   if ($('.rsSlide').length > 0){
     $('#slideshow').royalSlider('destroy');
-    console.log("Slideshow destroyed.")
+    //console.log("Slideshow destroyed.")
   }
   btnDetail.removeClass('active');
   btnPrev.removeClass('active');
   btnNext.removeClass('active');
   btnAbout.addClass('active');
-  
 
   setTimeout(function(){
-    $('section.active').removeClass('active'); 
+    $('section.active').css('opacity', 0); 
     setTimeout(function(){
-      sectionIndex.addClass('active');
-
+      $('section.active').removeClass('active');
+      sectionIndex.css('opacity', 1);
       setTimeout(function(){
+        sectionIndex.addClass('active');
         $('.project.active').removeClass('active').siblings('.project').removeClass('not-active').end().find('.project-link')
           .html('<i class="icon-angle-down"></i> View Project <i class="icon-angle-down"></i>');
       },1500);
-
     },1500);
-
   },1000);
-
-  
-
-  
 
   window.location.hash = '';
 }
@@ -283,7 +290,6 @@ function projectPanes(){
   } else {
       projectPaneContainer.width((projectCount * projectPaneWidth));
   }
-  
 }
 
 function interfaces(){
@@ -292,7 +298,7 @@ function interfaces(){
     
   $(btnClose).on('click',function(e){
     var currentSection = $('section.active').attr('id');
-    console.log('Closing current section... '+currentSection);
+    //console.log('Closing current section... '+currentSection);
     $(this).removeClass('active');
     loadIndex(currentSection);
   });
@@ -307,6 +313,7 @@ function interfaces(){
   faceMask.on('click',function(){
     btnDetail.click();
   });
+
   function navTimer(){
     setTimeout(function(){
       nav.addClass('trans');
@@ -320,9 +327,6 @@ function interfaces(){
       navTimer()
     }, 5000);
   })
-
-
-
 }
 
 function touch(){
