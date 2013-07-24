@@ -80,8 +80,8 @@ $projects["ciroc"] = array(
    "year"     =>  2011,
    "tags"     =>  array("Front-end Development", "Project Management", "Touch Sensitive"),
    "details"  =>  "<p>
-                     P Diddy's media team BlueFlame used Studiografica to build Ciroc.com to help promote the 
-                     brand so I had the opportunity to build a well known vodka brand. This project 
+                     P. Diddy's media team BlueFlame used Studiografica to build Ciroc.com to help promote the 
+                     brand, so I had the opportunity to build a site for a well known vodka brand. This project 
                      ran smoothly on iPads and used hashbang address bar manipulation to seamlessly fade 
                      between different pages of the site. All code was written without a framework. I may 
                      or may not have embedded \"j0e\" somewhere in the source. ;)
@@ -114,11 +114,9 @@ $projects["g-shock"] = array(
                      towards progressive enhancement, so finally leaving many graphical elements behind and using CSS to do it's job. 
                      I also developed custom CSS and JS
                      so no matter what width and height the watch came in from the back-end it always fit perfectly into the grid views.
-                  </p>
-
-                     ",
+                  </p>",
    "slides"   =>  array(
-                     "<div class=\"vertical-center\"><img src=\"projects/g-shock/logo.png\" alt=\"g-shock\" width=\"300\" height=\"295\"></div>",
+                     "<div class=\"vertical-center\"><img src=\"projects/g-shock/logo.png\" alt=\"g-shock\" width=\"200\" height=\"197\"></div>",
                      "<img class=\"rsImg\" src=\"projects/g-shock/slide-0.png\">",
                      "<img class=\"rsImg\" src=\"projects/g-shock/slide-1.png\">",
                      "<img class=\"rsImg\" src=\"projects/g-shock/slide-2.png\">",
@@ -262,32 +260,6 @@ $projects["aoa-ny"] = array(
                      "<img class=\"rsImg\" src=\"projects/aoa-ny/slide-3.png\">"
                   )
 );
-// $projects["music-gear"] = array(
-//    "id"       =>  "music-gear",
-//    "name"     =>  "Music Gear",
-//    "agency"   =>  "Studiografica",
-//    "year"     =>  2010,
-//    "tags"     =>  array("Project Management", "Front-end Development"),
-//    "details"  =>  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu 
-//                   tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum 
-//                   feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam.",
-//    "slides"   =>  array("http://placehold.it/800x600/00FFCC","http://placehold.it/800x600/0066CC","http://placehold.it/800x600/ccFFCC","http://placehold.it/800x600/0088FF")
-// );
-// $projects["casio-projector"] = array(
-//    "id"       =>  "casio-projector",
-//    "name"     =>  "Casio Projectors",
-//    "agency"   =>  "Studiografica",
-//    "year"     =>  2010,
-//    "tags"     =>  array("Project Management", "Front-end Development"),
-//    "details"  =>  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu 
-//                   tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum 
-//                   feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam.",
-//    "slides"   =>  array("http://placehold.it/800x600/00FFCC","http://placehold.it/800x600/0066CC","http://placehold.it/800x600/ccFFCC","http://placehold.it/800x600/0088FF")
-// );
-
-
-
-
 
 ?>
 

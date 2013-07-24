@@ -65,12 +65,15 @@ include "inc/nav.php";
         <div id="about-logo"></div>
 
         Made in Brooklyn, New York.
+        <div class="fb-like" data-href="http://joeylabs.com" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="segoe ui"></div>
       </header>
         
       <nav id="social">
         <a class="first" target="_blank" href="work/JoeBurdick_2013-RESUME.pdf"><i class="icon-file-text-alt"></i> View Resume</a>
         <a target="_blank" href="mailto:jb@joeylabs.com?subject=Sup brah, rad site."><i class="icon-envelope"></i> Email Joe</a>
-        <?php if($ismobile){ echo "<a href=\"tel:(646)481-1065\" class=\"mobile-only\"><i class=\"icon-phone-sign\"></i> Call Joe</a>";} ?>
+        <?php if($ismobile){ echo "<a href=\"tel:(646)481-1065\"><i class=\"icon-phone-sign\"></i> Phone Joe</a>";} ?>
+        <hr class="large-screen">
+        <a target="_blank" href="https://github.com/josephdburdick"><i class="icon-github-sign"></i> Github</a>
         <a target="_blank" href="http://www.linkedin.com/in/joeburdick"><i class="icon-linkedin-sign"></i> LinkedIn</a>
         <a target="_blank" href="http://j0e.me"><i class="icon-tumblr-sign"></i> Tumblr</a>
         <a target="_blank" href="http://fb.me/joeburdick"><i class="icon-thumbs-down-alt"></i> Facebook</a>
@@ -81,23 +84,23 @@ include "inc/nav.php";
         <img src="img/about_joeyBaby.png" alt="Joey as a wee lad!">
       </div>
       <p>
-        Hi, I'm Joe. I live in Brooklyn currently 
-        booking gigs as a front-end developer.
+        Hi, I'm Joe. I live in Brooklyn and I'm currently seeking projects as a user experience and front-end developer.
       </p>
       <p>
         I freelance under the guise Joey because it’s what everyone called me 
         when I was a kid. It reminds me of a time when I 
-        built time machines out of appliances and furniture. I strive to be that kid with my work today — creative and curious.
+        built time machines out of appliances and furniture. I strive to be that kid with my work today — creative and curious. 
       </p>
       <p>
         I’ve tinkered with computers for 15 years; got my start on a Tandy back in the 80's
         and webpages on 
-        Angelfire, got a degree in Mass Communications with a focus on Creative Advertising from Virginia 
-        Commonwealth University, and continue learning new ways to grab 
-        people’s attention to use the web in better ways.
+        Angelfire in the 90's, after moving a brazillion times with my family I ended up with a degree in Mass Communications, 
+        focusing on Creative Advertising from Virginia Commonwealth University and continue learning new ways to grab 
+        people’s attention on the Web, wherever the Web happens to be. 
       </p>
       <p>
-        I’m currently looking for freelance and full-time gigs.<br>      
+        When I'm not learning random facts on the Net I'm riding around on my bike, dropping the bass, drawing fine arts, and 
+        maxxin' out with my homies.
       </p>
 
       <p>
@@ -105,9 +108,12 @@ include "inc/nav.php";
           JOEY is a one-page, responsive portfolio powered by an associative 
           array that feeds projects from a PHP foreach loop to on-demand JSON 
           data. Javascript watches hashchanges in the browser’s address bar 
-          and the logic decides what data to show and where from. <br>
+          and the logic decides what data to show and where from. <br><br>
 
-          <a href="https://github.com/josephdburdick/JOEY">View in Github</a>
+          <a href="https://github.com/josephdburdick/JOEY-2013">View the source in Github.</a>
+
+          <h5>DISCLAIMER:</h5>
+          I code for IE but did not bother for this site.
         </small>
       </p>
     </article>

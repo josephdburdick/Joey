@@ -92,28 +92,33 @@ function slideshow(){
 
 function processRoute(page, project){
   console.log("Processing route...")
-  var postPage = page;
-  var postProject = project;
+
   if (project != undefined){
     $('#index-'+project).addClass('active').siblings('.project').addClass('not-active').end().find('.project-link').html('<i class="icon-spinner spin"></i> Loading Project...');
     var projectColor = $('#project')
     btnAbout.removeClass('active');
     var url = 'inc/projects_export.php?project=' + project;
     var data,tags,dataObject,projectTags;
-      
+    projectTags = [];
+    projectImages = [];
     $.post(url, project, function(data, textStatus) {
-      projectTags = [];
       $(data.tags).each(function(i, item){
         projectTags += "<span class='project-tag'>"+item+"</span>";
       });
-      projectImages = [];
+    
       $(data.slides).each(function(i, item){
-        if (i != 0){
-          if ((mobile() == true && $(window).width() <= 680)){
-            item = $(item).html().replace('.png','-lofi.png');  
+        var loFi = JSON.stringify(item);
+        if ((mobile() == true && $(window).width() <= 680)){
+          if (i != 0){
+            loFi = loFi.replace(/(.png)/g,'-lofi.png')
+            
+            loFi = $.parseJSON(loFi);
+            item = loFi;
           }
         }
+        console.log(item);
         projectImages += "<div class=\"slide-container\">" + item + "</div>";
+
       });
       setTimeout(function(){
         btnAbout.removeClass('active');
@@ -125,8 +130,6 @@ function processRoute(page, project){
           .find('.project-details').html(data.details).end()
           .find('.project-tags').html(projectTags).end()
           .find('#slideshow').html(projectImages);
-
-        slideshow();
 
         btnDetail.addClass('active');
         btnPrev.addClass('active');
@@ -144,13 +147,15 @@ function processRoute(page, project){
       
         setTimeout(function(){
           sectionIndex.removeClass('active');
-        },1000);
+          slideshow();
+        },500);
         setTimeout(function(){
           sectionDetail.addClass('active');
-        },1500);
+        },1000);
         
 
-    }, "json").fail(function(){
+    }, "json")
+    .fail(function(){
       alert('Section '+page+' failed to load. Please check your Internet connection and that the path is correct.');
       window.history.back();
     });
@@ -165,10 +170,10 @@ function processRoute(page, project){
 
       setTimeout(function(){
         $('section.active').removeClass('active'); 
-      },1000);
+      },500);
       setTimeout(function(){
         $(page).addClass('active');
-      },1500);
+      },1000);
 
       $(btnClose).addClass('active');
     }
