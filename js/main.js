@@ -113,6 +113,7 @@ function slideshow(){
       height: $(window).height(),
       arrowsNav: false,
       slidesSpacing: 0,
+      fadeinLoadedSlide:false,
       keyboardNavEnabled: false
     });
   }
