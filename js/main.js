@@ -317,7 +317,7 @@ function interfaces(){
     console.log('what')
     $.cookie('behaviorAlert', 'OK', { expires: 7 });
     $('.alert').removeClass('active');
-    loadIndex();
+    //loadIndex();
     event.preventDefault;
   });
 
