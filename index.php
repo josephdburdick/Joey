@@ -65,7 +65,7 @@ include "inc/nav.php";
         <div id="about-logo"></div>
 
         Made in Brooklyn, New York.
-        <div class="fb-like" data-href="http://joeylabs.com" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="segoe ui"></div>
+        <div class="fb-like" data-href="http://joeylabs.com" data-send="true" data-width="300" data-show-faces="true"></div>      
       </header>
         
       <nav id="social">
@@ -120,14 +120,22 @@ include "inc/nav.php";
   <div class="alert">
    
     <article>
-      <i class="icon-warning-sign"></i>
+      <i class="icon-check-sign"></i>
       <hr>
       <p>
-        On laptops and desktops please scroll up and down with your mouse/trackpad to pan 
+        Please scroll up and down with your mouse/trackpad to pan 
         through all projects.
       </p>
+      
+      <!--[if IE]>
+      <p>
+        While I am able to develop sites compatible with Internet Explorer this site provides 
+        an experience too rich to be viewed properly in your browser. Please view the site in <a href="http://browsehappy.com" target="_blank">one of these excellent alternatives</a>.
+      </p>
+      <![endif]-->
       <br>
         <a href="#" class="cookie button" data-cookie="OK">OK, GOT IT</a>
+      
     </article>
   </div>
 

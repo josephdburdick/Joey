@@ -89,8 +89,7 @@ $ismobile = check_user_agent('mobile');
       js = d.createElement(s); js.id = id;
       js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=133119286762322";
       fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>  
+    }(document, 'script', 'facebook-jssdk'));</script> 
   <!-- Facebook Like -->
   <div class="container"> 
 

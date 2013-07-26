@@ -194,11 +194,12 @@ function processRoute(page, project){
 
   } else {
     //console.log('Not loading a project page. Load the following section: '+ page);
-    if (!$(page).length > 0){
-      alert('Section '+page+' not found. Please check that the path is correct.');
-      $(btnClose).removeClass('active');
-      window.history.back();
-    } else {
+    // if (!$(page).length > 0){
+    //   //alert('Section '+page+' not found. Please check that the path is correct.');
+    //   loadIndex();
+    //   $(btnClose).removeClass('active');
+    //   window.history.back();
+    // } else {
 
       setTimeout(function(){
         $('section.active').removeClass('active'); 
@@ -208,7 +209,7 @@ function processRoute(page, project){
       },1000);
 
       $(btnClose).addClass('active');
-    }
+    //}
   }  
 }
 
@@ -314,7 +315,6 @@ function interfaces(){
     btnDetail.click();
   });
   $('.cookie').on('click',function(event){
-    console.log('what')
     $.cookie('behaviorAlert', 'OK', { expires: 7 });
     $('.alert').removeClass('active');
     //loadIndex();

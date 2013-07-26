@@ -235,28 +235,34 @@ body{
   padding:10px 20px;
   border:1px solid $accentColor1;
   @include border-radius(5px);
+  @include transition(all, .2s ease);
+    &:hover,&:active{
+      border-color:darken($accentColor1,10%);
+      color:darken($accentColor1,10%);
+    }
 }
 
 .alert{
   position: fixed;
   height:100%;
   right:0;
-  top:0;
+  top:100%;
   width:100%;
   left:0;
-  display:none;
+  @include opacity(0);
   padding:50px;
-  z-index:10;
-  background:rgba(0,0,0,.95);
+  z-index:-10;
+  background:#fff;
   font-size:150%;
   text-align: center;
   @include transition (opacity, .5s, ease);
-  z-index: 9999;
   overflow:auto;
   -webkit-overflow-scrolling: touch;
   
   &.active{
-    display:block;
+    top:0;
+    z-index:9999;
+    @include opacity(1);
   }
   article{
     position: relative;
@@ -274,7 +280,7 @@ body{
       color:#ccc;
     }
   }
-  .button{
+  /*.button{
     border-color:#ccc;
     color:#ccc;
     @include transition(all, .2s ease);
@@ -282,7 +288,7 @@ body{
       border-color:#eee;
       color:#eee;
     }
-  }
+  }*/
 }
 
 #nav-main{
