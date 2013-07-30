@@ -123,6 +123,7 @@ function slideshow(){
 
 function processRoute(page, project){
   //console.log("Processing route...")
+  var currentSection = $('section.active').attr('id');
 
   if (project != undefined){
     $('#index-'+project).addClass('active').siblings('.project').addClass('not-active').end().find('.project-link').html('<i class="icon-spinner spin"></i> Loading Project...');
@@ -180,10 +181,11 @@ function processRoute(page, project){
         },500);
         setTimeout(function(){
           //sectionIndex.removeClass('active');
-          $('section.active').removeClass('active');
-          setTimeout(function(){
-            $('section.active').addClass('out');
-          },1000);
+
+          $('#' + currentSection).removeClass('active');
+          // setTimeout(function(){
+          //   $('section.active').addClass('out');
+          // },1000);
         },1000);
         setTimeout(function(){
           sectionDetail.removeClass('active').addClass('active');
@@ -205,10 +207,7 @@ function processRoute(page, project){
     // } else {
 
       setTimeout(function(){
-        $('section.active').removeClass('active'); 
-        setTimeout(function(){
-          $('section.active').addClass('out');
-        },1000);
+        $('#' + currentSection).removeClass('active'); 
       },1000);
       setTimeout(function(){
         $(page).addClass('active');
@@ -244,6 +243,8 @@ function hashLoad(newUrl){
 }
 
 function loadIndex(currentSection){
+  var currentSection = $('section.active').attr('id');
+  
   if (mobile() == false && ($.cookie('behaviorAlert') != "OK")){
     $('.alert').addClass('active');
   }
@@ -258,7 +259,7 @@ function loadIndex(currentSection){
   btnAbout.addClass('active');
 
   setTimeout(function(){
-    $('section.active').removeClass('active').addClass('out'); 
+    $('#' + currentSection).removeClass('active'); //.addClass('out'); 
     setTimeout(function(){
       sectionIndex.addClass('active');
       setTimeout(function(){
