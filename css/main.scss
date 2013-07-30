@@ -380,7 +380,7 @@ section{
   overflow:hidden;
   @include transition (opacity, $pageTransitionSpeed, ease);
   -webkit-backface-visibility: hidden;
-  z-index:-1;
+  z-index:-50;
   @include opacity(0);
   &.active{
     overflow-x:hidden;
@@ -390,6 +390,11 @@ section{
     z-index:1;
     @include opacity(1);
   }
+  &.out{
+    position:fixed;
+    top:-100%;
+    z-index:-1;
+  }
 }
 .mobile #index.active{
   overflow-x:hidden;
@@ -398,8 +403,9 @@ section{
 /*html.midCPU section{
   @include transition (all, 0s, ease);
 }*/
-#index *{
+#index, #index *{
   -webkit-transform: translate3d(0,0,0);
+  -webkit-backface-visibility: hidden;
 }
 #index{
   

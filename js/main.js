@@ -113,7 +113,6 @@ function slideshow(){
       height: $(window).height(),
       arrowsNav: false,
       slidesSpacing: 0,
-      fadeinLoadedSlide:false,
       keyboardNavEnabled: false
     });
   }
@@ -180,10 +179,14 @@ function processRoute(page, project){
           slideshow();
         },500);
         setTimeout(function(){
-            sectionIndex.removeClass('active');
+          //sectionIndex.removeClass('active');
+          $('section.active').removeClass('active');
+          setTimeout(function(){
+            $('section.active').addClass('out');
+          },1000);
         },1000);
         setTimeout(function(){
-          sectionDetail.addClass('active');
+          sectionDetail.removeClass('active').addClass('active');
         },1000);
         
     }, "json")
@@ -203,7 +206,10 @@ function processRoute(page, project){
 
       setTimeout(function(){
         $('section.active').removeClass('active'); 
-      },500);
+        setTimeout(function(){
+          $('section.active').addClass('out');
+        },1000);
+      },1000);
       setTimeout(function(){
         $(page).addClass('active');
       },1000);
@@ -252,7 +258,7 @@ function loadIndex(currentSection){
   btnAbout.addClass('active');
 
   setTimeout(function(){
-    $('section.active').removeClass('active'); 
+    $('section.active').removeClass('active').addClass('out'); 
     setTimeout(function(){
       sectionIndex.addClass('active');
       setTimeout(function(){
