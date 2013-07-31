@@ -403,7 +403,7 @@ section{
 /*html.midCPU section{
   @include transition (all, 0s, ease);
 }*/
-#index, #index *{
+#index, #index *, #about, #about *{
   -webkit-transform: translate3d(0,0,0);
   -webkit-backface-visibility: hidden;
 }
