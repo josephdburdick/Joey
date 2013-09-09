@@ -49,7 +49,12 @@ $projects["ciroc"] = array(
                      P. Diddy's media team BlueFlame used Studiografica to build Ciroc.com to help promote the 
                      brand, so I had the opportunity to build a site for a well known vodka brand. This project 
                      ran smoothly on iPads and used hashbang address bar manipulation to seamlessly fade 
-                     between different pages of the site. All code was written without a framework. I may 
+                     between different pages of the site. All code was written without a framework. 
+                  </p>
+                  <p>
+                     My favorite part of this project was the drink detail view. When you clicked the next or previous
+                     button it would change the URL hash to keep it bookmarkable and the drinks would slide into view horizontally.
+                     I may 
                      or may not have embedded \"j0e\" somewhere in the source. ;)
                   </p>",
    "slides"   =>  array(

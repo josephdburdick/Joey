@@ -88,18 +88,18 @@ include "inc/nav.php";
       </p>
       <p>
         I freelance under the guise Joey because it’s what everyone called me 
-        when I was a kid. It reminds me of a time when I 
-        built time machines out of appliances and furniture. I strive to be that kid with my work today — creative and curious. 
+        when I was a kid.<br/>It reminds me of a time when I 
+        built time machines out of appliances and furniture. I strive to be that kid today with my work — creative and curious. 
       </p>
       <p>
         I’ve tinkered with computers for 15 years; got my start on a Tandy back in the 80's
-        and webpages on 
-        Angelfire in the 90's, after moving a brazillion times with my family I ended up with a degree in Mass Communications, 
-        focusing on Creative Advertising from Virginia Commonwealth University. I continue learning new ways to grab 
+        and webpages on Angelfire in the 90's, after moving a brazillion times with my family I ended up with a degree in 
+        Mass Communications/Creative Advertising
+        where I learned the art of grabbing people's attention. Today I continue learning new ways to grab 
         people’s attention on the Web, wherever the Web happens to be. 
       </p>
       <p>
-        When I'm not learning random facts on the Net I'm riding around on my bike, DJing, drawing fine arts, and 
+        When I'm not learning random facts on the Net I'm riding around on my bike, DJing, drawing <em>fine</em> arts, and 
         maxxin' out with my homies.
       </p>
 
