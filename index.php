@@ -84,7 +84,7 @@ include "inc/nav.php";
         <img src="img/about_joeyBaby.png" alt="Joey as a wee lad!">
       </div>
       <p>
-        Hi, I'm Joe. I live in Brooklyn and I'm currently seeking projects as a user experience and front-end developer.
+        Hi, I'm Joe. I live in Brooklyn, I'm currently seeking projects as a user experience/front-end developer, and I'm taking <a href="https://generalassemb.ly/education/back-end-web-development">a 10-week back-end Ruby programming course at General Assembly</a>.
       </p>
       <p>
         I freelance under the guise Joey because it’s what everyone called me 
