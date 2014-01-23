@@ -84,12 +84,10 @@ include "inc/nav.php";
         <img src="img/about_joeyBaby.png" alt="Joey as a wee lad!">
       </div>
       <p>
-        Hi, I'm Joe. I live in Brooklyn, I'm currently seeking projects as a user experience/front-end developer, and I'm taking <a href="https://generalassemb.ly/education/back-end-web-development">a 10-week back-end Ruby programming course at General Assembly</a>.
-      </p>
-      <p>
-        I freelance under the guise Joey because it’s what everyone called me 
-        when I was a kid.<br/>It reminds me of a time when I 
-        built time machines out of appliances and furniture. I strive to be that kid today with my work — creative and curious. 
+        Hi I'm Joe, the guy behind Joey. Hope that isn't confusing.<br> 
+        I'm a front-end designer/developer who has recently added Ruby on Rails to my skill set. I recently graduated from General Assembly's 
+        <a href="https://generalassemb.ly/education/back-end-web-development"> 10-week back-end Ruby programming 
+          course</a>.
       </p>
       <p>
         I’ve tinkered with computers for 15 years; got my start on a Tandy back in the 80's
@@ -99,8 +97,8 @@ include "inc/nav.php";
         people’s attention on the Web, wherever the Web happens to be. 
       </p>
       <p>
-        When I'm not learning random facts on the Net I'm riding around on my bike, DJing, drawing <em>fine</em> arts, and 
-        maxxin' out with my homies.
+        When I'm not learning random facts on the Net or working I'm racing cars on my bicycle, DJing, drawing app ideas, hanging 
+        out with friends or talking about Ruby and Javascript during Hacker Hours.
       </p>
 
       <p>

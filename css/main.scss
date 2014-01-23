@@ -280,15 +280,6 @@ body{
       color:#ccc;
     }
   }
-  /*.button{
-    border-color:#ccc;
-    color:#ccc;
-    @include transition(all, .2s ease);
-    &:hover,&:active{
-      border-color:#eee;
-      color:#eee;
-    }
-  }*/
 }
 
 #nav-main{
@@ -309,7 +300,7 @@ body{
   }
   &.trans{
     @include box-rgba (24,20,29,0.1);
-    -webkit-filter: blur(1px);
+    /*-webkit-filter: blur(1px);*/
   } 
 }
 #nav-menu{ //select on mobile
@@ -402,9 +393,6 @@ section{
   overflow-x:hidden;
   overflow-y:scroll;
 }
-/*html.midCPU section{
-  @include transition (all, 0s, ease);
-}*/
 #index, #index *, #about, #about *{
   -webkit-transform: translate3d(0,0,0);
   // -webkit-backface-visibility: hidden;
@@ -528,7 +516,7 @@ section{
       }
       &.not-active{
         @include opacity(1);
-        //-webkit-filter: grayscale(1) blur(0px);
+
         .bg{
           @include opacity(0.25);
         }
