@@ -147,7 +147,6 @@ function processRoute(page, project){
             item = loFi;
           }
         }
-        //console.log(item);
         projectImages += "<div class=\"slide-container\">" + item + "</div>";
 
       });
@@ -180,7 +179,6 @@ function processRoute(page, project){
           slideshow();
         },500);
         setTimeout(function(){
-          //sectionIndex.removeClass('active');
 
           $('#' + currentSection).removeClass('active');
         },1000);
