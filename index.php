@@ -19,11 +19,11 @@ include "inc/nav.php";
                   str_repeat(" ", 9). '<span class="project-number">'. sprintf ("%02u", $number) .'</span>'. "\n" .
                   str_repeat(" ", 9). '<span class="project-name">'. $project["name"] .'</span>'. "\n" .
                   str_repeat(" ", 9). '<hr>'. "\n" .
-                  str_repeat(" ", 9). '<span class="project-tags">'. "\n"; 
+                  str_repeat(" ", 9). '<div class="project-tags">'. "\n"; 
                   foreach ($project["tags"] as $tag){
-                    echo str_repeat(" ", 10).  '<span class="project-tag">' . $tag . '</span>'. "\n";
+                    echo str_repeat(" ", 10).  '<span>' . $tag . '</span>'. "\n";
                   } 
-                echo  str_repeat(" ", 9). '</span>'. "\n" .
+                echo  str_repeat(" ", 9). '</div>'. "\n" .
                 str_repeat(" ", 8). '</header>'. "\n" .
                 str_repeat(" ", 8). '<footer>'. "\n" .
                   str_repeat(" ", 9). '<a href="#!/work='. $project["id"] .'" class="project-link"><i class="icon-angle-down"></i> View Project <i class="icon-angle-down"></i></a> '. "\n" .
@@ -49,9 +49,9 @@ include "inc/nav.php";
         <h3>Description</h3>
         <span class="project-details"></span>
         <h3>Tags</h3>
-        <span class="project-tags"> 
-          <span class="project-tag"></span>
-        </span>
+        <div class="project-tags"> 
+          <span></span>
+        </div>
       </div>
     </aside>
     <article>
@@ -84,10 +84,12 @@ include "inc/nav.php";
         <img src="img/about_joeyBaby.png" alt="Joey as a wee lad!">
       </div>
       <p>
-        Hi I'm Joe, the guy behind Joey. Hope that isn't confusing.<br> 
-        I'm a front-end designer/developer who has recently added Ruby on Rails to my skill set. I recently graduated from General Assembly's 
+        Hi I'm Joe, the guy behind Joey.
+      </p>
+      <p>
+        I'm a front-end designer/developer who has recently added Ruby on Rails to my skill set. I graduated from General Assembly's 
         <a href="https://generalassemb.ly/education/back-end-web-development"> 10-week back-end Ruby programming 
-          course</a>.
+          course</a> at the beginning of this year and since then I've done design for MTV and a couple development projects, one being for <a href="http://carrot.is">Carrot Creative</a>.
       </p>
       <p>
         I’ve tinkered with computers for 15 years; got my start on a Tandy back in the 80's
@@ -97,7 +99,7 @@ include "inc/nav.php";
         people’s attention on the Web, wherever the Web happens to be. 
       </p>
       <p>
-        When I'm not learning random facts on the Net or working I'm racing cars on my bicycle, DJing, drawing app ideas, hanging 
+        When I'm not learning random facts on the Net or working I'm <a href="http://j0e.me">blogging around Brooklyn</a>, <a href="http://instagram.com/josephdburdick">taking pictures on Instagram</a>, DJing, sketching out app ideas, hanging 
         out with friends or talking about Ruby and Javascript during Hacker Hours.
       </p>
 
