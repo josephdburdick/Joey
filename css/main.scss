@@ -4,7 +4,7 @@
 @import 'mixins';
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300|Open+Sans+Condensed:300);
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css);
-
+@import 'scrollHint';
 
 
 
@@ -260,7 +260,7 @@ body{
   -webkit-overflow-scrolling: touch;
   
   &.active{
-    top:0;
+    top:2;
     z-index:9999;
     @include opacity(1);
   }
@@ -1036,6 +1036,7 @@ h3{
 */
 
 @media only screen and (max-width: 959px) {
+
   .face-mask{
     display:none!important;
   }
@@ -1053,6 +1054,9 @@ h3{
 @media only screen and (max-width:680px){
 
   $mobileRadius: 5px;
+  .mouse-container{
+    display:none
+  }
   #about .fb-like{
     display:none;
   }

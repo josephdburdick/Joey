@@ -1,4 +1,9 @@
     </div> <!-- /.container -->
+    <div class="mouse-container" id="mouse">
+      <div class="mouse">
+        <div class="button"></div>
+      </div>
+    </div>
     <div id="face-mask"></div>
     <script src="js/vendor/jquery-1.10.1.min.js"></script>
 

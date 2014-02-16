@@ -34,7 +34,7 @@
 
 
 var faceMask, btnClose, btnAbout, btnPrev, btnNext, btnDetail, nav,
-    detailPane, sectionIndex, sectionDetail, sectionAbout, mobile;
+    detailPane, sectionIndex, sectionDetail, sectionAbout, mobile, mouse;
 
     nav           = $('#nav-main'),
     faceMask      = $('#face-mask'),
@@ -46,7 +46,8 @@ var faceMask, btnClose, btnAbout, btnPrev, btnNext, btnDetail, nav,
     detailPane    = $('#detail > aside'),
     sectionIndex  = $('#index'),
     sectionDetail = $('#detail'),
-    sectionAbout  = $('#about')
+    sectionAbout  = $('#about'),
+    mouse         = $('#mouse');
 
 
 jQuery.rsCSS3Easing.easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';
@@ -210,19 +211,25 @@ function hashLoad(newUrl){
     //console.log("Determining whether URL initially includes hash...")
     if (location.hash){
       var urlHash = location.hash.replace(/^#!\//,"");
+
       if (urlHash.indexOf('=') == -1){
         //console.log('Route found.')
-        changeView(urlHash);  
+        $('#mouse').removeClass('active');
+        changeView(urlHash); 
       } else {
         //console.log('Route and project found.')
         var urlSplit = urlHash.split('=');
         //console.log(urlSplit);
+        $('#mouse').removeClass('active');
         changeView(urlSplit[0],urlSplit[1]);
+
       }  
     } else {
       //console.log('No hash detected. Loading Index.');
       loadIndex();
+      $('#mouse').addClass('active');
       //console.log('Index loaded.')
+
       btnClose.removeClass('active');
     }
   }
@@ -243,6 +250,12 @@ function loadIndex(currentSection){
   btnPrev.removeClass('active');
   btnNext.removeClass('active');
   btnAbout.addClass('active');
+  if (mobile() == false){
+    mouse.addClass('active');
+  }
+    
+
+
 
   setTimeout(function(){
     $('#' + currentSection).removeClass('active'); //.addClass('out'); 
@@ -341,6 +354,7 @@ function touch(){
 }
 
 function keyboard(){
+
   $(document).keyup(function(e) {
     if (e.keyCode == 27) { $(btnClose).click(); }   // esc
   });

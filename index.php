@@ -36,7 +36,6 @@ include "inc/nav.php";
       } ?>
     </ul>
   </section> <!-- /#index -->
-
   <section id="detail" data-id="">
     <aside class="off">
       <div class="content">
@@ -137,8 +136,7 @@ include "inc/nav.php";
         <a href="#" class="cookie button" data-cookie="OK">OK, GOT IT</a>
       
     </article>
-  </div>
+  </div> <!-- /alert -->
 
-</div><!-- /.container -->
 
 <?php include "inc/footer.php"; ?>
