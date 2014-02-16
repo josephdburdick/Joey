@@ -203,6 +203,9 @@ function processRoute(page, project){
       },1000);
 
       $(btnClose).addClass('active');
+      if (mobile() == false){
+        mouse.removeClass('active');
+      }
   }  
 }
 
@@ -216,7 +219,7 @@ function hashLoad(newUrl){
       if (urlHash.indexOf('=') == -1){
         //console.log('Route found.')
         if(mobile() == false && $(window).width <= 680){
-          $('#mouse').removeClass('active');
+          mouse.removeClass('active');
         }
         changeView(urlHash); 
       } else {
@@ -224,7 +227,7 @@ function hashLoad(newUrl){
         var urlSplit = urlHash.split('=');
         //console.log(urlSplit);
         if(mobile() == false && $(window).width <= 680){
-          $('#mouse').removeClass('active');
+          mouse.removeClass('active');
         }
         changeView(urlSplit[0],urlSplit[1]);
 
@@ -257,9 +260,7 @@ function loadIndex(currentSection){
   btnPrev.removeClass('active');
   btnNext.removeClass('active');
   btnAbout.addClass('active');
-  if (mobile() == false){
-    mouse.addClass('active');
-  }
+ 
     
 
 
@@ -271,6 +272,7 @@ function loadIndex(currentSection){
       setTimeout(function(){
         $('.project.active').removeClass('active').siblings('.project').removeClass('not-active').end().find('.project-link')
           .html('<i class="icon-angle-down"></i> View Project <i class="icon-angle-down"></i>');
+          mouse.addClass('active')
       },1500);
     },1500);
   },1000);
