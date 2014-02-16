@@ -56,6 +56,7 @@ function mobile(){
   var mobile;
   if ($('html').hasClass('mobile')){
     mobile = true;
+    mouse.hide()
     if (windowWidth() <= 1024){
       $('html').addClass('midCPU');
     }
@@ -214,20 +215,24 @@ function hashLoad(newUrl){
 
       if (urlHash.indexOf('=') == -1){
         //console.log('Route found.')
-        $('#mouse').removeClass('active');
+        if(mobile() == false && $(window).width <= 680){
+          $('#mouse').removeClass('active');
+        }
         changeView(urlHash); 
       } else {
         //console.log('Route and project found.')
         var urlSplit = urlHash.split('=');
         //console.log(urlSplit);
+        if(mobile() == false && $(window).width <= 680){
           $('#mouse').removeClass('active');
+        }
         changeView(urlSplit[0],urlSplit[1]);
 
       }  
     } else {
       //console.log('No hash detected. Loading Index.');
       loadIndex();
-      if(mobile() == true && $(window).width <= 680){
+      if(mobile() == false && $(window).width <= 680){
         $('#mouse').addClass('active');
       }
       //console.log('Index loaded.')
