@@ -214,17 +214,13 @@ function hashLoad(newUrl){
 
       if (urlHash.indexOf('=') == -1){
         //console.log('Route found.')
-        if(mobile() == true && $(window).width <= 680){
-          $('#mouse').removeClass('active');
-        }
+        $('#mouse').removeClass('active');
         changeView(urlHash); 
       } else {
         //console.log('Route and project found.')
         var urlSplit = urlHash.split('=');
         //console.log(urlSplit);
-        if(mobile() == true && $(window).width <= 680){
           $('#mouse').removeClass('active');
-        }
         changeView(urlSplit[0],urlSplit[1]);
 
       }  
