@@ -1054,8 +1054,8 @@ h3{
 @media only screen and (max-width:680px){
 
   $mobileRadius: 5px;
-  .mouse-container{
-    display:none
+  #mouse{
+    display: none !important;
   }
   #about .fb-like{
     display:none;
