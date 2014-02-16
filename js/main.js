@@ -202,10 +202,8 @@ function processRoute(page, project){
         $(page).addClass('active');
       },1000);
 
-      $(btnClose).addClass('active');
-      if (mobile() == false){
-        mouse.removeClass('active');
-      }
+      btnClose.addClass('active');
+      mouse.removeClass('active');
   }  
 }
 
@@ -218,17 +216,17 @@ function hashLoad(newUrl){
 
       if (urlHash.indexOf('=') == -1){
         //console.log('Route found.')
-        if(mobile() == false && $(window).width <= 680){
-          mouse.removeClass('active');
-        }
+        
+        mouse.removeClass('active');
+        
         changeView(urlHash); 
       } else {
         //console.log('Route and project found.')
         var urlSplit = urlHash.split('=');
         //console.log(urlSplit);
-        if(mobile() == false && $(window).width <= 680){
-          mouse.removeClass('active');
-        }
+ 
+        mouse.removeClass('active');
+ 
         changeView(urlSplit[0],urlSplit[1]);
 
       }  
@@ -261,10 +259,6 @@ function loadIndex(currentSection){
   btnNext.removeClass('active');
   btnAbout.addClass('active');
  
-    
-
-
-
   setTimeout(function(){
     $('#' + currentSection).removeClass('active'); //.addClass('out'); 
     setTimeout(function(){
