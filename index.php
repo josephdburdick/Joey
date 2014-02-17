@@ -10,6 +10,33 @@ include "inc/nav.php";
       <?php 
       $number = 1;
 
+      foreach ($previews as $preview) {
+        echo "\n". str_repeat(" ", 5). '<li class="project" id="index-'. $preview["id"] .'">'. "\n" . 
+            str_repeat(" ", 6). '<div class="vertical-block">'. "\n" . 
+              str_repeat(" ", 7). '<div class="bg"></div>'. "\n" . 
+              str_repeat(" ", 7). '<div class="info">'. "\n" . 
+                str_repeat(" ", 8). '<header>'. "\n" .
+                  str_repeat(" ", 9). '<span class="project-number">X</span>'. "\n" .
+                  str_repeat(" ", 9). '<span class="project-name">'. $preview["name"] .'</span>'. "\n" .
+                  str_repeat(" ", 9). '<hr>'. "\n" .
+                  str_repeat(" ", 9). '<div class="project-tags">'. "\n"; 
+                  foreach ($preview["tags"] as $tag){
+                    echo str_repeat(" ", 10).  '<span>' . $tag . '</span>'. "\n";
+                  } 
+                echo  str_repeat(" ", 9). '</div>'. "\n" .
+                str_repeat(" ", 8). '</header>'. "\n" .
+                str_repeat(" ", 8). '<footer>'. "\n" .
+                  str_repeat(" ", 9). '<span class="project-link">'. $preview["footer"] .'</span>'. "\n" .
+                str_repeat(" ", 8). '</footer>'. "\n" . 
+              str_repeat(" ", 7). '</div>'. "\n" .
+            str_repeat(" ", 6). '</div>'. "\n" .
+        str_repeat(" ", 5). '</li>'."\n"; 
+      $number++;
+      
+      } ?>
+      <?php 
+      $number = 1;
+
       foreach ($projects as $project) {
         echo "\n". str_repeat(" ", 5). '<li class="project" id="index-'. $project["id"] .'">'. "\n" . 
             str_repeat(" ", 6). '<div class="vertical-block">'. "\n" . 

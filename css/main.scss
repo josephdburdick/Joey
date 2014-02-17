@@ -413,6 +413,12 @@ section{
     @include transition (all, .2s, ease);
   }
 }
+  #index-mtv,#detail[data-id="mtv"] .slide-container{
+    background:#02daeb;
+    .bg{
+      background-image:url('../projects/mtv/bg.jpg');
+    }
+  }
   #index-macys,#detail[data-id="macys"] .slide-container{
     background:#6d060c;
     .bg{
@@ -497,6 +503,7 @@ section{
           @include transition(all, $pageTransitionSpeed/2, ease);
           footer{
             a{
+
               color:lighten($accentColor1,20%);
               -webkit-animation: greenBgPulse 2s infinite; 
               -moz-animation:    greenBgPulse 2s infinite; 
@@ -679,18 +686,23 @@ html.mobile.lowCPU{
       left:0;
       right:0;
       bottom:0;
+
+      @include opacity(1);
+      
+      background:rgba(255,255,255,.85);
+      text-align: center;
+      height:60px;
+      line-height: 60px;
+      color: #666;
+      letter-spacing: $spacing;
+      @include border-radius-separate(0,0,5px,5px);
+      @include transition (all,.1s, ease);
       a{
-        @include opacity(1);
-        display: block;
-        background:rgba(60,177,99,.9);
-        text-align: center;
         height:60px;
         line-height: 60px;
-        color:lighten(rgba(60,177,99,1),30%);
-        letter-spacing: $spacing;
-        @include border-radius-separate(0,0,5px,5px);
-        @include transition (all,.1s, ease);
+        display: block;
         cursor:pointer;
+        @include border-radius-separate(0,0,5px,5px);
         &:hover{
           background:saturate(rgba(60,177,99,.9),20%);
           color:darken(desaturate(rgba(60,177,99,.9),20%),20%);
@@ -1170,7 +1182,7 @@ h3{
       .project{
         float: none;
         width: 98%;
-        max-width: 400px;
+        max-width: 360px;
         margin: 20px auto 0;
         display: block;
         position: relative;

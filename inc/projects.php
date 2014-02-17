@@ -1,6 +1,21 @@
 <?php 
 
 $projects = array();
+$previews = array();
+
+$previews["mtv"] = array(
+   "id"       =>  "mtv",
+   "name"     =>  "Secret MTV Project",
+   "agency"   =>  "JOEY",
+   "year"     =>  2013,
+   "tags"     =>  array("Native App", "Visual Design", "UX"),
+   "footer"   =>  "Launching Summer 2014"
+);
+
+
+
+
+
 
 $projects["macys"] = array(
    "id"       =>  "macys",
