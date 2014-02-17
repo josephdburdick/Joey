@@ -9,14 +9,13 @@ include "inc/nav.php";
     <ul class="project-container">
       <?php 
       $number = 1;
-
       foreach ($previews as $preview) {
         echo "\n". str_repeat(" ", 5). '<li class="project" id="index-'. $preview["id"] .'">'. "\n" . 
             str_repeat(" ", 6). '<div class="vertical-block">'. "\n" . 
               str_repeat(" ", 7). '<div class="bg"></div>'. "\n" . 
               str_repeat(" ", 7). '<div class="info">'. "\n" . 
                 str_repeat(" ", 8). '<header>'. "\n" .
-                  str_repeat(" ", 9). '<span class="project-number">X</span>'. "\n" .
+                  str_repeat(" ", 9). '<span class="project-number">&bull;</span>'. "\n" .
                   str_repeat(" ", 9). '<span class="project-name">'. $preview["name"] .'</span>'. "\n" .
                   str_repeat(" ", 9). '<hr>'. "\n" .
                   str_repeat(" ", 9). '<div class="project-tags">'. "\n"; 
@@ -113,7 +112,7 @@ include "inc/nav.php";
         Hi I'm Joe, the guy behind Joey.
       </p>
       <p>
-        I'm a front-end designer/developer who has recently added Ruby on Rails to my skill set. I graduated from General Assembly's 
+        I'm a front-end designer/developer who recently added Ruby on Rails to my skill set. I graduated from General Assembly's 
         <a href="https://generalassemb.ly/education/back-end-web-development"> 10-week back-end Ruby programming 
           course</a> at the beginning of this year and since then I've done design for MTV and a couple development projects, one being for <a href="http://carrot.is">Carrot Creative</a>.
       </p>
