@@ -289,12 +289,11 @@ function projectPanes(){
   if (!Modernizr.touch){
     if (windowWidth() >= 680){     
       projectPaneContainer.width((projectCount * projectPaneWidth));
-      sectionIndex.mousewheel(function(event, delta) {
+      sectionIndex.unbind('mousewheel').mousewheel(function(event, delta) {
         this.scrollLeft -= (delta * 45);
         event.preventDefault();
       });
     } else {
-      projectPaneContainer.width((projectPaneWidth)); //.height(projectCount * projectPaneHeight);
       sectionIndex.unbind('mousewheel');
     }
   } else {

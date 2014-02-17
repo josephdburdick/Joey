@@ -1168,15 +1168,16 @@ h3{
     .project-container{
       width:100% !important;
       .project{
-        float:none;
-        width:auto;
-        margin:20px 20px 0;
-        display:block;
+        float: none;
+        width: 98%;
+        max-width: 400px;
+        margin: 20px auto 0;
+        display: block;
         position: relative;
-        height:550px;
+        height: 550px;
         @include border-radius(5px);
         &:first-child{
-          margin-top:60px;
+          margin-top: 60px;
         }
         .info{
           top:55%;
