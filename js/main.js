@@ -216,18 +216,14 @@ function hashLoad(newUrl){
       var urlHash = location.hash.replace(/^#!\//,"");
 
       if (urlHash.indexOf('=') == -1){
-        //console.log('Route found.')
-        
+        //console.log('Route found.')        
         mouse.removeClass('active');
-        
         changeView(urlHash); 
       } else {
         //console.log('Route and project found.')
         var urlSplit = urlHash.split('=');
         //console.log(urlSplit);
- 
         mouse.removeClass('active');
- 
         changeView(urlSplit[0],urlSplit[1]);
 
       }  
@@ -259,7 +255,7 @@ function loadIndex(currentSection){
   btnPrev.removeClass('active');
   btnNext.removeClass('active');
   btnAbout.addClass('active');
- 
+  
   setTimeout(function(){
     $('#' + currentSection).removeClass('active'); //.addClass('out'); 
     setTimeout(function(){
@@ -268,6 +264,7 @@ function loadIndex(currentSection){
         $('.project.active').removeClass('active').siblings('.project').removeClass('not-active').end().find('.project-link')
           .html('<i class="icon-angle-down"></i> View Project <i class="icon-angle-down"></i>');
           mouse.addClass('active')
+        detailPane.addClass('off');
       },1500);
     },1500);
   },1000);
