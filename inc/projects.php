@@ -145,7 +145,73 @@ $projects["tambaran"] = array(
                      "<img class=\"rsImg\" src=\"projects/tambaran/slide-12.png\">"
                   )
 );
+$projects["wwglass"] = array(
+   "id"       =>  "wwglass",
+   "name"     =>  "W&W Glass Pilkington",
+   "agency"   =>  "Studiografica",
+   "year"     =>  2011,
+   "tags"     =>  array("Front-End Development", "User Interface", "User Experience", "Touch"),
+   "details"  =>  "
+                  <p>
+                     <a href=\"http://wwglass.com/pilkington\">Pilkington Planar structural glass systems</a> have a proven track record in 
+                     the most demanding applications. Architects know they can call on Pilkington 
+                     to create roofs, canopies, soaring facades or even clad entire buildings in 
+                     glass and receive a total commitment for the design, supply and warranty of 
+                     the entire, integrated system.
+                  </p>
+                  <p>
+                     W&W Glass came to Studiografica to create a cross 
+                     platform web portfolio to show off their beautiful glass 
+                     structures. They had wonderful photography of their work 
+                     which always makes me excited. Once the design came through I made my own 
+                     tweaks to the portfolio section to make sure there was a good experience on tablets. 
+                  </p>
+                  <p>
+                     Aside from appropriately responding to all touch, the portfolio section also featured a list of locations 
+                     that used W&W and Pilkington. With your finger you could easily move up and down the list then touch the 
+                     different shots associated with that particular site. The animations between locations looked great and 
+                     remains one of my favorite things I ever worked on at Studiografica.
+                  </p>
 
+                  ",
+   "slides"   =>  array(
+                     "<div class=\"vertical-center\"><img src=\"projects/wwglass/logo.png\" alt=\"wwglass\" width=\"300\" height=\"100\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-0.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-1-1.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-2.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-3.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-4.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-4-1.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-5.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-6.png\"></div>"
+                  )
+);
+
+$projects["davids-bridal"] = array(
+   "id"       =>  "davids-bridal",
+   "name"     =>  "David's Bridal",
+   "agency"   =>  "JOEY",
+   "year"     =>  2012,
+   "tags"     =>  array("Project Management", "Front-End Design", "Front-End Development", "User Interface", "User Experience"),
+   "details"  =>  "
+                  <p>
+                     During my tenure at a startup called OurWeddingDay I helped design the original Vendor Platform what would 
+                     later be purchased by David's Bridal. I changed my focus to development after OurWeddingDay and 
+                     David's Bridal but once David's Bridal got around to using what I helped build they hired me to help. 
+                     I designed, developed, and 
+                     helped implement the brand new bride-facing and admin-facing Vendor Platform that is currently in use.
+                  </p>
+                  ",
+   "slides"   =>  array(
+                     "<div class=\"vertical-center\"><img src=\"projects/davids-bridal/logo.png\" alt=\"David's Bridal\" width=\"300\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/davids-bridal/slide-2.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/davids-bridal/slide-0.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/davids-bridal/slide-1.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/davids-bridal/slide-3.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/davids-bridal/slide-4.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/davids-bridal/slide-5.png\"></div>"
+                  )
+);
 $projects["citizen"] = array(
    "id"       =>  "citizen",
    "name"     =>  "Citizen",
@@ -180,72 +246,7 @@ $projects["citizen"] = array(
                      "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/citizen/slide-12.png\"></div>"
                   )
 );
-$projects["davids-bridal"] = array(
-   "id"       =>  "davids-bridal",
-   "name"     =>  "David's Bridal",
-   "agency"   =>  "JOEY",
-   "year"     =>  2012,
-   "tags"     =>  array("Project Management", "Front-End Design", "Front-End Development", "User Interface", "User Experience"),
-   "details"  =>  "
-                  <p>
-                     During my tenure at a startup called OurWeddingDay I helped design the original Vendor Platform what would 
-                     later be purchased by David's Bridal. I changed my focus to development after OurWeddingDay and 
-                     David's Bridal but once David's Bridal got around to using what I helped build they hired me to help. 
-                     I designed, developed, and 
-                     helped implement the brand new bride-facing and admin-facing Vendor Platform that is currently in use.
-                  </p>
-                  ",
-   "slides"   =>  array(
-                     "<div class=\"vertical-center\"><img src=\"projects/davids-bridal/logo.png\" alt=\"David's Bridal\" width=\"300\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/davids-bridal/slide-2.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/davids-bridal/slide-0.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/davids-bridal/slide-1.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/davids-bridal/slide-3.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/davids-bridal/slide-4.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/davids-bridal/slide-5.png\"></div>"
-                  )
-);
 
-$projects["wwglass"] = array(
-   "id"       =>  "wwglass",
-   "name"     =>  "W&W Glass",
-   "agency"   =>  "Studiografica",
-   "year"     =>  2011,
-   "tags"     =>  array("Front-End Development", "User Interface", "User Experience", "Touch"),
-   "details"  =>  "
-                  <p>
-                     Pilkington Planar structural glass systems have a proven track record in 
-                     the most demanding applications. Architects know they can call on Pilkington 
-                     to create roofs, canopies, soaring facades or even clad entire buildings in 
-                     glass and receive a total commitment for the design, supply and warranty of 
-                     the entire, integrated system.
-                  </p>
-                  <p>
-                     W&W Glass came to Studiografica to create a cross 
-                     platform web portfolio to show off their beautiful glass 
-                     structures. They had wonderful photography of their work 
-                     which always makes me excited. Once the design came through I made my own 
-                     tweaks to the portfolio section to make sure there was a good experience on tablets. 
-                  </p>
-                  <p>
-                     Aside from appropriately responding to all touch, the portfolio section also featured a list of locations 
-                     that used W&W and Pilkington. With your finger you could easily move up and down the list then touch the 
-                     different shots associated with that particular site. The animations between locations looked great and 
-                     remains one of my favorite things I ever worked on at Studiografica.
-                  </p>
-                  ",
-   "slides"   =>  array(
-                     "<div class=\"vertical-center\"><img src=\"projects/wwglass/logo.png\" alt=\"wwglass\" width=\"300\" height=\"100\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-0.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-1-1.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-2.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-3.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-4.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-4-1.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-5.png\"></div>",
-                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/wwglass/slide-6.png\"></div>"
-                  )
-);
 $projects["hard"] = array(
    "id"       =>  "hard",
    "name"     =>  "Hard Energy Drink",

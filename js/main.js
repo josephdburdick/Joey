@@ -86,6 +86,7 @@ function changeView(linkUrl, project){
     }
   } else {
     //console.log('Both linkUrl and project are undefined. Load index page.');
+
     loadIndex();
   } 
 }
@@ -270,7 +271,10 @@ function loadIndex(currentSection){
       },1500);
     },1500);
   },1000);
-
+  sectionIndex.unbind('mousewheel').mousewheel(function(event, delta) {
+    this.scrollLeft -= (delta * 45);
+    event.preventDefault();
+  });
   window.location.hash = '';
 }
 function windowWidth(){
@@ -309,6 +313,7 @@ function interfaces(){
     var currentSection = $('section.active').attr('id');
     //console.log('Closing current section... '+currentSection);
     $(this).removeClass('active');
+    faceMask.removeClass('active');
     loadIndex(currentSection);
   });
   btnDetail.on('click',function(){
