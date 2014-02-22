@@ -360,7 +360,7 @@ function touch(){
 function keyboard(){
 
   $(document).keyup(function(e) {
-    if (e.keyCode == 27) { $(btnClose).click(); }   // esc
+    if (e.keyCode == 27) { $(btnClose).click(); }  // esc
   });
   $('.project').on('mouseenter',function(){
     $(this).addClass('hover');
@@ -373,18 +373,21 @@ function keyboard(){
 }
 
 $(document).ready(function(){
-  $(window).on('resize',function(){
-    setTimeout(function(){
-      projectPanes();
-      $('#detail .vertical-center').vertCenter({cssWidth: true});
-    }, 800);
-  });
+  $(window)
+    .on('hashchange', function(e) {
+      hashLoad(location.hash);
+      e.preventDefault();
+    })
+    .on('resize',function(){
+      setTimeout(function(){
+        projectPanes();
+        $('#detail .vertical-center').vertCenter({cssWidth: true});
+      }, 800);
+    }).trigger('resize');
+
   hashLoad();
   interfaces();
-  $(window).on('hashchange', function(e) {
-    hashLoad(location.hash);
-    e.preventDefault();
-  });
+  
   setTimeout(function(){ window.scrollTo(0, 1); }, 0);
 });
 
