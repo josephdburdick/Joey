@@ -536,7 +536,6 @@ section{
             .project-number{
               -webkit-transform: scale(2);
               @include opacity(0);
-              //border:2px solid #000;
             }
           }
           footer{
@@ -549,7 +548,6 @@ section{
         }
       }
       &.active{
-        //-webkit-filter: grayscale(0) blur(0px);
         @include opacity(1);
         .bg{
           @include opacity(1);
@@ -563,7 +561,6 @@ section{
             .project-number{
               -webkit-transform: scale(2);
               @include opacity(0);
-              //border:2px solid #000;
             }
           }
           footer{
@@ -584,7 +581,6 @@ section{
               .project-number{
                 -webkit-transform: scale(2);
                 @include opacity(0);
-                //border:2px solid #000;
               }
             }
             footer{
@@ -624,37 +620,38 @@ html.mobile.lowCPU{
     @include transition(opacity, .5s, ease);
   }
   .info{
-    font:$default-text $condensed-font;
-    color:$accentColor-dark;
-    text-transform: uppercase;
-    position: absolute;
-    display:inline-block;
-    top:50%;
-    left:50%;
-    width:$paneWidth - 10;
-    padding-bottom:60px;
-    opacity:0;
-    vertical-align: middle;
-    margin: -200px 0 0 -150px;
-    cursor: default;
-    -webkit-transform: scale(1.1);
+    font           : $default-text $condensed-font;
+    color          : $accentColor-dark;
+    text-transform : uppercase;
+    position       : absolute;
+    display        : inline-block;
+    top            : 50%;
+    left           : 50%;
+    width          : $paneWidth - 10;
+    padding-bottom : 60px;
+    opacity        : 0;
+    vertical-align : middle;
+    margin         : -200px 0 0 -150px;
+    cursor         : default;
+    -webkit-transform : scale(1.1);
     @include transition(all, .2s, ease);
     
     header{
-      padding:100px 10px;
+      padding    : 100px 10px;
+      border-top : 1px solid #fff;
+      background : rgb(255,255,255);
       @include border-radius-separate(5px,5px,0,0);
-      background: rgb(255,255,255);
-      background: -moz-linear-gradient(top,  rgba(255,255,255,.9) 0%, rgba(254,255,244,1) 100%); /* FF3.6+ */
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.9)), color-stop(100%,rgba(254,255,244,1))); /* Chrome,Safari4+ */
-      background: -webkit-linear-gradient(top,  rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%); /* Chrome10+,Safari5.1+ */
-      background: -o-linear-gradient(top,  rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%); /* Opera 11.10+ */
-      background: -ms-linear-gradient(top,  rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%); /* IE10+ */
-      background: linear-gradient(to bottom,  rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%); /* W3C */
+      background : -moz-linear-gradient(top,  rgba(255,255,255,.9) 0%, rgba(254,255,244,1) 100%); /* FF3.6+ */
+      background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.9)), color-stop(100%,rgba(254,255,244,1))); /* Chrome,Safari4+ */
+      background : -webkit-linear-gradient(top,  rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%); /* Chrome10+,Safari5.1+ */
+      background : -o-linear-gradient(top,  rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%); /* Opera 11.10+ */
+      background : -ms-linear-gradient(top,  rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%); /* IE10+ */
+      background : linear-gradient(to bottom,  rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%); /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fefff4',GradientType=0 ); /* IE6-9 */
 
       & > span[class^="project"]{
-        display:block;
-        margin:24px auto 0 ;
+        display : block;
+        margin  : 24px auto 0 ;
         &:first-child{
           margin-top:0;
         }
@@ -663,37 +660,38 @@ html.mobile.lowCPU{
         letter-spacing: $spacing;
       }
       .project-number{
-        position: absolute;
-        font-size: 70%;
-        width:30px;
-        height:30px;
-        line-height: 28px;
+        position    : absolute;
+        top         : 40px;
+        left        : 50%;
+        margin      : 0 0 0 -15px!important;
+        font-size   : 70%;
+        width       : 30px;
+        height      : 30px;
+        line-height : 28px;
+        border      : 1px solid #ccc;
+        color       : #ccc;
         @include border-radius(20px);
         @include transition (all,.5s,ease);
         -webkit-transform: scale(1);
         @include opacity(1);
-        border:1px solid #ccc;
-        color:#ccc;
+
         
-        top: 40px;
-        left: 50%;
-        margin: 0 0 0 -15px!important;
+        
       }
     }
     footer{
-      position: absolute;
-      left:0;
-      right:0;
-      bottom:0;
+      position : absolute;
+      left     : 0;
+      right    : 0;
+      bottom   : 0;
+      height     : 60px;      
+      color      : #666;
+      text-align : center;
+      line-height : 60px;
+      letter-spacing : $spacing;
 
       @include opacity(1);
-      
       background:rgba(255,255,255,.85);
-      text-align: center;
-      height:60px;
-      line-height: 60px;
-      color: #666;
-      letter-spacing: $spacing;
       @include border-radius-separate(0,0,5px,5px);
       @include transition (all,.1s, ease);
       a{
@@ -713,24 +711,24 @@ html.mobile.lowCPU{
 
 .project-tags{
   span{
-    font-size:80%;
-    display:inline-block;
-    background:#ddd;
-    padding:5px 10px;
-    margin: 1px 1px 1px 0;
-    text-transform: uppercase;
+    font-size      : 80%;
+    display        : inline-block;
+    background     : #ddd;
+    padding        : 5px 10px;
+    margin         : 1px 1px 1px 0;
+    text-transform : uppercase;
     @include border-radius(5px);
   }
 }
 .btn-circle{
-  display:inline-block;
-  position: relative;
-  width:40px;
-  height:40px;
+  display    : inline-block;
+  position   : relative;
+  width      : 40px;
+  height     : 40px;
   line-height: 40px;
+  background : #333;
+  cursor     : pointer;
   @include border-radius (30px);
-  background:#333;
-  cursor:pointer;
   @include transition (all,.2s,ease);
   @include opacity (1);
   i{
@@ -761,34 +759,64 @@ html.mobile.lowCPU{
   }
   
 }
+.btnAbout{
+  &.hover{
+    &:before{
+      content     : '';
+      position    : absolute;
+      top         : 50%;
+      margin-top  : -10px;
+      left        : 65px;
+      width       : 0px;
+      height      : 0px;
+      border-style: solid;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent #000 transparent transparent;
+    }
+    &:after{
+      content: 'About Joey';
+      display: block;
+      position: absolute;
+      left: 75px;
+      background: black;
+      color: #ccc;
+      z-index: 999;
+      width: 120px;
+      padding: 0 8px;
+      text-transform: uppercase;
+      font-size: 70%;
+      font-weight: bold;
+    }
+  }
+}
 .btnClose{
-  margin-bottom:60px;
-  position: absolute;
-  top:0;
-  left:-25%;
-  margin-left: -20px!important;
-  background:#333;
+  position      : absolute;
+  top           : 0;
+  left          : -25%;
+  margin-bottom : 60px;
+  margin-left   : -20px!important;
+  background    : #333;
   @include opacity(0);
-  @include rotate (0);
-   -webkit-animation-delay:5s; 
-    -moz-animation-delay:5s;    
-    -o-animation-delay:5s;      
-    animation-delay:5s;    
+  @include rotate(0);
+  -webkit-animation-delay : 5s; 
+  -moz-animation-delay    : 5s;    
+  -o-animation-delay      : 5s;      
+  animation-delay         : 5s;    
   &:hover,&.hover{
-    background:$red;
-    -webkit-animation-delay:0s; 
-    -moz-animation-delay:0s;    
-    -o-animation-delay:0s;      
-    animation-delay:0s;    
+    background : $red;
+    -webkit-animation-delay: 0s; 
+    -moz-animation-delay   : 0s;    
+    -o-animation-delay     : 0s;      
+    animation-delay        : 0s;    
   }
   i{
     color:lighten($accentColor2,40%);
   }
   &.active{
-    -webkit-animation-delay:5s; 
-    -moz-animation-delay:5s;    
-    -o-animation-delay:5s;      
-    animation-delay:5s; 
+    -webkit-animation-delay: 5s; 
+    -moz-animation-delay   : 5s;    
+    -o-animation-delay     : 5s;      
+    animation-delay        : 5s; 
     left: 50%;
     background:darken($accentColor2,20%);
     @include opacity(1);
@@ -800,31 +828,30 @@ html.mobile.lowCPU{
 
 
 #detail{
-  z-index:0;
-  background:black;
-  color:#ccc;
-  position: fixed;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  width:100%;
-  height:100%;
+  z-index   : 0;
+  background: black;
+  color     : #ccc;
+  position  : fixed;
+  top       : 0;
+  left      : 0;
+  right     : 0;
+  bottom    : 0;
+  width     : 100%;
+  height    : 100%;
 
   article{
-    position: absolute;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    z-index: 9;
+    position  : absolute;
+    left      : 0;
+    top       : 0;
+    width     : 100%;
+    height    : 100%;
+    z-index   : 9;
     text-align: center;
   }
 }
 #detail .bg-slide{
   width:100%;
   height:100%;
-  //background-color
 }
 [data-id="macys"],[data-id="ciroc"],[data-id="citizen"]{
   .bg-slide{
@@ -834,20 +861,20 @@ html.mobile.lowCPU{
 
 
 aside{
-  position: fixed;
-  z-index: 10;
-  left:$menuWidthSmall;
-  width:$paneWidth;
+  position        : fixed;
+  z-index         : 10;
+  left            : -$paneWidth;
+  width           : $paneWidth;
+  height          : 100%;
+  font            : $default-text $condensed-font;
+  overflow        : auto;
+  @include opacity (0);
+  color           : $accentColor-dark;
   background-color: rgba(255,255,255,.95);
-  height:100%;
-  font: $default-text $condensed-font;
-  overflow: auto;
-  @include opacity (1);
-  color:$accentColor-dark;
   @include transition (all, $pageTransitionSpeed/1.5, ease);
   .content{
     position: relative;
-    margin:80px 40px 80px;
+    margin  : 80px 40px 80px;
   }
   .vertical-block{
     text-align: left;
@@ -856,8 +883,8 @@ aside{
     }
   }  
   h3{
-    margin-top:30px;
-    margin-bottom:0px;
+    margin-top    : 30px;
+    margin-bottom : 0px;
     &:first-child{
       margin-top:0;
     }
@@ -870,14 +897,19 @@ aside{
   .project-name, .project-year .project-agency{
     text-transform: uppercase;
   }
-  &.off{
-    left:-$paneWidth;
-    @include opacity(0);
+  &.active{
+    left: $menuWidthSmall;
+    @include opacity(1);
+    @media only screen and (max-width:680px){
+      left: 0;
+    }
   }
 }
 .slide-container{
-  height:100%;
-  text-align:center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: relative;
   h1, h2, h3{
     font-family: $normal-font;
     text-transform: uppercase;
@@ -943,17 +975,17 @@ h3{
 
   aside{
     width: $paneWidth;
-    display:none;
-    margin-right:40px;
+    display        : none;
+    margin-right   : 40px;
     
-    position:relative;
-    padding:0;
-    vertical-align: top;
-    height:auto;
-    position:relative;
-    left:0;
-    float:left;
-    margin-top:-52px;
+    position       : relative;
+    padding        : 0;
+    vertical-align : top;
+    height         : auto;
+    position       : relative;
+    left           : 0;
+    float          : left;
+    margin-top     : -52px;
   }
   article{
     h1{
@@ -973,33 +1005,6 @@ h3{
   }
 }
 
-.strikethrough{
-  display:inline-block;
-  position:relative;
-  &:after{
-    content:'WHO';
-    position:absolute;
-    padding:0px 10px;
-    left:2px;
-    top:46px;
-    color:darken($accentColor2,20%);
-    @include rotate(-5);
-    border-top:8px solid darken($accentColor2,20%);
-  }
-}
-
-.loading:after{
-  position: absolute;
-  content:'';
-  width:32px;
-  height:32px;
-  top:50%;
-  left:50%;
-  margin: -16px 0 0 -16px;
-  background:#fff url(../img/loading.gif) 50% 50% no-repeat;
-  @include border-radius(20px);
-  @include opacity(0.5);
-}
 
 
 
@@ -1008,10 +1013,8 @@ h3{
    Slideshow
    ———————————————
 */
+
 .royalSlider{
-  height:320px;
-}
-#slideshow{
   margin:0;
   padding:0;
   list-style:none;
@@ -1024,12 +1027,14 @@ h3{
   -webkit-user-select: none;
   -moz-user-select: none;  
   user-select: none;
-
+  overflow: hidden;
   .rsImg{
     margin-left:0 !important;
     width: auto;
     max-width: 100%;
-
+    @media only screen and (max-width:680px){
+      max-width: 400px;
+    }
   }
 }
 
@@ -1063,7 +1068,9 @@ h3{
   }
 }
 @media only screen and (max-width:680px){
-
+  #face-mask{
+    display: none !important;
+  }
   $mobileRadius: 5px;
   #mouse{
     display: none !important;
@@ -1111,36 +1118,22 @@ h3{
       -webkit-overflow-scrolling: touch;
     }
   }
-  aside{
-    position: relative;
-    z-index:998;
-    height:auto;
-    left:0;
-    width:100%;
-    overflow: hidden;
-    background-color: #fff;
-    -webkit-overflow-scrolling: touch;
-    height:auto;
-    @include transition (all, $pageTransitionSpeed, ease);
-    &.off{
-      left:0;
-      height:0px;
-    }
-  }
+
   #slideshow{
     left:0;
   }
+  $navHeight: 60px;
   #nav-main{
+    
     @include box-rgba (24,20,29,0.98);
-    height:60px;
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:auto;
-    height:60px;
-    min-height:60px;
-    width:100%;
+    position:  fixed;
+    top:       0;
+    left:      0;
+    right:     0;
+    bottom:    auto;
+    height:    $navHeight;
+    min-height: $navHeight;
+    width:     100%;
     -webkit-filter: blur(0px)!important;
     #logo{ top:5px; }
     .buttons{
@@ -1172,7 +1165,25 @@ h3{
       top:0;
     }
   }
-
+  aside{
+    position: relative;
+    z-index:998;
+    height:auto;
+    left: 0;
+    width:100%;
+    top: -100%;
+    overflow: hidden;
+    background-color: #fff;
+    -webkit-overflow-scrolling: touch;
+    height:auto;
+    @include transition (all, $pageTransitionSpeed, ease);
+    &.active{
+      top: $navHeight;
+    }
+    .content{
+      margin: 60px 20px 60px;
+    }
+  }
   .scroll-horizontal{ padding-left:0; }
   
   #index{
@@ -1224,12 +1235,11 @@ h3{
   aside{
       -webkit-overflow-scrolling: touch;
   }
-  #face-mask.active{
-    display:none;
-  }
+
+  $navHeight: 40px;
   #nav-main{
-    height:40px; 
-    min-height:40px;
+    height: $navHeight; 
+    min-height: $navHeight;
     #logo{
       display:inline-block;
       -webkit-background-size: 80%;
@@ -1239,6 +1249,9 @@ h3{
       top:-10px;
       left:30px;
     }
+  }
+  aside.active{
+    top: $navHeight;
   }
   .buttons{
     position: relative;
@@ -1274,7 +1287,11 @@ h3{
     only screen and (-o-min-device-pixel-ratio: 3/2),
     only screen and (min--moz-device-pixel-ratio: 1.5),
     only screen and (min-device-pixel-ratio: 1.5) {
-        .container {background-image:url(../img/pw_maze_black_@2X.png);}
+        .container {
+          background-image:url(../img/pw_maze_black_@2X.png);
+          background-size: 46px 23px;
+
+        }
 
         #about-logo{
           background-image:url(../img/JOEY_LOGO@2x.png);

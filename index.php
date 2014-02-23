@@ -63,7 +63,7 @@ include "inc/nav.php";
     </ul>
   </section> <!-- /#index -->
   <section id="detail" data-id="">
-    <aside class="off">
+    <aside>
       <div class="content">
         <h3>Project</h3>
         <span class="project-name"></span>

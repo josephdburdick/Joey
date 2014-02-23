@@ -5,23 +5,14 @@
       </div>
     </div>
     <div id="face-mask"></div>
-    <script src="js/vendor/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
-    <?php 
-        if($ismobile) { echo '<script src="js/vendor/hammer.jquery.min.js"></script>'."\n";}
-        else { echo '<script src="js/vendor/jquery.mousewheel.min.js"></script>'."\n";} 
-    ?>
     <script src="js/vendor/jquery.easing-1.3.js"></script>
     <script src="js/vendor/jquery.royalslider.min.js"></script>
     <script src="js/vendor/jquery.cookie.js"></script>
     <script src="js/vendor/vertCenter-ck.js"></script>
+    <script src="js/vendor/jquery.mousewheel.min.js"></script>
     <script src="js/main-ck.js"></script>
-
-
-    <script>
-    	if (mobile() == true) touch();
-    	else keyboard();
-    </script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
