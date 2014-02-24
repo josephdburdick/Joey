@@ -108,24 +108,28 @@ include "inc/nav.php";
       <div id="about-img">
         <img src="img/about_joeyBaby.png" alt="Joey as a wee lad!">
       </div>
+      <h2 class="text-center">
+        Sup! I'm Joe, the guy behind Joey.
+      </h2>
       <p>
-        Hi I'm Joe, the guy behind Joey.
+        I'm a designer/front-end developer with a degree in advertising and a knack for user experience. 
+        I recently finished General Assembly's 
+        <a href="https://generalassemb.ly/education/back-end-web-development">back-end Ruby programming 
+          course</a>, spearheaded the visual design for MTV's upcoming music video streaming app, and now have my
+          fingers in a couple development projects, one being for <a href="http://carrot.is">Carrot</a>.
       </p>
       <p>
-        I'm a front-end designer/developer who recently added Ruby on Rails to my skill set. I graduated from General Assembly's 
-        <a href="https://generalassemb.ly/education/back-end-web-development"> 10-week back-end Ruby programming 
-          course</a> at the beginning of this year and since then I've done design for MTV and a couple development projects, one being for <a href="http://carrot.is">Carrot Creative</a>.
-      </p>
-      <p>
-        I’ve tinkered with computers for 15 years; got my start on a Tandy back in the 80's
-        and webpages on Angelfire in the 90's, after moving a brazillion times with my family I ended up with a degree in 
-        Mass Communications/Creative Advertising
+        I’ve tinkered with computers for 15 years; got my start on a Tandy back in the late 80's
+        built webpages on Angelfire in the 90's, built Linux servers out of scraps in the 00's, and 
+        after moving a bunch of times I ended up at Virginia Commonwealth University
         where I learned the art of grabbing people's attention. Today I continue learning new ways to grab 
         people’s attention on the Web, wherever the Web happens to be. 
       </p>
       <p>
-        When I'm not learning random facts on the Net or working I'm <a href="http://j0e.me">blogging around Brooklyn</a>, <a href="http://instagram.com/josephdburdick">taking pictures on Instagram</a>, DJing, sketching out app ideas, hanging 
-        out with friends or talking about Ruby and Javascript during Hacker Hours.
+        When I'm not learning random facts on the Net or working I'm 
+        <a href="http://j0e.me">blogging around Brooklyn</a>, 
+        <a href="http://instagram.com/josephdburdick">taking pictures on Instagram</a>, 
+        DJing, sketching out app ideas, hanging out with friends, or talkin' Ruby and Javascript during Hacker Hours.
       </p>
 
       <p>

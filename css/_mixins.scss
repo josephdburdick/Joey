@@ -48,6 +48,13 @@
     filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr=$startColor, EndColorStr=$endColor);
 }
 
+/* SCALE */
+
+@mixin scale($amount){
+  transform: scale($amount, $amount);
+  -ms-transform: scale($amount, $amount);
+  -webkit-transform: scale($amount, $amount);
+}
 
 /* BACKGROUND SIZE */
 @mixin background-size($width: 100%, $height: 100%) {

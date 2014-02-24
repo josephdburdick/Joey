@@ -492,14 +492,12 @@ section{
       height:100%;
       position: relative;
       float:left;
-      
       &.hover{
         .bg{
           @include opacity(0.25);
           //-webkit-filter: grayscale(0) blur(3px);
         }
         .info{
-          -webkit-transform: scale(1);
           @include opacity(1);
           @include transition(all, $pageTransitionSpeed/2, ease);
           footer{
@@ -524,7 +522,7 @@ section{
       }
       &.not-active{
         @include opacity(1);
-
+        @include transform(scale(.85));
         .bg{
           @include opacity(0.25);
         }
@@ -535,7 +533,7 @@ section{
           
           header{
             .project-number{
-              -webkit-transform: scale(2);
+              @include transform(scale(2));
               @include opacity(0);
             }
           }
@@ -550,6 +548,7 @@ section{
       }
       &.active{
         @include opacity(1);
+         @include transform(scale(1));
         .bg{
           @include opacity(1);
         }
@@ -939,6 +938,7 @@ h3{
     width:80%;
     margin:0 auto;
     max-width: 960px;
+    padding-left: $menuWidthSmall;
   }
   #about-img{
     position: relative;      
@@ -1005,7 +1005,7 @@ h3{
     color:#666;
     text-align:left;
     position:relative;
-    padding: 0 0 100px 0;
+    padding: 0 0 100px $menuWidthSmall;
   }
 }
 
@@ -1089,7 +1089,7 @@ h3{
     padding:0px;
     
     hr              { width: 90%; }
-    article         { width:100%; }
+    article         { width:100%; padding: 0; }
     p, nav#social   {
       margin-left:20px;
       margin-right:20px;
