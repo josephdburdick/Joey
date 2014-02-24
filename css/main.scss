@@ -1170,7 +1170,7 @@ h3{
     }
   }
   aside{
-    position: relative;
+    position: absolute;
     z-index:998;
     height:auto;
     left: 0;
@@ -1180,9 +1180,9 @@ h3{
     background-color: #fff;
     -webkit-overflow-scrolling: touch;
     height:auto;
-    @include transition (all, $pageTransitionSpeed, ease);
+    @include transition (opacity, $pageTransitionSpeed, ease);
     &.active{
-      top: $navHeight;
+      top: 0; //$navHeight;
     }
     .content{
       margin: 60px 20px 60px;
@@ -1255,7 +1255,7 @@ h3{
     }
   }
   aside.active{
-    top: $navHeight;
+    top: 0; //$navHeight;
   }
   .buttons{
     position: relative;
