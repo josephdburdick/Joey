@@ -342,10 +342,10 @@ function hashLoad(hash){
 function interfaces(){  
   $(btnAbout)
     .on('mouseenter',function(){
-      $(this).addClass('hover')
+      $(this).addClass('hover');
     })
     .on('mouseleave',function(){
-      $(this).removeClass('hover')
+      $(this).removeClass('hover');
     });
   $(btnClose).on('click',function(){
     var currentSection = $('section.active').attr('id');
@@ -356,6 +356,9 @@ function interfaces(){
       btnDetail.trigger('click');
     }
     loadIndex(currentSection);
+    if ($('.royalSlider').is('[class*="rs"]')){
+      $('.royalSlider').royalSlider('destroy');
+    }
   });
   btnDetail.on('click',function(){
     $(this).toggleClass('on');
