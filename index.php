@@ -1,5 +1,3 @@
-
-
 <?php 
 $page = "index";
 include "inc/head.php";

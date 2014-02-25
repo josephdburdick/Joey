@@ -1,5 +1,4 @@
- 
-/*
+ /*
 
 
                  ___           ___                 
@@ -53,6 +52,7 @@ jQuery.rsCSS3Easing.easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';
 function windowWidth(){ var wW = $(window).width(); return wW; }
 function windowHeight(){ var wH = $(window).height(); return wH; }
 function navTimer(){ setTimeout(function(){ nav.addClass('trans'); }, 5000); }
+
 function showMouseNotify(b){
   if (b === true){
     if(mobile() === false && $(window).width <= 680){
@@ -74,6 +74,7 @@ function mobile(){
   }
   return isMobile;
 }
+
 function keyboard(){
   $(document).keyup(function(e) {
     if (sectionIndex.hasClass('active')){
@@ -122,6 +123,7 @@ function keyboard(){
     }
   });
 }
+
 function projectPanes(){
   var projectPaneContainer, projectPane, projectCount, projectPaneWidth, projectPaneHeight;
   projectPaneWidth = $('#index .project').width(),
@@ -145,15 +147,20 @@ function projectPanes(){
   } else {
       projectPaneContainer.width((projectCount * projectPaneWidth));
   }
-  $('.project').on('mouseenter',function(){
-    $(this).addClass('hover latest').siblings().removeClass('hover latest');
-  }).on('mouseleave',function(){
-    $(this).removeClass('hover').addClass('latest');
-  });
-  nav.on('mouseenter',function(){
-    $(this).click();
-  });
+  if (mobile()){
+    $('.project').addClass('hover');
+  } else {
+    $('.project').on('mouseenter',function(){
+      $(this).addClass('hover latest').siblings().removeClass('hover latest');
+    }).on('mouseleave',function(){
+      $(this).removeClass('hover').addClass('latest');
+    });
+    nav.on('mouseenter',function(){
+      $(this).click();
+    });
+  }
 }
+
 function loadIndex(){
   currentSection = $('section.active').attr('id');
 
@@ -174,6 +181,7 @@ function loadIndex(){
 
   projectPanes();
 }
+
 function slideshow(){
   if ($('.royalSlider').is('[class*="rs"]')){
     $('.royalSlider').royalSlider('destroy');
@@ -216,6 +224,7 @@ function slideshow(){
   $('#slideshow').find('.vertical-center').vertCenter({cssWidth: true});
   $(window).trigger('resize');
 }
+
 function pullData(project){
   var url = 'inc/projects_export.php?project=' + project;
   var projectTags, projectImages;
@@ -253,6 +262,9 @@ function pullData(project){
       btnPrev.addClass('active');
       btnNext.addClass('active');
       btnClose.addClass('active');
+      if (mobile() === false && detailPane.hasClass('active') === false){
+        btnDetail.trigger('click');
+      }
     },500);
     
 
@@ -261,8 +273,6 @@ function pullData(project){
     alert("Data not found.");
     window.history.back();
   });
-
-
 }
 
 function processRoute(page, project){
@@ -293,7 +303,6 @@ function processRoute(page, project){
   }
 }
 
-
 function changeView(linkUrl, project){
   //("Executing changeView.")
   var urlHash = location.hash.replace(/^#!\//,"");
@@ -311,9 +320,6 @@ function changeView(linkUrl, project){
     }
   }
 }
-
-
-
 
 function hashLoad(hash){
   if ("onhashchange" in window){ //initial load
@@ -339,7 +345,7 @@ function hashLoad(hash){
   $(window).trigger('onhashchange');
 }
 
-function interfaces(){  
+function interfaces(){
   $(btnAbout)
     .on('mouseenter',function(){
       $(this).addClass('hover');
@@ -347,9 +353,9 @@ function interfaces(){
     .on('mouseleave',function(){
       $(this).removeClass('hover');
     });
+
   $(btnClose).on('click',function(){
     var currentSection = $('section.active').attr('id');
-    //('Closing current section... '+currentSection);
     $(this).removeClass('active');
     faceMask.removeClass('active');
     if (detailPane.hasClass('active')){
@@ -360,21 +366,22 @@ function interfaces(){
       $('.royalSlider').royalSlider('destroy');
     }
   });
+
   btnDetail.on('click',function(){
     $(this).toggleClass('on');
     faceMask.toggleClass('active');
     detailPane.toggleClass('active');
-
   });
+
   faceMask.on('click',function(){
     btnDetail.click();
   });
+
   $('.cookie').on('click',function(){
     $.cookie('behaviorAlert', 'OK', { expires: 7 });
     $('.alert').removeClass('active');
     return false;
   });
-
 
   navTimer();
   
@@ -388,11 +395,7 @@ function interfaces(){
   keyboard();
 }
 
-
-
-
 $(document).ready(function(){
-  // var lastScrollTop = 0;
   $(window)
     .on('hashchange', function(e) {
       hashLoad(location.hash);

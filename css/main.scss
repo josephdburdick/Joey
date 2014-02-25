@@ -522,7 +522,6 @@ section{
       }
       &.not-active{
         @include opacity(1);
-        @include transform(scale(.85));
         .bg{
           @include opacity(0.25);
         }
@@ -533,7 +532,6 @@ section{
           
           header{
             .project-number{
-              @include transform(scale(2));
               @include opacity(0);
             }
           }
@@ -548,7 +546,6 @@ section{
       }
       &.active{
         @include opacity(1);
-         @include transform(scale(1));
         .bg{
           @include opacity(1);
         }
@@ -559,7 +556,6 @@ section{
           
           header{
             .project-number{
-              -webkit-transform: scale(2);
               @include opacity(0);
             }
           }
@@ -579,7 +575,6 @@ section{
             
             header{
               .project-number{
-                -webkit-transform: scale(2);
                 @include opacity(0);
               }
             }
@@ -633,7 +628,6 @@ html.mobile.lowCPU{
     vertical-align : middle;
     margin         : -200px 0 0 -150px;
     cursor         : default;
-    -webkit-transform : scale(1.1);
     @include transition(all, .2s, ease);
     
     header{
@@ -675,7 +669,6 @@ html.mobile.lowCPU{
         color       : #ccc;
         @include border-radius(20px);
         @include transition (all,.5s,ease);
-        -webkit-transform: scale(1);
         @include opacity(1);
 
         
