@@ -147,7 +147,7 @@ function projectPanes(){
   } else {
       projectPaneContainer.width((projectCount * projectPaneWidth));
   }
-  if (mobile()){
+  if (mobile() && windowWidth() <= 680){
     $('.project').addClass('hover');
   } else {
     $('.project').on('mouseenter',function(){
