@@ -262,7 +262,8 @@ function pullData(project){
       btnPrev.addClass('active');
       btnNext.addClass('active');
       btnClose.addClass('active');
-      if (mobile() === false && detailPane.hasClass('active') === false){
+      if ((mobile() === false && detailPane.hasClass('active') === false) || 
+        (mobile() === true && windowWidth() >= 680 && detailPane.hasClass('active') === false)){
         btnDetail.trigger('click');
       }
     },500);
