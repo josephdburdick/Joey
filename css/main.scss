@@ -227,7 +227,7 @@ body{
   top:0;
   width:100%;
   left:$paneWidth + $menuWidthSmall;
-  display:none;
+  display: none;
   z-index:10;
   &.active{
     display:block;
@@ -235,7 +235,7 @@ body{
 }
 .button{
   padding:10px 20px;
-  border:1px solid $accentColor1;
+  border:2px solid $accentColor1;
   @include border-radius(5px);
   @include transition(all, .2s ease);
     &:hover,&:active{
@@ -260,10 +260,11 @@ body{
   @include transition (opacity, .5s, ease);
   overflow:auto;
   -webkit-overflow-scrolling: touch;
-  
+  display: none;
   &.active{
-    top:2;
     z-index:9999;
+    top: 0;
+    display: block;
     @include opacity(1);
   }
   article{
@@ -772,6 +773,7 @@ html.mobile.lowCPU{
     }
     &:after{
       content: 'About Joey';
+      font-family: $normal-font;
       display: block;
       position: absolute;
       left: 75px;

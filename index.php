@@ -143,28 +143,22 @@ include "inc/nav.php";
       </p>
     </article>
   </section>
-
   <div class="alert">
-   
     <article>
       <i class="icon-check-sign"></i>
       <hr>
       <p>
-        Please scroll up and down with your mouse/trackpad to pan 
-        through all projects.
+        Joey is not compatible with versions of IE lower than 11.<br>I didn't even try. 
       </p>
-      
-      <!--[if IE]>
       <p>
-        While I am able to develop sites compatible with Internet Explorer this site provides 
-        an experience too rich to be viewed properly in your browser. Please view the site in <a href="http://browsehappy.com" target="_blank">one of these excellent alternatives</a>.
+        Using an outdated browser makes your computer unsafe. Learn about 
+        alternative browsers that may fit you even better than the one you 
+        are currently using at <a href="http://browsehappy.com/">Browse Happy</a>.
       </p>
-      <![endif]-->
       <br>
-        <a href="#" class="cookie button" data-cookie="OK">OK, GOT IT</a>
-      
+        <a href="#" class="cookie button" data-cookie="OK">YUP, GOT IT</a>
     </article>
-  </div> <!-- /alert -->
+  </div> 
 
 
 <?php include "inc/footer.php"; ?>

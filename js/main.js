@@ -347,6 +347,11 @@ function hashLoad(hash){
 }
 
 function interfaces(){
+  var isIE11 = !!navigator.userAgent.match(/Trident\/7\./);
+  var isIE = navigator.userAgent.indexOf(' MSIE ') > -1
+  if ($.cookie('ie-alert') !== "OK" && isIE === true && isIE11 === false)
+    $('.alert').addClass('active')
+
   $(btnAbout)
     .on('mouseenter',function(){
       $(this).addClass('hover');
@@ -379,7 +384,7 @@ function interfaces(){
   });
 
   $('.cookie').on('click',function(){
-    $.cookie('behaviorAlert', 'OK', { expires: 7 });
+    $.cookie('ie-alert', "OK", { expires: 7 });
     $('.alert').removeClass('active');
     return false;
   });
