@@ -416,6 +416,12 @@ section{
     @include transition (all, .2s, ease);
   }
 }
+  #index-bluechairbay,#detail[data-id="bluechairbay"] .slide-container{
+    background:#f1e6d2;
+    .bg{
+      background-image:url('../projects/bluechairbay/bg.jpg');
+    }
+  }
   #index-mtv,#detail[data-id="mtv"] .slide-container{
     background:#02daeb;
     .bg{

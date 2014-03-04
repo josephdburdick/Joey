@@ -3,11 +3,19 @@
 $projects = array();
 $previews = array();
 
+$previews["bluechairbay"] = array(
+   "id"       =>  "bluechairbay",
+   "name"     =>  "Blue Chair Bay",
+   "agency"   =>  "Carrot",
+   "year"     =>  2014,
+   "tags"     =>  array("Front-end Development", "UX"),
+   "footer"   =>  "Launching April 2014"
+);
 $previews["mtv"] = array(
    "id"       =>  "mtv",
    "name"     =>  "Secret MTV Project",
    "agency"   =>  "JOEY",
-   "year"     =>  2013,
+   "year"     =>  2014,
    "tags"     =>  array("Native App", "Visual Design", "UX"),
    "footer"   =>  "Launching Summer 2014"
 );
