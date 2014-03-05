@@ -510,7 +510,7 @@ section{
           @include transition(all, $pageTransitionSpeed/2, ease);
           footer{
             a{
-
+              border-bottom: 1px solid darken($accentColor1,10%);
               color:lighten($accentColor1,20%);
               -webkit-animation: greenBgPulse 2s infinite; 
               -moz-animation:    greenBgPulse 2s infinite; 
