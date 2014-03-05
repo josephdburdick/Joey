@@ -33,7 +33,7 @@
 
 
 var faceMask, btnClose, btnAbout, btnPrev, btnNext, btnDetail, nav, activeProject, currentSection,
-    detailPane, sectionIndex, sectionDetail, sectionAbout, isMobile, scrollAlert, slideshowOptions;
+    detailPane, sectionIndex, sectionDetail, sectionAbout, isMobile, scrollAlert, slideshowOptions, tabletBreakPoint;
 
     nav           = $('#nav-main'),
     faceMask      = $('#face-mask'),
@@ -46,7 +46,8 @@ var faceMask, btnClose, btnAbout, btnPrev, btnNext, btnDetail, nav, activeProjec
     sectionIndex  = $('#index'),
     sectionDetail = $('#detail'),
     sectionAbout  = $('#about'),
-    scrollAlert   = $('#mouse');
+    scrollAlert   = $('#mouse'),
+    tabletBreakPoint = 680;
 
 jQuery.rsCSS3Easing.easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';
 function windowWidth(){ var wW = $(window).width(); return wW; }
@@ -55,11 +56,11 @@ function navTimer(){ setTimeout(function(){ nav.addClass('trans'); }, 5000); }
 
 function showMouseNotify(b){
   if (b === true){
-    if(mobile() === false && $(window).width <= 680){
+    if(mobile() === false && $(window).width <= tabletBreakPoint){
       scrollAlert.addClass('active');
     }
   } else {
-    if(mobile() === false && $(window).width <= 680){
+    if(mobile() === false && $(window).width <= tabletBreakPoint){
       scrollAlert.removeClass('active');
     }
   }
@@ -135,7 +136,7 @@ function projectPanes(){
   $('#index .project .info').vertCenter({percentage: 1.75});
 
   if (!Modernizr.touch){
-    if (windowWidth() >= 680){
+    if (windowWidth() >= tabletBreakPoint){
       projectPaneContainer.width((projectCount * projectPaneWidth));
       sectionIndex.unbind('mousewheel').mousewheel(function(event, delta) {
         this.scrollLeft -= Math.round(parseInt(delta * 45));
@@ -147,7 +148,7 @@ function projectPanes(){
   } else {
       projectPaneContainer.width((projectCount * projectPaneWidth));
   }
-  if (mobile() && windowWidth() <= 680){
+  if (mobile() && windowWidth() <= tabletBreakPoint){
     $('.project').addClass('hover');
   } else {
     $('.project').on('mouseenter',function(){
@@ -237,7 +238,7 @@ function pullData(project){
   
     $(data.slides).each(function(i, item){
       var loFi = JSON.stringify(item);
-      if ((mobile() === true && $(window).width() <= 680)){
+      if ((mobile() === true && $(window).width() <= tabletBreakPoint)){
         if (i !== 0){
           loFi = loFi.replace(/(.png)/g,'-lofi.png');
           loFi = $.parseJSON(loFi);
@@ -263,7 +264,7 @@ function pullData(project){
       btnNext.addClass('active');
       btnClose.addClass('active');
       if ((mobile() === false && detailPane.hasClass('active') === false) || 
-        (mobile() === true && windowWidth() >= 680 && detailPane.hasClass('active') === false)){
+        (mobile() === true && windowWidth() >= tabletBreakPoint && detailPane.hasClass('active') === false)){
         btnDetail.trigger('click');
       }
     },500);
