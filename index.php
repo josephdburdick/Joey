@@ -110,14 +110,15 @@ include "inc/nav.php";
         Sup! I'm Joe, the guy behind Joey.
       </h2>
       <p>
-        I'm a designer/front-end developer with a degree in advertising and a knack for user experience. 
-        I recently finished General Assembly's 
-        <a href="https://generalassemb.ly/education/back-end-web-development">back-end Ruby programming 
-          course</a>, spearheaded the visual design for MTV's upcoming music video streaming app, and now have my
-          fingers in a couple development projects, one being for <a href="http://carrot.is">Carrot</a>.
+        I'm a front-end designer/developer with a degree in advertising and a knack for user experience. 
+        Earlier this year I finished General Assembly's 
+        <a href="https://generalassemb.ly/education/back-end-web-development">back-end Ruby/Ruby on Rails programming 
+          course</a>, spearheaded the visual design for MTV's upcoming music video streaming app, finished a front-end development
+          project for <a href="http://carrot.is">Carrot</a> while learning Stylus, Jade, Coffeescript and Git's rebase technique. 
+          I'm currently looking for a full-time dev posiiton where I'd work on a team and I'm available for freelance so hit me up!
       </p>
       <p>
-        I’ve tinkered with computers for 15 years; got my start on a Tandy back in the late 80's
+        I’ve tinkered with computers for 15 years; got my start on a Tandy back in the late 80's,
         built webpages on Angelfire in the 90's, built Linux servers out of scraps in the 00's, and 
         after moving a bunch of times I ended up at Virginia Commonwealth University
         where I learned the art of grabbing people's attention. Today I continue learning new ways to grab 
@@ -127,7 +128,8 @@ include "inc/nav.php";
         When I'm not learning random facts on the Net or working I'm 
         <a href="http://j0e.me">blogging around Brooklyn</a>, 
         <a href="http://instagram.com/josephdburdick">taking pictures on Instagram</a>, 
-        DJing, sketching out app ideas, hanging out with friends, or talkin' Ruby and Javascript during Hacker Hours.
+        DJing, sketching out app ideas, hanging out with friends talking about science 
+        or my collegues about code and design.
       </p>
 
       <p>
