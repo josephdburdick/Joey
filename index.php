@@ -115,7 +115,7 @@ include "inc/nav.php";
         <a href="https://generalassemb.ly/education/back-end-web-development">back-end Ruby/Ruby on Rails programming 
           course</a>, spearheaded the visual design for MTV's upcoming music video streaming app, finished a front-end development
           project for <a href="http://carrot.is">Carrot</a> while learning Stylus, Jade, Coffeescript and Git's rebase technique. 
-          I'm currently looking for a full-time dev posiiton where I'd work on a team and I'm available for freelance so hit me up!
+          I'm currently looking for a full-time dev position where I'd work on a team and I'm available for freelance so hit me up!
       </p>
       <p>
         I’ve tinkered with computers for 15 years; got my start on a Tandy back in the late 80's,
