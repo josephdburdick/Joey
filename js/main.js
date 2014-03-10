@@ -47,6 +47,7 @@ var faceMask, btnClose, btnAbout, btnPrev, btnNext, btnDetail, nav, activeProjec
     sectionDetail = $('#detail'),
     sectionAbout  = $('#about'),
     scrollAlert   = $('#mouse'),
+    slideshowDiv  = $('#slideshow'),
     tabletBreakPoint = 680;
 
 jQuery.rsCSS3Easing.easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';
@@ -216,13 +217,13 @@ function slideshow(){
     });
   }
 
-  $('#slideshow').royalSlider(slideshowOptions);
-  var slider = $('#slideshow').data('royalSlider');
+  slideshowDiv.royalSlider(slideshowOptions);
+  var slider = slideshowDiv.data('royalSlider');
   $(window).trigger('resize');
   $(btnPrev).unbind('click').on('click',function(){ slider.prev(); });
   $(btnNext).unbind('click').on('click',function(){ slider.next(); });
 
-  $('#slideshow').find('.vertical-center').vertCenter({cssWidth: true});
+  slideshowDiv.find('.vertical-center').vertCenter({cssWidth: true});
   $(window).trigger('resize');
 }
 
@@ -266,6 +267,9 @@ function pullData(project){
       if ((mobile() === false && detailPane.hasClass('active') === false) || 
         (mobile() === true && windowWidth() >= tabletBreakPoint && detailPane.hasClass('active') === false)){
         btnDetail.trigger('click');
+        faceMask.one('click',function(){
+          slideshowDiv.royalSlider('next');
+        });
       }
     },500);
     

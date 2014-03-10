@@ -92,7 +92,7 @@ include "inc/nav.php";
       </header>
         
       <nav id="social">
-        <a class="first" target="_blank" href="work/JoeBurdick_2013-RESUME.pdf"><i class="icon-file-text-alt"></i> View Resume</a>
+        <a class="first" target="_blank" href="work/JoeBurdick_resume2014.pdf"><i class="icon-file-text-alt"></i> View Resume</a>
         <a target="_blank" href="mailto:jb@joeylabs.com?subject=Sup brah, rad site."><i class="icon-envelope"></i> Email Joe</a>
         <?php if($ismobile){ echo "<a href=\"tel:(646)481-1065\"><i class=\"icon-phone-sign\"></i> Phone Joe</a>";} ?>
         <hr class="large-screen">
