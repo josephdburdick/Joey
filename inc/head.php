@@ -74,7 +74,7 @@ $ismobile = check_user_agent('mobile');
     <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png" />
     <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png" />
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />    
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, height=device-height, minimal-ui" />    
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <link rel="stylesheet" href="css/main.css"> 

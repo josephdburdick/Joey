@@ -150,7 +150,8 @@ include "inc/nav.php";
       <i class="icon-check-sign"></i>
       <hr>
       <p>
-        Joey is not compatible with versions of IE lower than 11.<br>I didn't even try. 
+        Joey is not compatible with your browser.<br>
+        I did not code Joey for versions of IE lower than 11. 
       </p>
       <p>
         Using an outdated browser makes your computer unsafe. Learn about 
