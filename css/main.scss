@@ -423,7 +423,7 @@ section{
     }
   }
   #index-mtv,#detail[data-id="mtv"] .slide-container{
-    background:#02daeb;
+    background:#00bcf0;
     .bg{
       background-image:url('../projects/mtv/bg.jpg');
     }
@@ -764,7 +764,9 @@ html.mobile.lowCPU{
   
 }
 .btnAbout{
+  background: darken($accentColor1,10%);
   &.hover{
+    background: darken($accentColor1,20%);
     &:before{
       content     : '';
       position    : absolute;
