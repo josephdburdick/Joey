@@ -11,19 +11,36 @@ $previews["bluechairbay"] = array(
    "tags"     =>  array("Front-end Development", "UX"),
    "footer"   =>  "Launching April 2014"
 );
-$previews["mtv"] = array(
+
+
+
+
+$projects["mtv"] = array(
    "id"       =>  "mtv",
-   "name"     =>  "Secret MTV Project",
+   "name"     =>  "MTV Music Video App",
    "agency"   =>  "JOEY",
    "year"     =>  2014,
-   "tags"     =>  array("Native App", "Visual Design", "UX"),
-   "footer"   =>  "Launching Summer 2014"
+   "tags"     =>  array("Native App", "Visual Design"),
+   "details"  =>  "<p>
+                     MTV's Digital Product Head at Viacom International requested visual design 
+                     for their upcoming iOS app with a tight turnaround (3 days). This app, scheduled for 
+                     release in Summer 2014, will stream apps to the user in a smart radio-esque style. 
+                     You put in an artist you want to watch or keywords you're looking for like 
+                     \"white dress\" or \"fisheye\" and it produces a non-stop stream of music videos.
+                  </p>",
+   "slides"   =>  array(
+                     
+                     "<img width=\"300\" height=\"177\" class=\"vertical-center\" src=\"projects/mtv/logo.png\" alt=\"Macy's\">",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/mtv/slide-0.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/mtv/slide-1.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/mtv/slide-2.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/mtv/slide-3.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/mtv/slide-4.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/mtv/slide-5.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/mtv/slide-6.png\"></div>",
+                     "<div class=\"bg-slide\"><img class=\"rsImg\" src=\"projects/mtv/slide-7.png\"></div>"
+                  )
 );
-
-
-
-
-
 
 $projects["macys"] = array(
    "id"       =>  "macys",

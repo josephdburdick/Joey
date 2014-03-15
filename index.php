@@ -104,7 +104,7 @@ include "inc/nav.php";
         <a class="last" target="_blank" href="https://twitter.com/jftf"><i class="icon-twitter"></i> Twitter</a>
       </nav>
       <div id="about-img">
-        <img src="img/about_joeyBaby.png" alt="Joey as a wee lad!">
+        <img src="img/about_joeyGraffiti.png" alt="Joey in his natural habitat.">
       </div>
       <h2 class="text-center">
         Sup! I'm Joe, the guy behind Joey.
