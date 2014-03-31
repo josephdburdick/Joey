@@ -5,7 +5,7 @@ $previews = array();
 
 $previews["bluechairbay"] = array(
    "id"       =>  "bluechairbay",
-   "name"     =>  "Blue Chair Bay",
+   "name"     =>  "Blue Chair Bay Rum",
    "agency"   =>  "Carrot",
    "year"     =>  2014,
    "tags"     =>  array("Front-end Development", "UX"),
@@ -17,7 +17,7 @@ $previews["bluechairbay"] = array(
 
 $projects["mtv"] = array(
    "id"       =>  "mtv",
-   "name"     =>  "MTV Music Video App",
+   "name"     =>  "MTV",
    "agency"   =>  "JOEY",
    "year"     =>  2014,
    "tags"     =>  array("Native App", "Visual Design"),
