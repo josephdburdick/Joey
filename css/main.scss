@@ -10,7 +10,7 @@
 
 /* ————————————————————————————————————————————————————
 
- 
+
    Joey
    2013
    ————————————————————————————————————————————————————
@@ -19,7 +19,7 @@
   margin: 0;
   padding: 0;
   @include box-sizing(border-box);
-  
+
 }
 html,body{
   width:100%;
@@ -30,10 +30,10 @@ html,body{
 
    Variables
    ———————————————
-*/  
+*/
   $default-text:      normal 18px/1;
-  $condensed-font:   'Open Sans Condensed', sans-serif;
-  $normal-font:      'Open Sans', sans-serif;
+  $condensed-font:   'Open Sans Condensed', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  $normal-font:      'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   $spacing:           2px;
 
   $accentColor-dark: #666;
@@ -47,12 +47,12 @@ html,body{
   $rgbaColor1:       rgba(0,0,0,.15);
   $pageTransitionSpeed:   .5s;
   $red:            lighten($accentColor2,5%);
-  
+
 /* ———————————————
 
    Animations
    ———————————————
-*/ 
+*/
 
 //greenBgPulse
 @-webkit-keyframes greenBgPulse {
@@ -122,15 +122,15 @@ html,body{
    ———————————————
 */
 ::-webkit-scrollbar { width: 5px; }
- 
+
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     border-radius: 0px;
 }
- 
+
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 hr            { height: 0;
                 border-top:1px solid #ccc;
@@ -149,15 +149,15 @@ hr            { height: 0;
                 left:0;
                 text-align: center;
               }
-.spin         { 
+.spin         {
               display:inline-block!important;
-              -webkit-animation: spin $pageTransitionSpeed infinite; 
-              -moz-animation:    spin $pageTransitionSpeed infinite; 
-              -o-animation:      spin $pageTransitionSpeed infinite; 
+              -webkit-animation: spin $pageTransitionSpeed infinite;
+              -moz-animation:    spin $pageTransitionSpeed infinite;
+              -o-animation:      spin $pageTransitionSpeed infinite;
               animation:         spin $pageTransitionSpeed infinite;
               animation-timing-function:linear;
               -webkit-animation-timing-function:linear; }
-p             { color:#333; line-height: 1.5; 
+p             { color:#333; line-height: 1.5;
 small         { line-height:1.3; }
 }
 a{
@@ -170,14 +170,14 @@ a{
   }
 }
 .bg-cover{
-  background: url('../img/bg_lightbox.png') no-repeat top center fixed; 
+  background: url('../img/bg_lightbox.png') no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 .bg-contain{
-  background: url('../img/bg_lightbox.png') no-repeat top center; 
+  background: url('../img/bg_lightbox.png') no-repeat top center;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -194,7 +194,7 @@ a{
 
 body{
   background:#222;
-  font: 300 120%/1.45 'Open Sans', sans-serif;
+  font: 300 120%/1.45 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   height:100%;
 }
 
@@ -304,7 +304,7 @@ body{
   &.trans{
     @include box-rgba (24,20,29,0.1);
     /*-webkit-filter: blur(1px);*/
-  } 
+  }
 }
 #nav-menu{ //select on mobile
   padding:0;
@@ -369,7 +369,7 @@ html.mobile{
    ———————————————
 */
 section{
-  
+
   position: relative;
   width:100%;
   height:100%;
@@ -401,7 +401,7 @@ section{
   // -webkit-backface-visibility: hidden;
 }
 #index{
-  
+
   .bg{
     position:absolute;
     top:0;
@@ -512,17 +512,17 @@ section{
             a{
               border-bottom: 1px solid darken($accentColor1,10%);
               color:lighten($accentColor1,20%);
-              -webkit-animation: greenBgPulse 2s infinite; 
-              -moz-animation:    greenBgPulse 2s infinite; 
-              -o-animation:      greenBgPulse 2s infinite; 
-              animation:         greenBgPulse 2s infinite; 
+              -webkit-animation: greenBgPulse 2s infinite;
+              -moz-animation:    greenBgPulse 2s infinite;
+              -o-animation:      greenBgPulse 2s infinite;
+              animation:         greenBgPulse 2s infinite;
               @include transition(all, $pageTransitionSpeed, ease);
               &:hover{
                 color:lighten($accentColor1,30%);
-                -webkit-animation: greenBgPulseHover 2s infinite; 
-                -moz-animation:    greenBgPulseHover 2s infinite; 
-                -o-animation:      greenBgPulseHover 2s infinite; 
-                animation:         greenBgPulseHover 2s infinite; 
+                -webkit-animation: greenBgPulseHover 2s infinite;
+                -moz-animation:    greenBgPulseHover 2s infinite;
+                -o-animation:      greenBgPulseHover 2s infinite;
+                animation:         greenBgPulseHover 2s infinite;
               }
             }
           }
@@ -537,7 +537,7 @@ section{
           @include opacity(0);
           top:-50%;
           @include transition(all, .5s, ease-in);
-          
+
           header{
             .project-number{
               @include opacity(0);
@@ -561,7 +561,7 @@ section{
           @include opacity(0);
           top:-50%;
           @include transition(all, .5s, ease-in);
-          
+
           header{
             .project-number{
               @include opacity(0);
@@ -580,7 +580,7 @@ section{
             @include opacity(0);
             top:0%;
             @include transition(all, .85s, ease-in);
-            
+
             header{
               .project-number{
                 @include opacity(0);
@@ -600,24 +600,24 @@ section{
 }
 html.mobile.lowCPU{
   #index .project a{
-    -webkit-animation: none; 
-    -moz-animation:    none; 
-    -o-animation:      none; 
-    animation:         none; 
+    -webkit-animation: none;
+    -moz-animation:    none;
+    -o-animation:      none;
+    animation:         none;
     color: darken($accentColor1,20%);
     background:saturate($accentColor1,5%);
     &:hover{
-      -webkit-animation: none; 
-      -moz-animation:    none; 
-      -o-animation:      none; 
-      animation:         none; 
+      -webkit-animation: none;
+      -moz-animation:    none;
+      -o-animation:      none;
+      animation:         none;
       color: darken($accentColor1,10%);
       background:saturate($accentColor1,20%);
     }
   }
 }
 .vertical-block{
-  
+
   .bg{
     @include opacity(1);
     @include transition(opacity, .5s, ease);
@@ -637,7 +637,7 @@ html.mobile.lowCPU{
     margin         : -200px 0 0 -150px;
     cursor         : default;
     @include transition(all, .2s, ease);
-    
+
     header{
       padding    : 100px 10px;
       border-top : 1px solid #fff;
@@ -679,8 +679,8 @@ html.mobile.lowCPU{
         @include transition (all,.5s,ease);
         @include opacity(1);
 
-        
-        
+
+
       }
     }
     footer{
@@ -688,7 +688,7 @@ html.mobile.lowCPU{
       left     : 0;
       right    : 0;
       bottom   : 0;
-      height     : 60px;      
+      height     : 60px;
       color      : #666;
       text-align : center;
       line-height : 60px;
@@ -707,8 +707,8 @@ html.mobile.lowCPU{
         &:hover{
           background:saturate(rgba(60,177,99,.9),20%);
           color:darken(desaturate(rgba(60,177,99,.9),20%),20%);
-        }  
-      } 
+        }
+      }
     }
   }
 }
@@ -740,9 +740,9 @@ html.mobile.lowCPU{
     @include transition (all,.2s,ease);
   }
   &:hover{
-    background-color: #222; 
+    background-color: #222;
     i{
-      @include opacity(0.85);   
+      @include opacity(0.85);
     }
   }
   &.on,&.on:hover{
@@ -761,7 +761,7 @@ html.mobile.lowCPU{
     z-index: 5;
     @include opacity(1);
   }
-  
+
 }
 .btnAbout{
   background: darken($accentColor1,10%);
@@ -805,25 +805,25 @@ html.mobile.lowCPU{
   background    : #333;
   @include opacity(0);
   @include rotate(0);
-  -webkit-animation-delay : 5s; 
-  -moz-animation-delay    : 5s;    
-  -o-animation-delay      : 5s;      
-  animation-delay         : 5s;    
+  -webkit-animation-delay : 5s;
+  -moz-animation-delay    : 5s;
+  -o-animation-delay      : 5s;
+  animation-delay         : 5s;
   &:hover,&.hover{
     background : $red;
-    -webkit-animation-delay: 0s; 
-    -moz-animation-delay   : 0s;    
-    -o-animation-delay     : 0s;      
-    animation-delay        : 0s;    
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay   : 0s;
+    -o-animation-delay     : 0s;
+    animation-delay        : 0s;
   }
   i{
     color:lighten($accentColor2,40%);
   }
   &.active{
-    -webkit-animation-delay: 5s; 
-    -moz-animation-delay   : 5s;    
-    -o-animation-delay     : 5s;      
-    animation-delay        : 5s; 
+    -webkit-animation-delay: 5s;
+    -moz-animation-delay   : 5s;
+    -o-animation-delay     : 5s;
+    animation-delay        : 5s;
     left: 50%;
     background:darken($accentColor2,20%);
     @include opacity(1);
@@ -888,7 +888,7 @@ aside{
     .centered{
       padding:0 20px;
     }
-  }  
+  }
   h3{
     margin-top    : 30px;
     margin-bottom : 0px;
@@ -948,7 +948,7 @@ h3{
     padding-left: $menuWidthSmall;
   }
   #about-img{
-    position: relative;      
+    position: relative;
     text-align: center;
     margin:40px 0 40px;
   }
@@ -968,7 +968,7 @@ h3{
   nav#social{
     margin: 0px 0 40px;
     text-align: center;
-    
+
     a{
       display:inline-block;
       margin:0 15px 5px;
@@ -988,7 +988,7 @@ h3{
     width: $paneWidth;
     display        : none;
     margin-right   : 40px;
-    
+
     position       : relative;
     padding        : 0;
     vertical-align : top;
@@ -1036,7 +1036,7 @@ h3{
   top:0;
   bottom:0;
   -webkit-user-select: none;
-  -moz-user-select: none;  
+  -moz-user-select: none;
   user-select: none;
   overflow: hidden;
   .rsImg{
@@ -1089,12 +1089,12 @@ h3{
   #about .fb-like{
     display:none;
   }
-  .alert { font-size:115%; 
+  .alert { font-size:115%;
            padding:10px;
          }
   #about{
     padding:0px;
-    
+
     hr              { width: 90%; }
     article         { width:100%; padding: 0; }
     p, nav#social   {
@@ -1135,7 +1135,7 @@ h3{
   }
   $navHeight: 60px;
   #nav-main{
-    
+
     @include box-rgba (24,20,29,0.98);
     position:  fixed;
     top:       0;
@@ -1160,7 +1160,7 @@ h3{
         margin:10px 0px 0 !important;
       }
     }
-    
+
     .btnClose.active  { margin-left:20px; }
     .btnNext.active,.btnPrev.active{
       display:none!important;
@@ -1197,7 +1197,7 @@ h3{
     }
   }
   .scroll-horizontal{ padding-left:0; }
-  
+
   #index{
     .project-container{
       width:100% !important;
@@ -1241,9 +1241,9 @@ h3{
     p,nav#social{
       margin-left:20px;
       margin-right:20px;
-    }  
+    }
   }
-  
+
   aside{
     -webkit-overflow-scrolling: touch;
     &.active{
@@ -1253,7 +1253,7 @@ h3{
 
   $navHeight: 40px;
   #nav-main{
-    height: $navHeight; 
+    height: $navHeight;
     min-height: $navHeight;
     #logo{
       display:inline-block;
@@ -1285,10 +1285,10 @@ h3{
     p,nav#social{
       margin-left:10px;
       margin-right:10px;
-    }  
+    }
   }
-  
-  
+
+
   aside{
     -webkit-overflow-scrolling: touch;
     .content{

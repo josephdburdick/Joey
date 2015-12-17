@@ -5,7 +5,7 @@
       </div>
     </div>
     <div id="face-mask"></div>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="js/vendor/jquery-1.10.2.min.js"></script>
 
     <script src="js/vendor/jquery.easing-1.3.js"></script>
     <script src="js/vendor/jquery.royalslider.min.js"></script>
@@ -24,6 +24,6 @@
       ga('send', 'pageview');
 
     </script>
-    
+
   </body>
 </html>
