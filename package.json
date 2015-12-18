@@ -1,0 +1,11 @@
+{
+  "name": "Lily",
+  "version": "0.1.0",
+  "description": "Offline Wifi Hotspots.",
+  "scripts": {
+    "start": "meteor --settings settings-development.json",
+    "staging": "meteor deploy staging.meteor.com --settings settings-development.json",
+    "production": "meteor deploy production.meteor.com --settings settings-production.json",
+    "debug": "iron-node meteor --settings settings-development.json"
+  }
+}

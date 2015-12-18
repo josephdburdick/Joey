@@ -1,0 +1,11 @@
+<template name="locationMap">
+  <main>
+    <div class="map-container">
+      {{#if Template.subscriptionsReady}}
+        {{> googleMap name="locationMap" options=locationMapOptions}}
+      {{else}}
+        <br><br><br><br><h1>LOADING...</h1>
+      {{/if}}
+    </div>
+  </main>
+</template>

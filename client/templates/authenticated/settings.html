@@ -1,0 +1,36 @@
+<template name="settings">
+  <main>
+    <div class="col-md-5 col-sm-6 center-block">
+      <h1>Settings</h1>
+      <form id="user-settings" class="form-horizontal">
+        <div class="form-group">
+          <label for="user-name" class="col-sm-2 control-label">Username</label>
+          <div class="col-sm-10">
+
+            <input type="text" name="userName" class="form-control required" id="user-name" placeholder="Screename" value="{{currentUser.username}}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="user-email" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" disabled name="userEmail" class="form-control" id="user-email" placeholder="Email" value="{{currentUser.emails.[0].address}}">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="locationTracking" id="user-geolocation" {{checked}}> Enhance experience by tracking location
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+</template>
