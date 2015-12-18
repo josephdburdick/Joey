@@ -1,7 +1,8 @@
 let startup = () => {
-  _validateCoordinates();
+  // _validateCoordinates();
+  // _insertProject();
 };
 
-var _validateCoordinates = () => Modules.both.validateCoordinates;
+// var _insertProject = () => Modules.both.insertProject;
 
 Modules.both.startup = startup;
