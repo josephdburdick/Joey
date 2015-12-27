@@ -1,5 +1,5 @@
 Template.registerHelper('appName', () => {
-  return "Lily";
+  return "Joey";
 });
 
 Template.registerHelper('currentUsername', () => {

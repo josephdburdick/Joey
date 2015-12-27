@@ -1,0 +1,9 @@
+<template name="projectList">
+  <section class="scroll-horizontal">
+    <ul class="project-container">
+      {{#each projects}}
+        {{> projectPane}}
+      {{/each}}
+    </ul>
+  </section>
+</template>
