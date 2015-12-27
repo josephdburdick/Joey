@@ -1,11 +1,11 @@
 {
-  "name": "Lily",
-  "version": "0.1.0",
-  "description": "Offline Wifi Hotspots.",
+  "name": "Joey",
+  "version": "0.0.1",
+  "description": "Cross-browser Portfolio Application",
   "scripts": {
     "start": "meteor --settings settings-development.json",
     "staging": "meteor deploy staging.meteor.com --settings settings-development.json",
     "production": "meteor deploy production.meteor.com --settings settings-production.json",
-    "debug": "iron-node meteor --settings settings-development.json"
+    "debug": "meteor debug --settings settings-development.json"
   }
 }

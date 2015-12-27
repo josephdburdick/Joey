@@ -30,17 +30,44 @@ let ProjectsSchema = new SimpleSchema({
 		label: "Year completed"
 	},
 	"tags": {
-		type: Object,
-		label: "Project Role(s)"
+		type: [String],
+		label: "Project Role(s)",
+    optional: true
 	},
 	"details": {
 		type: String,
-		label: "Project Details"
+		label: "Project Details",
+    optional: true
 	},
 	"slides": {
-		type: Object,
+		type: [String],
 		label: "Project Slides"
-	}
+	},
+  "credits" : {
+    type: [Object],
+    label: "Project Credits",
+    blackbox: true,
+    optional: true
+  },
+  "credits.$":{
+    type: Object,
+  },
+  "credits.$.name": {
+    type: String,
+    label: "Name of Participant",
+    optional: true
+  },
+  "credits.$.role": {
+    type: String,
+    label: "Role of Participant",
+    optional: true
+  },
+  "credits.$.url": {
+    type: String,
+    label: "URL for Participant",
+    optional: true
+  }
+
 });
 
 Projects.attachSchema(ProjectsSchema);
