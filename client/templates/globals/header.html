@@ -1,22 +1,15 @@
 <template name="header">
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-	  <div class="container">
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand" href="{{brandLink}}">{{appName}}</a>
-	    </div>
-	    <div id="navbar-collapse" class="collapse navbar-collapse">
-	    	{{#if currentUser}}
-					{{> authenticatedNavigation}}
-	      {{else}}
-	      	{{> publicNavigation}}
-	      {{/if}}
-	    </div>
-	  </div>
-	</nav>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="nav-main">
+    <div class="buttons">
+      <a href="#about" class="btn-circle icon-stack btnAbout"><i class="icon-user icon-light"></i></a>
+      <a href="javascript:void(0)" class="btn-circle icon-stack btnDetail"><i class="icon-reorder icon-light"></i></a>
+      <a href="javascript:void(0)" class="btn-circle icon-stack btnPrev"><i class="icon-arrow-left icon-light"></i></a>
+      <a href="javascript:void(0)" class="btn-circle icon-stack btnNext"><i class="icon-arrow-right icon-light"></i></a>
+      <a href="#" class="btn-circle icon-stack btnClose"><i class="icon-remove icon-light"></i></a>
+    </div>
+    <div id="navbar-collapse" class="collapse navbar-collapse">
+      {{#if currentUser}} {{> authenticatedNavigation}} {{else}} {{> publicNavigation}} {{/if}}
+    </div>
+    <h1 id="logo"><a href="{{brandLink}}"></a></h1>
+  </nav>
 </template>

@@ -7,3 +7,12 @@ Template.projectList.helpers({
     return Projects.find();
   }
 });
+
+Template.projectList.events({
+  'mouseenter .projectPane': (ev) => {
+    $(ev.currentTarget).toggleClass('hover');
+  },
+  'mouseleave .projectPane': (ev) => {
+    $(ev.currentTarget).toggleClass('hover');
+  }
+});

@@ -16,7 +16,6 @@
 * {
   margin: 0;
   padding: 0;
-  //@include box-sizing(border-box);
 }
 
 html,
@@ -166,43 +165,14 @@ $red: lighten($accentColor2,5%);
 }
 
 //spin
-@-webkit-keyframes spin {
-  0% {
-    //@include rotate(0);
-  }
-
-  100% {
-    //@include rotate(360);
-  }
-}
-
-@-moz-keyframes spin {
-  0% {
-    //@include rotate(0);
-  }
-
-  100% {
-    //@include rotate(360);
-  }
-}
-
-@-o-keyframes spin {
-  0% {
-    //@include rotate(0);
-  }
-
-  100% {
-    //@include rotate(360);
-  }
-}
 
 @keyframes spin {
   0% {
-    //@include rotate(0);
+    transform: rotate(0deg);
   }
 
   100% {
-    //@include rotate(360);
+    transform: rotate(360deg);
   }
 }
 
@@ -265,7 +235,6 @@ a {
   outline: 0;
   color: $accentColor1;
   text-decoration: none;
-  //@include transition(color, .2s);
 
   &:hover {
     color: lighten($accentColor1,5%);
@@ -313,8 +282,6 @@ a {
 
 .vertical-center {
   /*width:100%;*/
-  //@include opacity (0);
-  //@include transition (opacity, .2s, ease);
 }
 
 body {
@@ -363,8 +330,6 @@ body {
 .button {
   padding: 10px 20px;
   border: 2px solid $accentColor1;
-  //@include border-radius(5px);
-  //@include transition(all, .2s ease);
 
   &:hover,
   &:active {
@@ -380,13 +345,11 @@ body {
   top: 100%;
   width: 100%;
   left: 0;
-  //@include opacity(0);
   padding: 50px;
   z-index: -10;
   background: #fff;
   font-size: 150%;
   text-align: center;
-  //@include transition (opacity, .5s, ease);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   display: none;
@@ -395,7 +358,6 @@ body {
     z-index: 9999;
     top: 0;
     display: block;
-    //@include opacity(1);
   }
 
   article {
@@ -429,16 +391,12 @@ body {
   bottom: 0;
   z-index: 999;
   text-align: center;
-  //@include box-rgba (24,20,29,0.98);
-  //@include transition (background, .5s);
 
   .btn-circle {
     margin: 20px 0 0;
   }
 
   &.trans {
-    //@include box-rgba (24,20,29,0.1);
-    /*-webkit-filter: blur(1px);*/
   }
 }
 
@@ -451,7 +409,6 @@ body {
     display: block;
     padding: 10px;
     background: rgba(0,0,0,0);
-    //@include transition(all,.05s,ease);
 
     &:hover {
       padding-left: 20px;
@@ -482,7 +439,6 @@ body {
   position: relative;
   left: 0;
   border-top: 5px solid $accentColor2;
-  //@include transition(left,.05s,ease);
 }
 
 html.mobile {
@@ -510,10 +466,8 @@ section {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  //@include transition (opacity, $pageTransitionSpeed, ease);
   -webkit-backface-visibility: hidden;
   z-index: -50;
-  //@include opacity(0);
 
   &.active {
     overflow-x: hidden;
@@ -522,7 +476,6 @@ section {
     //overflow:auto;
     -webkit-overflow-scrolling: touch;
     z-index: 1;
-    //@include opacity(1);
   }
 
   &.out {
@@ -558,7 +511,6 @@ section {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    //@include transition (all, .2s, ease);
   }
 }
 
@@ -681,13 +633,20 @@ section {
       height: 100%;
       position: relative;
       float: left;
+      overflow: hidden;
 
-      &:hover {
-
+      .bg{
+        transition: all .1s ease-out;
+      }
+      .info{
+        transition: opacity .1s ease-out;
+      }
+      &.hover {
+        .bg {
+          -webkit-filter: grayscale(0.5) blur(5px);
+        }
         .info {
           opacity: 1;
-          //@include opacity(1);
-          //@include transition(all, $pageTransitionSpeed/2, ease);
 
           footer {
             a {
@@ -697,7 +656,6 @@ section {
               -moz-animation: greenBgPulse 2s infinite;
               -o-animation: greenBgPulse 2s infinite;
               animation: greenBgPulse 2s infinite;
-              //@include transition(all, $pageTransitionSpeed, ease);
 
               &:hover {
                 color: lighten($accentColor1,30%);
@@ -712,48 +670,34 @@ section {
       }
 
       &.not-active {
-        //@include opacity(1);
 
         .bg {
-          //@include opacity(0.25);
+          -webkit-filter: grayscale(0.5) blur(5px);
         }
 
         .info {
-          //@include opacity(0);
           top: -50%;
-          //@include transition(all, .5s, ease-in);
-
-          header {
-            .project-number {
-              //@include opacity(0);
-            }
-          }
 
           footer {
             a {
               background: #fff;
               color: $accentColor-dark;
-              //@include opacity(.5);
             }
           }
         }
       }
 
       &.active {
-        //@include opacity(1);
 
         .bg {
-          //@include opacity(1);
+          -webkit-filter: grayscale(0.5) blur(1px);
         }
 
         .info {
-          //@include opacity(0);
           top: -50%;
-          //@include transition(all, .5s, ease-in);
 
           header {
             .project-number {
-              //@include opacity(0);
             }
           }
 
@@ -761,27 +705,22 @@ section {
             a {
               background: #fff;
               color: $accentColor-dark;
-              //@include opacity(.5);
             }
           }
         }
 
         &.active:hover {
           .info {
-            //@include opacity(0);
             top: 0;
-            //@include transition(all, .85s, ease-in);
 
             header {
               .project-number {
-                //@include opacity(0);
               }
             }
 
             footer {
               a {
                 background: #fff;
-                //@include opacity(.5);
               }
             }
           }
@@ -791,111 +730,84 @@ section {
   }
 }
 
-html.mobile.lowCPU {
-  #projectList .projectPane a {
-    -webkit-animation: none;
-    -moz-animation: none;
-    -o-animation: none;
-    animation: none;
-    color: darken($accentColor1,20%);
-    background: saturate($accentColor1,5%);
 
-    &:hover {
-      -webkit-animation: none;
-      -moz-animation: none;
-      -o-animation: none;
-      animation: none;
-      color: darken($accentColor1,10%);
-      background: saturate($accentColor1,20%);
-    }
-  }
+.project-number{
+  border-radius: 9999em;
 }
 
-.vertical-block {
+.info {
+  font: $default-text $condensed-font;
+  color: $accentColor-dark;
+  text-transform: uppercase;
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  width: $paneWidth - 10;
+  padding-bottom: 60px;
+  opacity: 0;
+  vertical-align: middle;
+  margin: -200px 0 0 -150px;
+  cursor: default;
 
+  header {
+    padding: 100px 10px;
+    border-top: 1px solid #fff;
+    background: rgb(255,255,255);
 
-  .info {
-    font: $default-text $condensed-font;
-    color: $accentColor-dark;
-    text-transform: uppercase;
-    position: absolute;
-    display: inline-block;
-    top: 50%;
-    left: 50%;
-    width: $paneWidth - 10;
-    padding-bottom: 60px;
-    opacity: 0;
-    vertical-align: middle;
-    margin: -200px 0 0 -150px;
-    cursor: default;
-    //@include transition(all, .2s, ease);
+    background: linear-gradient(to bottom, rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%);
 
-    header {
-      padding: 100px 10px;
-      border-top: 1px solid #fff;
-      background: rgb(255,255,255);
+    & > span[class^="project"] {
+      display: block;
+      margin: 24px auto 0;
+      text-shadow: 0 1px 0 #fff;
 
-      background: linear-gradient(to bottom, rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%);
-
-      & > span[class^="project"] {
-        display: block;
-        margin: 24px auto 0;
-        text-shadow: 0 1px 0 #fff;
-
-        &:first-child {
-          margin-top: 0;
-        }
-      }
-
-      .project-name {
-        letter-spacing: $spacing;
-      }
-
-      .project-number {
-        position: absolute;
-        top: 40px;
-        left: 50%;
-        margin: 0 0 0 -15px !important;
-        font-size: 70%;
-        width: 30px;
-        height: 30px;
-        line-height: 28px;
-        border: 1px solid #ccc;
-        text-shadow: 0 1px 0 #fff;
-        box-shadow: 0 1px 0 #fff;
-        color: #ccc;
-        //@include border-radius(20px);
-        //@include transition (all,.5s,ease);
-        //@include opacity(1);
+      &:first-child {
+        margin-top: 0;
       }
     }
 
-    footer {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 60px;
-      color: #666;
-      text-align: center;
-      line-height: 60px;
+    .project-name {
       letter-spacing: $spacing;
-      //@include opacity(1);
-      background: rgba(255,255,255,.85);
-      //@include border-radius-separate(0,0,5px,5px);
-      //@include transition (all,.1s, ease);
+    }
 
-      a {
-        height: 60px;
-        line-height: 60px;
-        display: block;
-        cursor: pointer;
-        //@include border-radius-separate(0,0,5px,5px);
+    .project-number {
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      margin: 0 0 0 -15px !important;
+      font-size: 70%;
+      width: 30px;
+      height: 30px;
+      line-height: 28px;
+      border: 1px solid #ccc;
+      text-shadow: 0 1px 0 #fff;
+      box-shadow: 0 1px 0 #fff;
+      color: #ccc;
+    }
+  }
 
-        &:hover {
-          background: saturate(rgba(60,177,99,.9),20%);
-          color: darken(desaturate(rgba(60,177,99,.9),20%),20%);
-        }
+  footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    color: #666;
+    text-align: center;
+    line-height: 60px;
+    letter-spacing: $spacing;
+    background: rgba(255,255,255,.85);
+
+    a {
+      height: 60px;
+      line-height: 60px;
+      display: block;
+      cursor: pointer;
+
+      &:hover {
+        background: saturate(rgba(60,177,99,.9),20%);
+        color: darken(desaturate(rgba(60,177,99,.9),20%),20%);
       }
     }
   }
@@ -909,7 +821,6 @@ html.mobile.lowCPU {
     padding: 5px 10px;
     margin: 1px 1px 1px 0;
     text-transform: uppercase;
-    //@include border-radius(5px);
   }
 }
 
@@ -921,20 +832,14 @@ html.mobile.lowCPU {
   line-height: 40px;
   background: #333;
   cursor: pointer;
-  //@include border-radius (30px);
-  //@include transition (all,.2s,ease);
-  //@include opacity (1);
 
   i {
-    //@include opacity(0.25);
-    //@include transition (all,.2s,ease);
   }
 
   &:hover {
     background-color: #222;
 
     i {
-      //@include opacity(0.85);
     }
   }
 
@@ -943,7 +848,6 @@ html.mobile.lowCPU {
     background: #111;
 
     i {
-      //@include opacity(0.25);
     }
   }
 }
@@ -953,12 +857,9 @@ html.mobile.lowCPU {
 .btnPrev,
 .btnNext {
   z-index: -1;
-  //@include opacity(0);
-  //@include transition (all, .5s,ease);
 
   &.active {
     z-index: 5;
-    //@include opacity(1);
   }
 }
 
@@ -1006,8 +907,6 @@ html.mobile.lowCPU {
   margin-bottom: 60px;
   margin-left: -20px !important;
   background: #333;
-  //@include opacity(0);
-  //@include rotate(0);
   -webkit-animation-delay: 5s;
   -moz-animation-delay: 5s;
   -o-animation-delay: 5s;
@@ -1033,9 +932,6 @@ html.mobile.lowCPU {
     animation-delay: 5s;
     left: 50%;
     background: darken($accentColor2,20%);
-    //@include opacity(1);
-    //@include border-radius (30px);
-    //@include rotate (90);
   }
 }
 
@@ -1071,7 +967,6 @@ html.mobile.lowCPU {
 [data-id="ciroc"],
 [data-id="citizen"] {
   .bg-slide {
-    //@include background-gradient(#bbb, #fff);
   }
 }
 
@@ -1083,10 +978,8 @@ aside {
   height: 100%;
   font: $default-text $condensed-font;
   overflow: auto;
-  //@include opacity (0);
   color: $accentColor-dark;
   background-color: rgba(255,255,255,.95);
-  //@include transition (all, $pageTransitionSpeed/1.5, ease);
 
   .content {
     position: relative;
@@ -1122,7 +1015,6 @@ aside {
 
   &.active {
     left: $menuWidthSmall;
-    //@include opacity(1);
 
     @media only screen and (max-width:680px) {
       left: 0;
@@ -1200,8 +1092,6 @@ h3 {
       display: inline-block;
       margin: 0 15px 5px;
       padding: 4px 8px;
-      //@include border-radius(3px);
-      //@include transition (all, .2s, ease);
 
       &:hover {
         background: #eee;
@@ -1339,21 +1229,17 @@ h3 {
 
     nav#social {
       background: #eee;
-      //@include border-radius($mobileRadius);
 
       a {
         display: block;
         margin: 0;
         padding: 20px;
-        //@include border-radius(0px);
         text-align: left;
 
         &.first {
-          //@include border-radius-separate($mobileRadius,$mobileRadius,0px,0px);
         }
 
         &.last {
-          //@include border-radius-separate(0px,0px,$mobileRadius,$mobileRadius);
         }
 
         &:hover {
@@ -1377,7 +1263,6 @@ h3 {
   $navHeight: 60px;
 
   #nav-main {
-    //@include box-rgba (24,20,29,0.98);
     position: fixed;
     top: 0;
     left: 0;
@@ -1423,7 +1308,6 @@ h3 {
 
     #logo {
       display: inline-block;
-      //@include rotate(90);
       position: absolute;
       bottom: 0;
       left: 35px;
@@ -1443,7 +1327,6 @@ h3 {
     background-color: #fff;
     -webkit-overflow-scrolling: touch;
     height: auto;
-    //@include transition (opacity, $pageTransitionSpeed, ease);
 
     &.active {
       top: 0; //$navHeight;
@@ -1471,7 +1354,6 @@ h3 {
         display: block;
         position: relative;
         height: 550px;
-        //@include border-radius(5px);
 
         &:first-child {
           margin-top: 60px;
