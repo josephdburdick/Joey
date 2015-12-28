@@ -538,7 +538,7 @@ section {
 }
 
 #index,
-#index *,
+#projectList *,
 #about,
 #about * {
   -webkit-transform: translate3d(0,0,0);
@@ -546,7 +546,7 @@ section {
   // -webkit-backface-visibility: hidden;
 }
 
-#index {
+#projectList {
   .bg {
     position: absolute;
     top: 0;
@@ -674,21 +674,17 @@ section {
     margin: 0;
     list-style-type: none;
 
-    .project {
+    .projectPane {
       background-color: black; //default
       width: $paneWidth;
       height: 100%;
       position: relative;
       float: left;
 
-      &.hover {
-        .bg {
-          //@include opacity(0.25);
-
-          //-webkit-filter: grayscale(0) blur(3px);
-        }
+      &:hover {
 
         .info {
+          opacity: 1;
           //@include opacity(1);
           //@include transition(all, $pageTransitionSpeed/2, ease);
 
@@ -795,7 +791,7 @@ section {
 }
 
 html.mobile.lowCPU {
-  #index .project a {
+  #projectList .projectPane a {
     -webkit-animation: none;
     -moz-animation: none;
     -o-animation: none;
@@ -815,10 +811,7 @@ html.mobile.lowCPU {
 }
 
 .vertical-block {
-  .bg {
-    //@include opacity(1);
-    //@include transition(opacity, .5s, ease);
-  }
+
 
   .info {
     font: $default-text $condensed-font;
@@ -840,21 +833,9 @@ html.mobile.lowCPU {
       padding: 100px 10px;
       border-top: 1px solid #fff;
       background: rgb(255,255,255);
-      //@include border-radius-separate(5px,5px,0,0);
-      background: -moz-linear-gradient(top, rgba(255,255,255,.9) 0%, rgba(254,255,244,1) 100%);
-      /* FF3.6+ */
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.9)), color-stop(100%,rgba(254,255,244,1)));
-      /* Chrome,Safari4+ */
-      background: -webkit-linear-gradient(top, rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%);
-      /* Chrome10+,Safari5.1+ */
-      background: -o-linear-gradient(top, rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%);
-      /* Opera 11.10+ */
-      background: -ms-linear-gradient(top, rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%);
-      /* IE10+ */
+
       background: linear-gradient(to bottom, rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%);
-      /* W3C */
-      filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fefff4',GradientType=0 );
-      /* IE6-9 */
+
       & > span[class^="project"] {
         display: block;
         margin: 24px auto 0;
@@ -1305,7 +1286,7 @@ h3 {
     display: none!important;
   }
 
-  .scroll-horizontal > ul .project {
+  .scroll-horizontal > ul .projectPane {
     width: 250px;
 
     .info {
@@ -1477,11 +1458,11 @@ h3 {
     padding-left: 0;
   }
 
-  #index {
+  #projectList {
     .project-container {
       width: 100% !important;
 
-      .project {
+      .projectPane {
         float: none;
         width: 98%;
         max-width: 360px;
@@ -1517,7 +1498,7 @@ h3 {
     }
   }
 
-  #index .project {
+  #projectList .projectPane {
     height: 250px;
   }
 

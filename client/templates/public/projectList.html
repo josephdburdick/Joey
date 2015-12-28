@@ -1,9 +1,27 @@
 <template name="projectList">
-  <section class="scroll-horizontal">
+  <section id="projectList" class="scroll-horizontal active">
     <ul class="project-container">
-      {{#each projects}}
-        {{> projectPane}}
-      {{/each}}
+      {{#each projects}} {{#let index = @index+1}}
+      <li class="projectPane" id="index-{{projectId}}" data-index="{{@index}}">
+        <div class="vertical-block">
+          <div class="bg" style="background-image: url('images/projects/{{projectId}}/bg.jpg')"></div>
+          <div class="info">
+            <header>
+              <span class="project-number">{{@index}}</span>
+              <span class="project-name">{{name}}</span>
+              <hr>
+              <div class="project-tags">
+                {{#each tags}}
+                <span>{{this}}</span> {{/each}}
+              </div>
+            </header>
+            <footer>
+              <a href="" class="project-link"><i class="icon-angle-down"></i> View Project <i class="icon-angle-down"></i></a>
+            </footer>
+          </div>
+        </div>
+      </li>
+      {{/let}} {{/each}}
     </ul>
   </section>
 </template>
