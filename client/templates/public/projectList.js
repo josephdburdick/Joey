@@ -6,12 +6,14 @@ Template.projectList.helpers({
   projects() {
     return Projects.find();
   },
-  index: function(){
+  index(){
     return Projects.find({"_id": {$lt: this._id}}).count() + 1;
   },
-  projectListWidth: function(){
+  projectListWidth(){
     let projectCount = Projects.find().count(),
         totalWidth = [];
+
+        debugger;
 
   }
 });

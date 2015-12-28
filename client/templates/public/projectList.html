@@ -1,7 +1,7 @@
 <template name="projectList">
-  <section id="projectList" class="scroll-horizontal active">
-    <ul class="project-container">
-      {{#each projects}} {{#let index = @index+1}}
+  <section id="projectList" class="scroll-horizontal active" style="width: auto">
+    <ul class="projects-container">
+      {{#each projects}} {{#let index = @index}}
       <li class="projectPane" id="index-{{projectId}}" data-index="{{@index}}">
         <div class="vertical-block">
           <div class="bg" style="background-image: url('images/projects/{{projectId}}/bg.jpg')"></div>

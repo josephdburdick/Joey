@@ -17,6 +17,7 @@ let setBrowserPolicies = () => {
   BrowserPolicy.content.allowImageOrigin('https://maps.gstatic.com');
   BrowserPolicy.content.allowImageOrigin('http://chart.apis.google.com');
   BrowserPolicy.content.allowFontOrigin('https://fonts.gstatic.com');
+  BrowserPolicy.content.allowFontOrigin('https://fonts.googleapis.com');
 };
 
 Modules.server.setBrowserPolicies = setBrowserPolicies;
