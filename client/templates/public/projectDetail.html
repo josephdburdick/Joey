@@ -1,0 +1,27 @@
+<template name="projectDetail">
+{{#if Template.subscriptionsReady}}
+  {{#if project}}
+	<section id="projectDetail" data-id="{{this.projectId}}">
+    <aside class="active">
+      <div class="content">
+        <h3>Project</h3>
+        <span class="project-name">{{project.name}}</span>
+        <h3>Date</h3>
+        <span class="project-year">{{project.year}}</span>
+        <h3>Agency</h3>
+        <span class="project-agency">{{project.agency}}</span>
+        <h3>Description</h3>
+        <span class="project-details">{{project.details}}</span>
+        <h3>Tags</h3>
+        <div class="project-tags">
+          <span></span>
+        </div>
+      </div>
+    </aside>
+    <main>
+      <div id="slideshow" class="royalSlider"></div>
+    </main>
+  </section>
+	{{/if}}
+{{/if}}
+</template>

@@ -5,26 +5,30 @@ Template.projectList.onCreated(() => {
 			$doc = $(document);
 
 	$body.on('mousewheel', (event, delta) => {
-		console.log(event, delta);
 		$body[0].scrollLeft -= Math.round(parseInt(delta * 45));
 		return false;
 	});
 
-	$doc.on('keyup', (ev) => {
-		switch (ev.keyCode){
-			case 13:
-			console.log('Enter');
-			break;
-			case 37:
-				console.log('Left Arrow');
-			break;
-			case 39:
-				console.log('Right Arrow');
-			break;
-			case 27:
-			console.log('Escape');
-			break;
-		}
+	$doc
+		.on('keydown', (ev) => {
+			let ignoredKeys = [13, 37, 39, 27];
+			if (ignoredKeys.indexOf(ev.keyCode)) ev.preventDefault();
+		})
+		.on('keyup', (ev) => {
+			switch (ev.keyCode) {
+				case 13:
+					console.log('Enter');
+				break;
+				case 37:
+					console.log('Left Arrow');
+				break;
+				case 39:
+					console.log('Right Arrow');
+				break;
+				case 27:
+					console.log('Escape');
+				break;
+			}
 	});
 });
 

@@ -3,3 +3,8 @@ Meteor.publish('allProjects', function() {
     // 'owner': this.userId
   });
 });
+
+Meteor.publish('projectDetail', function(id) {
+	check(id, String);
+  return Projects.find({_id: id});
+});

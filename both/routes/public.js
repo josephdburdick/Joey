@@ -9,6 +9,21 @@ const publicRoutes = FlowRouter.group({
   triggersEnter: [publicRedirect]
 });
 
+publicRoutes.route('/project/:_id', {
+  name: 'project-detail',
+	triggersEnter: [ function() {
+    console.log( "Something to do on ENTER." );
+  }], 
+  triggersExit: [ function() {
+    console.log( "Something to do on EXIT." );
+  }],
+  action() {
+    BlazeLayout.render('default', {
+      yield: 'projectDetail'
+    });
+  }
+});
+
 publicRoutes.route('/signup', {
   name: 'signup',
   action() {

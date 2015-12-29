@@ -53,6 +53,10 @@ body {
 	margin-bottom: 1em;
 }
 
+#__blaze-root{
+	margin: 0;
+}
+
 /* ———————————————
 
    Animations
@@ -477,6 +481,7 @@ section {
   overflow: hidden;
   -webkit-backface-visibility: hidden;
   z-index: -50;
+	margin: 0;
 
   &.active {
     overflow-x: hidden;
@@ -706,7 +711,7 @@ section {
 
     & > span[class^="project"] {
       display: block;
-      margin: 24px auto 0;
+      margin: 24px auto;
       text-shadow: 0 1px 0 #fff;
 
       &:first-child {
