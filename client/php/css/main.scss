@@ -4,6 +4,7 @@
 
 // @import 'mixins';
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300|Open+Sans+Condensed:300);
+
 // @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css);
 // @import 'scrollHint';
 /* ————————————————————————————————————————————————————
@@ -13,25 +14,15 @@
    2013
    ————————————————————————————————————————————————————
 */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
 
 /* ———————————————
 
    Variables
    ———————————————
 */
-$default-text: normal 18px/1;
-$condensed-font: 'Open Sans Condensed', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$normal-font: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$default-text: normal 16px/1;
+$font-face--condensed: 'Open Sans Condensed', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-face--default: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $spacing: 2px;
 $accentColor-dark: #666;
 $accentColor1: #31735d;
@@ -45,6 +36,23 @@ $rgbaColor1: rgba(0,0,0,.15);
 $pageTransitionSpeed: 0.5s;
 $red: lighten($accentColor2,5%);
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+	font: $default-text $font-face--default;
+}
+
+* + * {
+	margin-bottom: 1em;
+}
+
 /* ———————————————
 
    Animations
@@ -57,7 +65,7 @@ $red: lighten($accentColor2,5%);
   }
 
   50% {
-    background: darken($accentColor1,10%);
+    background: darken($accentColor1, 10%);
   }
 
   100% {
@@ -165,7 +173,6 @@ $red: lighten($accentColor2,5%);
 }
 
 //spin
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -397,10 +404,12 @@ body {
   }
 
   &.trans {
+
   }
 }
 
 #nav-menu {
+
   //select on mobile
   padding: 0;
   margin: 0;
@@ -490,15 +499,6 @@ section {
   overflow-y: scroll;
 }
 
-#index,
-#projectList *,
-#about,
-#about * {
-  -webkit-transform: translate3d(0,0,0);
-
-  // -webkit-backface-visibility: hidden;
-}
-
 #projectList {
   .bg {
     position: absolute;
@@ -517,101 +517,56 @@ section {
 #index-bluechairbay,
 #detail[data-id="bluechairbay"] .slide-container {
   background: #e2cd9c;
-
-  .bg {
-    background-image: url(../projects/bluechairbay/bg.jpg);
-  }
 }
 
 #index-mtv,
 #detail[data-id="mtv"] .slide-container {
   background: #00bcf0;
-
-  .bg {
-    background-image: url(../projects/mtv/bg.jpg);
-  }
 }
 
 #index-macys,
 #detail[data-id="macys"] .slide-container {
   background: #6d060c;
-
-  .bg {
-    background-image: url(../projects/macys/bg.jpg);
-  }
 }
 
 #index-ciroc,
 #detail[data-id="ciroc"] .slide-container {
   background: #8fa7d1;
-
-  .bg {
-    background-image: url(../projects/ciroc/bg.jpg);
-  }
 }
 
 #index-citizen,
 #detail[data-id="citizen"] .slide-container {
   background: #15222b;
-
-  .bg {
-    background-image: url(../projects/citizen/bg.jpg);
-  }
 }
 
 #index-g-shock,
 #detail[data-id="g-shock"] .slide-container {
   background: #3f2627;
-
-  .bg {
-    background-image: url(../projects/g-shock/bg.jpg);
-  }
 }
 
 #index-davids-bridal,
 #detail[data-id="davids-bridal"] .slide-container {
   background: #3a2d27;
-
-  .bg {
-    background-image: url(../projects/davids-bridal/bg.jpg);
-    background-position: top center;
-  }
 }
 
 #index-tambaran,
 #detail[data-id="tambaran"] .slide-container {
   background: #585049;
-
-  .bg {
-    background-image: url(../projects/tambaran/bg.jpg);
-  }
 }
 
 #index-hard,
 #detail[data-id="hard"] .slide-container {
   background: #b12b39;
-
-  .bg {
-    background-image: url(../projects/hard/bg.jpg);
-  }
 }
 
 #index-wwglass,
 #detail[data-id="wwglass"] .slide-container {
   background: #364661;
-
-  .bg {
-    background-image: url(../projects/wwglass/bg.jpg);
-  }
 }
 
 #index-aoa-ny,
 #detail[data-id="aoa-ny"] .slide-container {
   background: #433c3e;
-
-  .bg {
-    background-image: url(../projects/aoa-ny/bg.jpg);
-  }
 }
 
 .scroll-horizontal {
@@ -626,117 +581,106 @@ section {
     margin: 0;
     list-style-type: none;
     display: flex;
-
-    .projectPane {
-      background-color: black; //default
-      width: $paneWidth;
-      height: 100%;
-      position: relative;
-      float: left;
-      overflow: hidden;
-
-      .bg{
-        transition: all .1s ease-out;
-      }
-      .info{
-        transition: opacity .1s ease-out;
-      }
-      &.hover {
-        .bg {
-          -webkit-filter: grayscale(0.5) blur(5px);
-        }
-        .info {
-          opacity: 1;
-
-          footer {
-            a {
-              border-bottom: 1px solid darken($accentColor1,10%);
-              color: lighten($accentColor1,20%);
-              -webkit-animation: greenBgPulse 2s infinite;
-              -moz-animation: greenBgPulse 2s infinite;
-              -o-animation: greenBgPulse 2s infinite;
-              animation: greenBgPulse 2s infinite;
-
-              &:hover {
-                color: lighten($accentColor1,30%);
-                -webkit-animation: greenBgPulseHover 2s infinite;
-                -moz-animation: greenBgPulseHover 2s infinite;
-                -o-animation: greenBgPulseHover 2s infinite;
-                animation: greenBgPulseHover 2s infinite;
-              }
-            }
-          }
-        }
-      }
-
-      &.not-active {
-
-        .bg {
-          -webkit-filter: grayscale(0.5) blur(5px);
-        }
-
-        .info {
-          top: -50%;
-
-          footer {
-            a {
-              background: #fff;
-              color: $accentColor-dark;
-            }
-          }
-        }
-      }
-
-      &.active {
-
-        .bg {
-          -webkit-filter: grayscale(0.5) blur(1px);
-        }
-
-        .info {
-          top: -50%;
-
-          header {
-            .project-number {
-            }
-          }
-
-          footer {
-            a {
-              background: #fff;
-              color: $accentColor-dark;
-            }
-          }
-        }
-
-        &.active:hover {
-          .info {
-            top: 0;
-
-            header {
-              .project-number {
-              }
-            }
-
-            footer {
-              a {
-                background: #fff;
-              }
-            }
-          }
-        }
-      }
-    }
   }
 }
+.projectPane {
+	background-color: black;
+	width: $paneWidth;
+	height: 100%;
+	position: relative;
+	float: left;
+	overflow: hidden;
 
+	.bg {
+		transition: all 0.1s ease-out;
+	}
 
-.project-number{
-  border-radius: 9999em;
+	.info {
+		transition: opacity 0.1s ease-out;
+	}
+
+	&.hover {
+		.bg {
+			-webkit-filter: grayscale(0.5) blur(5px);
+		}
+
+		.info {
+			opacity: 1;
+
+			footer {
+				a {
+					border-bottom: 1px solid darken($accentColor1,10%);
+					color: lighten($accentColor1,20%);
+					-webkit-animation: greenBgPulse 2s infinite;
+					-moz-animation: greenBgPulse 2s infinite;
+					-o-animation: greenBgPulse 2s infinite;
+					animation: greenBgPulse 2s infinite;
+
+					&:hover {
+						color: lighten($accentColor1,30%);
+						-webkit-animation: greenBgPulseHover 2s infinite;
+						-moz-animation: greenBgPulseHover 2s infinite;
+						-o-animation: greenBgPulseHover 2s infinite;
+						animation: greenBgPulseHover 2s infinite;
+					}
+				}
+			}
+		}
+	}
+
+	&.not-active {
+		.bg {
+			-webkit-filter: grayscale(0.5) blur(5px);
+		}
+
+		.info {
+			footer {
+				a {
+					background: #fff;
+					color: $accentColor-dark;
+				}
+			}
+		}
+	}
+
+	&.active {
+		.bg {
+			-webkit-filter: grayscale(0.5) blur(1px);
+		}
+
+		.info {
+			top: -50%;
+
+			header {
+				.project-number {
+
+				}
+			}
+
+			footer {
+				a {
+					background: #fff;
+					color: $accentColor-dark;
+				}
+			}
+		}
+
+		&.active:hover {
+			.info {
+				top: 0;
+
+				footer {
+					a {
+						background: #fff;
+					}
+				}
+			}
+		}
+	}
 }
 
 .info {
-  font: $default-text $condensed-font;
+  font: $default-text $font-face--condensed;
   color: $accentColor-dark;
   text-transform: uppercase;
   position: absolute;
@@ -750,11 +694,14 @@ section {
   margin: -200px 0 0 -150px;
   cursor: default;
 
+	.projectPane &{
+		text-align: center;
+	}
+
   header {
     padding: 100px 10px;
     border-top: 1px solid #fff;
     background: rgb(255,255,255);
-
     background: linear-gradient(to bottom, rgba(255,255,255,.9) 0%,rgba(254,255,244,1) 100%);
 
     & > span[class^="project"] {
@@ -784,6 +731,7 @@ section {
       text-shadow: 0 1px 0 #fff;
       box-shadow: 0 1px 0 #fff;
       color: #ccc;
+			border-radius: 9999rem;
     }
   }
 
@@ -834,12 +782,14 @@ section {
   cursor: pointer;
 
   i {
+
   }
 
   &:hover {
     background-color: #222;
 
     i {
+
     }
   }
 
@@ -848,6 +798,7 @@ section {
     background: #111;
 
     i {
+
     }
   }
 }
@@ -884,7 +835,7 @@ section {
 
     &:after {
       content: 'About Joey';
-      font-family: $normal-font;
+      font-family: $font-face--default;
       display: block;
       position: absolute;
       left: 75px;
@@ -963,20 +914,13 @@ section {
   height: 100%;
 }
 
-[data-id="macys"],
-[data-id="ciroc"],
-[data-id="citizen"] {
-  .bg-slide {
-  }
-}
-
 aside {
   position: fixed;
   z-index: 10;
   left: -$paneWidth;
   width: $paneWidth;
   height: 100%;
-  font: $default-text $condensed-font;
+  font: $default-text $font-face--condensed;
   overflow: auto;
   color: $accentColor-dark;
   background-color: rgba(255,255,255,.95);
@@ -1005,7 +949,7 @@ aside {
 
   h3 + span {
     color: #111;
-    font: 300 12px/1.3 $normal-font;
+    font: 300 12px/1.3 $font-face--default;
   }
 
   .project-name,
@@ -1031,13 +975,13 @@ aside {
   h1,
   h2,
   h3 {
-    font-family: $normal-font;
+    font-family: $font-face--default;
     text-transform: uppercase;
   }
 }
 
 h3 {
-  font: normal 12px/1 $condensed-font;
+  font: normal 12px/1 $font-face--condensed;
   letter-spacing: $spacing;
   color: #777;
   text-transform: uppercase;
@@ -1120,7 +1064,7 @@ h3 {
   article {
     h1 {
       margin: 100px 0 80px;
-      font: bold 72px/1.3 $condensed-font;
+      font: bold 72px/1.3 $font-face--condensed;
       color: #666;
       text-align: center;
     }
@@ -1237,9 +1181,11 @@ h3 {
         text-align: left;
 
         &.first {
+
         }
 
         &.last {
+
         }
 
         &:hover {
@@ -1344,7 +1290,7 @@ h3 {
 
   #projectList {
     .projects-container {
-      width: 100% !important;
+      flex-direction: column;
 
       .projectPane {
         float: none;
