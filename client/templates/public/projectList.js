@@ -41,9 +41,9 @@ Template.projectList.helpers({
 
 Template.projectList.events({
   'mouseenter .project-pane': (ev) => {
-    $(ev.currentTarget).toggleClass('hover');
+    $(ev.currentTarget).toggleClass('hover latest').siblings().removeClass('hover latest');
   },
   'mouseleave .project-pane': (ev) => {
-    $(ev.currentTarget).toggleClass('hover');
+    $(ev.currentTarget).toggleClass('hover').addClass('latest');
   }
 });
