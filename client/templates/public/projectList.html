@@ -1,18 +1,19 @@
 <template name="projectList">
-  <section id="projectList" class="scroll-horizontal active" style="width: auto">
-    <ul class="projects-container">
+  <section id="projectList" class="projects-container scroll-horizontal">
+    <ul class="project-list">
       {{#each projects}} {{#let index = @index}}
-      <li class="projectPane" id="index-{{projectId}}" data-index="{{@index}}">
-        <div class="bg" style="background-image: url('images/projects/{{projectId}}/bg.jpg')"></div>
-        <div class="info">
+      <li class="project-pane" data-project-id="{{projectId}}" data-index="{{@index}}">
+        <div class="bg" style="background-color: {{color}}; background-image: url('images/projects/{{projectId}}/bg.jpg')"></div>
+        <div class="info-panel">
           <header>
             <span class="project-number">{{@index}}</span>
             <span class="project-name">{{name}}</span>
             <hr>
-            <div class="project-tags">
+            <ul class="project-tags">
               {{#each tags}}
-              <span>{{this}}</span> {{/each}}
-            </div>
+              	<li>{{this}}</li>
+							{{/each}}
+            </ul>
           </header>
           <footer>
             <a href="{{pathFor 'project-detail' _id=_id}}" class="project-link"><i class="icon-angle-down"></i> View Project <i class="icon-angle-down"></i></a>

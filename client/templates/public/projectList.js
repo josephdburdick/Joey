@@ -1,8 +1,9 @@
 Template.projectList.onCreated(() => {
   Template.instance().subscribe('allProjects');
 
-	let $body = $('body'),
-			$doc = $(document);
+	let
+		$body = $('body'),
+		$doc = $(document);
 
 	$body.on('mousewheel', (event, delta) => {
 		$body[0].scrollLeft -= Math.round(parseInt(delta * 45));
@@ -39,10 +40,10 @@ Template.projectList.helpers({
 });
 
 Template.projectList.events({
-  'mouseenter .projectPane': (ev) => {
+  'mouseenter .project-pane': (ev) => {
     $(ev.currentTarget).toggleClass('hover');
   },
-  'mouseleave .projectPane': (ev) => {
+  'mouseleave .project-pane': (ev) => {
     $(ev.currentTarget).toggleClass('hover');
   }
 });
