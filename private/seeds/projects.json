@@ -14,7 +14,8 @@
     "slide-5.png",
     "slide-6.png",
     "slide-7.png"
-  ]
+  ],
+	"color": "#e2cd9c"
 }, {
   "name": "MTV",
   "projectId": "mtv",
@@ -34,7 +35,8 @@
     "slide-5.png",
     "slide-6.png",
     "slide-7.png"
-  ]
+  ],
+	"color": "#00bcf0"
 }, {
   "name": "Macy's",
   "projectId": "macys",
@@ -55,7 +57,8 @@
     "slide-3.png",
     "slide-4.png",
     "slide-5.png"
-  ]
+  ],
+	"color": "#6d060c"
 }, {
   "name": "Cîroc Vodka",
   "projectId": "ciroc",
@@ -70,7 +73,8 @@
     "slide-3.png",
     "slide-4.png",
     "slide-5.png"
-  ]
+  ],
+	"color": "#8fa7d1"
 }, {
   "name": "G-Shock",
   "projectId": "g-shock",
@@ -88,7 +92,8 @@
     "slide-3.png",
     "slide-4.png",
     "slide-5.png"
-  ]
+  ],
+	"color": "#3f2627"
 }, {
   "name": "Tambaran",
   "projectId": "tambaran",
@@ -113,7 +118,8 @@
     "slide-9.png",
     "slide-10.png",
     "slide-12.png"
-  ]
+  ],
+	"color": "#585049"
 }, {
   "name": "W&W Glass Pilkington",
   "projectId": "wwglass",
@@ -135,7 +141,8 @@
     "slide-4-1.png",
     "slide-5.png",
     "slide-6.png"
-  ]
+  ],
+	"color": "#364661"
 }, {
   "name": "David's Bridal",
   "projectId": "davids-bridal",
@@ -156,7 +163,8 @@
     "slide-3.png",
     "slide-4.png",
     "slide-5.png"
-  ]
+  ],
+	"color": "#3a2d27"
 }, {
   "name": "Citizen",
   "projectId": "citizen",
@@ -184,7 +192,8 @@
     "slide-10.png",
     "slide-11.png",
     "slide-12.png"
-  ]
+  ],
+	"color": "#15222b"
 }, {
   "name": "Hard Energy Drink",
   "projectId": "hard",
@@ -203,7 +212,8 @@
     "slide-3.png",
     "slide-4.png",
     "slide-5.png"
-  ]
+  ],
+	"color": "#b12b39"
 }, {
   "name": "AOA NY",
   "projectId": "aoa-ny",
@@ -220,5 +230,6 @@
     "slide-1.png",
     "slide-2.png",
     "slide-3.png"
-  ]
+  ],
+	"color": "#433c3e"
 }]

@@ -25,7 +25,8 @@ Meteor.methods({
       year: Number,
       tags: [String],
       details: String,
-      slides: [String] //,
+      slides: [String],
+			color: String //,
       // credits: true
     });
 

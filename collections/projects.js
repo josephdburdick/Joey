@@ -43,6 +43,11 @@ let ProjectsSchema = new SimpleSchema({
 		type: [String],
 		label: "Project Slides"
 	},
+	"color": {
+		type: String,
+		label: "Project Color",
+		optional: true
+	},
   "credits" : {
     type: [Object],
     label: "Project Credits",
