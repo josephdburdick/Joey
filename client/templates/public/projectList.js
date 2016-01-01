@@ -1,22 +1,12 @@
 Template.projectList.onCreated(() => {
   Template.instance().subscribe('allProjects');
-
-	let
-		$body = $('body'),
-		$doc = $(document);
-
-	$body.on('mousewheel', (event, delta) => {
-		$body[0].scrollLeft -= Math.round(parseInt(delta * 45));
-		return false;
-	});
-
-	$doc
-		.on('keydown', (ev) => {
+	$(document)
+		.on('keydown', (event) => {
 			let ignoredKeys = [13, 37, 39, 27];
-			if (ignoredKeys.indexOf(ev.keyCode)) ev.preventDefault();
+			if (ignoredKeys.indexOf(event.keyCode)) event.preventDefault();
 		})
-		.on('keyup', (ev) => {
-			switch (ev.keyCode) {
+		.on('keyup', (event) => {
+			switch (event.keyCode) {
 				case 13:
 					console.log('Enter');
 				break;
@@ -27,10 +17,10 @@ Template.projectList.onCreated(() => {
 					console.log('Right Arrow');
 				break;
 				case 27:
-					console.log('Escape');
+					console.log('Escape on List');
 				break;
 			}
-	});
+		});
 });
 
 Template.projectList.helpers({
@@ -40,10 +30,20 @@ Template.projectList.helpers({
 });
 
 Template.projectList.events({
-  'mouseenter .project-pane': (ev) => {
-    $(ev.currentTarget).toggleClass('hover latest').siblings().removeClass('hover latest');
+  'mouseenter .project-pane': (event) => {
+    $(event.currentTarget).toggleClass('hover latest').siblings().removeClass('hover latest');
   },
-  'mouseleave .project-pane': (ev) => {
-    $(ev.currentTarget).toggleClass('hover').addClass('latest');
-  }
+  'mouseleave .project-pane': (event) => {
+    $(event.currentTarget).toggleClass('hover').addClass('latest');
+  },
+	'mousewheel #projectList': (event) => {
+		event.preventDefault();
+		let
+			scrollTime = 1.2,
+			scrollDistance = 170,
+			delta = event.originalEvent.wheelDelta / 120 || -event.originalEvent.detail / 3;
+
+		document.querySelector('body').scrollLeft -= Math.round(parseInt(delta * scrollDistance));
+		return false;
+	}
 });

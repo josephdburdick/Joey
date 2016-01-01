@@ -822,22 +822,20 @@ section {
   z-index: 0;
   background: black;
   color: #ccc;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 
   main {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9;
-    text-align: center;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 9;
+		text-align: center;
+		bottom: 0;
+		margin: 0;
   }
 }
 
