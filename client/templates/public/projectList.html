@@ -1,5 +1,5 @@
 <template name="projectList">
-  <section id="projectList" class="projects-container scroll-horizontal">
+  <section id="{{currentTemplateName}}" class="projects-container scroll-horizontal">
     <ul class="project-list">
       {{#each projects}} {{#let index = @index}}
       <li class="project-pane" data-project-id="{{projectId}}" data-index="{{@index}}">

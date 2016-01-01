@@ -1,7 +1,7 @@
 <template name="projectDetail">
 {{#if Template.subscriptionsReady}}
   {{#if project}}
-	<section id="projectDetail" class="project-detail" data-project-id="{{project.projectId}}">
+	<section id="{{currentTemplateName}}" class="project-detail" data-project-id="{{project.projectId}}">
     <aside class="active">
       <div class="project-content">
       <h3>Project</h3>
@@ -21,12 +21,12 @@
       </div>
     </aside>
     <main>
-      <ul id="slideshow" class="royalSlider">
+      <ul id="project-detail--carousel" class="owl-carousel carousel">
 				{{#let color = project.color}}
       	{{#each slides project}}
-					<li class="rsSlide" style="background-color: {{project.color}}">
+					<li class="carousel-item item" style="background-color: {{project.color}}">
 						<figure class="bg" >
-							<img class="rsImg" src="{{this}}"/>
+							<img class="lazyOwl carousel-image" data-src="{{this}}"/>
 						</figure>
 					</li>
 				{{/each}}
