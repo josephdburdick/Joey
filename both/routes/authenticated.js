@@ -9,15 +9,6 @@ const authenticatedRoutes = FlowRouter.group({
   triggersEnter: [authenticatedRedirect]
 });
 
-authenticatedRoutes.route('/', {
-  name: 'index',
-  action() {
-    BlazeLayout.render('default', {
-      yield: 'index'
-    });
-  }
-});
-
 authenticatedRoutes.route('/dashboard', {
   name: 'dashboard',
   action() {
