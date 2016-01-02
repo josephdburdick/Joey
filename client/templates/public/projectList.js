@@ -27,20 +27,22 @@ Template.projectList.events({
 	},
 	'keydown *': (event) => {
 		let ignoredKeys = [13, 37, 39, 27];
+		console.log(event);
 		if (ignoredKeys.indexOf(event.keyCode)) event.preventDefault();
 	},
 	'keyup *': (event) => {
+		console.log(event);
 		switch (event.keyCode) {
 			case 13:
+				event.preventDefault();
 				console.log('Enter');
 			break;
-			case 37:
-				console.log('Left Arrow');
-			break;
 			case 39:
-				console.log('Right Arrow');
+				event.preventDefault();
+				console.log('Left or Right Arrow');
 			break;
 			case 27:
+				event.preventDefault();
 				console.log('Escape on List');
 			break;
 		}

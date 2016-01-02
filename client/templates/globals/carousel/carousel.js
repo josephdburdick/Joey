@@ -20,16 +20,16 @@ Template.carousel.helpers({
 
 Template.carousel.events({
 	'keydown *': (event) => {
-		let ignoredKeys = [27];
+		let ignoredKeys = [37, 39, 27];
 		if (ignoredKeys.indexOf(event.keyCode)) event.preventDefault();
 	},
 	'keyup *': (event) => {
 		switch (event.keyCode) {
 			case 37:
-				$('#carousel').slick('slickPrev');
+				$('#carousel').slickPrev();
 			break;
 			case 39:
-				$('#carousel').slick('slickNext');
+				$('#carousel').slickNext();
 			break;
 			case 27:
 				console.log('Escape to Home');
