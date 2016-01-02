@@ -43,7 +43,7 @@ Template.projectList.events({
 			scrollDistance = 170,
 			delta = event.originalEvent.wheelDelta / 120 || -event.originalEvent.detail / 3;
 
-		document.querySelector('body').scrollLeft -= Math.round(parseInt(delta * scrollDistance));
+		$('body')[0].scrollLeft -= Math.round(parseInt(delta * scrollDistance));
 		return false;
 	}
 });

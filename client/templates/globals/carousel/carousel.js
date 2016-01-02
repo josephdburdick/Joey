@@ -1,14 +1,11 @@
+Template.projectDetail.onCreated(() => {
+  Template.instance().subscribe('projectDetail', FlowRouter.getParam('_id'));
+});
 Template.carousel.onRendered(() => {
-	let $carousel = $('#carousel');
-  $carousel.slick({
-    dots: true,
-    arrows: !!Modernizr.touch ? false : true,
-		infinite: true,
-	  slidesToShow: 1
-	});
-	setTimeout(() => {
-		$carousel.focus();
-	}, 100);
+	$('#carousel').slick();
+	// setTimeout(() => {
+	// 	$carousel.attr("tabindex",-1).focus();
+	// }, 100);
 });
 
 

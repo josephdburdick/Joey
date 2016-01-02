@@ -1,13 +1,15 @@
 <template name="carousel">
-  <ul id="{{currentTemplateName}}">
-		{{#let color = this.color}}
-    {{#each slides}}
-			<li class="carousel-slide" style="background-color: {{color}}">
-				<figure class="bg">
-					<img src="{{this}}" class="carousel-image" />
-				</figure>
-			</li>
-		{{/each}}
-		{{/let}}
-  </ul>
+	{{#if Template.subscriptionsReady}}
+	  <div id="carousel">
+			{{#let color = this.color}}
+	    {{#each slides}}
+				<div class="carousel-slide" style="background-color: {{color}}">
+					<figure class="bg">
+						<img src="{{this}}" class="carousel-image" />
+					</figure>
+				</div>
+			{{/each}}
+			{{/let}}
+	  </div>
+	{{/if}}
 </template>
