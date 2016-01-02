@@ -1,11 +1,6 @@
 Template.projectDetail.onCreated(() => {
   Template.instance().subscribe('projectDetail', FlowRouter.getParam('_id'));
 
-	$('#project-detail--carousel').owlCarousel({
-		items : 4,
-    lazyLoad : true
-	});
-
 	$(document)
 		.on('keydown', (event) => {
 			let ignoredKeys = [13, 27];
