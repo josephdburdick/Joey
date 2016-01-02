@@ -1,5 +1,6 @@
 let UI = () => {
   let ui = {};
+	
   ui.colors = {
     brandPrimary: "#16a085",
     brandSecondary: "#004358",
@@ -98,6 +99,7 @@ let UI = () => {
   };
 
   return {
+		elements: ui.elements,
     createIcon: createIcon,
     colors: ui.colors,
     icons: ui.icons

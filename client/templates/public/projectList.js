@@ -1,26 +1,5 @@
 Template.projectList.onCreated(() => {
   Template.instance().subscribe('allProjects');
-	$(document)
-		.on('keydown', (event) => {
-			let ignoredKeys = [13, 37, 39, 27];
-			if (ignoredKeys.indexOf(event.keyCode)) event.preventDefault();
-		})
-		.on('keyup', (event) => {
-			switch (event.keyCode) {
-				case 13:
-					console.log('Enter');
-				break;
-				case 37:
-					console.log('Left Arrow');
-				break;
-				case 39:
-					console.log('Right Arrow');
-				break;
-				case 27:
-					console.log('Escape on List');
-				break;
-			}
-		});
 });
 
 Template.projectList.helpers({
@@ -45,5 +24,25 @@ Template.projectList.events({
 
 		$('body')[0].scrollLeft -= Math.round(parseInt(delta * scrollDistance));
 		return false;
+	},
+	'keydown *': (event) => {
+		let ignoredKeys = [13, 37, 39, 27];
+		if (ignoredKeys.indexOf(event.keyCode)) event.preventDefault();
+	},
+	'keyup *': (event) => {
+		switch (event.keyCode) {
+			case 13:
+				console.log('Enter');
+			break;
+			case 37:
+				console.log('Left Arrow');
+			break;
+			case 39:
+				console.log('Right Arrow');
+			break;
+			case 27:
+				console.log('Escape on List');
+			break;
+		}
 	}
 });

@@ -1,27 +1,11 @@
-
-
 Template.projectDetail.onCreated(() => {
-  Template.instance().subscribe('projectDetail', FlowRouter.getParam('_id'));
+	// this.asideVisible = new ReactiveVar(false);
+});
 
-	$(document)
-		.on('keydown', (event) => {
-			let ignoredKeys = [13, 27];
-			if (ignoredKeys.indexOf(event.keyCode)) event.preventDefault();
-		})
-		.on('keyup', (event) => {
-			switch (event.keyCode) {
-				case 13:
-					console.log('Enter: toggle project info');
-					let $aside = $('aside');
-					$aside.toggleClass('active');
-				break;
-				case 27:
-					console.log('Escape on detail');
-					FlowRouter.go('index');
-				break;
-			}
-		});
-
+Template.projectDetail.onRendered(() => {
+	setTimeout(function(){
+		$('#project-detail--aside, #face-mask').addClass('active');
+	}, 500);
 });
 
 Template.projectDetail.helpers({
@@ -34,4 +18,29 @@ Template.projectDetail.helpers({
 });
 
 Template.projectDetail.events({
+	'keyup *': (event) => {
+		switch (event.keyCode) {
+			case 13:
+				$('#project-detail--aside').toggleClass('active');
+				$('#face-mask').removeClass('active');
+			break;
+			case 37:
+				console.log('slickPrev');
+				$('#carousel').slick('slickPrev');
+			break;
+			case 39:
+				console.log('slickNext');
+				$('#carousel').slick('slickNext');
+			break;
+			case 27:
+				console.log('Escape to Home');
+				FlowRouter.go('index');
+				// event.preventDefault();
+			break;
+		}
+	},
+	'click #face-mask': (event) => {
+		$('#project-detail--aside').toggleClass('active');
+		$('#face-mask').removeClass('active');
+	}
 });

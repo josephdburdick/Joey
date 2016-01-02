@@ -2,7 +2,7 @@
 {{#if Template.subscriptionsReady}}
   {{#if project}}
 	<section id="{{currentTemplateName}}" class="project-detail" data-project-id="{{project.projectId}}">
-    <aside>
+    <aside id="project-detail--aside">
       <div class="project-content">
       <h3>Project</h3>
         <span class="project-name">{{project.name}}</span>
@@ -22,6 +22,7 @@
     </aside>
     <main>
 			{{> carousel project}}
+			<div id="face-mask"></div>
     </main>
   </section>
 	{{/if}}
