@@ -1,3 +1,5 @@
+
+
 Template.projectDetail.onCreated(() => {
   Template.instance().subscribe('projectDetail', FlowRouter.getParam('_id'));
 
@@ -10,6 +12,8 @@ Template.projectDetail.onCreated(() => {
 			switch (event.keyCode) {
 				case 13:
 					console.log('Enter: toggle project info');
+					let $aside = $('aside');
+					$aside.toggleClass('active');
 				break;
 				case 27:
 					console.log('Escape on detail');
