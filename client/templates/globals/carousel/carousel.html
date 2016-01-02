@@ -1,11 +1,13 @@
 <template name="carousel">
-  <div id="{{currentTemplateName}}">
+  <ul id="{{currentTemplateName}}">
+		{{#let color = this.color}}
     {{#each slides}}
-			<div class="carousel-slide">
-				<div class="bg">
+			<li class="carousel-slide" style="background-color: {{color}}">
+				<figure class="bg">
 					<img src="{{this}}" class="carousel-image" />
-				</div>
-			</div>
+				</figure>
+			</li>
 		{{/each}}
-  </div>
+		{{/let}}
+  </ul>
 </template>
