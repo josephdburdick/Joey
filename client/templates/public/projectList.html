@@ -3,7 +3,8 @@
     <ul class="project-list">
       {{#each projects}} {{#let index = @index}}
       <li class="project-pane" data-project-id="{{projectId}}" data-index="{{@index}}">
-        <div class="bg" style="background-color: {{color}}; background-image: url('images/projects/{{projectId}}/bg.jpg')"></div>
+				<div class="bg bgImage" style="background-image: url('images/projects/{{projectId}}/bg.jpg')"></div>
+        <div class="bg bgColor" style="background-color: {{color}};"></div>
         <div class="info-panel">
           <header>
             <span class="project-number">{{@index}}</span>
