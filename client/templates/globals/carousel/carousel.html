@@ -2,14 +2,21 @@
 	{{#if Template.subscriptionsReady}}
 	  <div id="carousel">
 			{{#let color = this.color}}
+				{{#if this.logo}}
+					<div class="carousel-slide" style="background-color: {{color}}">
+						<figure class="bg">
+							<img data-lazy="{{logo}}" class="carousel-image" />
+						</figure>
+					</div>
+				{{/if}}
+			{{/let}}
 	    {{#each slides}}
-				<div class="carousel-slide" style="background-color: {{color}}">
+				<div class="carousel-slide" style="background-color: #e0e0e0;">
 					<figure class="bg">
 						<img data-lazy="{{this}}" class="carousel-image" />
 					</figure>
 				</div>
 			{{/each}}
-			{{/let}}
 	  </div>
 	{{/if}}
 </template>

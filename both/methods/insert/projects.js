@@ -17,7 +17,7 @@ Meteor.methods({
           return true;
         }
       });
-
+		console.log(obj.logo);
     check(obj, {
       name: String,
       projectId: String,
@@ -25,6 +25,7 @@ Meteor.methods({
       year: Number,
       tags: [String],
       details: String,
+			logo: String,
       slides: [String],
 			color: String //,
       // credits: true

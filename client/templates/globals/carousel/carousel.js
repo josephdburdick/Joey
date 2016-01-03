@@ -1,7 +1,3 @@
-Template.projectDetail.onCreated(() => {
-  Template.instance().subscribe('projectDetail', FlowRouter.getParam('_id'));
-	// let self = this;
-});
 Template.carousel.onRendered(() => {
 	let $carousel = $('#carousel');
 	$carousel.slick();
@@ -12,9 +8,17 @@ Template.carousel.onRendered(() => {
 
 
 Template.carousel.helpers({
+	logo(){
+		if (this.projectId){
+			return `/images/projects/${this.projectId}/${this.logo}`;
+		}
+	},
 	slides(){
-		let project = Template.instance().data;
-		return Array.from(project.slides, slide => `/images/projects/${project.projectId}/${slide}`);
+		if (this.projectId){
+			return Array.from(this.slides, slide => `/images/projects/${this.projectId}/${slide}`);
+		} else {
+			return this.slides;
+		}
 	}
 });
 

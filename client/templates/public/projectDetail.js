@@ -1,12 +1,11 @@
 Template.projectDetail.onCreated(() => {
-	this.asideOpen = new ReactiveVar(false);
+  Template.instance().subscribe('projectDetail', FlowRouter.getParam('_id'));
 });
 
 Template.projectDetail.onRendered(() => {
 	let template = Template.instance();
 	setTimeout(() => {
 		$('#project-detail--aside, #face-mask').addClass('active');
-		template.asideOpen.set(true);
 	}, 500);
 });
 
@@ -14,11 +13,12 @@ Template.projectDetail.helpers({
   project() {
     return Projects.findOne();
   },
-	slides(project){
-		return Array.from(project.slides, slide => `/images/projects/${project.projectId}/${slide}`);
+	logo(project){
+		return !!project.logo ? `/images/projects/${project.projectId}/${project.logo}` : null;
 	},
-	asideOpen(){
-		return Template.instance().asideOpen.get();
+	carouselItems(project){
+		let array = [];
+		Array.from(project.slides, slide => `/images/projects/${project.projectId}/${slide}`);
 	}
 });
 
@@ -37,13 +37,11 @@ Template.projectDetail.events({
 				}
 			break;
 			case 37:
-				console.log('slickPrev');
 				if ($('#face-mask').hasClass('active')){
 					$('#face-mask').trigger('click');
 				}
 			break;
 			case 39:
-				console.log('slickNext');
 				if ($('#face-mask').hasClass('active')){
 					$('#face-mask').trigger('click');
 				}
