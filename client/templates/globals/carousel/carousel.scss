@@ -42,11 +42,28 @@ $menuWidthSmall: 80px;
 	  position: relative;
 		justify-content: center;
 		align-content: center;
+		flex-direction: column;
 	}
+}
+.carousel-image--container{
+	display: flex;
+	flex: 1;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
 }
 .carousel-image{
 	display: flex;
 	width: auto;
 	max-height: 95%;
 	align-self: center;
+
+}
+
+.return-link--container{
+	align-content: center;
+	align-self: center;
+	.return-link{
+		display: inline-block;
+	}
 }

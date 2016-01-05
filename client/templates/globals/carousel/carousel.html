@@ -5,7 +5,13 @@
 				{{#if this.logo}}
 					<div class="carousel-slide" style="background-color: {{color}}">
 						<figure class="bg">
-							<img data-lazy="{{logo}}" class="carousel-image" />
+							<div class="carousel-image--container">
+								<img data-lazy="{{logo}}" class="carousel-image carousel-logo" />
+							</div>
+
+							<div class="return-link--container hidden">
+								<a href="{{pathFor 'index'}}" class="btn btn-lg btn-outline btn-white return-link">Return Home</a>
+							</div>
 						</figure>
 					</div>
 				{{/if}}
@@ -13,7 +19,9 @@
 	    {{#each slides}}
 				<div class="carousel-slide" style="background-color: #e0e0e0;">
 					<figure class="bg">
-						<img data-lazy="{{this}}" class="carousel-image" />
+						<div class="carousel-image--container">
+							<img data-lazy="{{this}}" class="carousel-image" />
+						</div>
 					</figure>
 				</div>
 			{{/each}}

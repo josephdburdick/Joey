@@ -1,8 +1,17 @@
 Template.carousel.onRendered(() => {
 	let $carousel = $('#carousel');
+
 	$carousel.slick({
-		arrows: !Modernizr.touch ? true : false
+		arrows: !Modernizr.touch ? true : false,
+		onAfterChange: function(slide, index){
+			if( index !== 0 ){
+				if ($carousel.find('.return-link--container.hidden')){
+					$carousel.find('.return-link--container.hidden').removeClass('hidden');
+				}
+			}
+		}
 	});
+
 	setTimeout(() => {
 		$carousel.attr('tabindex', -1).focus();
 	}, 100);
