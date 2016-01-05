@@ -2,6 +2,12 @@ Template.projectList.onCreated(() => {
   Template.instance().subscribe('allProjects');
 });
 
+Template.projectList.onRendered(() => {
+  if (!Modernizr.touch){
+		$('#projectList').append('<div class="icon-scroll"></div>');
+	}
+});
+
 Template.projectList.helpers({
   projects() {
     return Projects.find();
