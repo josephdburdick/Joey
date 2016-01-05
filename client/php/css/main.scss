@@ -296,7 +296,7 @@ body {
 
 #logo {
   display: block;
-  background: url(../img/JOEY_logo_vertical.png) center center no-repeat;
+  background: url(/images/logos/JOEY_logo_vertical.png) center center no-repeat;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -724,56 +724,7 @@ section {
   }
 }
 
-#carousel{
-	margin-bottom: 0;
-	margin-left: $menuWidthSmall;
 
-	button.slick-prev,
-	button.slick-next{
-		width: 50px;
-		height: 40px;
-		background: rgba(white, .25);
-		border-radius: 999rem;
-		box-shadow: 0 0 0 2px rgba(black, .05) !important;
-		&:before{
-			font-family: "fontawesome";
-		}
-	}
-	button.slick-prev{
-		left: 25px;
-		&:before{
-			content: "\f053";
-			padding-right: 2px;
-		}
-	}
-	button.slick-next{
-		right: 25px;
-		&:before{
-			content: "\f054";
-			padding-left: 2px;
-		}
-	}
-
-}
-.carousel-slide{
-	display: flex;
-	margin-bottom: 0;
-	.bg {
-		display: flex;
-	  width: 100%;
-	  height: 100vh;
-	  text-align: center;
-	  position: relative;
-		justify-content: center;
-		align-content: center;
-	}
-}
-.carousel-image{
-	display: flex;
-	width: auto;
-	max-height: 95%;
-	align-self: center;
-}
 
 .btn-circle {
   display: inline-block;
@@ -1151,6 +1102,10 @@ h3 {
     width: 100%;
     -webkit-filter: blur(0px)!important;
 
+		.nav a{
+			font: normal 12px/1 "Open Sans Condensed", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			text-transform: uppercase;
+		}
     #logo {
       top: 5px;
     }
