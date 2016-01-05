@@ -22,7 +22,7 @@ Template.projectList.events({
 			scrollDistance = 170,
 			delta = event.originalEvent.wheelDelta / 120 || -event.originalEvent.detail / 3;
 
-		$('body')[0].scrollLeft -= Math.round(parseInt(delta * scrollDistance));
+		$('html, body')[0].scrollLeft -= Math.round(parseInt(delta * scrollDistance));
 		return false;
 	},
 	'keydown *': (event) => {
