@@ -1,0 +1,22 @@
+<template name="profile">
+	<main>
+		<section id="{{currentTemplateName}}">
+		I stay busy.
+		{{#if stats}}
+		<div style="display: flex; flex-wrap: wrap; flex-direction: row; ">
+			{{#each stats}}
+
+				<div class="panel panel-default">
+				  <div class="panel-heading">Action: {{type}}</div>
+				  <div class="panel-body">
+				    Repo: {{repo.name}}
+				  </div>
+				</div>
+			{{/each}}
+		</div>
+		{{else}}
+			<h1>LOADING STATS...</h1>
+		{{/if}}
+		</section>
+	</main>
+</template>

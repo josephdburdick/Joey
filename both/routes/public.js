@@ -33,6 +33,15 @@ publicRoutes.route('/project/:_id', {
   }
 });
 
+publicRoutes.route('/profile', {
+  name: 'profile',
+  action() {
+    BlazeLayout.render('default', {
+      yield: 'profile'
+    });
+  }
+});
+
 publicRoutes.route('/signup', {
   name: 'signup',
   action() {

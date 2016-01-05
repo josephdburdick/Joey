@@ -29,7 +29,6 @@ Template.projectList.events({
 			scrollDistance = 170,
 			delta = event.originalEvent.wheelDelta / 120 || -event.originalEvent.detail / 3,
 			currentDistance = $track.scrollLeft();
-			console.log(Math.round(parseInt(delta * scrollDistance)));
 
 		$track.scrollLeft(currentDistance -= Math.round(parseInt(delta * scrollDistance)));
 		return false;
