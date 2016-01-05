@@ -1,5 +1,11 @@
-# Lily
-Geolocation experiment.
+# Joey
+Visual Portfolio in progress.
+
+Updates:
+* Meteor
+* Autoprefixer
+* Flexbox
+* Improved carousel
 
 <table>
   <tbody>
@@ -13,5 +19,3 @@ Geolocation experiment.
     </tr>
   </tbody>
 </table>
-
-[Read the Documentation](http://themeteorchef.com/base)
