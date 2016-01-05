@@ -1,9 +1,12 @@
 Template.carousel.onRendered(() => {
 	let $carousel = $('#carousel');
-	$carousel.slick();
+	$carousel.slick({
+		arrows: !Modernizr.touch ? true : false
+	});
 	setTimeout(() => {
-		$carousel.attr("tabindex", -1).focus();
+		$carousel.attr('tabindex', -1).focus();
 	}, 100);
+
 });
 
 

@@ -1,11 +1,4 @@
-// @import 'normalize.min';
-// @import 'boilerplate';
-@import 'royalslider';
-
-// @import 'mixins';
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300|Open+Sans+Condensed:300);
-
-// @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css);
 // @import 'scrollHint';
 /* ————————————————————————————————————————————————————
 
@@ -733,6 +726,34 @@ section {
 
 #carousel{
 	margin-bottom: 0;
+	margin-left: $menuWidthSmall;
+
+	button.slick-prev,
+	button.slick-next{
+		width: 50px;
+		height: 40px;
+		background: rgba(white, .25);
+		border-radius: 999rem;
+		box-shadow: 0 0 0 2px rgba(black, .05) !important;
+		&:before{
+			font-family: "fontawesome";
+		}
+	}
+	button.slick-prev{
+		left: 25px;
+		&:before{
+			content: "\f053";
+			padding-right: 2px;
+		}
+	}
+	button.slick-next{
+		right: 25px;
+		&:before{
+			content: "\f054";
+			padding-left: 2px;
+		}
+	}
+
 }
 .carousel-slide{
 	display: flex;
@@ -1117,10 +1138,7 @@ h3 {
     }
   }
 
-  #slideshow {
-    left: 0;
-  }
-  $navHeight: 60px;
+	$navHeight: 60px;
 
   #nav-main {
     position: fixed;
@@ -1260,7 +1278,8 @@ h3 {
       top: 0;
     }
   }
-  $navHeight: 40px;
+
+	$navHeight: 40px;
 
   #nav-main {
     height: $navHeight;
