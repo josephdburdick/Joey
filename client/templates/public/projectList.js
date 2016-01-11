@@ -1,8 +1,12 @@
+let Breakpoint = new ReactiveVar();
+
 Template.projectList.onCreated(() => {
   Template.instance().subscribe('allProjects');
 });
 
 Template.projectList.onRendered(() => {
+	Breakpoint.set(Modules.client.Breakpoint);
+
   if (!Modernizr.touch){
 		$('#projectList').append('<div class="icon-scroll"></div>');
 	}
@@ -11,6 +15,9 @@ Template.projectList.onRendered(() => {
 Template.projectList.helpers({
   projects() {
     return Projects.find();
+  },
+	Breakpoint: function () {
+    return Template.instance().state.get('Breakpoint');
   }
 });
 
@@ -26,12 +33,49 @@ Template.projectList.events({
 		let
 			$track = $('#projectList .project-list'),
 			scrollTime = 1.2,
-			scrollDistance = 170,
-			delta = event.originalEvent.wheelDelta / 120 || -event.originalEvent.detail / 3,
-			currentDistance = $track.scrollLeft();
+			scrollDistance = 170;
 
-		$track.scrollLeft(currentDistance -= Math.round(parseInt(delta * scrollDistance)));
-		return false;
+		function sideScroll(){
+			console.log('site is side scrolling.');
+			let	currentDistance = $track.scrollLeft(),
+					delta = event.originalEvent.wheelDelta / 120 || -event.originalEvent.detail / 3;
+
+			$track.scrollLeft(currentDistance -= Math.round(parseInt(delta * scrollDistance)));
+
+			return false;
+		}
+		function normalScroll(){
+
+			console.log('site is normal scrolling.');
+			// $track.unbind('mousewheel'); //.animate({'scrollTop': (currentDistance -= Math.round(parseInt(delta * scrollDistance)))});
+			let scrollTop = $track.scrollTop(),
+					delta = event.originalEvent.wheelDelta || event.originalEvent.detail;
+
+					console.log(delta);
+ 			$track.scrollTop(scrollTop - Math.round(delta * 50));
+			console.log(event);
+			// return true;
+			// if ($track.scrollLeft > 0){
+			// 	debugger;
+			// } else {
+			// 	debugger;
+			// }
+		}
+
+		if (Breakpoint.get().is('md')){
+			sideScroll();
+		} else {
+			normalScroll();
+		}
+		$(window).on('change:breakpoint', function (e, current, previous) {
+	    console.log('previous breakpoint was', previous);
+	    console.log('current breakpoint is', current);
+			if (Breakpoint.get().is('md')){
+				sideScroll();
+			} else {
+				normalScroll();
+			}
+		});
 	},
 	'keydown *': (event) => {
 		let ignoredKeys = [13, 37, 39, 27];
