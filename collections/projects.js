@@ -1,15 +1,15 @@
 Projects = new Meteor.Collection('projects');
 
 Projects.allow({
-  insert: () => false,
-  update: () => false,
-  remove: () => false
-});
-
-Projects.deny({
   insert: () => true,
   update: () => true,
   remove: () => true
+});
+
+Projects.deny({
+  insert: () => false,
+  update: () => false,
+  remove: () => false
 });
 
 let ProjectsSchema = new SimpleSchema({
@@ -37,7 +37,10 @@ let ProjectsSchema = new SimpleSchema({
 	"details": {
 		type: String,
 		label: "Project Details",
-    optional: true
+    optional: true,
+		autoform: {
+		  rows: 5
+		}
 	},
 	"logo": {
 		type: String,

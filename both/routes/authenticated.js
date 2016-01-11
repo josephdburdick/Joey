@@ -26,3 +26,12 @@ authenticatedRoutes.route('/settings', {
     });
   }
 });
+
+authenticatedRoutes.route('/insert', {
+  name: 'insertProjectForm',
+  action() {
+    BlazeLayout.render('default', {
+      yield: 'insertProjectForm'
+    });
+  }
+});

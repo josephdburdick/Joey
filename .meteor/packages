@@ -38,3 +38,4 @@ mrt:modernizr-meteor
 udondan:slick
 http
 mrt:jquery-mousewheel
+aldeed:autoform
