@@ -1,0 +1,35 @@
+/*
+
+Buttons
+
+*/
+
+.button {
+  padding: 10px 20px;
+  border: 2px solid $accentColor1;
+
+  &:hover,
+  &:active {
+    border-color: darken($accentColor1,10%);
+    color: darken($accentColor1,10%);
+  }
+}
+
+.btn-outline {
+  border: 2px solid transparent;
+}
+
+.btn-white {
+  border-color: white;
+  color: white;
+
+  &:visited {
+    color: white;
+  }
+
+  &:hover,
+  &:active {
+    background-color: rgba(white, .25);
+    color: white;
+  }
+}

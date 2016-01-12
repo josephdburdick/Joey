@@ -45,6 +45,12 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  background: #222;
+  font: 300 120%/1.45 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  height: 100%;
+}
+
 * + * {
   margin-bottom: 1em;
 }
@@ -53,133 +59,8 @@ body {
 main {
   margin: 0;
 }
-/* ———————————————
 
-   Animations
-   ———————————————
-*/
-//greenBgPulse
-@-webkit-keyframes greenBgPulse {
-  0% {
-    background: $accentColor1;
-  }
-
-  50% {
-    background: darken($accentColor1, 10%);
-  }
-
-  100% {
-    background: $accentColor1;
-  }
-}
-
-@-moz-keyframes greenBgPulse {
-  0% {
-    background: $accentColor1;
-  }
-
-  50% {
-    background: darken($accentColor1,10%);
-  }
-
-  100% {
-    background: $accentColor1;
-  }
-}
-
-@-o-keyframes greenBgPulse {
-  0% {
-    background: $accentColor1;
-  }
-
-  50% {
-    background: darken($accentColor1,10%);
-  }
-
-  100% {
-    background: $accentColor1;
-  }
-}
-
-@keyframes greenBgPulse {
-  0% {
-    background: $accentColor1;
-  }
-
-  50% {
-    background: darken($accentColor1,10%);
-  }
-
-  100% {
-    background: $accentColor1;
-  }
-}
-//greenBgPulseHover
-@-webkit-keyframes greenBgPulseHover {
-  0% {
-    background: saturate($accentColor1,5%);
-  }
-
-  50% {
-    background: saturate($accentColor1,20%);
-  }
-
-  100% {
-    background: saturate($accentColor1,5%);
-  }
-}
-
-@-moz-keyframes greenBgPulseHover {
-  0% {
-    background: saturate($accentColor1,5%);
-  }
-
-  50% {
-    background: saturate($accentColor1,20%);
-  }
-
-  100% {
-    background: saturate($accentColor1,5%);
-  }
-}
-
-@-o-keyframes greenBgPulseHover {
-  0% {
-    background: saturate($accentColor1,5%);
-  }
-
-  50% {
-    background: saturate($accentColor1,20%);
-  }
-
-  100% {
-    background: saturate($accentColor1,5%);
-  }
-}
-
-@keyframes greenBgPulseHover {
-  0% {
-    background: saturate($accentColor1,5%);
-  }
-
-  50% {
-    background: saturate($accentColor1,20%);
-  }
-
-  100% {
-    background: saturate($accentColor1,5%);
-  }
-}
-//spin
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
+@import 'animations';
 
 hr {
   height: 0;
@@ -187,14 +68,6 @@ hr {
   border-bottom: 1px solid rgba(255,255,255,.85);
   width: 70%;
   margin: 20px auto;
-}
-
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
 }
 
 .text-left {
@@ -207,24 +80,6 @@ hr {
 
 .text-center {
   text-align: center!important;
-}
-
-.top-50 {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  left: 0;
-  text-align: center;
-}
-
-.spin {
-  display: inline-block!important;
-  -webkit-animation: spin $pageTransitionSpeed infinite;
-  -moz-animation: spin $pageTransitionSpeed infinite;
-  -o-animation: spin $pageTransitionSpeed infinite;
-  animation: spin $pageTransitionSpeed infinite;
-  animation-timing-function: linear;
-  -webkit-animation-timing-function: linear;
 }
 
 p {
@@ -246,71 +101,8 @@ a {
   }
 }
 
-.bg-cover {
-  background: url(../img/bg_lightbox.png) no-repeat top center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.bg-contain {
-  background: url(../img/bg_lightbox.png) no-repeat top center;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-size: contain;
-}
-
-.bg-green {
-  background: rgba(49,115,93,.85);
-}
-
-.vertical-block {
-  text-align: center;
-  height: 100%;
-}
-
-.vertical-block:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  margin-right: -0.25em;
-  /* Adjusts for spacing */
-}
-
-.centered {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.vertical-center {
-  /*width:100%;*/
-}
-
-body {
-  background: #222;
-  font: 300 120%/1.45 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  height: 100%;
-}
-
-#logo {
-  display: block;
-  background: url(/images/logos/JOEY_logo_vertical.png) center center no-repeat;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 26px;
-  height: 62px;
-  margin-left: -15px;
-
-  a {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-}
+@import 'bg';
+@import 'buttons';
 /* ———————————————
 
    Menu
@@ -329,83 +121,13 @@ body {
   &.active {
     display: block;
   }
-}
-
-.button {
-  padding: 10px 20px;
-  border: 2px solid $accentColor1;
-
-  &:hover,
-  &:active {
-    border-color: darken($accentColor1,10%);
-    color: darken($accentColor1,10%);
-  }
-}
-
-.btn-outline {
-  border: 2px solid transparent;
-}
-
-.btn-white {
-  border-color: white;
-  color: white;
-
-  &:visited {
-    color: white;
-  }
-
-  &:hover,
-  &:active {
-    background-color: rgba(white, .25);
-    color: white;
-  }
-}
-
-.alert {
-  position: fixed;
-  height: 100%;
-  right: 0;
-  top: 100%;
-  width: 100%;
-  left: 0;
-  padding: 50px;
-  z-index: -10;
-  background: #fff;
-  font-size: 150%;
-  text-align: center;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  display: none;
-
-  &.active {
-    z-index: 9999;
-    top: 0;
-    display: block;
-  }
-
-  article {
-    position: relative;
-    margin: 40px auto;
-    width: 70%;
-    max-width: 800px;
-
-    h3 {
-      color: #ccc;
-    }
-
-    p {
-      color: #ccc;
-    }
-
-    i {
-      font-size: 300%;
-      color: #ccc;
-    }
-  }
+	@media only screen and (max-width: $screen-sm) {
+		display: none;
+	}
 }
 
 #nav-main {
-	display: none;
+  display: none;
   width: $menuWidthSmall;
   min-height: 100%;
   height: 100%;
@@ -477,7 +199,7 @@ html.mobile {
   position: relative;
   width: 100%;
   height: 100%;
-  background: #222 url(../img/pw_maze_black.png);
+  background: #222;
 }
 /* ———————————————
 
@@ -584,7 +306,8 @@ section {
       transform: scale(1);
 
       footer {
-				margin-bottom: 0;
+        margin-bottom: 0;
+
         a {
           border-bottom: 1px solid darken($accentColor1,10%);
           color: lighten($accentColor1,20%);
@@ -748,105 +471,6 @@ section {
   }
 }
 
-.btn-circle {
-  display: inline-block;
-  position: relative;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  background: #333;
-  cursor: pointer;
-
-  i {}
-
-  &:hover {
-    background-color: #222;
-
-    i {}
-  }
-
-  &.on,
-  &.on:hover {
-    background: #111;
-
-    i {}
-  }
-}
-
-.btnDetail,
-.btnAbout,
-.btnPrev,
-.btnNext {
-  z-index: -1;
-
-  &.active {
-    z-index: 5;
-  }
-}
-
-.btnAbout {
-  background: darken($accentColor1,10%);
-
-  &.hover {
-    background: darken($accentColor1,20%);
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      margin-top: -10px;
-      left: 65px;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 10px 10px 10px 0;
-      border-color: transparent #000 transparent transparent;
-    }
-
-    &:after {
-      content: 'About Joey';
-      font-family: $font-face--default;
-      display: block;
-      position: absolute;
-      left: 75px;
-      background: black;
-      color: #ccc;
-      z-index: 999;
-      width: 120px;
-      padding: 0 8px;
-      text-transform: uppercase;
-      font-size: 70%;
-      font-weight: bold;
-    }
-  }
-}
-
-.btnClose {
-  position: absolute;
-  top: 0;
-  left: -25%;
-  margin-bottom: 60px !important;
-  margin-left: -20px;
-  background: #333;
-  animation-delay: 5s;
-
-  &:hover,
-  &.hover {
-    background: $red;
-    animation-delay: 0s;
-  }
-
-  i {
-    color: lighten($accentColor2,40%);
-  }
-
-  &.active {
-    animation-delay: 5s;
-    left: 50%;
-    background: darken($accentColor2,20%);
-  }
-}
-
 .project-detail {
   z-index: 0;
   background: black;
@@ -921,173 +545,14 @@ h3 {
   text-transform: uppercase;
 }
 
-#about {
-  h2 {
-    font-weight: normal;
-  }
-
-  .fb-like {
-    display: block;
-    position: relative;
-    margin: 60px 0 0;
-  }
-background: #fff; //url(../img/about_joeyBaby.png) 50% 60px no-repeat;
-  -webkit-overflow-scrolling: touch;
-
-  article {
-    width: 80%;
-    margin: 0 auto;
-    max-width: 960px;
-    padding-left: $menuWidthSmall;
-  }
-
-  #about-img {
-    position: relative;
-    text-align: center;
-    margin: 40px 0;
-  }
-
-  #about-logo {
-    background: url(../img/JOEY_LOGO.png) center center no-repeat;
-    height: 109px;
-  }
-
-  header {
-    margin: 100px 0 80px;
-    text-align: center;
-    color: #666;
-
-    img {
-      margin-bottom: 10px;
-    }
-  }
-
-  nav#social {
-    margin: 0 0 40px;
-    text-align: center;
-
-    a {
-      display: inline-block;
-      margin: 0 15px 5px;
-      padding: 4px 8px;
-
-      &:hover {
-        background: #eee;
-      }
-
-      i {
-        margin-right: 5px;
-      }
-    }
-  }
-
-  aside {
-    width: $paneWidth;
-    display: none;
-    margin-right: 40px;
-    position: relative;
-    padding: 0;
-    vertical-align: top;
-    height: auto;
-    position: relative;
-    left: 0;
-    float: left;
-    margin-top: -52px;
-  }
-
-  article {
-    h1 {
-      margin: 100px 0 80px;
-      font: bold 72px/1.3 $font-face--condensed;
-      color: #666;
-      text-align: center;
-    }
-clear: both;
-    width: 70%;
-    height: auto;
-    margin: 0 auto;
-    color: #666;
-    text-align: left;
-    position: relative;
-    padding: 0 0 100px $menuWidthSmall;
-  }
-}
 /* ————————————————————————————————————————————————————
 
 
    Media Queries
    ————————————————————————————————————————————————————
 */
-// @media only screen and (max-width: $screen-md) {
-//   .face-mask {
-//     display: none!important;
-//   }
-//
-//   .scroll-horizontal > ul .project-pane {
-//     width: 250px;
-//
-//     .info-panel {
-//       width: 246px;
-//       left: 2px;
-//       right: 2px;
-//       top: 50%;
-//       margin: -200px 0 0;
-//     }
-//   }
-// }
 
 @media only screen and (max-width: $screen-sm) {
-  #face-mask {
-    display: none !important;
-  }
-$mobileRadius: 5px;
-
-  #mouse {
-    display: none !important;
-  }
-
-  #about .fb-like {
-    display: none;
-  }
-
-  #about {
-    padding: 0;
-
-    hr {
-      width: 90%;
-    }
-
-    article {
-      width: 100%;
-      padding: 0;
-    }
-
-    p,
-    nav#social {
-      margin-left: 20px;
-      margin-right: 20px;
-    }
-
-    nav#social {
-      background: #eee;
-
-      a {
-        display: block;
-        margin: 0;
-        padding: 20px;
-        text-align: left;
-
-        &.first {}
-
-        &.last {}
-
-        &:hover {
-          background: darken(#eee,10%);
-        }
-      }
-    }
-  }
-
   .project-detail {
     &.aside-open {
       overflow-x: hidden;
@@ -1095,7 +560,7 @@ $mobileRadius: 5px;
       -webkit-overflow-scrolling: touch;
     }
   }
-$navHeight: 60px;
+	$navHeight: 60px;
 
   #nav-main {
     position: fixed;
@@ -1114,45 +579,12 @@ $navHeight: 60px;
     }
 
     #logo {
-      top: 5px;
-    }
-
-    .buttons {
-      float: right;
-      padding-right: 15px;
-    }
-
-    .btnAbout,
-    .btnNext,
-    .btnPrev,
-    .btnDetail,
-    .btnClose {
-      display: none;
-
-      &.active {
-        display: inline-block;
-        position: relative;
-        left: auto;
-        margin: 10px 0 0 !important;
-      }
-    }
-
-    .btnClose.active {
-      margin-left: 20px;
-    }
-
-    .btnNext.active,
-    .btnPrev.active {
-      display: none!important;
-    }
-
-    #logo {
       display: inline-block;
       position: absolute;
+			top: 0;
       bottom: 0;
       left: 35px;
       margin: 0;
-      top: 0;
     }
   }
 
@@ -1169,7 +601,7 @@ $navHeight: 60px;
     height: auto;
 
     &.active {
-      top: 0; //$navHeight;
+      top: 0;
       z-index: 10;
     }
 
@@ -1182,27 +614,26 @@ $navHeight: 60px;
     padding-left: 0;
   }
 
-  .projects-container {
-    .project-list {
-      flex-wrap: wrap;
-      .project-pane {
-				position: relative;
-        float: none;
-        width: 98%;
-        max-width: 50%;
-				min-width: 360px;
-        margin: 0 auto;
-        display: flex;
-        height: 550px;
+  .project-list {
+    flex-wrap: wrap;
+    .project-pane {
+      position: relative;
+      float: none;
+      width: 98%;
+      max-width: 50%;
+      min-width: 360px;
+      margin: 0 auto;
+      display: flex;
+      height: 550px;
 
-				@media screen and (max-width: 635px){
-					margin-bottom: 20px;
-				}
-        .info-panel {
-          width: 300px;
-          align-self: center;
-          display: block;
-        }
+      @media screen and (max-width: 735px) {
+        margin-bottom: 20px;
+      }
+
+      .info-panel {
+        width: 300px;
+        align-self: center;
+        display: block;
       }
     }
   }
@@ -1211,11 +642,12 @@ $navHeight: 60px;
 @media only screen and (max-width: $screen-xs) {
   .projects-container .project-pane {
     height: 250px;
-		margin: 0 auto 20px;
-		padding: 40px;
-		&:first-child {
-			margin-top: 60px;
-		}
+    margin: 0 auto 20px;
+    padding: 40px;
+
+    &:first-child {
+      margin-top: 60px;
+    }
   }
 
   aside {
@@ -1226,52 +658,10 @@ $navHeight: 60px;
     }
   }
 $navHeight: 40px;
-
-  #nav-main {
-    height: $navHeight;
-    min-height: $navHeight;
-
-    #logo {
-      display: inline-block;
-      background-size: 80%;
-      top: -10px;
-      left: 30px;
-    }
-  }
-
-  .buttons {
-    position: relative;
-    top: -5px;
-  }
-
-  .btnAbout,
-  .btnNext,
-  .btnPrev,
-  .btnDetail,
-  .btnClose {
-    height: 30px;
-    width: 30px;
-    line-height: 30px;
-    margin: 0 !important;
-
-    i {
-      font-size: 0.75em!important;
-    }
-  }
 }
 
 @media only screen and (max-width: $screen-xs) {
-  #about {
-    p,
-    nav#social {
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-  }
-
   aside {
-    -webkit-overflow-scrolling: touch;
-
     .project-content {
       margin: 60px 10px 100px;
     }

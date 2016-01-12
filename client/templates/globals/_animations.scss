@@ -1,0 +1,133 @@
+/* ———————————————
+
+   Animations
+   ———————————————
+*/
+//greenBgPulse
+@-webkit-keyframes greenBgPulse {
+  0% {
+    background: $accentColor1;
+  }
+
+  50% {
+    background: darken($accentColor1, 10%);
+  }
+
+  100% {
+    background: $accentColor1;
+  }
+}
+
+@-moz-keyframes greenBgPulse {
+  0% {
+    background: $accentColor1;
+  }
+
+  50% {
+    background: darken($accentColor1,10%);
+  }
+
+  100% {
+    background: $accentColor1;
+  }
+}
+
+@-o-keyframes greenBgPulse {
+  0% {
+    background: $accentColor1;
+  }
+
+  50% {
+    background: darken($accentColor1,10%);
+  }
+
+  100% {
+    background: $accentColor1;
+  }
+}
+
+@keyframes greenBgPulse {
+  0% {
+    background: $accentColor1;
+  }
+
+  50% {
+    background: darken($accentColor1,10%);
+  }
+
+  100% {
+    background: $accentColor1;
+  }
+}
+//greenBgPulseHover
+@-webkit-keyframes greenBgPulseHover {
+  0% {
+    background: saturate($accentColor1,5%);
+  }
+
+  50% {
+    background: saturate($accentColor1,20%);
+  }
+
+  100% {
+    background: saturate($accentColor1,5%);
+  }
+}
+
+@-moz-keyframes greenBgPulseHover {
+  0% {
+    background: saturate($accentColor1,5%);
+  }
+
+  50% {
+    background: saturate($accentColor1,20%);
+  }
+
+  100% {
+    background: saturate($accentColor1,5%);
+  }
+}
+
+@-o-keyframes greenBgPulseHover {
+  0% {
+    background: saturate($accentColor1,5%);
+  }
+
+  50% {
+    background: saturate($accentColor1,20%);
+  }
+
+  100% {
+    background: saturate($accentColor1,5%);
+  }
+}
+
+@keyframes greenBgPulseHover {
+  0% {
+    background: saturate($accentColor1,5%);
+  }
+
+  50% {
+    background: saturate($accentColor1,20%);
+  }
+
+  100% {
+    background: saturate($accentColor1,5%);
+  }
+}
+//spin
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  display: inline-block!important;
+  animation: spin $pageTransitionSpeed infinite;
+  animation-timing-function: linear;
+}
