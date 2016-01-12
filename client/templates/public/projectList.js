@@ -33,57 +33,51 @@ Template.projectList.events({
 		let
 			$track = $('#projectList .project-list'),
 			scrollTime = 1.2,
-			scrollDistance = 170;
-
-		function sideScroll(){
-			console.log('site is side scrolling.');
-			let	currentDistance = $track.scrollLeft(),
+			scrollDistance = 170,
+			mobileThreshold = Breakpoint.get().getBreakpoints().sm.max,
+			currentBreakpoint = Breakpoint.get().current(),
+			sideScroll = ()  => {
+				let
+					currentDistance = $track.scrollLeft(),
 					delta = event.originalEvent.wheelDelta / 120 || -event.originalEvent.detail / 3;
 
-			$track.scrollLeft(currentDistance -= Math.round(parseInt(delta * scrollDistance)));
+				$track.scrollLeft(currentDistance -= Math.round(parseInt(delta * scrollDistance)));
 
-			return false;
-		}
-		function normalScroll(){
+				return false;
+			},
+			normalScroll = () => {
+				let
+					scrollTop = $track.scrollTop(),
+					delta = event.originalEvent.wheelDelta / 120 || event.originalEvent.detail;
 
-			console.log('site is normal scrolling.');
-			// $track.unbind('mousewheel'); //.animate({'scrollTop': (currentDistance -= Math.round(parseInt(delta * scrollDistance)))});
-			let scrollTop = $track.scrollTop(),
-					delta = event.originalEvent.wheelDelta || event.originalEvent.detail;
+				$track.scrollTop(scrollTop - Math.round(delta * 50));
+			},
+			chooseScroll = (callbackFn) => {
+				if (Breakpoint.get().getBreakpoints()[currentBreakpoint].max < mobileThreshold){
+					normalScroll();
+				} else {
+					sideScroll();
+				}
+				if (callbackFn) callbackFn();
+			},
+			windowResizeListener = () => {
+				$(window).on('change:breakpoint', function (e, current, previous) {
+					chooseScroll();
+				});
+			},
+			init = () => {
+				windowResizeListener();
+				chooseScroll();
+			};
 
-					console.log(delta);
- 			$track.scrollTop(scrollTop - Math.round(delta * 50));
-			console.log(event);
-			// return true;
-			// if ($track.scrollLeft > 0){
-			// 	debugger;
-			// } else {
-			// 	debugger;
-			// }
-		}
+			init();
 
-		if (Breakpoint.get().is('md')){
-			sideScroll();
-		} else {
-			normalScroll();
-		}
-		$(window).on('change:breakpoint', function (e, current, previous) {
-	    console.log('previous breakpoint was', previous);
-	    console.log('current breakpoint is', current);
-			if (Breakpoint.get().is('md')){
-				sideScroll();
-			} else {
-				normalScroll();
-			}
-		});
 	},
 	'keydown *': (event) => {
 		let ignoredKeys = [13, 37, 39, 27];
-		console.log(event);
 		if (ignoredKeys.indexOf(event.keyCode)) event.preventDefault();
 	},
 	'keyup *': (event) => {
-		console.log(event);
 		switch (event.keyCode) {
 			case 13:
 				event.preventDefault();
