@@ -18,21 +18,18 @@ class MarkdownWrapper extends React.Component {
         <div className="markdown">
           <h1>{post.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: post.body }} />
+
           <em
             style={{
-              display: 'block',
-              marginBottom: rhythm(2),
+              display: 'block'
             }}
           >
             Posted {moment(post.date).format('MMMM D, YYYY')}
           </em>
-          <hr
-            style={{
-              marginBottom: rhythm(2),
-            }}
-          />
-          <ReadNext post={post} pages={route.pages} />
+          <hr/>
           <Bio />
+          <hr/>
+          <ReadNext post={post} pages={route.pages} />
         </div>
       </DocumentTitle>
     )

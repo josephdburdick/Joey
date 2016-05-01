@@ -13,9 +13,8 @@ class Projects extends React.Component {
   render () {
     const pageLinks = []
     // Sort pages.
-    const sortedPages = sortBy(this.props.route.pages, (page) =>
-      access(page, 'data.order')
-    ).reverse()
+    const sortedPages = sortBy(this.props.route.pages, (page) => access(page, 'data.order')).reverse();
+
     sortedPages.forEach((page) => {
       if (access(page, 'file.ext') === 'md' && !include(page.path, '/404')) {
         const title = access(page, 'data.title') || page.path
