@@ -24,7 +24,7 @@ class MarkdownWrapper extends React.Component {
     };
     const slides = () => {
       if (post.slides) {
-        let slides = post.slides.map((slide, i) => <li key={i}>{slide}</li>)
+        let slides = post.slides.map((slide, i) => <li key={i}><img src={`${route.path + 'slides/' + slide}`}/></li>)
         return (
           <ul>
             {slides}
@@ -40,13 +40,6 @@ class MarkdownWrapper extends React.Component {
           { slides() }
           <div dangerouslySetInnerHTML={{ __html: post.body }} />
 
-          <em
-            style={{
-              display: 'block'
-            }}
-          >
-            Posted {moment(post.date).format('MMMM D, YYYY')}
-          </em>
           <hr/>
           <Bio />
           <hr/>
