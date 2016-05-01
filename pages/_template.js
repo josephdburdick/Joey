@@ -55,27 +55,6 @@ class Template extends React.Component {
         </h3>
       )
     }
-    const tags = () => {
-      if (data.tags) {
-        let tags = data.tags.map((tag, i) => <li key={i}>{tag}</li>)
-        return (
-          <ul>
-            {tags}
-          </ul>
-        );
-      }
-    };
-
-    const slides = () => {
-      if (data.slides) {
-        let slides = data.slides.map((slide, i) => <li key={i}>{slide}</li>)
-        return (
-          <ul>
-            {slides}
-          </ul>
-        );
-      }
-    };
 
     return (
       <Container
@@ -85,9 +64,7 @@ class Template extends React.Component {
         }}
       >
         {header}
-        {tags()}
         {children}
-        {slides()}
       </Container>
     )
   }
