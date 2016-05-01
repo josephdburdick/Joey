@@ -4,7 +4,7 @@ title: G-Shock
 date: 2012
 layout: post
 readNext: "/hard-energy-drink/"
-path: "/hard-energy-drink/"
+path: "/g-shock/"
 
 tags:
   - Project Management

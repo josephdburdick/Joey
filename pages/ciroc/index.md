@@ -4,7 +4,7 @@ title: Cîroc Vodka
 date: 2011
 layout: post
 readNext: "/my-second-post/"
-path: "/ciroc-vodka/"
+path: "/ciroc/"
 tags:
   - Front-end Development
   - Project Management

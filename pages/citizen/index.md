@@ -1,10 +1,10 @@
 ---
 order: 2
-title: Citizen Watches
+title: Citizen
 agency: Studiografica
 date: "2015-05-01T22:12:03.284Z"
 layout: post
-path: "/citizen-watches/"
+path: "/citizen/"
 tags:
   - Web App
   - Project Management
@@ -26,7 +26,7 @@ slides:
   - slide-9.png
   - slide-10.png
   - slide-11.png
-  - slide-12.png
+  - slide-12.png  
 ---
 Focusing on Citizen's Eco-Drive line, Studiografica created a touch-interactive presentation for Citizen's digital campaigns to organize and showcase Citizen's outdoor, in-store, direct and digital advertising.
 

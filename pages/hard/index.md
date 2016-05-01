@@ -4,7 +4,7 @@ title: Hard Energy Drink
 agency: Studiografica
 date: 2012
 layout: post
-readNext: "/citizen-watches/"
+readNext: "/citizen/"
 path: "/hard/"
 tags:
   - Project Management
