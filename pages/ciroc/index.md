@@ -1,18 +1,28 @@
 ---
-order: 4
-title: Ciroc Vodka
-date: "2015-05-01T22:12:03.284Z"
+order: 7
+title: Cîroc Vodka
+date: 2011
 layout: post
 readNext: "/my-second-post/"
-path: "/hello-world/"
+path: "/ciroc-vodka/"
+tags:
+  - Front-end Development
+  - Project Management
+  - Touch Sensitive
+
+logo: true
+slides:
+  - slide-0.png
+  - slide-1.png
+  - slide-2.png
+  - slide-3.png
+  - slide-4.png
+  - slide-5.png
 ---
+P. Diddy's media team BlueFlame used Studiografica to build Ciroc.com to help promote the
+brand, so I had the opportunity to build a site for a well known vodka brand. This project
+ran smoothly on iPads and used hash-bang address bar manipulation to seamlessly fade
+between different pages of the site. All code was written without a framework.
 
-This is my first post on my new fake blog! How exciting!
-
-I'm sure I'll write a lot more interesting things in the future.
-
-Oh, and here's a great quote from this Wikipedia on [salted duck eggs](http://en.wikipedia.org/wiki/Salted_duck_egg).
-
->A salted duck egg is a Chinese preserved food product made by soaking duck eggs in brine, or packing each egg in damp, salted charcoal. In Asian supermarkets, these eggs are sometimes sold covered in a thick layer of salted charcoal paste. The eggs may also be sold with the salted paste removed, wrapped in plastic, and vacuum packed. From the salt curing process, the salted duck eggs have a briny aroma, a gelatin-like egg white and a firm-textured, round yolk that is bright orange-red in color.
-
-![Chinese Salty Egg](./salty_egg.jpg)
+My favorite part of this project was the drink detail view. When you clicked the next or previous
+button it would change the URL hash to keep it bookmarkable and the drinks would slide into view horizontally.
