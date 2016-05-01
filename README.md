@@ -1,21 +1,8 @@
-# Joey
-Visual Portfolio in progress.
+# gatsby-starter-blog
+Gatsby starter for creating a blog
 
-Updates:
-* Meteor
-* Autoprefixer
-* Flexbox
-* Improved carousel
+Install this starter (assuming Gatsby is installed) by running from your CLI:
+`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
 
-<table>
-  <tbody>
-    <tr>
-      <th>Base Version</th>
-      <td>v3.3.0</td>
-    </tr>
-    <tr>
-      <th>Meteor Version</th>
-      <td>v1.2.1</td>
-    </tr>
-  </tbody>
-</table>
+## Running in development
+`gatsby develop`

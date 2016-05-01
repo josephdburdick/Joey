@@ -1,8 +1,0 @@
-<template name="header">
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="nav-main">
-    <div id="navbar-collapse" class="collapse navbar-collapse">
-      {{#if currentUser}} {{> authenticatedNavigation}} {{else}} {{> publicNavigation}} {{/if}}
-    </div>
-    <h1 id="logo"><a href="{{pathFor 'index'}}"></a></h1>
-  </nav>
-</template>
