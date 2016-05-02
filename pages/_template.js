@@ -1,41 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router'
-import { Container } from 'react-responsive-grid'
 import { prefixLink } from 'gatsby-helpers'
-import { rhythm, fontSizeToMS } from 'utils/typography'
 import { config } from 'config'
 
-import '../css/styles.css'
+import '../assets/css/styles.css'
 
 class Template extends React.Component {
   render () {
     const { location, children } = this.props
     const pathName = location.pathname;
-    let data;
-    const routes = this.props.route.pages.map((page) => {
-      if (page.path === pathName) {
-        data = page.data;
-      }
-      return Object.assign(page, {isActive: page.path === pathName});
-    });
 
     let header
     if (location.pathname === prefixLink('/')) {
       header = (
-        <h1
-          style={{
-            fontSize: fontSizeToMS(2.5).fontSize,
-            lineHeight: fontSizeToMS(2.5).lineHeight,
-            marginBottom: rhythm(1.5),
-          }}
-        >
-          <Link
-            style={{
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={prefixLink('/')}
-          >
+        <h1>
+          <Link to={prefixLink('/')}>
             {config.blogTitle}
           </Link>
         </h1>
@@ -43,13 +22,7 @@ class Template extends React.Component {
     } else {
       header = (
         <h3>
-          <Link
-            style={{
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={prefixLink('/')}
-          >
+          <Link to={prefixLink('/')}>
             {config.blogTitle}
           </Link>
         </h3>
@@ -57,15 +30,10 @@ class Template extends React.Component {
     }
 
     return (
-      <Container
-        style={{
-          maxWidth: rhythm(24),
-          padding: `${rhythm(2)} ${rhythm(1/2)}`,
-        }}
-      >
+      <div>
         {header}
         {children}
-      </Container>
+      </div>
     )
   }
 }
