@@ -2,8 +2,7 @@
 order: 9
 title: MTV
 date: "2016-05-01T0:02:03.284Z"
-layout: post
-readNext: "/blue-chair-bay/"
+layout: project
 path: "/mtv/"
 tags:
   - Native App

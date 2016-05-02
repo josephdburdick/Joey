@@ -3,8 +3,7 @@ order: 1
 title: Hard Energy Drink
 agency: Studiografica
 date: 2012
-layout: post
-readNext: "/citizen/"
+layout: project
 path: "/hard/"
 tags:
   - Project Management

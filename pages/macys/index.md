@@ -2,8 +2,7 @@
 order: 8
 title: Macy's
 date: "2016-05-01T0:02:03.284Z"
-layout: post
-readNext: "/mtv/"
+layout: project
 path: "/macys/"
 
 logo: "logo.png"
@@ -14,8 +13,6 @@ slides:
   - slide-3.png
   - slide-4.png
   - slide-5.png
-  - slide-6.png
-  - slide-7.png
 ---
 An in-store Macy's training app for employees specialized for the iPad 2.
 The first project was Macy's Diamonds educated

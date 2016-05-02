@@ -3,8 +3,7 @@ order: 3
 agency: Joey
 title: David's Bridal
 date: "2015-05-01T22:12:03.284Z"
-layout: post
-readNext: "/g-shock"
+layout: project
 path: "/davids-bridal/"
 tags:
   - Project Management

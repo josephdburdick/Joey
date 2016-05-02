@@ -3,8 +3,7 @@ order: 0
 title: AOA NY
 agency: Joey
 date: [2010, 2013]
-layout: post
-readNext: "/hard-energy-drink/"
+layout: project
 path: "/aoa-ny/"
 tags:
   - Project Management

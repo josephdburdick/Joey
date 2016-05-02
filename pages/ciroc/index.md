@@ -2,8 +2,7 @@
 order: 7
 title: Cîroc Vodka
 date: 2011
-layout: post
-readNext: "/my-second-post/"
+layout: project
 path: "/ciroc/"
 tags:
   - Front-end Development

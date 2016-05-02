@@ -2,8 +2,7 @@
 order: 6
 title: G-Shock
 date: 2012
-layout: post
-readNext: "/hard-energy-drink/"
+layout: project
 path: "/g-shock/"
 
 tags:

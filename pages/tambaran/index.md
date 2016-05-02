@@ -2,8 +2,7 @@
 order: 5
 title: Tambaran
 date: "2016-05-01T0:02:03.284Z"
-layout: post
-readNext: "/g-shock/"
+layout: project
 path: "/tambaran/"
 tags:
   - Project Management
