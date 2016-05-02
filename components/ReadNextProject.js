@@ -2,8 +2,11 @@ import React from 'react'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import { prune, include as includes } from 'underscore.string'
-import find from 'lodash/find'
-import _ from 'lodash'
+import {
+  sortBy,
+  indexOf,
+  find
+} from 'lodash'
 import { rhythm, fontSizeToMS } from 'utils/typography'
 
 class ReadNextProject extends React.Component {
@@ -11,8 +14,8 @@ class ReadNextProject extends React.Component {
     const { pages, post } = this.props
     const { readNext } = post
     const projectPages = pages.filter((page) => page.data.layout === "project");
-    const projects = _.sortBy(projectPages, 'data.order');
-    const currentProjectIndex = _.indexOf(projects, _.find(projects, {path: post.path}));
+    const projects = sortBy(projectPages, 'data.order');
+    const currentProjectIndex = indexOf(projects, find(projects, {path: post.path}));
 
     let nextProject = projects[currentProjectIndex + 1];
     let lastProject = projects[currentProjectIndex - 1];
