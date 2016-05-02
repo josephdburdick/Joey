@@ -1,12 +1,12 @@
 import React from 'react'
 import moment from 'moment'
 import DocumentTitle from 'react-document-title'
-import ReadNext from '../components/ReadNext'
+import ReadNextProject from '../components/ReadNextProject'
 import { rhythm } from 'utils/typography'
 import { config } from 'config'
-import Bio from 'components/Bio'
 
-import '../css/zenburn.css'
+import '../assets/css/styles.css'
+import '../assets/css/zenburn.css'
 
 class MarkdownWrapper extends React.Component {
   render () {
@@ -14,7 +14,7 @@ class MarkdownWrapper extends React.Component {
     const post = route.page.data
     const tags = () => {
       if (post.tags) {
-        let tags = post.tags.map((tag, i) => <li key={i}>{tag}</li>)
+        let tags = post.tags.map((tag, i) => <li key={i}>{tag}</li>);
         return (
           <ul>
             {tags}
@@ -24,7 +24,7 @@ class MarkdownWrapper extends React.Component {
     };
     const slides = () => {
       if (post.slides) {
-        let slides = post.slides.map((slide, i) => <li key={i}><img src={`${route.path + 'slides/' + slide}`}/></li>)
+        let slides = post.slides.map((slide, i) => <li key={i}><img src={`${route.path + 'slides/' + slide}`}/></li>);
         return (
           <ul>
             {slides}
@@ -33,19 +33,16 @@ class MarkdownWrapper extends React.Component {
       }
     };
     return (
-      <DocumentTitle title={`${post.title} | ${config.blogTitle}`}>
+      <div>
         <div className="markdown">
           <h1>{post.title}</h1>
           { tags() }
           { slides() }
           <div dangerouslySetInnerHTML={{ __html: post.body }} />
-
           <hr/>
-          <Bio />
-          <hr/>
-          <ReadNext post={post} pages={route.pages} />
+          <ReadNextProject post={post} pages={route.pages} />
         </div>
-      </DocumentTitle>
+      </div>
     )
   }
 }
