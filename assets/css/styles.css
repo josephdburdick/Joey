@@ -1,0 +1,38 @@
+
+html, body, #react-mount{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: rgb(42,93,173);
+  text-decoration: none;
+}
+
+.no-list-style{
+  list-style: none;
+}
+
+.projects-list-container{
+
+}
+
+.projects-list{
+  @extend .no-list-style;
+  background: purple;
+  display: flex;
+}
+
+.project-item{
+  $size: 640px;
+
+  display: inline-flex;
+  width: calc(640px / 2);
+  height: 640px;
+  background-color: pink;
+  padding: 0 12px;
+  &--pane{
+    background: red;
+  }
+}
