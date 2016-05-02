@@ -6,11 +6,12 @@ import find from 'lodash/find'
 import _ from 'lodash'
 import { rhythm, fontSizeToMS } from 'utils/typography'
 
-class ReadNext extends React.Component {
+class ReadNextProject extends React.Component {
   render () {
     const { pages, post } = this.props
     const { readNext } = post
-    const projects = pages.filter((page) => page.data.layout === "project");
+    const projectPages = pages.filter((page) => page.data.layout === "project");
+    const projects = _.sortBy(projectPages, 'data.order');
     const currentProjectIndex = _.indexOf(projects, _.find(projects, {path: post.path}));
 
     let nextProject = projects[currentProjectIndex + 1];
@@ -61,9 +62,9 @@ class ReadNext extends React.Component {
   }
 }
 
-ReadNext.propTypes = {
+ReadNextProject.propTypes = {
   post: React.PropTypes.object.isRequired,
   pages: React.PropTypes.array,
 }
 
-export default ReadNext
+export default ReadNextProject
