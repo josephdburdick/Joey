@@ -9,8 +9,8 @@ import '../assets/css/styles.scss'
 
 class MarkdownWrapper extends React.Component {
   render () {
-    const { route } = this.props
-    const post = route.page.data
+    const { route } = this.props;
+    const post = route.page.data;
     const tags = () => {
       if (post.tags) {
         let tags = post.tags.map((tag, i) => <li key={i}>{tag}</li>);

@@ -43,7 +43,6 @@ html, body{
 
 .project-item{
   $size: 640px;
-
   display: inline-flex;
   width: calc(640px / 2);
   height: 640px;
@@ -54,6 +53,8 @@ html, body{
   &:hover{
     z-index: 2;
     transform: scale(1.125);
+    filter: blur(10px);
+    transition: transform 1s ease-out;
   }
   &--pane{
     background: red;
@@ -70,7 +71,6 @@ html, body{
   transition: background-color .2s ease-out;
   &:hover{
     background-color: rgba(black, .85);
-    filter: blur(5px);
     .card{
       opacity: 1;
     }

@@ -17,8 +17,8 @@ class Projects extends React.Component {
     console.log(totalPages);
     sortedPages.forEach((project) => {
       if (access(project, 'file.ext') === 'md' && !include(project.path, '/404')) {
-        const projectNumber = totalPages - project
-        const title = access(project, 'data.title') || project.path
+        const projectNumber = totalPages - project;
+        const title = access(project, 'data.title') || project.path;
         const logo = project.path + access(project, 'data.logo');
         const bgImage = project.path + 'bg.jpg';
         const slideCount = access(project, 'data.slides').length;
