@@ -2,7 +2,7 @@ import React from 'react'
 
 const Joey = (() => {
   return (
-    <svg width="1000" height="431.95001" id="logo-joey">
+    <svg viewBox="0 0 1000 431.95001" id="logo-joey" preserveAspectRatio="xMidYMid meet">
       <g transform="matrix(1.25,0,0,-1.25,0,431.95)" id="g10">
         <g id="g12">
           <g clip-path="url(#clipPath16)" id="g14">
