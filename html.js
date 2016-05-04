@@ -1,7 +1,6 @@
-import React from 'react'
-import DocumentTitle from 'react-document-title'
-import { prefixLink } from 'gatsby-helpers'
-const TypographyStyle = require('utils/typography').TypographyStyle
+import React from 'react';
+import DocumentTitle from 'react-document-title';
+import { prefixLink } from 'gatsby-helpers';
 
 module.exports = React.createClass({
   displayName: 'HTML',
@@ -27,7 +26,6 @@ module.exports = React.createClass({
             content="width=device-width, initial-scale=1.0 maximum-scale=5.0"
           />
           <title>{title}</title>
-          <TypographyStyle />
           {cssLink}
         </head>
         <body className="landing-page">
