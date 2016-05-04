@@ -5,8 +5,7 @@ import ReadNextProject from '../components/ReadNextProject'
 import { rhythm } from 'utils/typography'
 import { config } from 'config'
 
-import '../assets/css/styles.css'
-import '../assets/css/zenburn.css'
+import '../assets/css/styles.scss'
 
 class MarkdownWrapper extends React.Component {
   render () {
