@@ -8,35 +8,38 @@ import access from 'safe-access'
 import {config} from 'config'
 import include from 'underscore.string/include'
 
-import { Joey } from '../assets/SVGs'
-
-import styles from '../assets/css/styles';
-
 class Projects extends React.Component {
   render() {
-    const pageLinks = []
-    // Sort pages.
-    const sortedPages = sortBy(this.props.route.pages, (page) => access(page, 'data.order')).reverse();
+    const projectLinks = []
+    // Sort projects.
+    const sortedPages = sortBy(this.props.route.pages, (project) => access(project, 'data.order')).reverse();
+    const totalPages = sortedPages.length - 1;
+    console.log(totalPages);
+    sortedPages.forEach((project) => {
+      if (access(project, 'file.ext') === 'md' && !include(project.path, '/404')) {
+        const projectNumber = totalPages - project
+        const title = access(project, 'data.title') || project.path
+        const logo = project.path + access(project, 'data.logo');
+        const bgImage = project.path + 'bg.jpg';
+        const slideCount = access(project, 'data.slides').length;
 
-    sortedPages.forEach((page) => {
-      if (access(page, 'file.ext') === 'md' && !include(page.path, '/404')) {
-        const title = access(page, 'data.title') || page.path
-        const logo = access(page, 'data.logo') || page.path
-        pageLinks.push(
-          <li key={page.path} className="project-item">
-            <div className="project-item">
-              <Link to={prefixLink(page.path)}>{title} {logo}</Link>
-            </div>
+        projectLinks.push(
+          <li key={project.path} className="project-item" style={{backgroundImage: `url(${bgImage})`}}>
+            <Link to={prefixLink(project.path)} className="project-item__link">
+              <div className="card">
+                <div class="card-header">{title}</div>
+                <img src={logo} />
+              </div>
+            </Link>
           </li>
         )
       }
     })
     return (
       <div>
-        { Joey }
         <div className="projects-list-container">
           <ul className="projects-list">
-            { pageLinks }
+            { projectLinks }
           </ul>
         </div>
       </div>

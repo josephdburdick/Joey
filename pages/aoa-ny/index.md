@@ -10,7 +10,7 @@ tags:
   - Custom e-blasts
   - Front-end Development
 
-logo: true
+logo: logo.png
 slides:
   - slide-0.png
   - slide-1.png

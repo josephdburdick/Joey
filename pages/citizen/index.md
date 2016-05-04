@@ -12,7 +12,7 @@ tags:
   - .NET Implementation
   - Touch Interactive
 
-logo: logo.png
+logo: logo.svg
 slides:
   - slide-0.png
   - slide-1.png

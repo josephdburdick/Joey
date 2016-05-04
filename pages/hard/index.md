@@ -10,7 +10,7 @@ tags:
   - Front-end Development
   - .NET Implementation
 
-logo: true
+logo: logo.png
 slides:
   - slide-0.png
   - slide-1.png

@@ -8,7 +8,7 @@ tags:
   - Native App
   - Visual Design
 
-logo: logo.png
+logo: logo.svg
 slides:
   - slide-0.png
   - slide-1.png

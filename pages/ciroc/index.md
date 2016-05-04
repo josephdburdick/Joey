@@ -9,7 +9,7 @@ tags:
   - Project Management
   - Touch Sensitive
 
-logo: true
+logo: logo.svg
 slides:
   - slide-0.png
   - slide-1.png

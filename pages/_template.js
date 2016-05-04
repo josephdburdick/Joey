@@ -2,8 +2,9 @@ import React from 'react'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import { config } from 'config'
+import { Joey } from '../assets/SVGs'
 
-import '../assets/css/styles.css'
+// import '../assets/css/styles.scss'
 
 class Template extends React.Component {
   render () {
@@ -13,27 +14,27 @@ class Template extends React.Component {
     let header
     if (location.pathname === prefixLink('/')) {
       header = (
-        <h1>
+        <div className="main-logo--large">
           <Link to={prefixLink('/')}>
-            {config.blogTitle}
+            { Joey }
           </Link>
-        </h1>
+        </div>
       )
     } else {
       header = (
-        <h3>
+        <div className="main-logo--small">
           <Link to={prefixLink('/')}>
-            {config.blogTitle}
+            { Joey }
           </Link>
-        </h3>
+        </div>
       )
     }
 
     return (
-      <div>
-        {header}
+      <main>
+        {/*{header}*/}
         {children}
-      </div>
+      </main>
     )
   }
 }
