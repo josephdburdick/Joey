@@ -19,8 +19,15 @@ class Projects extends React.Component {
     };
     this.scrollHorizontal = this.scrollHorizontal.bind(this);
   }
-  scrollHorizontal() {
-      console.log(666);
+  scrollHorizontal(event) {
+    console.log(event);
+    // $('#scroll-horizontal').scrollLeft
+  }
+  onMouseEnter(event) {
+    console.log(event);
+  }
+  onMouseLeave(event) {
+    console.log(event);
   }
   render() {
     // require('jquery-mousewheel');
@@ -31,7 +38,7 @@ class Projects extends React.Component {
     const totalPages = sortedPages.length - 1;
     console.log(totalPages);
 
-    $window.on('mousewheel', (e) => this.scrollHorizontal(e));
+    $window.on('mousewheel', (event) => this.scrollHorizontal(event));
 
     sortedPages.forEach((project) => {
       if (access(project, 'file.ext') === 'md' && !include(project.path, '/404')) {
@@ -42,7 +49,7 @@ class Projects extends React.Component {
         const slideCount = access(project, 'data.slides').length;
 
         projectLinks.push(
-          <li key={project.path} className="project-item" style={{backgroundImage: `url(${bgImage})`}}>
+          <li key={project.path} className="project-item" style={{backgroundImage: `url(${bgImage})`}} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
             <Link to={prefixLink(project.path)} className="project-item__link">
               <div className="card">
                 <div class="card-header">{title}</div>
@@ -54,13 +61,13 @@ class Projects extends React.Component {
       }
     })
     return (
-      <div>
-        <div className="projects-list-container">
+      <main>
+        <div className="projects-list-container" id="scroll-horizontal">
           <ul className="projects-list">
             { projectLinks }
           </ul>
         </div>
-      </div>
+      </main>
     )
   }
 }

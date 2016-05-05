@@ -52,7 +52,7 @@ html, body{
   z-index: 1;
   &:hover{
     z-index: 2;
-    transform: scale(1.125);
+    transform: scale(1.0275);
     filter: blur(10px);
     transition: transform 1s ease-out;
   }
