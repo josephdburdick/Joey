@@ -7,14 +7,32 @@ import {rhythm} from 'utils/typography'
 import access from 'safe-access'
 import {config} from 'config'
 import include from 'underscore.string/include'
+import $ from 'jquery';
+
 
 class Projects extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      scrolling: false,
+
+    };
+    this.scrollHorizontal = this.scrollHorizontal.bind(this);
+  }
+  scrollHorizontal() {
+      console.log(666);
+  }
   render() {
+    // require('jquery-mousewheel');
+    const $window = $(window);
     const projectLinks = []
     // Sort projects.
     const sortedPages = sortBy(this.props.route.pages, (project) => access(project, 'data.order')).reverse();
     const totalPages = sortedPages.length - 1;
     console.log(totalPages);
+
+    $window.on('mousewheel', (e) => this.scrollHorizontal(e));
+
     sortedPages.forEach((project) => {
       if (access(project, 'file.ext') === 'md' && !include(project.path, '/404')) {
         const projectNumber = totalPages - project;
