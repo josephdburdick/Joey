@@ -9,14 +9,6 @@
  */
 @import "../../utils/variables.css";
 
-@media screen and (max-width: $screen-sm) {
-  .content {
-    padding: 0 16px;
-  }
-}
 .content {
-  padding: 0 16px;
-  @media screen and (min-width: $screen-sm) {
-    background-color: pink;
-  }
+  display: block;
 }
