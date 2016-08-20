@@ -6,7 +6,7 @@ import { title, html, test } from './index.md';
 class HomePage extends React.Component {
 
   static propTypes = {
-    articles: PropTypes.array.isRequired,
+    
   };
 
   componentDidMount() {
@@ -18,9 +18,7 @@ class HomePage extends React.Component {
     return (
       <Layout className={s.content}>
         {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
-        <section>
-          <p>Intro</p>
-        </section>
+
         <section>
           <p>Work</p>
         </section>
