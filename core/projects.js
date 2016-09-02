@@ -10,22 +10,40 @@ import mtv from '../data/mtv/mtv.md';
 import tambaran from '../data/tambaran/tambaran.md';
 import wwglass from '../data/wwglass/wwglass.md';
 
-const allProjects = {
-  aoany,
-  bluechairbay,
-  ciroc,
-  citizen,
-  davidsbridal,
-  gshock,
-  hard,
-  macys,
-  mtv,
-  tambaran,
-  wwglass
-};
+// const allProjects = {
+//   aoany,
+//   bluechairbay,
+//   ciroc,
+//   citizen,
+//   davidsbridal,
+//   gshock,
+//   hard,
+//   macys,
+//   mtv,
+//   tambaran,
+//   wwglass
+// };
 
-function getProject(project){
-  return allProjects[project];
+// function getProject(project){
+//   return allProjects[project];
+// }
+
+function Projects(){
+  this.allProjects = {
+    aoany,
+    bluechairbay,
+    ciroc,
+    citizen,
+    davidsbridal,
+    gshock,
+    hard,
+    macys,
+    mtv,
+    tambaran,
+    wwglass
+  }
+  this.get = (project) => this.allProjects[project];
+  this.toString = () => JSON.stringify(this.allProjects);
 }
 
-export default { allProjects, getProject };
+export default new Projects();

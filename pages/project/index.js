@@ -3,7 +3,7 @@ import 'whatwg-fetch';
 import Layout from '../../components/Layout';
 import s from './project.css';
 import { title, html } from './index.md';
-import projects from '../../core/projects.js';
+import Projects from '../../core/projects.js';
 
 class Project extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Project extends React.Component {
   }
   componentWillMount() {
     const projectId = this.props.route.params.projectId;
-    this.setState({ project: projects.getProject(this.props.route.params.projectId) });
+    this.setState({ project: Projects.get(this.props.route.params.projectId) });
   }
   componentDidMount() {
     console.log(this.state.project)
