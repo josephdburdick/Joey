@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import Layout from '../../components/Layout';
 import s from './home.css';
 import { title, html, test } from './index.md';
+import Projects from '../../core/projects.js';
 
 class HomePage extends React.Component {
 
@@ -11,7 +12,6 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     document.title = title;
-    console.log(test);
   }
 
   render() {
@@ -23,19 +23,7 @@ class HomePage extends React.Component {
           living in Brooklyn, New York.
         </section>
         <section>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
+          {Projects.toString()}  
         </section>
         <section>
           <p>Work</p>
