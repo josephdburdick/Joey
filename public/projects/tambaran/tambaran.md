@@ -3,7 +3,7 @@ order: 5
 title: Tambaran
 date: "2016-05-01T0:02:03.284Z"
 layout: project
-path: "/tambaran/"
+name: "/tambaran/"
 tags:
   - Project Management
   - Custom E-Blasts

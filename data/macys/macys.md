@@ -1,9 +1,9 @@
 ---
 order: 8
+name: macys
 title: Macy's
 date: "2016-05-01T0:02:03.284Z"
 layout: project
-path: "/macys/"
 
 logo: "logo.png"
 slides:

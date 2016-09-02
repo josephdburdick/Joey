@@ -1,9 +1,9 @@
 ---
 order: 6
+name: g-shock
 title: G-Shock
 date: 2012
 layout: project
-path: "/g-shock/"
 
 tags:
   - Project Management

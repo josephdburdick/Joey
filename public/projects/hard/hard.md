@@ -4,7 +4,7 @@ title: Hard Energy Drink
 agency: Studiografica
 date: 2012
 layout: project
-path: "/hard/"
+name: "/hard/"
 tags:
   - Project Management
   - Front-end Development

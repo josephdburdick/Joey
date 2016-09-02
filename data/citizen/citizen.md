@@ -1,10 +1,10 @@
 ---
 order: 2
+name: citizen
 title: Citizen
 agency: Studiografica
 date: "2015-05-01T22:12:03.284Z"
 layout: project
-path: "/citizen/"
 tags:
   - Web App
   - Project Management

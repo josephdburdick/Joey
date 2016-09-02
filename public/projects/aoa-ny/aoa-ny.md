@@ -4,7 +4,7 @@ title: AOA NY
 agency: Joey
 date: [2010, 2013]
 layout: project
-path: "/aoa-ny/"
+name: "/aoa-ny/"
 tags:
   - Project Management
   - Custom e-blasts

@@ -3,7 +3,7 @@ order: 8
 title: Macy's
 date: "2016-05-01T0:02:03.284Z"
 layout: project
-path: "/macys/"
+name: "/macys/"
 
 logo: "logo.png"
 slides:

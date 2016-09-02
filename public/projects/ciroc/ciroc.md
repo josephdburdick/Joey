@@ -3,7 +3,7 @@ order: 7
 title: Cîroc Vodka
 date: 2011
 layout: project
-path: "/ciroc/"
+name: "/ciroc/"
 tags:
   - Front-end Development
   - Project Management
