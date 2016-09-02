@@ -1,10 +1,10 @@
 ---
 order: 0
+name: bluechairbay
 title: Blue Chair Bay Rum
 agency: Carrot
 date: [2014]
 layout: project
-path: "/bluechairbay/"
 tags:
   - Front-end Development
 logo: logo.png

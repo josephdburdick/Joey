@@ -3,7 +3,7 @@ order: 6
 title: G-Shock
 date: 2012
 layout: project
-path: "/g-shock/"
+name: "/g-shock/"
 
 tags:
   - Project Management

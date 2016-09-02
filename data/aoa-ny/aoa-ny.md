@@ -1,10 +1,10 @@
 ---
 order: 0
+name: aoa-ny
 title: AOA NY
 agency: Joey
 date: [2010, 2013]
 layout: project
-path: "/aoa-ny/"
 tags:
   - Project Management
   - Custom e-blasts
