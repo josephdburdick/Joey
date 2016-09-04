@@ -2,20 +2,15 @@ import React, { PropTypes } from 'react';
 import Layout from '../../components/Layout';
 import s from './projects.css';
 import { title, html } from './index.md';
+import projects from '../../core/projects.js';
 
 class Projects extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrolling: false
     };
   }
-  onMouseEnter(event) {
-    console.log(event);
-  }
-  onMouseLeave(event) {
-    console.log(event);
-  }
+
   render() {
     // <li key={project.path} className="project-item" style={{backgroundImage: `url(${bgImage})`}} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
     //   <Link to={prefixLink(project.path)} className="project-item__link">
@@ -35,7 +30,6 @@ class Projects extends React.Component {
     //     </div>
     //   </main>
     // )
-    console.log(this.props);
     return (
       <div>Projects</div>
     )

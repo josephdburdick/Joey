@@ -10,26 +10,9 @@ import mtv from '../data/mtv/mtv.md';
 import tambaran from '../data/tambaran/tambaran.md';
 import wwglass from '../data/wwglass/wwglass.md';
 
-// const allProjects = {
-//   aoany,
-//   bluechairbay,
-//   ciroc,
-//   citizen,
-//   davidsbridal,
-//   gshock,
-//   hard,
-//   macys,
-//   mtv,
-//   tambaran,
-//   wwglass
-// };
-
-// function getProject(project){
-//   return allProjects[project];
-// }
-
-function Projects(){
-  this.allProjects = {
+const projects = {
+  // prefix: `/projects/${this.state.project.name}/`;
+  allProjects: {
     aoany,
     bluechairbay,
     ciroc,
@@ -41,9 +24,20 @@ function Projects(){
     mtv,
     tambaran,
     wwglass
+  },
+  get(project) {
+    try {
+      if (this.allProjects[project])
+        return this.allProjects[project];
+      else
+        throw new Error(`Project "${project}" not found.`);
+    } catch (error) {
+      return false;
+    }
+  },
+  toString() {
+    return JSON.stringify(this.allProjects)
   }
-  this.get = (project) => this.allProjects[project];
-  this.toString = () => JSON.stringify(this.allProjects);
-}
+};
 
-export default new Projects();
+export default projects;
