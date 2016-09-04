@@ -17,10 +17,6 @@
     "page": "./pages/about"
   },
   {
-    "path": "/projects",
-    "page": "./pages/projects"
-  },
-  {
     "path": "/project/:projectId",
     "page": "./pages/project"
   }

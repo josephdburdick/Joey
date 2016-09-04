@@ -11,4 +11,17 @@
 
 .content {
   display: block;
+  background-color: #ccc;
+}
+.content section{
+  height: 100vh;
+  min-height: calc(768px / 2);
+  /*opacity: 0;*/
+  transition: opacity 2s ease-in 2s;
+  padding: 0 2em;
+}
+
+.intro{
+  position: fixed;
+  bottom: 0;
 }

@@ -3,7 +3,7 @@ import 'whatwg-fetch';
 import Layout from '../../components/Layout';
 import s from './project.css';
 import { title, html } from './index.md';
-import Projects from '../../core/projects.js';
+import projects from '../../core/projects.js';
 
 class Project extends React.Component {
   constructor(props) {
@@ -14,17 +14,20 @@ class Project extends React.Component {
   }
   componentWillMount() {
     const projectId = this.props.route.params.projectId;
-    this.setState({ project: Projects.get(this.props.route.params.projectId) });
-  }
-  componentDidMount() {
-    console.log(this.state.project)
+    const project = projects.get(this.props.route.params.projectId);
+    if (project) {
+      this.setState({ project: projects.get(this.props.route.params.projectId) });
+    }
   }
   render() {
-    const logo = this.state.project.logo;
-    const prefix = `/projects/${this.state.project.name}/`;
+    const p = this.state.project;
+    const prefix = `/projects/${this.state.project.name}/slides/`;
+    const template = !!p ? (
+      <img src={prefix + p.slides[1]} />
+    ) : <div>Project not found</div>
     return (
-      <div style={{backgroundColor: 'red'}}>
-        <img src={`${prefix + logo}`}/>
+      <div>
+        {template}
       </div>
     )
   }
