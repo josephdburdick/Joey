@@ -11,17 +11,18 @@
 
 .content {
   display: block;
-  background-color: #ccc;
-  transition: background-color 1s ease-in;
+  background-color: #cdcdcd;
+  transition: all 1s ease-in;
 }
 .is-top{
   background-color: #fff;
 }
 .is-bottom{
   background-color: #000;
+  color: #cdcdcd;
 }
 .content section{
-  height: 80vh;
+  height: 100vh;
   min-height: calc(768px / 2);
   /*opacity: 0;*/
   transition: opacity 2s ease-in 2s;
@@ -29,6 +30,5 @@
 }
 
 .intro{
-  position: fixed;
-  bottom: 0;
+  display: flex;
 }
