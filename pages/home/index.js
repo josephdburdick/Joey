@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import cx from 'classnames';
 import Layout from '../../components/Layout';
 import s from './home.css';
 import { title, html, test } from './index.md';
@@ -8,11 +9,12 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      top: true,
+      top: false,
       bottom: false,
       scrollTop: 0,
+      windowHeight: 0,
+      documentHeight: 0,
       windowWidth: 0,
-      windowHeight: 0
     };
     this.handleResize = this.handleResize.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
@@ -38,17 +40,26 @@ class HomePage extends React.Component {
 
   handleScroll(e) {
     if (this._isMounted){
-      this.setState({ scrollTop: $(window).scrollTop() });
-
+      this.setState({
+        scrollTop: $(window).scrollTop(),
+        documentHeight: $(document).height()
+      });
       this.state.scrollTop === 0 ? this.setState({top: true}) : this.setState({top: false});
-      this.state.scrollTop === this.state.windowHeight ? this.setState({bottom: true}) : this.setState({bottom: false});
+      this.state.scrollTop + this.state.windowHeight === this.state.documentHeight ? this.setState({bottom: true}) : this.setState({bottom: false});
+      this.handleResize();
+
       console.log(this.state);
     }
   }
 
   render() {
     return (
-      <Layout className={s.content}>
+      <Layout className={cx([
+        s.content,
+        this.state.top ? s['is-top'] : null,
+        this.state.bottom ? s['is-bottom'] : null
+      ])
+      }>
         <section>
           <div className={s.intro} dangerouslySetInnerHTML={{ __html: html }} />
         </section>
