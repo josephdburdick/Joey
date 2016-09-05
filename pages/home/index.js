@@ -9,9 +9,10 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      top: false,
-      bottom: false,
+      isTop: false,
+      isBottom: false,
       scrollTop: 0,
+      median: 0,
       windowHeight: 0,
       documentHeight: 0,
       windowWidth: 0,
@@ -23,30 +24,42 @@ class HomePage extends React.Component {
   componentDidMount() {
     this._isMounted = true;
     document.title = title;
+
+    this.setState({
+      windowWidth: window.innerWidth,
+      windowHeight: window.innerHeight,
+      documentHeight: $(document).height(),
+      median: $(document).height() / 2
+    });
+
     $(window)
       .on('resize', this.handleResize)
       .on('scroll', this.handleScroll)
       .trigger('resize');
+
   }
 
   handleResize(e) {
     if (this._isMounted){
+
+      console.log($(document).height());
       this.setState({
         windowWidth: window.innerWidth,
-        windowHeight: window.innerHeight
+        windowHeight: window.innerHeight,
+        documentHeight: $(document).height(),
+        median: ($(document).height() / 2) - 100
       });
     }
   }
 
   handleScroll(e) {
     if (this._isMounted){
-      this.setState({
-        scrollTop: $(window).scrollTop(),
-        documentHeight: $(document).height()
-      });
-      this.state.scrollTop === 0 ? this.setState({top: true}) : this.setState({top: false});
-      this.state.scrollTop + this.state.windowHeight === this.state.documentHeight ? this.setState({bottom: true}) : this.setState({bottom: false});
       this.handleResize();
+      this.setState({
+        scrollTop: $(window).scrollTop()
+      });
+      this.state.scrollTop < 100 ? this.setState({isTop: true}) : this.setState({isTop: false});
+      this.state.scrollTop > this.state.median ? this.setState({isBottom: true}) : this.setState({isBottom: false});
 
       console.log(this.state);
     }
@@ -56,8 +69,8 @@ class HomePage extends React.Component {
     return (
       <Layout className={cx([
         s.content,
-        this.state.top ? s['is-top'] : null,
-        this.state.bottom ? s['is-bottom'] : null
+        this.state.isTop ? s['is-top'] : null,
+        this.state.isBottom ? s['is-bottom'] : null
       ])
       }>
         <section>
