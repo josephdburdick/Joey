@@ -73,14 +73,15 @@ class HomePage extends React.Component {
         this.state.isBottom ? s['is-bottom'] : null
       ])
       }>
-        <section>
-          <div className={s.intro} dangerouslySetInnerHTML={{ __html: html }} />
+        <section className={s.intro}>
+          <div dangerouslySetInnerHTML={{ __html: html }} />
         </section>
 
-        <section>
-          <p>Work</p>
-          <div>{this.state.windowWidth}</div>
-          <div>{this.state.scrollTop}</div>
+        <section className={s.work}>
+          <div>
+            <p>Work</p>
+            {/* <WorkSlider {...this.props} /> */}
+          </div>
         </section>
       </Layout>
     );
