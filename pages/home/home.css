@@ -12,6 +12,13 @@
 .content {
   display: block;
   background-color: #ccc;
+  transition: background-color 1s ease-in;
+}
+.is-top{
+  background-color: #fff;
+}
+.is-bottom{
+  background-color: #000;
 }
 .content section{
   height: 80vh;
