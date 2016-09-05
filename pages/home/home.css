@@ -14,7 +14,7 @@
   background-color: #ccc;
 }
 .content section{
-  height: 100vh;
+  height: 80vh;
   min-height: calc(768px / 2);
   /*opacity: 0;*/
   transition: opacity 2s ease-in 2s;
