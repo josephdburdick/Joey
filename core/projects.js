@@ -12,7 +12,7 @@ import wwglass from '../data/wwglass/wwglass.md';
 
 const projects = {
   // prefix: `/projects/${this.state.project.name}/`;
-  allProjects: {
+  all: {
     aoany,
     bluechairbay,
     ciroc,
@@ -27,8 +27,8 @@ const projects = {
   },
   get(project) {
     try {
-      if (this.allProjects[project])
-        return this.allProjects[project];
+      if (this.all[project])
+        return this.all[project];
       else
         throw new Error(`Project "${project}" not found.`);
     } catch (error) {
@@ -36,7 +36,7 @@ const projects = {
     }
   },
   toString() {
-    return JSON.stringify(this.allProjects)
+    return JSON.stringify(this.all);
   }
 };
 
