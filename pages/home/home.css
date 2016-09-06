@@ -7,23 +7,27 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE.txt file in the root directory of this source tree.
  */
+@import 'https://fonts.googleapis.com/css?family=PT+Sans';
 @import "../../utils/variables.css";
 
 .content {
   display: block;
-  background-color: #cdcdcd;
+  background-color: #ccc;
   transition: all 1s ease-in;
+
+  font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
+
 }
 .is-top{
   background-color: #fff;
 }
 .is-bottom{
   background-color: #000;
-  color: #cdcdcd;
+  color: #ccc;
 }
 .content section{
   display: flex;
-  height: calc(100vh - 2rem);
+  height: calc(100vh - 4rem);
   min-height: calc(768px / 2);
   transition: opacity 2s ease-in 2s;
   padding: 2rem;
@@ -35,6 +39,9 @@
 .intro{
   align-items: flex-end;
   justify-content: flex-start;
+
+  font-size: 4;
+  line-height: 1;
 }
 .work{
   align-items: center;

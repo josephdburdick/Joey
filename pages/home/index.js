@@ -60,8 +60,6 @@ class HomePage extends React.Component {
       });
       this.state.scrollTop < 100 ? this.setState({isTop: true}) : this.setState({isTop: false});
       this.state.scrollTop > this.state.median ? this.setState({isBottom: true}) : this.setState({isBottom: false});
-
-      console.log(this.state);
     }
   }
 
@@ -80,7 +78,9 @@ class HomePage extends React.Component {
         <section className={s.work}>
           <div>
             <p>Work</p>
-            {/* <WorkSlider {...this.props} /> */}
+            <button className="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+  <i className="material-icons">add</i>
+</button>
           </div>
         </section>
       </Layout>
