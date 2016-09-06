@@ -16,276 +16,48 @@ class Slider extends React.Component {
   }
   render() {
     const projects = Object.values(this.props.slides).sort((a, b) => a.order - b.order);
-    console.log(projects);
+    const projectCard = (project) => {
+      console.log(project);
+      const projectTags = project.tags
+        ? (
+          <ul className="project-tags">
+            {project.tags.map((tag) => (
+              <li>{tag}</li>
+            ))}
+          </ul>
+        )
+        : null;
+      const projectNumber = ('0' + (project.order + 1)).slice(-2)
+      return (
+        <li className="project" id={`project-card__${project.name}`}>
+          <div className="demo-card-square mdl-card mdl-shadow--2dp">
+            <div className="mdl-card__title mdl-card--expand">
+              <h2 className="mdl-card__title-text">{project.title}</h2>
+            </div>
+            <div className="mdl-card__supporting-text">
+              <div className="info">
+                <header>
+                  <div className="project-number">{projectNumber}</div>
+                  <div className="project-name">{project.title}</div>
+                  <hr/>
+                  {projectTags}
+                </header>
+              </div>
+            </div>
+            <div className="mdl-card__actions mdl-card--border">
+              <a className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                View Project
+              </a>
+            </div>
+          </div>
+        </li>
+      )
+    };
+    const slides = projects.map((project) => projectCard(project));
     return (
       <div>
         <ul>
-          <li className="project" id="index-macys">
-            <div className="demo-card-square mdl-card mdl-shadow--2dp">
-              <div className="mdl-card__title mdl-card--expand">
-                <h2 className="mdl-card__title-text">Update</h2>
-              </div>
-              <div className="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-              </div>
-              <div className="mdl-card__actions mdl-card--border">
-                <a className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  View Updates
-                </a>
-              </div>
-            </div>
-            <div className="vertical-block">
-              <div className="info">
-                <header>
-                  <span className="project-number">02</span>
-                  <span className="project-name">Macy's</span>
-                  <hr/>
-                  <div className="project-tags">
-                    <span>Web App</span>
-                    <span>Project Management</span>
-                    <span>Front-end Development</span>
-                    <span>.NET implementation</span>
-                    <span>Touch Sensitive</span>
-                  </div>
-                </header>
-                <footer>
-                  <a href="#!/work=macys" className="project-link">
-                    <i className="icon-angle-down"></i>
-                    View Project
-                    <i className="icon-angle-down"></i>
-                  </a>
-                </footer>
-              </div>
-            </div>
-          </li>
-          <li className="project" id="index-macys">
-            <div className="demo-card-square mdl-card mdl-shadow--2dp">
-              <div className="mdl-card__title mdl-card--expand">
-                <h2 className="mdl-card__title-text">Update</h2>
-              </div>
-              <div className="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-              </div>
-              <div className="mdl-card__actions mdl-card--border">
-                <a className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  View Updates
-                </a>
-              </div>
-            </div>
-            <div className="vertical-block">
-              <div className="info">
-                <header>
-                  <span className="project-number">02</span>
-                  <span className="project-name">Macy's</span>
-                  <hr/>
-                  <div className="project-tags">
-                    <span>Web App</span>
-                    <span>Project Management</span>
-                    <span>Front-end Development</span>
-                    <span>.NET implementation</span>
-                    <span>Touch Sensitive</span>
-                  </div>
-                </header>
-                <footer>
-                  <a href="#!/work=macys" className="project-link">
-                    <i className="icon-angle-down"></i>
-                    View Project
-                    <i className="icon-angle-down"></i>
-                  </a>
-                </footer>
-              </div>
-            </div>
-          </li>
-          <li className="project" id="index-macys">
-            <div className="demo-card-square mdl-card mdl-shadow--2dp">
-              <div className="mdl-card__title mdl-card--expand">
-                <h2 className="mdl-card__title-text">Update</h2>
-              </div>
-              <div className="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-              </div>
-              <div className="mdl-card__actions mdl-card--border">
-                <a className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  View Updates
-                </a>
-              </div>
-            </div>
-            <div className="vertical-block">
-              <div className="info">
-                <header>
-                  <span className="project-number">02</span>
-                  <span className="project-name">Macy's</span>
-                  <hr/>
-                  <div className="project-tags">
-                    <span>Web App</span>
-                    <span>Project Management</span>
-                    <span>Front-end Development</span>
-                    <span>.NET implementation</span>
-                    <span>Touch Sensitive</span>
-                  </div>
-                </header>
-                <footer>
-                  <a href="#!/work=macys" className="project-link">
-                    <i className="icon-angle-down"></i>
-                    View Project
-                    <i className="icon-angle-down"></i>
-                  </a>
-                </footer>
-              </div>
-            </div>
-          </li>
-          <li className="project" id="index-macys">
-            <div className="demo-card-square mdl-card mdl-shadow--2dp">
-              <div className="mdl-card__title mdl-card--expand">
-                <h2 className="mdl-card__title-text">Update</h2>
-              </div>
-              <div className="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-              </div>
-              <div className="mdl-card__actions mdl-card--border">
-                <a className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  View Updates
-                </a>
-              </div>
-            </div>
-            <div className="vertical-block">
-              <div className="info">
-                <header>
-                  <span className="project-number">02</span>
-                  <span className="project-name">Macy's</span>
-                  <hr/>
-                  <div className="project-tags">
-                    <span>Web App</span>
-                    <span>Project Management</span>
-                    <span>Front-end Development</span>
-                    <span>.NET implementation</span>
-                    <span>Touch Sensitive</span>
-                  </div>
-                </header>
-                <footer>
-                  <a href="#!/work=macys" className="project-link">
-                    <i className="icon-angle-down"></i>
-                    View Project
-                    <i className="icon-angle-down"></i>
-                  </a>
-                </footer>
-              </div>
-            </div>
-          </li>
-          <li className="project" id="index-macys">
-            <div className="demo-card-square mdl-card mdl-shadow--2dp">
-              <div className="mdl-card__title mdl-card--expand">
-                <h2 className="mdl-card__title-text">Update</h2>
-              </div>
-              <div className="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-              </div>
-              <div className="mdl-card__actions mdl-card--border">
-                <a className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  View Updates
-                </a>
-              </div>
-            </div>
-            <div className="vertical-block">
-              <div className="info">
-                <header>
-                  <span className="project-number">02</span>
-                  <span className="project-name">Macy's</span>
-                  <hr/>
-                  <div className="project-tags">
-                    <span>Web App</span>
-                    <span>Project Management</span>
-                    <span>Front-end Development</span>
-                    <span>.NET implementation</span>
-                    <span>Touch Sensitive</span>
-                  </div>
-                </header>
-                <footer>
-                  <a href="#!/work=macys" className="project-link">
-                    <i className="icon-angle-down"></i>
-                    View Project
-                    <i className="icon-angle-down"></i>
-                  </a>
-                </footer>
-              </div>
-            </div>
-          </li>
-          <li className="project" id="index-macys">
-            <div className="demo-card-square mdl-card mdl-shadow--2dp">
-              <div className="mdl-card__title mdl-card--expand">
-                <h2 className="mdl-card__title-text">Update</h2>
-              </div>
-              <div className="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-              </div>
-              <div className="mdl-card__actions mdl-card--border">
-                <a className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  View Updates
-                </a>
-              </div>
-            </div>
-            <div className="vertical-block">
-              <div className="info">
-                <header>
-                  <span className="project-number">02</span>
-                  <span className="project-name">Macy's</span>
-                  <hr/>
-                  <div className="project-tags">
-                    <span>Web App</span>
-                    <span>Project Management</span>
-                    <span>Front-end Development</span>
-                    <span>.NET implementation</span>
-                    <span>Touch Sensitive</span>
-                  </div>
-                </header>
-                <footer>
-                  <a href="#!/work=macys" className="project-link">
-                    <i className="icon-angle-down"></i>
-                    View Project
-                    <i className="icon-angle-down"></i>
-                  </a>
-                </footer>
-              </div>
-            </div>
-          </li>
-          <li className="project" id="index-macys">
-            <div className="demo-card-square mdl-card mdl-shadow--2dp">
-              <div className="mdl-card__title mdl-card--expand">
-                <h2 className="mdl-card__title-text">Update</h2>
-              </div>
-              <div className="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-              </div>
-              <div className="mdl-card__actions mdl-card--border">
-                <a className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  View Updates
-                </a>
-              </div>
-            </div>
-            <div className="vertical-block">
-              <div className="info">
-                <header>
-                  <span className="project-number">02</span>
-                  <span className="project-name">Macy's</span>
-                  <hr/>
-                  <div className="project-tags">
-                    <span>Web App</span>
-                    <span>Project Management</span>
-                    <span>Front-end Development</span>
-                    <span>.NET implementation</span>
-                    <span>Touch Sensitive</span>
-                  </div>
-                </header>
-                <footer>
-                  <a href="#!/work=macys" className="project-link">
-                    <i className="icon-angle-down"></i>
-                    View Project
-                    <i className="icon-angle-down"></i>
-                  </a>
-                </footer>
-              </div>
-            </div>
-          </li>
+          {slides}
         </ul>
       </div>
     )
