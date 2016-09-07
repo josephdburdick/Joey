@@ -1,0 +1,27 @@
+@import "../../utils/variables.css";
+
+.slider{
+  display: flex;
+  padding: 0 5rem;
+}
+
+.slider > ul {
+  display: flex;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0 -5rem;
+  @media (min-width: $screen-sm){
+    flex-direction: row;
+  }
+  @media (max-width: $screen-sm){
+    flex-direction: column;
+  }
+}
+
+.slider > ul > li{
+  position: relative;
+  margin: 0 1rem;
+  flex: 0;
+}

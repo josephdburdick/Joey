@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import cx from 'classnames';
 import Layout from '../../components/Layout';
 import s from './home.css';
-import {title, html, test} from './index.md';
+import {title, html} from './index.md';
 import $ from 'jquery';
 
 import Slider from '../../components/Slider/Slider';
@@ -34,7 +34,10 @@ class HomePage extends React.Component {
       median: $(document).height() / 2
     });
 
-    $(window).on('resize', this.handleResize).on('scroll', this.handleScroll).trigger('resize');
+    $(window)
+      .on('resize', this.handleResize)
+      .on('scroll', this.handleScroll)
+      .trigger('resize');
 
   }
 
@@ -44,14 +47,13 @@ class HomePage extends React.Component {
         windowWidth: window.innerWidth,
         windowHeight: window.innerHeight,
         documentHeight: $(document).height(),
-        median: ($(document).height() / 2) - 100
+        median: ($(document).height() / 4) - 100
       });
     }
   }
 
   handleScroll(e) {
     if (this._isMounted) {
-      this.handleResize();
       this.setState({scrollTop: $(window).scrollTop()});
       this.state.scrollTop < 100
         ? this.setState({isTop: true})
@@ -80,7 +82,6 @@ class HomePage extends React.Component {
 
         <section className={s.work}>
           <div>
-            <p>Work</p>
             <Slider { ...this.state }
               handleResize={ this.handleResize }
               handleScroll={ this.handleScroll }
