@@ -16,7 +16,6 @@
   transition: all 1s ease-in;
 
   font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
-
 }
 .is-top{
   background-color: #fff;
@@ -27,23 +26,28 @@
 }
 .content section{
   display: flex;
-  height: calc(100vh - 4rem);
-  min-height: calc(768px / 2);
+  min-height: calc(100vh - 10rem);
   transition: opacity 2s ease-in 2s;
-  padding: 2rem;
-  & > div{
-    flex: 1;
-  }
 }
 
 .intro{
+  padding: 5rem;
   align-items: flex-end;
   justify-content: flex-start;
-
-  font-size: 4;
-  line-height: 1;
 }
+
 .work{
-  align-items: center;
-  justify-content: center;
+  background-color: #eee;
+  padding: 5rem 0;
+}
+.work > div{
+  transition: all 1s ease-out .5s;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(5rem);
+}
+
+.is-bottom .work > div{
+  opacity: 1;
+  transform: translateY(0rem);
 }
