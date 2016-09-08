@@ -75,19 +75,17 @@ class HomePage extends React.Component {
           : null
       ])}>
         <section className={s.intro}>
-          <div dangerouslySetInnerHTML={{
+          <div className="container" dangerouslySetInnerHTML={{
             __html: html
           }}/>
         </section>
 
         <section className={s.work}>
-          <div>
-            <Slider { ...this.state }
-              handleResize={ this.handleResize }
-              handleScroll={ this.handleScroll }
-              slides={ projects.all }
-            />
-          </div>
+          <Slider { ...this.state }
+            handleResize={ this.handleResize }
+            handleScroll={ this.handleScroll }
+            slides={ projects.all }
+          />
         </section>
       </Layout>
     );
