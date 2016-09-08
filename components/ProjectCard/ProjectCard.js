@@ -4,6 +4,7 @@ import s from './ProjectCard.css';
 
 class ProjectCard extends React.Component{
   static propTypes = {
+    className: PropTypes.string,
     project: PropTypes.shape({
       order: PropTypes.number,
       name: PropTypes.string,
@@ -33,7 +34,7 @@ class ProjectCard extends React.Component{
       <div className={
         cx([
           `mdl-card mdl-shadow--2dp`,
-          s['project-card']
+          this.props.className
         ])}>
         <div className="mdl-card__title mdl-card--expand">
           <h2 className="mdl-card__title-text">{project.title}</h2>

@@ -12,10 +12,15 @@
 
 .content {
   display: block;
-  background-color: #ccc;
+  background-color: #efefef;
   transition: all 1s ease-in;
 
   font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
+}
+:global(.container){
+  max-width: 1200px;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 .is-top{
   background-color: #fff;
@@ -34,20 +39,25 @@
   padding: 5rem;
   align-items: flex-end;
   justify-content: flex-start;
+  p{
+    font-size: 10vmin;
+  }
 }
 
 .work{
   background-color: #eee;
   padding: 5rem 0;
+  color: #ccc;
 }
 .work > div{
   transition: all 1s ease-out .5s;
   margin: auto;
-  opacity: 0;
-  transform: translateY(5rem);
+  /*opacity: 0;*/
+  /*transform: translateY(5rem);*/
 }
 
-.is-bottom .work > div{
-  opacity: 1;
-  transform: translateY(0rem);
+.is-bottom .work{
+  color: #222;
+  /*opacity: 1;*/
+  /*transform: translateY(0rem);*/
 }
