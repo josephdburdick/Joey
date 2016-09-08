@@ -17,9 +17,9 @@
     "react-mdl": "^1.6.1",
     "react-prefixer": "^1.1.4",
     "react-redux": "^4.4.5",
+    "react-scroll-horizontal": "git+ssh://git@github.com/josephdburdick/react-scroll-horizontal#b50e91e",
     "redux": "^3.5.2",
-    "whatwg-fetch": "^1.0.0",
-    "zepto": "^1.2.0"
+    "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.4.0",
