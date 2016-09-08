@@ -30,7 +30,7 @@
   min-height: 500px;
   width: 100vw;
   flex: 1 1 auto;
-  padding: 0 1rem;
+  /*padding: 0 1rem;*/
   & > * {
     height: 100%;
   }
@@ -44,8 +44,14 @@
 .project-card{
   @media(min-width:$screen-sm){
     margin: 0 1rem 1rem;
+    &:first-child{
+      margin-left: 2rem;
+    }
+    &:last-child{
+      margin-right: 2rem;
+    }
   }
   @media(max-width:$screen-sm){
-    margin: 0 .5rem 1rem;
+    margin: 0 1rem 1rem;
   }
 }
