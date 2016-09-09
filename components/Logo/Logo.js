@@ -22,7 +22,7 @@ class Logo extends React.Component {
     let count = 0;
     let randomImageObj = {};
     const searchString = search.split(' ').join('+');
-    const request = `http://api.giphy.com/v1/gifs/search?q=${searchString}?limit=${limit}&api_key=dc6zaTOxFJmzC`;
+    const request = `//api.giphy.com/v1/gifs/search?q=${searchString}?limit=${limit}&api_key=dc6zaTOxFJmzC`;
     fetch(request)
       .then(response => response.json())
       .then(json => {
