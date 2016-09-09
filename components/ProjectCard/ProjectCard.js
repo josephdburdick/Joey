@@ -5,17 +5,7 @@ import s from './ProjectCard.css';
 class ProjectCard extends React.Component{
   static propTypes = {
     className: PropTypes.string,
-    project: PropTypes.shape({
-      order: PropTypes.number,
-      name: PropTypes.string,
-      title: PropTypes.string,
-      data: PropTypes.date,
-      layout: PropTypes.string,
-      tags: PropTypes.arrayOf(PropTypes.string),
-      logo: PropTypes.string,
-      agency: PropTypes.string,
-      slides: PropTypes.arrayOf(PropTypes.string)
-    })
+    project: PropTypes.object
   }
   render(){
     const project = this.props.project;
@@ -36,16 +26,17 @@ class ProjectCard extends React.Component{
           `mdl-card mdl-shadow--2dp`,
           this.props.className
         ])}>
-        <div className="mdl-card__title mdl-card--expand">
-          <h2 className="mdl-card__title-text">{project.title}</h2>
+        <div className="mdl-card__title mdl-card--expand" style={{
+          backgroundImage: `url(${project.path}/bg.jpg)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}>
         </div>
         <div className="mdl-card__supporting-text">
           <div className="info">
             <header>
-              <div className="project-number">{projectNumber}</div>
-              <div className="project-name">{project.title}</div>
-              <hr/>
-              {projectTags}
+              <div className={`project-number ${s['project-card__number']}`}>{projectNumber}</div>
+              <h2 className="mdl-card__title-text">{project.title}</h2>
             </header>
           </div>
         </div>
