@@ -7,7 +7,7 @@ Add deployment script to `run.js`:
 ```js
 tasks.set('publish', () => {
   const remote = {
-    url: 'https://github.com/<owner>/<repo>.git', // TODO: Update deployment URL
+    url: 'https://github.com/josephdburdick/Joey.git', // TODO: Update deployment URL
     branch: 'gh-pages',
   };
   global.DEBUG = process.argv.includes('--debug') || false;
