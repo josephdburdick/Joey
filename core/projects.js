@@ -13,18 +13,14 @@ function Project(project) {
   this.slidesPath = `/projects/${this.name}/slides/`;
 };
 
-const all = {};
-const extendedProjectData = Object.values(projectsData).map(project => {
-  all[project.name] = new Project(project);
-});
+const all = {} || projects.all;
+Object.values(projectsData).map(project => all[project.name] = new Project(project));
 
 const projects = {
   all,
   get(project) {
     try {
       if (this.all[project]){
-        // const _this = new Project(this.all[project]);
-        // console.log(_this);
         return this.all[project];
       } else {
         throw new Error(`Project "${project}" not found.`);
@@ -33,7 +29,7 @@ const projects = {
       return false;
     }
   },
-  toString() {
+  toJSON() {
     return JSON.stringify(this.all);
   }
 };
