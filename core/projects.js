@@ -1,36 +1,34 @@
-import aoany from '../data/aoa-ny/aoa-ny.md';
-import bluechairbay from '../data/bluechairbay/bluechairbay.md';
-import ciroc from '../data/ciroc/ciroc.md';
-import citizen from '../data/citizen/citizen.md';
-import davidsbridal from '../data/davids-bridal/davids-bridal.md';
-import gshock from '../data/g-shock/g-shock.md';
-import hard from '../data/hard/hard.md';
-import macys from '../data/macys/macys.md';
-import mtv from '../data/mtv/mtv.md';
-import tambaran from '../data/tambaran/tambaran.md';
-import wwglass from '../data/wwglass/wwglass.md';
+import projectsData from '../data/index.js';
+
+function Project(project) {
+  this.name = project.name;
+  this.order = project.order;
+  this.title = project.title;
+  this.date = project.date;
+  this.tags = project.tags;
+  this.logo = project.logo;
+  this.agency = project.agency;
+  this.slides = Object.values(project.slides).map(slide => slide);
+  this.path = `/projects/${this.name}`;
+  this.slidesPath = `/projects/${this.name}/slides/`;
+};
+
+const all = {};
+const extendedProjectData = Object.values(projectsData).map(project => {
+  all[project.name] = new Project(project);
+});
 
 const projects = {
-  // prefix: `/projects/${this.state.project.name}/`;
-  all: {
-    aoany,
-    bluechairbay,
-    ciroc,
-    citizen,
-    davidsbridal,
-    gshock,
-    hard,
-    macys,
-    mtv,
-    tambaran,
-    wwglass
-  },
+  all,
   get(project) {
     try {
-      if (this.all[project])
+      if (this.all[project]){
+        // const _this = new Project(this.all[project]);
+        // console.log(_this);
         return this.all[project];
-      else
+      } else {
         throw new Error(`Project "${project}" not found.`);
+      }
     } catch (error) {
       return false;
     }
