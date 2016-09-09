@@ -21,10 +21,12 @@ class Project extends React.Component {
   }
   render() {
     const p = this.state.project;
-    const prefix = `/projects/${this.state.project.name}/slides/`;
-    const template = !!p ? (
-      <img src={prefix + p.slides[1]} />
-    ) : <div>Project not found</div>
+    const renderSlides = p.slides.map(slide => <img src={ p.slidesPath + slide }/>);
+    const template = (
+      <div>
+        {renderSlides}
+      </div>
+    );
     return (
       <div>
         {template}
