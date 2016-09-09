@@ -14,7 +14,8 @@
   },
   {
     "path": "/about",
-    "page": "./pages/about"
+    "page": "./pages/about",
+    "chunk": "main"
   },
   {
     "path": "/projects/:projectId",

@@ -7,7 +7,7 @@ const webpack = require('webpack');
 const config = {
   title: 'JOEY: The Work and Play of Joseph Burdick',        // Your website title
   url: 'http://j0ey.co',          // Your website URL
-  project: 'react-static-boilerplate',      // Firebase project. See README.md -> How to Deploy
+  project: 'joey-d7997',      // Firebase project. See README.md -> How to Deploy
   trackingID: 'UA-XXXXX-Y',                 // Google Analytics Site's ID
 };
 
