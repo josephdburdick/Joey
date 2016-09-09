@@ -6,6 +6,7 @@ import {title, html} from './index.md';
 import $ from 'jquery';
 
 import Slider from '../../components/Slider/Slider';
+import Logo from '../../components/Logo/Logo';
 import projects from '../../core/projects';
 
 class HomePage extends React.Component {
@@ -38,7 +39,6 @@ class HomePage extends React.Component {
       .on('resize', this.handleResize)
       .on('scroll', this.handleScroll)
       .trigger('resize');
-
   }
 
   handleResize(e) {
@@ -75,6 +75,7 @@ class HomePage extends React.Component {
           : null
       ])}>
         <section className={s.intro}>
+          <Logo />
           <div className="container" dangerouslySetInnerHTML={{
             __html: html
           }}/>
