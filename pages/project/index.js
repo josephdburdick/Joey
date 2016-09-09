@@ -21,7 +21,17 @@ class Project extends React.Component {
   }
   render() {
     const p = this.state.project;
-    const renderSlides = p.slides.map(slide => <img src={ p.slidesPath + slide }/>);
+    const renderSlides = p.slides.map((slide, i) => {
+      const imageUrl = window.devicePixelRatio > 1 ? (
+        [
+          slide.split('.')[0],
+          p.hiDefAffix,
+          '.',
+          slide.split('.')[1]
+        ].join('')
+      ): slide;
+      return <img key={i} src={ p.slidesPath + imageUrl }/>
+    });
     const template = (
       <div>
         {renderSlides}

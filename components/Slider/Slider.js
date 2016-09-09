@@ -7,14 +7,12 @@ import HorizontalScroll from 'react-scroll-horizontal';
 
 class Slider extends React.Component {
   static propTypes = {
-    slides: PropTypes.object,
-    windowWidth: PropTypes.number
+    slides: PropTypes.object
   }
   render() {
-    const isMobile = 'ontouchstart' in document.documentElement;
     const projects = Object.values(this.props.slides).sort((a, b) => a.order - b.order);
-    const renderSlides = projects.map((project, i) => <ProjectCard project={project} className={s['project-card']} key={i}/>);
-    const renderScrollArea = !isMobile && this.props.windowWidth > 768 ? (
+    const renderSlides = projects.map((project, i) => <ProjectCard project={project} className={s['project-card']} key={i} {...this.props} />);
+    const renderScrollArea = !this.props.isMobile && this.props.windowWidth > 768 ? (
       <HorizontalScroll reverseScroll={true} pageLock={true}>
         {renderSlides}
       </HorizontalScroll>
