@@ -1,5 +1,6 @@
 ---
 order: 6
+agency: Studiografica
 name: g-shock
 title: G-Shock
 date: 2012
