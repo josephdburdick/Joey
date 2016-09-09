@@ -9,7 +9,6 @@ class ProjectCard extends React.Component{
   }
   render(){
     const project = this.props.project;
-    const projectLink = `project/${project.name}`;
     const projectTags = project.tags
     ? (
       <ul className="project-tags">
@@ -26,7 +25,7 @@ class ProjectCard extends React.Component{
           `mdl-card mdl-shadow--2dp`,
           this.props.className
         ])}>
-        <div className="mdl-card__title mdl-card--expand" style={{
+        <div className="mdl-card--expand" style={{
           backgroundImage: `url(${project.path}/bg.jpg)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
@@ -42,7 +41,7 @@ class ProjectCard extends React.Component{
         </div>
         <div className="mdl-card__actions mdl-card--border">
           <a className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-            href={projectLink}>
+            href={project.path}>
             View Project
           </a>
         </div>

@@ -1,18 +1,8 @@
-/**
- * React Static Boilerplate
- * https://github.com/koistya/react-static-boilerplate
- *
- * Copyright © 2015-2016 Konstantin Tarkus (@koistya)
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-@import 'https://fonts.googleapis.com/css?family=PT+Sans';
+/*@import 'https://fonts.googleapis.com/css?family=PT+Sans';*/
 @import "../../utils/variables.css";
 
 .content {
   display: block;
-  background-color: #efefef;
   transition: all 1s ease-in;
 
   font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
@@ -26,19 +16,19 @@
   background-color: #fff;
 }
 .is-bottom{
-  background-color: #000;
+  background-color: #666;
   color: #ccc;
 }
 .content section{
   display: flex;
   min-height: calc(100vh - 10rem);
-  /*transition: opacity 2s ease-in 2s;*/
 }
 
 .intro{
   padding: 5rem;
   align-items: flex-end;
   justify-content: flex-start;
+  background: #ddd url('/images/bg_trans.png');
   p{
     font-size: 10vmin;
   }
@@ -52,12 +42,8 @@
 .work > div{
   transition: all 1s ease-out .5s;
   margin: auto;
-  /*opacity: 0;*/
-  /*transform: translateY(5rem);*/
 }
 
 .is-bottom .work{
   color: #222;
-  /*opacity: 1;*/
-  /*transform: translateY(0rem);*/
 }
