@@ -9,20 +9,26 @@ class Project extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      project: null
+      project: null,
+      isHighDef: null,
+      isMobile: null
     };
   }
   componentWillMount() {
     const projectId = this.props.route.params.projectId;
     const project = projects.get(this.props.route.params.projectId);
     if (project) {
-      this.setState({ project: projects.get(this.props.route.params.projectId) });
+      this.setState({
+        project: projects.get(this.props.route.params.projectId),
+        isHighDef: window.devicePixelRatio > 1,
+        isMobile: 'ontouchstart' in document.documentElement
+      });
     }
   }
   render() {
     const p = this.state.project;
     const renderSlides = p.slides.map((slide, i) => {
-      const imageUrl = window.devicePixelRatio > 1 ? (
+      const imageUrl = !this.state.isMobile && window.devicePixelRatio > 1 ? (
         [
           slide.split('.')[0],
           p.hiDefAffix,
