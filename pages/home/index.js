@@ -81,7 +81,7 @@ class HomePage extends React.Component {
           }}/>
         </section>
 
-        <section className={s.work}>
+        <section className={s.work} id="work">
           <Slider { ...this.state }
             handleResize={ this.handleResize }
             handleScroll={ this.handleScroll }
