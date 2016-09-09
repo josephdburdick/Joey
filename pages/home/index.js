@@ -19,7 +19,9 @@ class HomePage extends React.Component {
       median: 0,
       windowHeight: 0,
       documentHeight: 0,
-      windowWidth: 0
+      windowWidth: 0,
+      isHighDef: null,
+      isMobile: null
     };
     this.handleResize = this.handleResize.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
@@ -32,7 +34,9 @@ class HomePage extends React.Component {
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
       documentHeight: $(document).height(),
-      median: $(document).height() / 2
+      median: $(document).height() / 2,
+      isHighDef: window.devicePixelRatio > 1,
+      isMobile: 'ontouchstart' in document.documentElement
     });
 
     $(window)
@@ -82,7 +86,8 @@ class HomePage extends React.Component {
         </section>
 
         <section className={s.work} id="work">
-          <Slider { ...this.state }
+          <Slider
+            { ...this.state }
             handleResize={ this.handleResize }
             handleScroll={ this.handleScroll }
             slides={ projects.all }

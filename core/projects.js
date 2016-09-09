@@ -11,6 +11,7 @@ function Project(project) {
   this.slides = Object.values(project.slides).map(slide => slide);
   this.path = `/projects/${this.name}`;
   this.slidesPath = `/projects/${this.name}/slides/`;
+  this.hiDefAffix = '@2x';
 };
 
 const all = {} || projects.all;
