@@ -40,6 +40,9 @@ class Project extends React.Component {
     });
     const template = (
       <div>
+        <code>
+          {JSON.stringify(p)}
+        </code>
         {renderSlides}
       </div>
     );
