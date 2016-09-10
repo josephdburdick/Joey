@@ -14,7 +14,7 @@ class Logo extends React.Component {
   }
   componentDidMount() {
     this.requestImage({
-      search: "perfect loop",
+      search: "perfect loop white",
       limit: 25
     });
   }
