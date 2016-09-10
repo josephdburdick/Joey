@@ -79,13 +79,15 @@ class HomePage extends React.Component {
           : null
       ])}>
         <section className={s.intro}>
-          <Logo />
-          <div dangerouslySetInnerHTML={{
-            __html: html
-          }}/>
+          <div>
+            <Logo />
+            <div dangerouslySetInnerHTML={{
+              __html: html
+            }}/>
+          </div>
         </section>
 
-        <section className={s.work} id="work">
+        <section className={s.work}>
           <Slider
             { ...this.state }
             handleResize={ this.handleResize }
