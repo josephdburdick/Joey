@@ -12,38 +12,37 @@
   padding-left: 4rem;
   padding-right: 4rem;
 }
-.is-top{
-  background-color: #fff;
-}
-.is-bottom{
-  background-color: #666;
-  color: #ccc;
+
+.content {
+  display: flex;
+  @media(min-width: $screen-md){
+    flex-direction: row;
+  }
+  @media(max-width: $screen-md){
+    flex-direction: column;
+  }
 }
 .content section{
   display: flex;
   min-height: calc(100vh - 10rem);
+  @media(min-width: $screen-md){
+    width: 50vw;
+  }
 }
 
 .intro{
   padding: 5rem;
   align-items: flex-end;
   justify-content: flex-start;
-  background: #ddd url('/images/bg_trans.png');
+  background-color: #222;
   p{
     font-size: 10vmin;
   }
 }
-
-.work{
-  background-color: #eee;
-  padding: 5rem 0;
-  color: #ccc;
+.work {
+   background: #eee;
 }
 .work > div{
   transition: all 1s ease-out .5s;
   margin: auto;
-}
-
-.is-bottom .work{
-  color: #222;
 }
