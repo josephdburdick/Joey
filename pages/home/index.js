@@ -80,7 +80,7 @@ class HomePage extends React.Component {
       ])}>
         <section className={s.intro}>
           <Logo />
-          <div className="container" dangerouslySetInnerHTML={{
+          <div dangerouslySetInnerHTML={{
             __html: html
           }}/>
         </section>
