@@ -14,7 +14,7 @@ class Logo extends React.Component {
   }
   componentDidMount() {
     this.requestImage({
-      search: "perfect loop white",
+      search: "perfect loop",
       limit: 25
     });
   }
@@ -51,7 +51,7 @@ class Logo extends React.Component {
           </rdf:RDF>
         </metadata>
         <defs id="defs6">
-          <pattern id="graffiti" patternUnits="userSpaceOnUse" width="${this.state.width}" height="${this.state.height}">
+          <pattern id="graffiti" patternTransform="scale(1, -1)" patternUnits="userSpaceOnUse" width="${this.state.width}" height="${this.state.height}">
             <image xlink:href="${this.state.url}" x="0" y="0"
                   width="${this.state.width}" height="${this.state.height}" />
           </pattern>
