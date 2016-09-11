@@ -47,9 +47,9 @@ class Project extends React.Component {
       </div>
     );
     return (
-      <div>
+      <Layout className={s.content}>
         {template}
-      </div>
+      </Layout>
     )
   }
 }

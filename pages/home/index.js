@@ -70,17 +70,11 @@ class HomePage extends React.Component {
 
   render() {
     return (
-      <Layout className={cx([
-        s.content, this.state.isTop
-          ? s['is-top']
-          : null,
-        this.state.isBottom
-          ? s['is-bottom']
-          : null
-      ])}>
+      <Layout className={s.content}>
         <section className={s.intro}>
           <div>
-            <Logo />
+
+            <Logo /><br />
             <div dangerouslySetInnerHTML={{
               __html: html
             }}/>
