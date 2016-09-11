@@ -25,9 +25,6 @@
 .content section{
   display: flex;
   min-height: calc(100vh - 10rem);
-  @media(min-width: $screen-md){
-    width: 50vw;
-  }
 }
 
 .intro{
@@ -35,14 +32,22 @@
   align-items: flex-end;
   justify-content: flex-start;
   background-color: #222;
+  color: #ccc;
+  @media(min-width: $screen-md){
+    width: 25%;
+  }
   p{
     font-size: 10vmin;
   }
 }
 .work {
-   background: #eee;
+  background: #eee;
+  @media(min-width: $screen-md){
+    width: 75%;
+  }
 }
 .work > div{
   transition: all 1s ease-out .5s;
-  margin: auto;
+  margin: auto 0;
+  width: 100%;
 }

@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 import cx from 'classnames';
 import Header from './Header';
-// import Footer from '../Footer';
 import s from './Layout.css';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Layout extends React.Component {
 
@@ -23,7 +23,14 @@ class Layout extends React.Component {
       <div ref={node => (this.root = node)}>
         <div className="mdl-layout__inner-container">
           <main>
-            <div {...this.props} className={cx(s.content, this.props.className)} />
+            <ReactCSSTransitionGroup
+              transitionName="page"
+              transitionEnterTimeout={500}
+              transitionLeaveTimeout={500}
+              transitionAppear={true}
+              transitionAppearTimeout={500}>
+              <div {...this.props} className={cx(s.content, this.props.className)} />
+            </ReactCSSTransitionGroup>
           </main>
         </div>
       </div>

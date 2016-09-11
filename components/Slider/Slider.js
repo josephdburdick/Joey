@@ -17,7 +17,7 @@ class Slider extends React.Component {
         {renderSlides}
       </HorizontalScroll>
     ) : (
-      <div className={s['project-list--mobile']}>
+      <div className="scroll-horizontal">
         {renderSlides}
       </div>
     )
