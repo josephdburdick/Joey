@@ -39,7 +39,7 @@ class ProjectCard extends React.Component{
             </div>
             <div className="mdl-card__actions mdl-card--border">
               <Link className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                to={project.path}>
+                to={project.route}>
                 View Project
               </Link>
             </div>

@@ -9,8 +9,9 @@ function Project(project) {
   this.logo = project.logo;
   this.agency = project.agency;
   this.slides = Object.values(project.slides).map(slide => slide);
-  this.path = `/projects/${this.name}`;
-  this.slidesPath = `/projects/${this.name}/slides/`;
+  this.path = `projects/${this.name}`;
+  this.route = `/projects/${this.name}`;
+  this.slidesPath = `${this.name}/slides/`;
   this.hiDefAffix = '@2x';
 };
 
