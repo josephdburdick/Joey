@@ -14,7 +14,7 @@
 }
 :global(.page){
   opacity: 0;
-  transition: all 2s ease-in;
+  transition: all 2s ease-in-out;
 }
 :global(.page-appear) {
   opacity: 0.01;
@@ -23,7 +23,7 @@
 :global(.page-appear.page-appear-active) {
   opacity: 1;
   /*transform:*/
-  transition: opacity .5s ease-in;
+  transition: opacity .5s ease-in-out;
 }
 
 :global(.page-enter) {
@@ -32,7 +32,7 @@
 
 :global(.page-enter.page-enter-active) {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in-out;
 }
 
 :global(.page-leave) {
@@ -41,5 +41,5 @@
 
 :global(.page-leave.page-leave-active) {
   opacity: 0.01;
-  transition: opacity 300ms ease-in;
+  transition: opacity 300ms ease-in-out;
 }
