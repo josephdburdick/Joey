@@ -73,7 +73,6 @@ class HomePage extends React.Component {
       <Layout className={s.content}>
         <section className={s.intro}>
           <div>
-
             <Logo /><br />
             <div dangerouslySetInnerHTML={{
               __html: html

@@ -11,6 +11,10 @@
   max-width: 1200px;
   padding-left: 4rem;
   padding-right: 4rem;
+  @media(max-width: $screen-md){
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .content {
@@ -25,29 +29,38 @@
 .content section{
   display: flex;
   min-height: calc(100vh - 10rem);
+  margin: 0;
+
 }
 
 .intro{
-  padding: 5rem;
   align-items: flex-end;
   justify-content: flex-start;
   background-color: #222;
   color: #ccc;
   @media(min-width: $screen-md){
-    width: 25%;
+    flex: 1 1 25%;
+    padding: 4rem;
   }
-  p{
-    font-size: 10vmin;
+  @media(max-width: $screen-md){
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    & > div{
+      text-align: center;
+    }
   }
 }
 .work {
   background: #eee;
   @media(min-width: $screen-md){
-    width: 75%;
+    flex: 0 1 auto;
   }
 }
 .work > div{
-  transition: all 1s ease-out .5s;
   margin: auto 0;
   width: 100%;
+  /*@media(max-width: $screen-md){
+    flex: 0 1 auto;
+  }*/
 }
