@@ -5,6 +5,7 @@ import Link from '../../components/Link';
 import s from './project.css';
 import { title, html } from './index.md';
 import projects from '../../core/projects.js';
+import LazyLoad from 'react-lazyload';
 
 class Project extends React.Component {
   constructor(props) {
@@ -26,6 +27,11 @@ class Project extends React.Component {
       });
     }
   }
+  projectLinkClick(e){
+    console.log(e);
+    window.scrollTo(0, 0);
+    browserHistory.push(this.to);
+  }
   render() {
     const p = this.state.project;
     const renderSlides = p.slides.map((slide, i) => {
@@ -37,10 +43,10 @@ class Project extends React.Component {
           slide.split('.')[1]
         ].join('')
       ): slide;
-      return <img key={i} src={ p.slidesPath + imageUrl }/>
+      return <LazyLoad key={i} height="100vh"><img src={ p.slidesPath + imageUrl }/></LazyLoad>
     });
     const projectsList = Object.values(projects.all).map(project =>
-      <li key={project.name}><a href={project.path} className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">{project.name}</a></li>
+      <li key={project.name}><Link to={`${project.path}`} className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onClick={this.projectLinkClick}>{project.name}</Link></li>
     );
     const template = (
       <div>
