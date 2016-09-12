@@ -66,7 +66,7 @@ class Project extends React.Component {
       return <LazyLoad key={i} height="100vh"><img src={p.slidesPath + imageUrl}/></LazyLoad>
     });
     const projectsList = Object.values(projects.all).map(project => <li key={project.name}>
-      <Link to={`${project.path}`} className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onClick={this.projectLinkClick}>{project.name}</Link>
+      <Link to={project.route} className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onClick={this.projectLinkClick}>{project.name}</Link>
     </li>);
     const template = (
       <div>
