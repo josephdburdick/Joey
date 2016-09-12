@@ -7,33 +7,83 @@ import HorizontalScroll from 'react-scroll-horizontal';
 
 class Slider extends React.Component {
   static propTypes = {
-    slides: PropTypes.object
+    slides: PropTypes.array
   }
+  constructor(props) {
+    super(props);
+    this.state = {
+      windowWidth: 0,
+      isHighDef: null,
+      isMobile: null
+    };
+    this.handleResize = this.handleResize.bind(this);
+  }
+
+  componentDidMount() {
+    this._isMounted = true;
+    this.setState({
+      isHighDef: window.devicePixelRatio > 1,
+      isMobile: 'ontouchstart' in document.documentElement,
+      windowWidth: window.innerWidth
+    });
+    (function () {
+      var throttle = function (type, name, obj) {
+        obj = obj || window;
+        var running = false;
+        var func = function () {
+          if (running) {
+            return;
+          }
+          running = true;
+          requestAnimationFrame(function () {
+            obj.dispatchEvent(new CustomEvent(name));
+            running = false;
+          });
+        };
+        obj.addEventListener(type, func);
+      };
+
+      throttle('resize', 'optimizedResize');
+    })();
+
+    window.addEventListener('optimizedResize', this.handleResize);
+  }
+
+  handleResize(e) {
+    console.log(e);
+    console.log(window.innerWidth);
+    console.log(this._isMounted);
+    if (this._isMounted) {
+      this.setState({
+        windowWidth: window.innerWidth
+      });
+    }
+  }
+
   render() {
-    const projects = Object.values(this.props.slides).sort((a, b) => a.order - b.order);
-    const renderSlides = projects.map((project, i) => <ProjectCard project={project} className={s['project-card']} key={i} {...this.props} />);
-    const renderScrollArea = !this.props.isMobile && this.props.windowWidth > 768 ? (
-      <HorizontalScroll reverseScroll={true} pageLock={true}>
-        {renderSlides}
-      </HorizontalScroll>
-    ) : (
-      <div className="scroll-horizontal">
-        {renderSlides}
-      </div>
-    )
+    const renderScrollArea = !this.state.isMobile && this.state.windowWidth > 768
+      ? (
+        <HorizontalScroll reverseScroll={true} pageLock={true}>
+          {this.props.slides}
+        </HorizontalScroll>
+      )
+      : (
+        <div className="scroll-horizontal">
+          {this.props.slides}
+        </div>
+      )
     return (
       <div>
-        <div className="container">
-          <h3>{title}</h3>
-          <div dangerouslySetInnerHTML={{
-            __html: html
-          }}/>
-        </div>
         <div className={s.slider}>
           {renderScrollArea}
         </div>
       </div>
     )
+  }
+  componentWillUnmount() {
+    this._isMounted = false;
+    window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener('scroll', this.handleScroll);
   }
 }
 

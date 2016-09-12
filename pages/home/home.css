@@ -39,7 +39,8 @@
   background-color: #222;
   color: #ccc;
   @media(min-width: $screen-md){
-    flex: 1 1 25%;
+    /*flex: 1 1 25%;*/
+    width: 25%;
     padding: 4rem;
   }
   @media(max-width: $screen-md){
@@ -53,14 +54,15 @@
 }
 .work {
   background: #eee;
-  @media(min-width: $screen-md){
-    flex: 0 1 auto;
-  }
+  width: 100%;
+  position: relative;
 }
 .work > div{
   margin: auto 0;
   width: 100%;
-  /*@media(max-width: $screen-md){
-    flex: 0 1 auto;
-  }*/
+}
+.project-card{
+  display: inline-flex;
+  width: 310px;
+  margin: 0 .5rem 2rem;
 }
