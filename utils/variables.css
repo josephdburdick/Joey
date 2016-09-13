@@ -2,3 +2,7 @@ $screen-xs: 640px;
 $screen-sm: 768px;
 $screen-md: 1024px;
 $screen-lg: 1200px;
+
+
+$easeInOutQuad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1);

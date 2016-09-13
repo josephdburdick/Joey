@@ -22,13 +22,14 @@ class Layout extends React.Component {
     return (
       <div ref={node => (this.root = node)}>
         <div className="mdl-layout__inner-container">
+          <Header {...this.props}/>
           <main>
             <ReactCSSTransitionGroup
               transitionName="page"
-              transitionEnterTimeout={500}
-              transitionLeaveTimeout={500}
+              transitionEnterTimeout={4000}
+              transitionLeaveTimeout={4000}
               transitionAppear={true}
-              transitionAppearTimeout={500}>
+              transitionAppearTimeout={2000}>
               <div {...this.props} className={cx(s.content, this.props.className)} />
             </ReactCSSTransitionGroup>
           </main>

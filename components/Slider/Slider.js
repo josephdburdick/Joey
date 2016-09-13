@@ -4,6 +4,7 @@ import s from './Slider.css';
 import ProjectCard from '../ProjectCard/ProjectCard.js';
 import {title, html} from './slider.md';
 import HorizontalScroll from 'react-scroll-horizontal';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Slider extends React.Component {
   static propTypes = {
@@ -50,9 +51,6 @@ class Slider extends React.Component {
   }
 
   handleResize(e) {
-    console.log(e);
-    console.log(window.innerWidth);
-    console.log(this._isMounted);
     if (this._isMounted) {
       this.setState({
         windowWidth: window.innerWidth
