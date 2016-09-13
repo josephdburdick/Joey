@@ -32,6 +32,8 @@ class Project extends React.Component {
   }
 
   projectLinkClick(e) {
+    const href = e.target.href;
+    e.preventDefault();
     function scrollToTop(scrollDuration, cb) {
       const scrollHeight = window.scrollY,
         scrollStep = Math.PI / (scrollDuration / 15),
@@ -49,7 +51,7 @@ class Project extends React.Component {
           }
         }, 15);
     }
-    scrollToTop(2000, () => { history.push(this.to) });
+    scrollToTop(2000, () => { history.push(href) });
   }
 
   render() {
@@ -66,10 +68,10 @@ class Project extends React.Component {
       return <LazyLoad key={i} height="100vh"><img src={p.slidesPath + imageUrl}/></LazyLoad>
     });
     const projectsList = Object.values(projects.all).map(project => <li key={project.name}>
-      <Link to={project.route} className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onClick={this.projectLinkClick}>{project.name}</Link>
+      <Link to={project.route} className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">{project.name}</Link>
     </li>);
     const template = (
-      <div>
+      <section>
         <code>
           {JSON.stringify(p)}
         </code>
@@ -77,7 +79,7 @@ class Project extends React.Component {
         <ul>
           {projectsList}
         </ul>
-      </div>
+      </section>
     );
     return (
       <Layout className={s.content}>

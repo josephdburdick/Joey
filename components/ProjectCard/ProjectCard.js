@@ -13,9 +13,9 @@ class ProjectCard extends React.Component{
     const projectTags = project.tags
     ? (
       <ul className="project-tags">
-      {project.tags.map((tag, i) => (
-        <li key={i}>{tag}</li>
-      ))}
+        {project.tags.map((tag, i) => (
+          <li key={i}>{tag}</li>
+        ))}
       </ul>
     )
     : null;

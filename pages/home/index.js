@@ -15,25 +15,20 @@ class HomePage extends React.Component {
     this._isMounted = true;
     document.title = title;
   }
-
+  transition = event => {
+    event.preventDefault();
+    history.push({ pathname: event.currentTarget.pathname });
+  };
   render() {
     const renderSlides = Object.values(projects.all)
                           .sort((a, b) => a.order - b.order)
-                          .map((project, i) => <ProjectCard project={project} className={s['project-card']} key={i} {...this.props} />);
+                          .map((project, i) => <ProjectCard project={project} transition={this.trasition} className={s['project-card']} key={i} {...this.props} />);
     return (
       <Layout className={s.content}>
-        <section className={s.intro}>
-          <div>
-            <Logo /><br />
-            <div dangerouslySetInnerHTML={{
-              __html: html
-            }}/>
-          </div>
-        </section>
-
         <section className={s.work}>
           <Slider {...this.state } slides={ renderSlides } />
         </section>
+
       </Layout>
     );
   }
