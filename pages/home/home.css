@@ -13,20 +13,9 @@
 
 .content {
   display: flex;
-  font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
-  @media(min-width: $screen-md){
-    flex-direction: row;
-    padding: 2rem;
-    width: calc(100vw - 4rem);
-    height: calc(100vh - 4rem);
-  }
-  @media(max-width: $screen-md){
-    flex-direction: column;
-  }
 }
 .content section{
   display: flex;
-  /*min-height: calc(100vh - 10rem);*/
   margin: 0;
 }
 
@@ -36,7 +25,6 @@
   background-color: #222;
   color: #ccc;
   @media(min-width: $screen-md){
-    /*flex: 1 1 25%;*/
     width: 25%;
     padding: 4rem;
   }
@@ -50,6 +38,7 @@
   }
 }
 .work {
+  background-color: #eee;
   width: 100%;
   position: relative;
 }
@@ -61,4 +50,13 @@
   display: inline-flex;
   width: 310px;
   margin: 0 .5rem 2rem;
+
+  @media(min-width: $screen-md){
+    &:first-child{
+      margin-left: 0;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+  }
 }

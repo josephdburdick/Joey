@@ -22,8 +22,8 @@ class Layout extends React.Component {
     return (
       <div ref={node => (this.root = node)}>
         <div className="mdl-layout__inner-container">
-          <Header {...this.props}/>
           <main>
+            <Header {...this.props}/>
             <ReactCSSTransitionGroup
               transitionName="page"
               transitionEnterTimeout={4000}
