@@ -25,8 +25,20 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header className={`mdl-layout__header ${s.header}`} ref={node => (this.root = node)}>
+      <header className={s.header} ref={node => (this.root = node)}>
         <Logo />
+        <div className="col">
+          Joseph Burdick<br/>
+          Independent Designer & Developer<br/>
+        </div>
+        <div className="col">
+        Bedstuy, Brooklyn<br/>
+        New York City
+        </div>
+        <div className="col">
+          <Link to="/about">About</Link><br />
+          <Link to="/about">Contact</Link>
+        </div>
         {/* <Navigation /> */}
       </header>
     );

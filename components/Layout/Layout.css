@@ -1,20 +1,12 @@
 @import "../../utils/variables.css";
 
 .content {
-  margin: 0 auto;
+  padding-top: 78px;
   display: flex;
   font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
   background: #eee;
-
-  @media(min-width: $screen-md){
-    flex-direction: row;
-    padding: 2rem;
-    width: calc(100vw - 4rem);
-    height: calc(100vh - 4rem);
-  }
-  @media(max-width: $screen-md){
-    flex-direction: column;
-  }
+  flex-direction: column;
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%);
 }
 
 /*

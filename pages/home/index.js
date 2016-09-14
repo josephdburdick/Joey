@@ -28,7 +28,6 @@ class HomePage extends React.Component {
         <section className={s.work}>
           <Slider {...this.state } slides={ renderSlides } />
         </section>
-
       </Layout>
     );
   }
