@@ -61,7 +61,7 @@ class Slider extends React.Component {
   render() {
     const renderScrollArea = !this.state.isMobile && this.state.windowWidth > 768
       ? (
-        <HorizontalScroll reverseScroll={true} pageLock={true}>
+        <HorizontalScroll reverseScroll={true}>
           {this.props.slides}
         </HorizontalScroll>
       )
@@ -71,10 +71,8 @@ class Slider extends React.Component {
         </div>
       )
     return (
-      <div>
-        <div className={s.slider}>
-          {renderScrollArea}
-        </div>
+      <div className={s.slider}>
+        {renderScrollArea}
       </div>
     )
   }

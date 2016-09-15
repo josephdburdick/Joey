@@ -1,10 +1,10 @@
 ---
-order: 1
+order: 9
 name: hard
 title: Hard Energy Drink
 agency: Studiografica
 date: 2012
-layout: project
+
 tags:
   - Project Management
   - Front-end Development

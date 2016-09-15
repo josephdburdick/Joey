@@ -1,9 +1,9 @@
 ---
-order: 7
+order: 3
 name: ciroc
 title: Cîroc Vodka
 date: 2011
-layout: project
+agency: Studiografica
 tags:
   - Front-end Development
   - Project Management

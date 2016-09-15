@@ -1,10 +1,10 @@
 ---
-order: 3
+order: 7
 name: davids-bridal
 agency: Joey
 title: David's Bridal
 date: "2015-05-01T22:12:03.284Z"
-layout: project
+
 tags:
   - Project Management
   - Front-End Design

@@ -1,5 +1,86 @@
 @import "../../utils/variables.css";
 
+:global(.btn-back){
+  z-index: 20;
+  position: fixed;
+  top: 4rem;
+  right: 4rem;
+  @media(max-width: $screen-md){
+    top: 2rem;
+    right: 2rem;
+  }
+}
+
 .content {
-  display: block;
+  min-height: calc(100vh - 68px);
+  height: auto;
+}
+.container{
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+
+  @media(max-width: $screen-md){
+    flex-direction: column;
+  }
+}
+.aside{
+  display: flex;
+  flex: 1 0 330px;
+  transition: transform 1s $easeInOutQuad .5s, opacity 1s $easeInOutQuad .5s;
+  transform: translateX(-50%);
+  opacity: 0;
+  @media(min-width: $screen-md){
+    flex: 1 0 330px;
+  }
+  @media(max-width: $screen-md){
+    flex: 1;
+    max-width: $screen-sm;
+    & > div {
+      flex-direction: row;
+    }
+  }
+  & > div{
+    padding: 2rem;
+  }
+}
+.aside--mounted{
+  background-color: white;
+  transform: translateX(0%);
+  opacity: 1;
+}
+.aside section + section{
+  margin-top: 2rem;
+}
+.heading{
+  text-transform: uppercase;
+  font-size: .85rem;
+  color: #999;
+  line-height: 1;
+  margin-bottom: .25rem;
+}
+
+.figures{
+  padding: 0 2rem;
+  max-height: calc(100vh - 68px);
+  overflow: hidden;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-flow: row wrap;
+
+  @media(max-width: $screen-md){
+    width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    & > div {
+      min-width: 100%;
+      max-width: auto;
+      flex-direction: row;
+    }
+  }
 }
