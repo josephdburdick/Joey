@@ -1,9 +1,10 @@
 ---
 order: 5
 name: tambaran
+agency: Freelance
 title: Tambaran
 date: "2016-05-01T0:02:03.284Z"
-layout: project
+
 tags:
   - Project Management
   - Custom E-Blasts

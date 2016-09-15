@@ -1,15 +1,13 @@
 ---
-order: 8
+order: 2
 name: macys
 title: Macy's
 date: "2016-05-01T0:02:03.284Z"
-layout: project
-
 tags:
   - Web App
   - Project Management
   - Front-end Development
-  - .Net Implementation 
+  - .Net Implementation
   - Touch Sensitive
 
 logo: "logo.png"

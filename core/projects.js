@@ -7,11 +7,12 @@ function Project(project) {
   this.date = project.date;
   this.tags = project.tags;
   this.logo = project.logo;
+  this.html = project.html;
   this.agency = project.agency;
   this.slides = Object.values(project.slides).map(slide => slide);
   this.path = `projects/${this.name}`;
   this.route = `/projects/${this.name}`;
-  this.slidesPath = `${this.name}/slides/`;
+  this.slidesPath = `/projects/${this.name}/slides/`;
   this.hiDefAffix = '@2x';
 };
 
@@ -20,6 +21,7 @@ Object.values(projectsData).map(project => all[project.name] = new Project(proje
 
 const projects = {
   all,
+  sorted(){ return Object.values(this.all).sort((a, b) => a.order - b.order) },
   get(project) {
     try {
       if (this.all[project]){

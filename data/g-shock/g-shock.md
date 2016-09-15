@@ -1,10 +1,10 @@
 ---
-order: 6
+order: 4
 agency: Studiografica
 name: g-shock
 title: G-Shock
 date: 2012
-layout: project
+
 
 tags:
   - Project Management

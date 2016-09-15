@@ -1,6 +1,8 @@
 /*@import 'https://fonts.googleapis.com/css?family=PT+Sans';*/
 @import "../../utils/variables.css";
 
+$header-height: 70px;
+
 :global(.container){
   max-width: 1200px;
   padding-left: 4rem;
@@ -14,9 +16,11 @@
 .content {
   display: flex;
 }
-.content section{
+.content > section{
   display: flex;
-  margin: 0;
+  margin: auto;
+  flex-direction: column;
+  padding: 1rem 0;
 }
 
 .intro{
@@ -38,7 +42,6 @@
   }
 }
 .work {
-  background-color: #eee;
   width: 100%;
   position: relative;
 }
@@ -59,4 +62,36 @@
       margin-right: 0;
     }
   }
+}
+.modal{
+  position: fixed;
+  height: calc(100vh - $header-height);
+  top: -100vh;
+  left: 0;
+  right: 0;
+  overflow-x: auto;
+  display: block;
+  background-color: white;
+  z-index: 99;
+  transition: opacity 1s $easeInOutQuad 0s;
+  opacity: 0;
+}
+.modal--on{
+  top: 0;
+  opacity: 1;
+  user-select: auto;
+}
+.modal--off{
+  top: -100vh;
+  opacity: 0;
+  user-select: none;
+  transition: opacity .25s $easeInOutQuad 0s, top 0s 2s;
+}
+.scale{
+  transition: all 0.5s 0s;
+  opacity: 1;
+}
+.scale--down{
+  transform: scale(.5);
+  opacity: 0;
 }

@@ -2,9 +2,9 @@
 order: 10
 name: aoa-ny
 title: AOA NY
-agency: Joey
+agency: Freelance
 date: [2010, 2013]
-layout: project
+
 tags:
   - Project Management
   - Custom e-blasts

@@ -21,18 +21,17 @@ class Layout extends React.Component {
   render() {
     return (
       <div ref={node => (this.root = node)}>
-        <div className="mdl-layout__inner-container">
+        <div className="mdl-layout mdl-layout__inner-container">
           <main>
-            <Header {...this.props}/>
             <ReactCSSTransitionGroup
               transitionName="page"
-              transitionEnterTimeout={4000}
-              transitionLeaveTimeout={4000}
-              transitionAppear={true}
-              transitionAppearTimeout={2000}>
-              <div {...this.props} className={cx(s.content, this.props.className)} />
+              transitionEnterTimeout={2000}
+              transitionLeaveTimeout={2000}>
+              {/* {React.cloneElement(<div {...this.props} className={cx(s.content, this.props.className)} />, {key: this.props.className})} */}
+              <div {...this.props} key={this.props.className} className={cx(s.content, this.props.className)} />
             </ReactCSSTransitionGroup>
           </main>
+          <Header />
         </div>
       </div>
     );

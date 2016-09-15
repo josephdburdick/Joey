@@ -16,6 +16,6 @@
   },
   {
     "path": "/projects/:projectId",
-    "page": "./pages/project"
+    "page": "./pages/project/index.js"
   }
 ]

@@ -4,7 +4,7 @@ name: bluechairbay
 title: Blue Chair Bay Rum
 agency: Carrot
 date: [2014]
-layout: project
+
 tags:
   - Front-end Development
 logo: logo.png
