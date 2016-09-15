@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import 'whatwg-fetch';
-import Slider from '../../components/Slider/Slider';
+import Slider from 'react-slick';
 import Layout from '../../components/Layout';
 import Link from '../../components/Link';
 import s from './project.css';
@@ -8,7 +8,7 @@ import {title, html} from './index.md';
 import projects from '../../core/projects.js';
 import LazyLoad from 'react-lazyload';
 import history from '../../core/history';
-
+import moment from 'moment';
 class Project extends React.Component {
   constructor(props) {
     super(props);
@@ -41,9 +41,18 @@ class Project extends React.Component {
           slide.split('.')[1]
         ].join(''))
         : slide;
-      return <LazyLoad key={i} height="100vh"><img src={project.slidesPath + imageUrl}/></LazyLoad>
+      return <div className={s.slide} key={i}><img src={project.slidesPath + imageUrl}/></div>
     });
-
+    const settings = {
+      lazyLoad: false,
+      arrows: false,
+      className: s.slide,
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
     return (
       <section>
         <div className={s.container}>
@@ -55,7 +64,7 @@ class Project extends React.Component {
               </section>
               <section>
                 <div className={s.heading}>date</div>
-                <div className="section-body">{project.date}</div>
+                <div className="section-body">{moment(new Date(project.date)).fromNow()}</div>
               </section>
               <section>
                 <div className={s.heading}>agency</div>
@@ -67,12 +76,20 @@ class Project extends React.Component {
               </section>
               <section>
                 <div className={s.heading}>tags</div>
-                <div className="section-body">tags</div>
+                <div className="section-body">
+                  {project.tags.map((tag, i) => <span className="mdl-chip" key={i}><span className="mdl-chip__text">{tag}</span></span>)}
+                </div>
               </section>
             </div>
           </aside>
           <div className={s.figures}>
-            {renderSlides}
+            <div className={s.slideshow}>
+              <Slider {...settings}>
+                {renderSlides}
+              </Slider>
+            </div>
+
+            {/* {renderSlides} */}
           </div>
           {/* <Slider {...this.props} slides={renderSlides} /> */}
         </div>
