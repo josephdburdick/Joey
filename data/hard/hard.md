@@ -3,7 +3,7 @@ order: 9
 name: hard
 title: Hard Energy Drink
 agency: Studiografica
-date: 2012
+date: 2012-05-01T0:02:03.284Z
 
 tags:
   - Project Management

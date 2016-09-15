@@ -3,7 +3,7 @@ order: 7
 name: davids-bridal
 agency: Joey
 title: David's Bridal
-date: "2015-05-01T22:12:03.284Z"
+date: 2012-05-01T0:02:03.284Z
 
 tags:
   - Project Management

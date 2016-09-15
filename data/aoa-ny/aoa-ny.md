@@ -3,7 +3,7 @@ order: 10
 name: aoa-ny
 title: AOA NY
 agency: Freelance
-date: [2010, 2013]
+date: 2014-05-01T0:02:03.284Z
 
 tags:
   - Project Management
