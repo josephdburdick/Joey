@@ -33,7 +33,7 @@ class Project extends React.Component {
   render() {
     const project = this.props.project;
     const renderSlides = project.slides.map((slide, i) => {
-      const imageUrl = !this.state.isMobile && window.devicePixelRatio > 1
+      const imageUrl = !this.state.isMobile && window.devicePixelRatio > 1 || !this.state.isMobile && window.innerWidth > 1200
         ? ([
           slide.split('.')[0],
           project.hiDefAffix,
@@ -46,7 +46,7 @@ class Project extends React.Component {
     const settings = {
       lazyLoad: false,
       arrows: false,
-      className: s.slide,
+      //className: s.slide,
       dots: false,
       infinite: true,
       speed: 500,
@@ -83,13 +83,7 @@ class Project extends React.Component {
             </div>
           </aside>
           <div className={s.figures}>
-            <div className={s.slideshow}>
-              <Slider {...settings}>
-                {renderSlides}
-              </Slider>
-            </div>
-
-            {/* {renderSlides} */}
+            {renderSlides}
           </div>
           {/* <Slider {...this.props} slides={renderSlides} /> */}
         </div>
