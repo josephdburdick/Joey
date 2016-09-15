@@ -3,13 +3,10 @@ order: 4
 agency: Studiografica
 name: g-shock
 title: G-Shock
-date: 2012
-
-
+date: 2012-05-01T0:02:03.284Z
 tags:
   - Project Management
   - Front-end Development
-
 logo: "logo.png"
 slides:
   - slide-0.png

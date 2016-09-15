@@ -3,7 +3,7 @@ order: 0
 name: bluechairbay
 title: Blue Chair Bay Rum
 agency: Carrot
-date: [2014]
+date: 2014-05-01T0:02:03.284Z
 
 tags:
   - Front-end Development

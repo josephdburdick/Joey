@@ -3,7 +3,7 @@ order: 8
 name: citizen
 title: Citizen
 agency: Studiografica
-date: "2015-05-01T22:12:03.284Z"
+date: 2013-05-01T0:02:03.284Z
 
 tags:
   - Web App
