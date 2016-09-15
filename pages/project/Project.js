@@ -83,7 +83,7 @@ class Project extends React.Component {
             </div>
           </aside>
           <div className={s.figures}>
-            {renderSlides}
+            {renderSlides[0]}
           </div>
           {/* <Slider {...this.props} slides={renderSlides} /> */}
         </div>
