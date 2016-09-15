@@ -6,19 +6,11 @@ import Link from '../Link/Link';
 class ProjectCard extends React.Component{
   static propTypes = {
     className: PropTypes.string,
-    project: PropTypes.object
+    project: PropTypes.object,
+    projectCardClick: PropTypes.func
   }
   render(){
     const project = this.props.project;
-    const projectTags = project.tags
-    ? (
-      <ul className="project-tags">
-        {project.tags.map((tag, i) => (
-          <li key={i}>{tag}</li>
-        ))}
-      </ul>
-    )
-    : null;
     const projectNumber = ('0' + (project.order + 1)).slice(-2);
     return (
       <div className={
@@ -38,10 +30,19 @@ class ProjectCard extends React.Component{
               </header>
             </div>
             <div className="mdl-card__actions mdl-card--border">
-              <Link className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+              {/* <Link className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
                 to={project.route}>
                 View Project
-              </Link>
+              </Link> */}
+              <a
+                href={project.route}
+                data-route={project.route}
+                data-name={project.name}
+                ref={(ref) => this.projectCardLink = ref}
+                className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                onClick={this.props.projectCardClick.bind(this)}>
+                  View Project
+              </a>
             </div>
           </div>
       </div>

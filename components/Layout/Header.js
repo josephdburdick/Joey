@@ -1,20 +1,10 @@
-/**
- * React Static Boilerplate
- * https://github.com/kriasoft/react-static-boilerplate
- *
- * Copyright © 2015-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 import React from 'react';
 import Navigation from './Navigation';
 import Link from '../Link';
+import cx from 'classnames';
 import s from './Header.css';
 import Logo from '../Logo/Logo';
 class Header extends React.Component {
-
   componentDidMount() {
     window.componentHandler.upgradeElement(this.root);
   }
@@ -25,21 +15,38 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header className={s.header} ref={node => (this.root = node)}>
-        <Logo />
-        <div className="col">
-          Joseph Burdick<br/>
-          Independent Designer & Developer<br/>
+      <header className={cx([
+        'mdl-layout__header',
+        s.header
+      ])} ref={node => (this.root = node)}>
+        <div className={s.container}>
+          <Logo className={s.logo} />
+          <div className={s['hidden--mobile']}>
+            Joseph Burdick<br/>
+            Designer & Developer<br/>
+          </div>
+          <div className={s['hidden--mobile']}>
+            Brooklyn<br/>
+            New York City
+          </div>
+          <div className={s.divider} />
+          <div>
+
+          <button id="demo-menu-top-right"
+                className="mdl-button mdl-js-button mdl-button--icon">
+          <i className="material-icons">more_vert</i>
+          </button>
+
+          <ul className="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
+            data-mdl-for="demo-menu-top-right">
+            <li className="mdl-menu__item">Some Action</li>
+            <li className="mdl-menu__item">Another Action</li>
+            <li disabled className="mdl-menu__item">Disabled Action</li>
+            <li className="mdl-menu__item">Yet Another Action</li>
+          </ul>
+
+          </div>
         </div>
-        <div className="col">
-        Bedstuy, Brooklyn<br/>
-        New York City
-        </div>
-        <div className="col">
-          <Link to="/about">About</Link><br />
-          <Link to="/about">Contact</Link>
-        </div>
-        {/* <Navigation /> */}
       </header>
     );
   }

@@ -3,31 +3,62 @@ import cx from 'classnames';
 import Layout from '../../components/Layout';
 import s from './home.css';
 import {title, html} from './index.md';
-
+import history from '../../core/history.js';
 import Logo from '../../components/Logo/Logo';
 import Slider from '../../components/Slider/Slider';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
+import Project from '../project/Project.js';
 import Link from '../../components/Link/Link';
 import projects from '../../core/projects';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class HomePage extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      project: false
+    }
+    this.projectCardClick = this.projectCardClick.bind(this);
+    this.modalToggle = this.modalToggle.bind(this);
+  }
   componentDidMount() {
     this._isMounted = true;
     document.title = title;
   }
-  transition = event => {
+  projectCardClick = event => {
     event.preventDefault();
+    this.setState({ project: projects.get(event.currentTarget.dataset.name) });
     history.push({ pathname: event.currentTarget.pathname });
   };
+  modalToggle = event => {
+    event.preventDefault();
+    this.setState({ project: !!!this.state.project });
+  }
   render() {
-    const renderSlides = Object.values(projects.all)
-                          .sort((a, b) => a.order - b.order)
-                          .map((project, i) => <ProjectCard project={project} transition={this.trasition} className={s['project-card']} key={i} {...this.props} />);
+    const renderSlides = projects.sorted().map((project, i) => <ProjectCard project={project} projectCardClick={this.projectCardClick} className={s['project-card']} key={i} {...this.props} />);
     return (
       <Layout className={s.content}>
-        <section className={s.work}>
+        <section className={cx([
+          s.work,
+          s.scale,
+          this.state.project ? s['scale--down'] : ''
+        ])}>
           <Slider {...this.state } slides={ renderSlides } />
         </section>
+
+        <div className={cx([
+          s.modal,
+          this.state.project ? s['modal--on'] : s['modal--off']
+        ])}>
+          {this.state.project ? (
+            <span>
+              <a href="" onClick={this.modalToggle} className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored btn-back">
+                <i className="material-icons">clear</i>
+              </a>
+              <Project project={this.state.project} />
+            </span>
+          ) : null}
+        </div>
       </Layout>
     );
   }

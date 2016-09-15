@@ -1,60 +1,31 @@
 @import "../../utils/variables.css";
 
 .content {
-  padding-top: 78px;
   display: flex;
   font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
   background: #eee;
   flex-direction: column;
-  background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50.555%,rgba(237,237,237,1) 50.56%,rgba(255,255,255,1) 100%);
+  height: calc(100vh - 68px);
 }
 
 /*
 
 PAGE Transitions
+================
 */
 
-:global(.page) {
-  /*opacity: 0;*/
-  position: absolute;
-}
-:global(.page-appear) {
-  /*opacity: 0.01;*/
-  transform: translateX(-100vw);
-}
-
-:global(.page-appear.page-appear-active) {
-  transform: translateX(0vw);
-  /*opacity: 1;*/
-  transition: translateX 1s;
-}
-
-/*
-
-PAGE ENTER
-*/
-:global(.page-enter) {
+:global(.page-enter){
   opacity: 0.01;
-  transform: translateX(-100vw);
 }
-
-:global(.page-enter.page-enter-active) {
-  /*opacity: 1;*/
-  transform: translateX(0vw);
-  transition: translateX 1s;
+:global(.page-enter.page-enter-active){
+  opacity: 1;
+  transition: opacity 500ms ease-in;
 }
-
-/*
-
-PAGE LEAVE
-*/
-:global(.page-leave) {
-  transform: translateX(0vw);
-  /*opacity: 1;*/
+:global(.page-leave){
+  opacity: 1;
 }
-
-:global(.page-leave.page-leave-active) {
-  transform: translateX(100vw);
-  /*opacity: 0.01;*/
-  transition: translateX 1s;
+:global(.page-leave.page-leave-active){
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
