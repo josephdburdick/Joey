@@ -7,7 +7,7 @@
   display: flex;
   font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
   flex-direction: column;
-  height: calc(100vh - 68px);
+  height: calc(100vh - $header-height);
 }
 
 /*

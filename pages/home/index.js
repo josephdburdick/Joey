@@ -22,23 +22,19 @@ class HomePage extends React.Component {
   componentDidMount() {
     this._isMounted = true;
     document.title = title;
-    history.listen((location, action) => {
-      console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
-      console.log(`The last navigation action was ${action}`)
-    });
   }
   projectCardClick = event => {
     event.preventDefault();
     const project = projects.get(event.currentTarget.dataset.name);
-    // this.setState({ project });
-    history.push('/about');
-    // history.push({
-    //   pathname: event.currentTarget.pathname,
-    //   state: this.state
-    // });
-    // history.pushState(project.route);
-    // history.transitionTo(project.route);
-    // history.pushState(null, null, project.route);
+
+    this.setState({ project });
+    /*
+    This pushes the route to the address bar.
+    history.push({
+      pathname: event.currentTarget.pathname,
+      state: this.state
+    });
+    */
   };
   modalToggle = event => {
     event.preventDefault();
