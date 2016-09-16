@@ -1,8 +1,10 @@
 import React from 'react';
-import Navigation from '../Layout/Navigation';
 import cx from 'classnames';
+import MobileDetect from 'mobile-detect';
+
 import Link from '../Link';
 import s from './Logo.css';
+
 class Logo extends React.Component {
   constructor(){
     super();
@@ -10,13 +12,16 @@ class Logo extends React.Component {
       url: "",
       backup: "data:image/png;base64,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",
       width: 0,
-      height: 0
+      height: 0,
+      isMobile: false
     }
     this.requestImage = this.requestImage.bind(this);
     this.setImageState = this.setImageState.bind(this);
   }
   componentWillMount() {
     this._isMounted = false;
+    const md = new MobileDetect(window.navigator.userAgent);
+    this.setState({ isMobile: md.mobile() })
   }
   componentDidMount() {
     this._isMounted = true;
@@ -24,12 +29,17 @@ class Logo extends React.Component {
       search: this.props.search,
       limit: this.props.limit,
       size: this.props.size,
-      interval: this.props.interval
+      interval: !!this.state.isMobile ? false : this.props.interval
     });
   }
-  setImageState({gifs, size}){
+  setImageState({gifs, size, interval}){
     const count = gifs.length;
-    if (!this.props.interval){
+    this.setState({
+      width: 2,
+      height: 2,
+      url: this.state.backup
+    });
+    if (!interval){
       const randomIndex = Math.floor(Math.random() * count);
       const {width, height, url} = gifs[randomIndex].images[size];
       if (this._isMounted){
@@ -40,8 +50,23 @@ class Logo extends React.Component {
         });
       }
     } else {
+      /* Instead of looping through all results, use a limit on an array of random numbers */
+      let randomImageIndexArray = []
+      while (randomImageIndexArray.length < this.props.limit) {
+        const randomNumber = Math.ceil(Math.random() * count)
+        let found = false;
+        for (var i = 0; i < randomImageIndexArray.length; i++) {
+          if (randomImageIndexArray[i] == randomNumber) {
+            found = true;
+            break
+          }
+        }
+        if (!found)
+          randomImageIndexArray[randomImageIndexArray.length] = randomNumber;
+      }
       setInterval(() => {
-        const randomIndex = Math.floor(Math.random() * count);
+        /* Generate an array of [this.props.limit] number of items */
+        const randomIndex = Math.floor(Math.random() * randomImageIndexArray.length );
         if (this._isMounted){
           this.setState({
             width: gifs[randomIndex].images[size].width,
@@ -49,7 +74,7 @@ class Logo extends React.Component {
             url: gifs[randomIndex].images[size].url
           });
         }
-      }, this.props.interval)
+      }, interval)
     }
   }
 
@@ -60,7 +85,7 @@ class Logo extends React.Component {
     const request = `https://api.giphy.com/v1/gifs/search?q=${searchString}?limit=${limit}&api_key=${this.props.giphyAPIkey}`;
     fetch(request)
       .then(response => response.json())
-      .then(json => this.setImageState({gifs: json.data, size}))
+      .then(json => this.setImageState({gifs: json.data, size, interval}))
       .catch(reason => {
         /*
           Couldn't fetch an image from giphy.com,
@@ -73,7 +98,9 @@ class Logo extends React.Component {
             url: "data:image/png;base64,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"
           })
         }
-        console.log(reason);
+        /* Is it better to throw or console.warn ? */
+        console.warn(reason);
+        // throw reason;
       });
   }
 
@@ -133,9 +160,9 @@ class Logo extends React.Component {
 Logo.defaultProps = {
   giphyAPIkey: "dc6zaTOxFJmzC",
   search: "perfect loop",
-  limit: 25,
+  limit: 5,
   size: "fixed_height",
-  interval: 2000 // integer or false
+  interval: 5000
 };
 
 export default Logo;
