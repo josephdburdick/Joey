@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import cx from 'classnames';
 import s from './ProjectCard.css';
 import Link from '../Link/Link';
-
+import Button from '../Button/Button';
 class ProjectCard extends React.Component{
   static propTypes = {
     className: PropTypes.string,
@@ -34,15 +34,25 @@ class ProjectCard extends React.Component{
                 to={project.route}>
                 View Project
               </Link> */}
-              <a
+              {/* <a
                 href={project.route}
                 data-route={project.route}
                 data-name={project.name}
                 ref={(ref) => this.projectCardLink = ref}
-                className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                className="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect"
                 onClick={this.props.projectCardClick.bind(this)}>
                   View Project
-              </a>
+              </a> */}
+              <Button
+                href={project.route}
+                data-route={project.route}
+                data-name={project.name}
+                accent ripple
+                // ref={(ref) => this.projectCardLink = ref}
+                className="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect"
+                onClick={this.props.projectCardClick.bind(this)}>
+                  View Project
+              </Button>
             </div>
           </div>
       </div>

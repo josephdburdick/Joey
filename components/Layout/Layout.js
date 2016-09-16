@@ -21,7 +21,7 @@ class Layout extends React.Component {
   render() {
     return (
       <div ref={node => (this.root = node)}>
-        <div className="mdl-layout mdl-layout__inner-container">
+        <div className={`mdl-layout mdl-layout__inner-container ${s.layout}`}>
           <main>
             <ReactCSSTransitionGroup
               transitionName="page"

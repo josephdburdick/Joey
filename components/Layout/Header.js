@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from './Navigation';
 import Link from '../Link';
+import Button from '../Button';
 import cx from 'classnames';
 import s from './Header.css';
 import Logo from '../Logo/Logo';
@@ -32,10 +33,17 @@ class Header extends React.Component {
           <div className={s.divider} />
           <div>
 
-          <button id="demo-menu-top-right"
+          {/* <button id="demo-menu-top-right"
                 className="mdl-button mdl-js-button mdl-button--icon">
           <i className="material-icons">more_vert</i>
-          </button>
+          </button> */}
+
+          <Button
+            href="#"
+            ripple
+            type="icon">
+            <i className="material-icons">more_vert</i>
+          </Button>
 
           <ul className="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
             data-mdl-for="demo-menu-top-right">

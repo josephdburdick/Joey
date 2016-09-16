@@ -18,6 +18,9 @@ class Project extends React.Component {
       isMobile: null
     };
   }
+  componentDidMount() {
+    window.componentHandler.upgradeElement(this.root);
+  }
 
   componentWillMount() {
     const md = new MobileDetect(window.navigator.userAgent);
@@ -50,7 +53,7 @@ class Project extends React.Component {
       </span>
     ));
     return (
-      <section>
+      <section ref={node => (this.root = node)}>
         <div className={s.container}>
           <aside className={s.aside} ref="aside">
             <div>
@@ -87,6 +90,7 @@ class Project extends React.Component {
   }
   componentWillUnmountMount(){
     this.refs.aside.classList.remove(s['aside--mounted']);
+    window.componentHandler.downgradeElements(this.root);
   }
 }
 
