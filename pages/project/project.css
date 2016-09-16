@@ -1,91 +1,138 @@
 @import "../../utils/variables.css";
 @import "./slick.css";
 @import "./slick-theme.css";
-$heightSansHeader: calc(100vh - 68px);
-:global(*){
+$headerHeight: 68px;
+$heightSansHeader: calc(100vh - $headerHeight);
+$whiteGradient: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 75%,rgba(255,255,255,1) 100%);
+
+:global(*) {
   min-height: 0;
   min-width: 0;
 }
-:global(.btn-back){
+
+:global(.btn-back) {
   z-index: 20;
   position: fixed;
   top: 4rem;
   right: 4rem;
-  @media(max-width: $screen-md){
+  @media(max-width: $screen-md) {
     top: 2rem;
     right: 2rem;
   }
 }
-:global(.mdl-chip){
+
+:global(.mdl-chip) {
   margin-right: .25rem;
-  &:last-child{
+  &:last-child {
     margin-right: 0;
   }
 }
+
 .content {
   min-height: $heightSansHeader;
   height: auto;
   overflow-y: scroll;
 }
-.content > section{
+
+.content>section {
   flex: 1 0 100%;
   display: flex;
 }
-.container{
+
+.container {
   display: flex;
   padding: 0;
   justify-content: center;
   align-items: stretch;
-  @media(min-width: $screen-md){
+  flex: 1 0 auto;
+  @media(min-width: $screen-md) {
     max-height: $heightSansHeader;
+    justify-content: flex-end;
   }
-  @media(max-width: $screen-md){
+  @media(max-width: $screen-md) {
     flex-direction: column;
     display: block;
     flex: none;
     min-height: $heightSansHeader;
     width: 100%;
-    & > * {
+    &>* {
       display: block;
       flex: none;
     }
   }
 }
-.aside{
+
+.aside {
+  $aside-padding: 2rem;
   align-items: center;
-  overflow-y: auto;
-  padding: 2rem;
-  @media(min-width: $screen-md){
-    display: flex;
-    flex: 0 0 330px;
+  padding: $aside-padding;
+  box-sizing: border-box;
+  @media(min-width: $screen-md) {
+    position: relative;
     max-height: $heightSansHeader;
+    max-width: 25vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: $headerHeight;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*&:after{
+      content: "";
+      position: absolute;
+      height: $aside-padding;
+      bottom: $aside-padding;
+      left: 0; right: 0;
+      margin: 0 $aside-padding;
+      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+    }*/
+    & > div {
+      overflow-y: auto;
+    }
   }
-  @media(max-width: $screen-md){
+  @media(min-width: $screen-md) and (max-width: 1450px){
+    max-width: 33.333vw;
+  }
+  @media(max-width: $screen-md) {
     flex: 1 0 auto;
     max-width: $screen-sm;
     margin: auto;
-    & > div {
-      flex-direction: row;
-    }
   }
 }
-.aside > div{
-  background-color: rgba(255,255,255,.75);
+
+.aside > div {
+  /*background-color: rgba(255, 255, 255, .75);*/
+  background: $whiteGradient;
   border-radius: 3px;
   padding: 2rem;
-  transition: transform 1s $easeInOutQuad .5s, opacity 1s $easeInOutQuad .5s;
-  transform: translateX(-50%);
+  transition: transform .5s $easeInOutQuad .5s, opacity 1s $easeInOutQuad .5s;
   opacity: 0;
-  flex-direction: column;
+  flex-direction: row;
+  @media(min-width: $screen-md){
+    transform: translateX(-25%);
+  }
+  @media(max-width: $screen-md){
+    transform: translateY(-10%);
+  }
 }
-.aside--mounted > div{
-  transform: translateX(0%);
+
+.aside--mounted > div {
   opacity: 1;
+  @media(min-width: $screen-md){
+    transform: translateX(0%);
+  }
+  @media(max-width: $screen-md){
+    transform: translateY(0%);
+  }
 }
-.aside section + section{
+
+.aside section+section {
   margin-top: 2rem;
 }
-.heading{
+
+.heading {
   text-transform: uppercase;
   font-size: .85rem;
   color: #999;
@@ -93,35 +140,48 @@ $heightSansHeader: calc(100vh - 68px);
   margin-bottom: .25rem;
 }
 
-.figures{
+.slideshow {
   flex: 0 1 auto;
   position: relative;
+  @media(min-width: $screen-md) {
+    width: 75vw;
+  }
+  @media(min-width: $screen-md) and (max-width: 1450px){
+    max-width: 66.666vw;
+  }
+  &:after{
+    content: "";
+    position: fixed;
+    height: 2rem;
+    bottom: $headerHeight;
+    left: 0; right: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+  }
 }
-.slideshow{
-  flex: none;
-  position: absolute;
-  margin: 0 auto;
-  color: #333;
-  height: 100%;
-  background: #419be0;
-  display: block;
-}
-.slide{
+
+.slide {
   width: 100%;
   height: 100%;
   text-align: center;
   height: $heightSansHeader;
   display: flex;
   flex-direction: column;
-  @media(max-width: $screen-md){
+  background: $whiteGradient;
+
+  @media(min-width: $screen-md) {
+    min-height: 75vmin;
+  }
+  @media(max-width: $screen-md) {
     height: auto;
-    min-height: 75vh;
+    min-height: 95vmin;
   }
 }
-.slide img{
+
+.slide img {
   margin: auto;
   max-height: 80vmin;
-  @media(max-width: $screen-lg){
+  max-width: 100%;
+  @media(max-width: $screen-lg) {
     max-width: 90%;
     height: auto;
   }

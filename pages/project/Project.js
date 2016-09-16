@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import 'whatwg-fetch';
+import moment from 'moment';
 import Slider from 'react-slick';
 import Layout from '../../components/Layout';
 import Link from '../../components/Link';
@@ -7,8 +8,8 @@ import s from './project.css';
 import {title, html} from './index.md';
 import projects from '../../core/projects.js';
 import LazyLoad from 'react-lazyload';
-import history from '../../core/history';
-import moment from 'moment';
+import MobileDetect from 'mobile-detect';
+
 class Project extends React.Component {
   constructor(props) {
     super(props);
@@ -20,9 +21,10 @@ class Project extends React.Component {
   }
 
   componentWillMount() {
+    const md = new MobileDetect(window.navigator.userAgent);
     this.setState({
       isHighDef: window.devicePixelRatio > 1,
-      isMobile: 'ontouchstart' in document.documentElement
+      isMobile: !!md.mobile()
     });
   }
 
@@ -32,7 +34,7 @@ class Project extends React.Component {
 
   render() {
     const project = this.props.project;
-    const renderSlides = project.slides.map((slide, i) => {
+    const renderProjectSlides = project.slides.map((slide, i) => {
       const imageUrl = !this.state.isMobile && window.devicePixelRatio > 1 || !this.state.isMobile && window.innerWidth > 1200
         ? ([
           slide.split('.')[0],
@@ -43,16 +45,11 @@ class Project extends React.Component {
         : slide;
       return <div className={s.slide} key={i}><img src={project.slidesPath + imageUrl}/></div>
     });
-    const settings = {
-      lazyLoad: false,
-      arrows: false,
-      //className: s.slide,
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
+    const renderProjectTags = project.tags.map((tag, i) => (
+      <span className="mdl-chip" key={i}>
+        <span className="mdl-chip__text">{tag}</span>
+      </span>
+    ));
     return (
       <section>
         <div className={s.container}>
@@ -77,15 +74,14 @@ class Project extends React.Component {
               <section>
                 <div className={s.heading}>tags</div>
                 <div className="section-body">
-                  {project.tags.map((tag, i) => <span className="mdl-chip" key={i}><span className="mdl-chip__text">{tag}</span></span>)}
+                  {renderProjectTags}
                 </div>
               </section>
             </div>
           </aside>
-          <div className={s.figures}>
-            {renderSlides[0]}
+          <div className={s.slideshow}>
+            {renderProjectSlides}
           </div>
-          {/* <Slider {...this.props} slides={renderSlides} /> */}
         </div>
       </section>
     )
