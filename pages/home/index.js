@@ -15,20 +15,30 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 class HomePage extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      project: false
-    }
+    this.state = { project: false }
     this.projectCardClick = this.projectCardClick.bind(this);
     this.modalToggle = this.modalToggle.bind(this);
   }
   componentDidMount() {
     this._isMounted = true;
     document.title = title;
+    history.listen((location, action) => {
+      console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
+      console.log(`The last navigation action was ${action}`)
+    });
   }
   projectCardClick = event => {
     event.preventDefault();
-    this.setState({ project: projects.get(event.currentTarget.dataset.name) });
-    history.push({ pathname: event.currentTarget.pathname });
+    const project = projects.get(event.currentTarget.dataset.name);
+    // this.setState({ project });
+    history.push('/about');
+    // history.push({
+    //   pathname: event.currentTarget.pathname,
+    //   state: this.state
+    // });
+    // history.pushState(project.route);
+    // history.transitionTo(project.route);
+    // history.pushState(null, null, project.route);
   };
   modalToggle = event => {
     event.preventDefault();
