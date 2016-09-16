@@ -32,27 +32,20 @@ class Header extends React.Component {
           </div>
           <div className={s.divider} />
           <div>
+            <Button
+              href="#"
+              ripple
+              type="icon">
+              <i className="material-icons">more_vert</i>
+            </Button>
 
-          {/* <button id="demo-menu-top-right"
-                className="mdl-button mdl-js-button mdl-button--icon">
-          <i className="material-icons">more_vert</i>
-          </button> */}
-
-          <Button
-            href="#"
-            ripple
-            type="icon">
-            <i className="material-icons">more_vert</i>
-          </Button>
-
-          <ul className="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
-            data-mdl-for="demo-menu-top-right">
-            <li className="mdl-menu__item">Some Action</li>
-            <li className="mdl-menu__item">Another Action</li>
-            <li disabled className="mdl-menu__item">Disabled Action</li>
-            <li className="mdl-menu__item">Yet Another Action</li>
-          </ul>
-
+            <ul className="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
+              data-mdl-for="demo-menu-top-right">
+              <li className="mdl-menu__item">Some Action</li>
+              <li className="mdl-menu__item">Another Action</li>
+              <li disabled className="mdl-menu__item">Disabled Action</li>
+              <li className="mdl-menu__item">Yet Another Action</li>
+            </ul>
           </div>
         </div>
       </header>
