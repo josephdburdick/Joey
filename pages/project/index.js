@@ -2,7 +2,9 @@ import React, {PropTypes} from 'react';
 import 'whatwg-fetch';
 import Slider from '../../components/Slider/Slider';
 import Layout from '../../components/Layout';
+
 import Link from '../../components/Link';
+import Button from '../../components/Button';
 import s from './project.css';
 import {title, html} from './index.md';
 import projects from '../../core/projects.js';
@@ -20,7 +22,13 @@ class ProjectPage extends React.Component {
       isMobile: null
     };
   }
+  componentDidMount() {
+    window.componentHandler.upgradeElement(this.root);
+  }
 
+  componentWillUnmount() {
+    window.componentHandler.downgradeElements(this.root);
+  }
   componentWillMount() {
     if (!this.props.project){
       const projectId = this.props.route.params.projectId;
@@ -38,10 +46,15 @@ class ProjectPage extends React.Component {
       <Link to={project.route} className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">{project.name}</Link>
     </li>);
     return (
-      <Layout className={s.content}>
-        <Link to="/" className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored btn-back">
+      <Layout className={s.content} ref={node => (this.root = node)}>
+        <Button
+          to="/"
+          colored
+          accent
+          ripple
+          type="fab">
           <i className="material-icons">clear</i>
-        </Link>
+        </Button>
         <Project {...this.state} />
       </Layout>
     )

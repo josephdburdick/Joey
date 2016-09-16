@@ -87,6 +87,7 @@ $header-height: 70px;
   transition: opacity .5s $easeInOutQuad 0s;
 }
 .scale{
+  will-change: transform, opacity;
   transition: all 0.5s 0s;
   opacity: 1;
 }

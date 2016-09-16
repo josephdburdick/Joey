@@ -102,6 +102,7 @@
   background: $gradient-white;
   border-radius: $border-radius;
   padding: 2rem;
+  will-change: transform, opacity;
   transition: transform .5s $easeInOutQuad .5s, opacity 1s $easeInOutQuad .5s;
   opacity: 0;
   flex-direction: row;

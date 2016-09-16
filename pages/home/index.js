@@ -6,6 +6,7 @@ import {title, html} from './index.md';
 import history from '../../core/history.js';
 import Logo from '../../components/Logo/Logo';
 import Slider from '../../components/Slider/Slider';
+import Button from '../../components/Button/Button';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import Project from '../project/Project.js';
 import Link from '../../components/Link/Link';
@@ -58,9 +59,10 @@ class HomePage extends React.Component {
         ])}>
           {this.state.project ? (
             <span>
-              <a href="" onClick={this.modalToggle} className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored btn-back">
+              <Button href="#" colored accent ripple type="fab" onClick={this.modalToggle} className="btn-back">
                 <i className="material-icons">clear</i>
-              </a>
+              </Button>
+
               <Project project={this.state.project} />
             </span>
           ) : null}
