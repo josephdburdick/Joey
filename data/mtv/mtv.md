@@ -22,6 +22,6 @@ slides:
 ---
 MTV's Digital Product Head at Viacom International requested visual design
 for their upcoming iOS app with a tight turnaround (3 days). This app, scheduled for
-release in Summer 2014, will stream apps to the user in a smart radio-esque style.
+release in Summer 2014, streams apps to the user in a smart, radio-esque style.
 You put in an artist you want to watch or keywords you're looking for like
 white dress or fisheye and it produces a non-stop stream of music videos.
