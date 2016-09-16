@@ -22,9 +22,7 @@
     "react-prefixer": "^1.1.4",
     "react-redux": "^4.4.5",
     "react-scroll-horizontal": "git+ssh://git@github.com/josephdburdick/react-scroll-horizontal#b50e91e",
-    "react-slick": "^0.14.3",
     "redux": "^3.5.2",
-    "slick-carousel": "^1.6.0",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {

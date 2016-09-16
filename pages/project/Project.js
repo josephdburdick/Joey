@@ -1,7 +1,6 @@
 import React, {PropTypes} from 'react';
 import 'whatwg-fetch';
 import moment from 'moment';
-import Slider from 'react-slick';
 import Layout from '../../components/Layout';
 import Link from '../../components/Link';
 import s from './project.css';
