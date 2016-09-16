@@ -11,7 +11,7 @@
     &:before, &:after{
       content: '';
       width: 1.85rem;
-      height: 100%;
+      height: calc(100% - 1rem);
       position: absolute;
       top: 0;
       bottom: 0;
@@ -20,11 +20,11 @@
     }
     &:before {
       left: 0;
-      background: linear-gradient(to right, rgba(238,238,238,1) 0%,rgba(238,238,238,0) 100%);
+      background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
     }
     &:after{
       right: 0;
-      background: linear-gradient(to left, rgba(238,238,238,1) 0%,rgba(238,238,238,0) 100%);
+      background: linear-gradient(to left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
     }
   }
 }
