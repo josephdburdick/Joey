@@ -41,7 +41,7 @@ file structure. For a simple to-do app, this list of routes may look like this (
 ]
 ```
 
-This list of routes is referenced inside the main application file (where the React app is beeing
+This list of routes is referenced inside the main application file (where the React app is being
 bootstrapped) by using [`routes-loader`](../utils/routes-loader.js) (see [`main.js`](../main.js)):
 
 ```js
@@ -122,7 +122,7 @@ render(history.getCurrentLocation());
 ```
 
 For more information about how the `history` npm module works please visit:
- 
+
 https://github.com/ReactJSTraining/history/tree/master/docs
 
 All transitions between pages must be performed by using this module, for example:
