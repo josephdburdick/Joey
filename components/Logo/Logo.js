@@ -58,7 +58,7 @@ class Logo extends React.Component {
         for (var i = 0; i < randomImageIndexArray.length; i++) {
           if (randomImageIndexArray[i] == randomNumber) {
             found = true;
-            break
+            break;
           }
         }
         if (!found)
