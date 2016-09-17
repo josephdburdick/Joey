@@ -10,34 +10,14 @@ import LazyLoad from 'react-lazyload';
 import MobileDetect from 'mobile-detect';
 
 class Project extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      project: this.props.project,
-      isHighDef: null,
-      isMobile: null
-    };
-  }
   componentDidMount() {
-    window.componentHandler.upgradeElement(this.root);
-  }
-
-  componentWillMount() {
-    const md = new MobileDetect(window.navigator.userAgent);
-    this.setState({
-      isHighDef: window.devicePixelRatio > 1,
-      isMobile: !!md.mobile()
-    });
-  }
-
-  componentDidMount(){
     this.refs.aside.classList.add(s['aside--mounted']);
   }
 
   render() {
     const project = this.props.project;
     const renderProjectSlides = project.slides.map((slide, i) => {
-      const imageUrl = !this.state.isMobile && window.devicePixelRatio > 1 || !this.state.isMobile && window.innerWidth > 1200
+      const imageUrl = !this.props.isMobile && window.devicePixelRatio > 1 || !this.props.isMobile && window.innerWidth > 1200
         ? ([
           slide.split('.')[0],
           project.hiDefAffix,
@@ -88,9 +68,8 @@ class Project extends React.Component {
       </section>
     )
   }
-  componentWillUnmountMount(){
+  componentWillUnmount(){
     this.refs.aside.classList.remove(s['aside--mounted']);
-    window.componentHandler.downgradeElements(this.root);
   }
 }
 

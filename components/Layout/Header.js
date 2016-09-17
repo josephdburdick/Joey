@@ -5,13 +5,11 @@ import Button from '../Button';
 import cx from 'classnames';
 import s from './Header.css';
 import Logo from '../Logo/Logo';
+
 class Header extends React.Component {
+
   componentDidMount() {
     window.componentHandler.upgradeElement(this.root);
-  }
-
-  componentWillUnmount() {
-    window.componentHandler.downgradeElements(this.root);
   }
 
   render() {
@@ -21,7 +19,13 @@ class Header extends React.Component {
         s.header
       ])} ref={node => (this.root = node)}>
         <div className={s.container}>
-          <Logo className={s.logo} />
+          <Logo
+            url=""
+            className={s.logo}
+            search={"perfect loop"}
+            limit={5}
+            size={"fixed_height"}
+            interval={5000} {...this.props} />
           <div className={s['hidden--mobile']}>
             Joseph Burdick<br/>
             Designer & Developer<br/>
@@ -38,14 +42,6 @@ class Header extends React.Component {
               type="icon">
               <i className="material-icons">more_vert</i>
             </Button>
-
-            <ul className="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
-              data-mdl-for="demo-menu-top-right">
-              <li className="mdl-menu__item">Some Action</li>
-              <li className="mdl-menu__item">Another Action</li>
-              <li disabled className="mdl-menu__item">Disabled Action</li>
-              <li className="mdl-menu__item">Yet Another Action</li>
-            </ul>
           </div>
         </div>
       </header>

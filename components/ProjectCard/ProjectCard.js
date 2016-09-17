@@ -48,9 +48,9 @@ class ProjectCard extends React.Component{
                 data-route={project.route}
                 data-name={project.name}
                 accent ripple
-                // ref={(ref) => this.projectCardLink = ref}
                 className="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect"
-                onClick={this.props.projectCardClick.bind(this)}>
+                onClick={this.props.projectCardClick.bind(this)}
+                >
                   View Project
               </Button>
             </div>

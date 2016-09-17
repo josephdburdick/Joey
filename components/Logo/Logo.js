@@ -33,48 +33,50 @@ class Logo extends React.Component {
     });
   }
   setImageState({gifs, size, interval}){
-    const count = gifs.length;
-    this.setState({
-      width: 2,
-      height: 2,
-      url: this.state.backup
-    });
-    if (!interval){
-      const randomIndex = Math.floor(Math.random() * count);
-      const {width, height, url} = gifs[randomIndex].images[size];
-      if (this._isMounted){
-        this.setState({
-          width,
-          height,
-          url
-        });
-      }
-    } else {
-      /* Instead of looping through all results, use a limit on an array of random numbers */
-      let randomImageIndexArray = []
-      while (randomImageIndexArray.length < this.props.limit) {
-        const randomNumber = Math.ceil(Math.random() * count)
-        let found = false;
-        for (var i = 0; i < randomImageIndexArray.length; i++) {
-          if (randomImageIndexArray[i] == randomNumber) {
-            found = true;
-            break;
-          }
-        }
-        if (!found)
-          randomImageIndexArray[randomImageIndexArray.length] = randomNumber;
-      }
-      setInterval(() => {
-        /* Generate an array of [this.props.limit] number of items */
-        const randomIndex = Math.floor(Math.random() * randomImageIndexArray.length );
+    if (this._isMounted){
+      const count = gifs.length;
+      this.setState({
+        width: 2,
+        height: 2,
+        url: this.state.backup
+      });
+      if (!interval){
+        const randomIndex = Math.floor(Math.random() * count);
+        const {width, height, url} = gifs[randomIndex].images[size];
         if (this._isMounted){
           this.setState({
-            width: gifs[randomIndex].images[size].width,
-            height: gifs[randomIndex].images[size].height,
-            url: gifs[randomIndex].images[size].url
+            width,
+            height,
+            url
           });
         }
-      }, interval)
+      } else {
+        /* Instead of looping through all results, use a limit on an array of random numbers */
+        let randomImageIndexArray = []
+        while (randomImageIndexArray.length < this.props.limit) {
+          const randomNumber = Math.ceil(Math.random() * count)
+          let found = false;
+          for (var i = 0; i < randomImageIndexArray.length; i++) {
+            if (randomImageIndexArray[i] == randomNumber) {
+              found = true;
+              break;
+            }
+          }
+          if (!found)
+            randomImageIndexArray[randomImageIndexArray.length] = randomNumber;
+        }
+        setInterval(() => {
+          /* Generate an array of [this.props.limit] number of items */
+          const randomIndex = Math.floor(Math.random() * randomImageIndexArray.length );
+          if (this._isMounted){
+            this.setState({
+              width: gifs[randomIndex].images[size].width,
+              height: gifs[randomIndex].images[size].height,
+              url: gifs[randomIndex].images[size].url
+            });
+          }
+        }, interval)
+      }
     }
   }
 
