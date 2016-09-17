@@ -36,8 +36,7 @@
 
   @media(min-width: $screen-sm) and (max-width: $screen-md){
     overflow: hidden;
-    overflow-x: scroll;
-    white-space: nowrap;
+    overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     & > div{
       display: inline-flex;

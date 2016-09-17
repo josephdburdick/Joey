@@ -3,13 +3,17 @@
   background: #eee;
   background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50.555%,rgba(237,237,237,1) 50.56%,rgba(255,255,255,1) 100%);
 }
+/*.layout{
+  @media(min-width: $screen-md){
+    flex-direction: column-reverse;
+  }
+}*/
 .content {
   display: flex;
   font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
   flex-direction: column;
   height: calc(100vh - $header-height);
 }
-
 /*
 
 PAGE Transitions
