@@ -21,7 +21,7 @@
     "react-mdl": "^1.6.1",
     "react-prefixer": "^1.1.4",
     "react-redux": "^4.4.5",
-    "react-scroll-horizontal": "git+ssh://git@github.com/josephdburdick/react-scroll-horizontal#b50e91e",
+    "react-scroll-horizontal": "josephdburdick/react-scroll-horizontal#dc3ab293",
     "redux": "^3.5.2",
     "whatwg-fetch": "^1.0.0"
   },
