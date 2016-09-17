@@ -24,7 +24,7 @@ class HomePage extends React.Component {
     this._isMounted = true;
     document.title = title;
   }
-  projectCardClick = event => {
+  projectCardClick(event) {
     event.preventDefault();
     const project = projects.get(event.currentTarget.dataset.name);
 
@@ -37,7 +37,7 @@ class HomePage extends React.Component {
     });
     */
   };
-  modalToggle = event => {
+  modalToggle(event) {
     event.preventDefault();
     this.setState({ project: !!!this.state.project });
   }

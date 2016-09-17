@@ -13,7 +13,14 @@
   right: 0;
   position: fixed;
   width: 100vw;
-
+  &:before{
+    content: "";
+    position: fixed;
+    height: 4rem;
+    bottom: $header-height;
+    left: 0; right: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+  }
 }
 .container{
   display: flex;

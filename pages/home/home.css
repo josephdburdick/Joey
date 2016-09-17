@@ -15,12 +15,21 @@ $header-height: 70px;
 
 .content {
   display: flex;
+  height: calc(100vh - $header-height);
 }
 .content > section{
   display: flex;
   margin: auto;
   flex-direction: column;
   padding: 1rem 0;
+
+  @media(min-width: $screen-sm) and (max-width: $screen-md){
+    align-content: space-between;
+  }
+  @media(max-width: $screen-sm){
+    padding-bottom: 0;
+    height: $window-height__sans-header;
+  }
 }
 
 .intro{
