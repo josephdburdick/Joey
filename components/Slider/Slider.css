@@ -7,7 +7,7 @@
   flex-basis: 100%;
   flex-direction: column;
   position: relative;
-  @media(min-width: $screen-sm){
+  @media(min-width: $screen-md){
     &:before, &:after{
       content: '';
       width: 1.85rem;
@@ -35,6 +35,7 @@
   position: relative;
 
   @media(min-width: $screen-sm) and (max-width: $screen-md){
+    height: $window-height__sans-header;
     overflow: hidden;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -43,8 +44,9 @@
     }
   }
   @media(max-width: $screen-sm){
+    height: $window-height__sans-header;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     flex-flow: row wrap;
   }
@@ -61,8 +63,4 @@
       margin-right: 2rem;
     }
   }
-}
-
-:global(.slide-transition){
-
 }
