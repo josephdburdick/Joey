@@ -5,18 +5,9 @@ import s from './Layout.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Layout extends React.Component {
-
   static propTypes = {
-    className: PropTypes.string,
+    className: PropTypes.string
   };
-
-  componentDidMount() {
-    window.componentHandler.upgradeElement(this.root);
-  }
-
-  componentWillUnmount() {
-    window.componentHandler.downgradeElements(this.root);
-  }
 
   render() {
     return (
