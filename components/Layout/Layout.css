@@ -1,4 +1,7 @@
 @import "../../utils/variables.css";
+:global(.mdl-layout__inner-container){
+  height: 100vh;
+}
 :global(main){
   background: #eee;
   background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50.555%,rgba(237,237,237,1) 50.56%,rgba(255,255,255,1) 100%);
@@ -8,6 +11,7 @@
   display: flex;
   font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
   flex-direction: column;
+  height: 100vh;
 }
 /*
 
@@ -20,12 +24,12 @@ PAGE Transitions
 }
 :global(.page-enter.page-enter-active){
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  transition: opacity 1000ms ease-in;
 }
 :global(.page-leave){
   opacity: 1;
 }
 :global(.page-leave.page-leave-active){
   opacity: 0.01;
-  transition: opacity 300ms ease-in;
+  transition: opacity 500ms ease-in;
 }

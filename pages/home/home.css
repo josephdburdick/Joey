@@ -1,4 +1,3 @@
-/*@import 'https://fonts.googleapis.com/css?family=PT+Sans';*/
 @import "../../utils/variables.css";
 
 $header-height: 70px;
@@ -27,29 +26,21 @@ $header-height: 70px;
     align-content: space-between;
   }
   @media(max-width: $screen-sm){
+    padding-top: 0;
     padding-bottom: 0;
+    margin: 0;
     height: $window-height__sans-header;
   }
 }
-
-.intro{
-  align-items: flex-end;
-  justify-content: flex-start;
-  background-color: #222;
-  color: #ccc;
-  @media(min-width: $screen-md){
-    width: 25%;
-    padding: 4rem;
+.slider{
+  @media(min-width: $screen-sm) and (max-width: $screen-md){
+    height: auto;
   }
   @media(max-width: $screen-md){
-    padding: 1rem;
-    align-items: center;
-    justify-content: center;
-    & > div{
-      text-align: center;
-    }
+    padding-top: 1rem;
   }
 }
+
 .work {
   width: 100%;
   position: relative;

@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import prefix from 'react-prefixer';
+import cx from 'classnames';
 import s from './Slider.css';
 import ProjectCard from '../ProjectCard/ProjectCard.js';
 import {title, html} from './slider.md';
@@ -8,7 +9,8 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Slider extends React.Component {
   static propTypes = {
-    slides: PropTypes.array
+    slides: PropTypes.array,
+    className: PropTypes.string
   }
   constructor(props) {
     super(props);
@@ -66,7 +68,12 @@ class Slider extends React.Component {
         </HorizontalScroll>
       )
       : (
-        <div className="scroll-horizontal">
+        <div className={cx(
+          [
+            'scroll-horizontal',
+            this.props.className ? this.props.className : null
+          ]
+        )}>
           {this.props.slides}
         </div>
       )

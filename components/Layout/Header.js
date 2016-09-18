@@ -7,11 +7,9 @@ import s from './Header.css';
 import Logo from '../Logo/Logo';
 
 class Header extends React.Component {
-
   componentDidMount() {
     window.componentHandler.upgradeElement(this.root);
   }
-
   render() {
     return (
       <header className={cx([
@@ -22,9 +20,9 @@ class Header extends React.Component {
           <Logo
             url=""
             className={s.logo}
-            search={"perfect loop"}
+            search="perfect loop"
             limit={5}
-            size={"fixed_height"}
+            size="fixed_height"
             interval={5000} {...this.props} />
           <div className={s['hidden--mobile']}>
             Joseph Burdick<br/>
