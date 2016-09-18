@@ -42,7 +42,7 @@ class HomePage extends React.Component {
           s.scale,
           this.state.project ? s['scale--down'] : ''
         ])}>
-          <Slider {...this.state } slides={ renderSlides } />
+          <Slider {...this.state } slides={ renderSlides } className={s.slider} />
         </section>
       </Layout>
     );

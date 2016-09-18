@@ -37,15 +37,19 @@
   @media(min-width: $screen-sm) and (max-width: $screen-md){
     height: $window-height__sans-header;
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
     & > div{
       display: inline-flex;
     }
   }
   @media(max-width: $screen-sm){
-    height: $window-height__sans-header;
     display: flex;
+    height: $window-height__sans-header;
+    overflow: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     flex-direction: column;
     justify-content: center;
     flex-flow: row wrap;
