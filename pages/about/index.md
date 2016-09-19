@@ -1,5 +1,8 @@
 ---
-title: Joey is made in Brooklyn, New York.
+name: Joseph Burdick
+title: Interactive Designer & developer
+hood: Brooklyn
+city: New York City
 ---
 ## Joey is made in Brooklyn, New York.
 Joey is a one-stop shop focusing in interactive and performant websites and apps.
