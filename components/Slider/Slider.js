@@ -29,8 +29,8 @@ class Slider extends React.Component {
       isMobile: 'ontouchstart' in document.documentElement,
       windowWidth: window.innerWidth
     });
-    (function () {
-      const throttle = function (type, name, obj) {
+    (() => {
+      const throttle = (type, name, obj) => {
         obj = obj || window;
         let running = false;
         const func = function () {
