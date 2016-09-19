@@ -83,6 +83,7 @@
     flex-direction: column;
     justify-content: center;
     z-index: 50;
+    max-width: 25vw;
     & > div {
       overflow-y: auto;
     }
