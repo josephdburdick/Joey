@@ -5,7 +5,6 @@ import Layout from '../../components/Layout';
 import Link from '../../components/Link';
 import Button from '../../components/Button';
 import s from './project.css';
-import {title, html} from './index.md';
 import projects from '../../core/projects.js';
 import Project from './Project';
 import LazyLoad from 'react-lazyload';
@@ -25,13 +24,7 @@ class ProjectPage extends React.Component {
 
   projectCardClick = event => {
     event.preventDefault();
-    /*
-    This pushes the route to the address bar.
-    */
-    history.push({
-      pathname: event.currentTarget.pathname,
-      state: this.state
-    });
+    history.push(event.currentTarget.pathname);
   }
 
   componentWillMount() {
@@ -42,24 +35,23 @@ class ProjectPage extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this._isMounted = true;
+    const {title} = projects.get(this.props.route.params.projectId);
+
+    document.title = `JOEY: ${title}`;
+    window.document.addEventListener('keyup', (e) => {
+      if (e.keyCode === 27) {
+        history.push({
+          pathname: '/',
+          state: this.state
+        })
+      }
+    });
+  }
+
   render() {
     const project = projects.get(this.props.route.params.projectId);
-    const renderProjectSlides = project.slides.map((slide, i) => {
-      const imageUrl = !this.state.isMobile && window.devicePixelRatio > 1 || !this.state.isMobile && window.innerWidth > 1200
-        ? ([
-          slide.split('.')[0],
-          project.hiDefAffix,
-          '.',
-          slide.split('.')[1]
-        ].join(''))
-        : slide;
-      return <div className={s.slide} key={i}><img src={project.slidesPath + imageUrl}/></div>
-    });
-    const renderProjectTags = project.tags.map((tag, i) => (
-      <span className="mdl-chip" key={i}>
-        <span className="mdl-chip__text">{tag}</span>
-      </span>
-    ));
     return (
       <Layout className={s.content} ref={node => (this.root = node)}>
         <Button href="/" colored accent ripple type="fab" className="btn-back" onClick={this.projectCardClick.bind(this)}>

@@ -1,11 +1,8 @@
 @import "../../utils/variables.css";
 
 .header{
-  /*flex-basis: 100%;
-  display: flex;
-  flex-direction: row;*/
   z-index: 99;
-  background-color: rgb(205,220,57);
+  background-color: $yellow;
   color: #444;
 
   bottom: 0;
@@ -21,7 +18,7 @@
     bottom: $header-height;
 
     left: 0; right: 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+    background: $gradient-white;
   }
   @media(max-width: $screen-md){
     display: block;
@@ -55,4 +52,17 @@
   @media(max-width: $screen-sm){
     display: none;
   }
+}
+
+
+.modal{
+  max-width: calc(515px - 4rem);
+  margin: auto;
+  padding: 2rem;
+  background: white;
+  border-radius: $border-radius;
+}
+.btn-modal--open{
+  background-color: $pink;
+  color: rgb(224,241,64);
 }

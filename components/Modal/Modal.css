@@ -1,0 +1,44 @@
+@import "../../utils/variables.css";
+
+:global(.modal) {
+  position: fixed;
+  height: calc(100vh - $header-height);
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow-x: auto;
+  display: flex;
+  z-index: 99;
+  transition: opacity 1s $easeInOutQuad 0s, top 0s 2s;
+  opacity: 1;
+  background: $yellow;
+  background: linear-gradient(to bottom, rgba($yellowRGB, 1), rgba($pinkRGB, .95));
+  @media(min-width: $screen-sm){
+    padding: 2rem;
+  }
+  @media(max-width: $screen-sm){
+    padding: 2%;
+  }
+}
+
+:global(.modal-anim-enter) {
+  opacity: 0.00;
+  /*transform: scale(1.25);*/
+  transition: all 1s ease-out;
+}
+
+:global(.modal-anim-enter.modal-anim-enter-active) {
+  opacity: 1;
+  /*transform: scale(1);*/
+}
+
+:global(.modal-anim-leave) {
+  opacity: 1;
+  /*transform: scale(1);*/
+  transition: all 1s ease-out;
+}
+
+:global(.modal-anim-leave.modal-anim-leave-active) {
+  opacity: 0.00;
+  /*transform: scale(1.25);*/
+}

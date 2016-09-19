@@ -1,7 +1,13 @@
 ---
-title: About JOEY
+title: Joey is made in Brooklyn, New York.
 ---
+## Joey is made in Brooklyn, New York.
+Joey is a one-stop shop focusing in interactive and performant websites and apps.
 
-## About
+This site represents the professional work and services of Joseph Burdick, a self-taught designer and developer living in Brooklyn, New York. You can catch him on a number of social networks including:
+- [AngelList](https://angel.co/josephdburdick)
+- [LinkedIn](https://www.linkedin.com/in/josephdburdick)
+- [Github](https://www.github.com/josephdburdick)
+- [Twitter](https://twitter.com/josephdburdick)
 
-Hi, I'm Joe. I'm a self-taught designer and developer living in Brooklyn, New York. I've tinkered with web technologies for 17 years and when I'm left to my own devices I'm usually obsessing over an app I want to create.
+Have a project in mind? Don't be shy, [say hello!](mailto:hello@j0ey.co?subject=Hello!)

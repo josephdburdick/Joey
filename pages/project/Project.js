@@ -4,14 +4,16 @@ import moment from 'moment';
 import Layout from '../../components/Layout';
 import Link from '../../components/Link';
 import s from './project.css';
-import {title, html} from './index.md';
 import projects from '../../core/projects.js';
 import LazyLoad from 'react-lazyload';
 import MobileDetect from 'mobile-detect';
 
 class Project extends React.Component {
   componentDidMount() {
-    this.refs.aside.classList.add(s['aside--mounted']);
+    setTimeout(() => {
+      this.refs.aside.classList.add(s['aside--mounted']);
+      this.refs.slideshow.classList.add(s['slideshow--mounted']);
+    }, 200);
   }
 
   render() {
@@ -61,7 +63,7 @@ class Project extends React.Component {
               </section>
             </div>
           </aside>
-          <div className={s.slideshow}>
+          <div className={s.slideshow} ref="slideshow">
             {renderProjectSlides}
           </div>
         </div>
