@@ -8,7 +8,13 @@ import cx from 'classnames';
 import s from './Header.css';
 import Logo from '../Logo/Logo';
 import Modal from '../Modal/Modal';
-import {title, html} from '../../pages/about/index.md';
+import {
+  name,
+  title,
+  hood,
+  city,
+  html
+} from '../../pages/about/index.md';
 
 class Header extends React.Component {
   constructor(){
@@ -33,7 +39,7 @@ class Header extends React.Component {
         'mdl-chip mdl-chip--deletable',
         s['btn-modal--open']
       ])} onClick={this.toggleModal}>
-        <span className="mdl-chip__text">Close Modal</span>
+        <span className="mdl-chip__text">Close Info</span>
         <button type="button" className="mdl-chip__action">
           <i className="material-icons">cancel</i>
         </button>
@@ -43,7 +49,7 @@ class Header extends React.Component {
         ripple
         type="icon"
         onClick={this.toggleModal}>
-        <i className="material-icons">more_vert</i>
+        <i className="material-icons">comment</i>
       </Button>
     );
     return (
@@ -60,26 +66,23 @@ class Header extends React.Component {
             size="fixed_height"
             interval={5000} {...this.props} />
           <div className={s['hidden--mobile']}>
-            Joseph Burdick<br/>
-            Interactive Designer & Developer<br/>
+            {name}<br/>
+            {title}<br/>
           </div>
           <div className={s['hidden--mobile']}>
-            Brooklyn<br/>
-            New York City
+            {hood}<br/>
+            {city}
           </div>
           <div className={s.divider} />
           <div>
-
-               {renderModalToggleButton}
+            {renderModalToggleButton}
           </div>
         </div>
         <Modal
           isOpen={this.state.isModalOpen}
           transitionName="modal-anim"
         >
-          <div className={s.modal}>
-            <div dangerouslySetInnerHTML={{__html: html }}></div>
-          </div>
+          <div className={s.modal} dangerouslySetInnerHTML={{__html: html }} />
         </Modal>
       </header>
     );

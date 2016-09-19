@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react';
 import 'whatwg-fetch';
-import Slider from '../../components/Slider/Slider';
 import Layout from '../../components/Layout';
 import Link from '../../components/Link';
 import Button from '../../components/Button';
