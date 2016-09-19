@@ -13,7 +13,7 @@ class Project extends React.Component {
     setTimeout(() => {
       this.refs.aside.classList.add(s['aside--mounted']);
       this.refs.slideshow.classList.add(s['slideshow--mounted']);
-    }, 200);
+    }, 500);
   }
 
   render() {
