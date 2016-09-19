@@ -1,10 +1,5 @@
 @import "../../utils/variables.css";
 
-:global(*) {
-  min-height: 0;
-  min-width: 0;
-}
-
 :global(.btn-back) {
   z-index: 20;
   position: fixed;
@@ -65,12 +60,8 @@
   align-items: center;
   padding: $aside-padding;
   box-sizing: border-box;
-  @media(min-width: $screen-md) and (max-width: 1450px){
-    max-width: 33.333vw;
-  }
-  @media(min-width: $screen-md) and (max-width: $screen-lg) {
-    max-width: 33.333vw
-  }
+  width: 100%;
+
   @media(min-width: $screen-md) {
     position: relative;
     max-height: $window-height__sans-header;
@@ -83,10 +74,16 @@
     flex-direction: column;
     justify-content: center;
     z-index: 50;
-    max-width: 25vw;
+    max-width: 33.333vmax;
     & > div {
       overflow-y: auto;
     }
+  }
+  @media(min-width: $screen-lg) {
+    max-width: 25vmax;
+  }
+  @media(min-width: $screen-md) and (max-width: $screen-lg) {
+    max-width: 33.333vmax
   }
 
   @media(max-width: $screen-md) {
@@ -141,11 +138,11 @@
 .slideshow {
   flex: 0 1 auto;
   position: relative;
-  @media(min-width: $screen-md) {
-    width: 75vw;
+  @media(min-width: $screen-lg) {
+    width: 75vmax;
   }
-  @media(min-width: $screen-md) and (max-width: 1450px){
-    max-width: 66.666vw;
+  @media(min-width: $screen-md) and (max-width: $screen-lg){
+    max-width: 66.666vmax;
     margin: auto 0 auto auto;
   }
 }
@@ -159,8 +156,15 @@
   flex-direction: column;
   background: $gradient-white;
   border-radius: $border-radius;
+
+  @media(min-width: $screen-md) and (max-width: $screen-lg) {
+
+  }
+
   @media(min-width: $screen-md) {
-    min-height: 75vmin;
+    min-height: calc(75vmin - 4rem);
+    height: 100%;
+    padding: 2rem 0;
   }
   @media(max-width: $screen-md) {
     height: auto;
