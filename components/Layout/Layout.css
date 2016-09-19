@@ -7,6 +7,15 @@
   background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50.555%,rgba(237,237,237,1) 50.56%,rgba(255,255,255,1) 100%);
 }
 
+:global(*) {
+  min-height: 0;
+  min-width: 0;
+  box-sizing: border-box;
+  &:before, &:after{
+    box-sizing: border-box;
+  }
+}
+
 .content {
   display: flex;
   font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
