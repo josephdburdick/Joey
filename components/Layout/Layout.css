@@ -11,23 +11,36 @@
   min-height: 0;
   min-width: 0;
   box-sizing: border-box;
+  font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
   &:before, &:after{
     box-sizing: border-box;
   }
 }
-
+:global(p){
+  font-size: 15px;
+}
 .content {
-  display: flex;
-  font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
+  display: block;
   flex-direction: column;
   height: 100vh;
+  transition: opacity 1s $easeInOutQuad 0s;
 }
+
 /*
 
 PAGE Transitions
 ================
 */
 
+:global(.scale){
+  will-change: transform, opacity;
+  transition: all 0.5s 0s;
+  opacity: 1;
+}
+:global(.scale--down){
+  transform: scale(.95);
+  opacity: 0;
+}
 :global(.page-enter){
   opacity: 0.01;
 }

@@ -41,14 +41,23 @@ $header-height: 70px;
   }
 }
 
-.work {
+.projects {
   width: 100%;
   position: relative;
 }
-.work > div{
+
+.projects > div{
   margin: auto 0;
   width: 100%;
+  will-change: opacity;
+  transition: opacity 1s $easeInOutQuad;
+  opacity: 0;
 }
+
+.projects--mounted > div {
+  opacity: 1;
+}
+
 .project-card{
   display: inline-flex;
   width: 310px;
@@ -62,36 +71,4 @@ $header-height: 70px;
       margin-right: 2rem;
     }
   }
-}
-.modal{
-  position: fixed;
-  height: calc(100vh - $header-height);
-  top: -100vh;
-  left: 0;
-  right: 0;
-  overflow-x: auto;
-  display: block;
-  z-index: 99;
-  transition: opacity 1s $easeInOutQuad 0s, top 0s 2s;
-  opacity: 0;
-}
-.modal--on{
-  top: 0;
-  opacity: 1;
-  user-select: auto;
-}
-.modal--off{
-  top: -100vh;
-  opacity: 0;
-  user-select: none;
-  transition: opacity .5s $easeInOutQuad 0s;
-}
-.scale{
-  will-change: transform, opacity;
-  transition: all 0.5s 0s;
-  opacity: 1;
-}
-.scale--down{
-  transform: scale(.95);
-  opacity: 0;
 }

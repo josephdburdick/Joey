@@ -21,27 +21,23 @@ class HomePage extends React.Component {
   componentDidMount() {
     this._isMounted = true;
     document.title = title;
+    setTimeout(() => {
+      this.refs.projects.classList.add(s['projects--mounted']);
+    }, 200);
   }
   projectCardClick = event => {
     event.preventDefault();
     /*
     This pushes the route to the address bar.
     */
-    history.push({
-      pathname: event.currentTarget.pathname,
-      state: this.state
-    });
+    history.push(event.currentTarget.pathname);
   };
 
   render() {
     const renderSlides = projects.sorted().map((project, i) => <ProjectCard project={project} projectCardClick={this.projectCardClick} className={s['project-card']} key={i} {...this.props} />);
     return (
       <Layout className={s.content}>
-        <section className={cx([
-          s.work,
-          s.scale,
-          this.state.project ? s['scale--down'] : ''
-        ])}>
+        <section className={s.projects} ref="projects">
           <Slider {...this.state } slides={ renderSlides } className={s.slider} />
         </section>
       </Layout>
