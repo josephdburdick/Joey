@@ -25,10 +25,6 @@ class Button extends React.Component {
     window.componentHandler.upgradeElement(this.root);
   }
 
-  // componentWillUnmount() {
-  //   window.componentHandler.downgradeElements(this.root);
-  // }
-
   render() {
     const { component, type, className, colored, to, href,
       primary, accent, ripple, children, ...other } = this.props;
