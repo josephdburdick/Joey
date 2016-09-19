@@ -15,7 +15,10 @@
     margin-right: auto;
   }
 }
-
+.project-card--disabled .project-card--expand{
+  filter: grayscale(1);
+  opacity: .5;
+}
 .project-card--expand{
   display: flex;
   align-items: center;

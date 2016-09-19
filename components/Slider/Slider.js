@@ -30,10 +30,10 @@ class Slider extends React.Component {
       windowWidth: window.innerWidth
     });
     (function () {
-      var throttle = function (type, name, obj) {
+      const throttle = function (type, name, obj) {
         obj = obj || window;
-        var running = false;
-        var func = function () {
+        let running = false;
+        const func = function () {
           if (running) {
             return;
           }
@@ -61,22 +61,15 @@ class Slider extends React.Component {
   }
 
   render() {
-    const renderScrollArea = !this.state.isMobile && this.state.windowWidth > 768
-      ? (
-        <HorizontalScroll reverseScroll={true}>
-          {this.props.slides}
-        </HorizontalScroll>
-      )
-      : (
-        <div className={cx(
-          [
-            'scroll-horizontal',
-            this.props.className ? this.props.className : null
-          ]
-        )}>
-          {this.props.slides}
-        </div>
-      )
+    const renderScrollArea = !this.state.isMobile && this.state.windowWidth > 768 ? (
+      <HorizontalScroll reverseScroll={true}>
+        {this.props.slides}
+      </HorizontalScroll>
+    ) : (
+      <div className={cx('scroll-horizontal', this.props.className ? this.props.className : null)}>
+        {this.props.slides}
+      </div>
+    );
     return (
       <div className={s.slider}>
         {renderScrollArea}

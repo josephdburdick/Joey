@@ -12,16 +12,35 @@ class ProjectCard extends React.Component{
   render(){
     const project = this.props.project;
     const projectNumber = ('0' + (project.order + 1)).slice(-2);
+    const isActive = !!this.props.project.slides.length;
+    const renderProjectCardButton = isActive ? (
+      <Button
+        href={project.route}
+        data-route={project.route}
+        data-name={project.name}
+        accent ripple
+        className="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect"
+        onClick={this.props.projectCardClick.bind(this)}
+        >
+          View Project
+      </Button>
+    ) : (
+      <Button className="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect" accent ripple disabled>
+        Coming Soon
+      </Button>
+    )
     return (
       <div className={
         cx([
           `mdl-card mdl-shadow--2dp`,
           s['project-card'],
-          this.props.className
+          this.props.className,
+          !isActive ? s['project-card--disabled'] : null
         ])}>
-          <div className={`mdl-card--expand ${s['project-card--expand']}`} style={{backgroundImage: `url(${project.path}/bg.jpg)`}}>
-
-          </div>
+          <div className={cx(
+              'mdl-card--expand',
+              s['project-card--expand']
+            )} style={{backgroundImage: `url(${project.path}/bg.jpg)`}} />
           <div className={s['project-card__info']}>
             <div className="mdl-card__supporting-text">
               <header>
@@ -30,29 +49,7 @@ class ProjectCard extends React.Component{
               </header>
             </div>
             <div className="mdl-card__actions mdl-card--border">
-              {/* <Link className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                to={project.route}>
-                View Project
-              </Link> */}
-              {/* <a
-                href={project.route}
-                data-route={project.route}
-                data-name={project.name}
-                ref={(ref) => this.projectCardLink = ref}
-                className="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect"
-                onClick={this.props.projectCardClick.bind(this)}>
-                  View Project
-              </a> */}
-              <Button
-                href={project.route}
-                data-route={project.route}
-                data-name={project.name}
-                accent ripple
-                className="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect"
-                onClick={this.props.projectCardClick.bind(this)}
-                >
-                  View Project
-              </Button>
+              {renderProjectCardButton}
             </div>
           </div>
       </div>
