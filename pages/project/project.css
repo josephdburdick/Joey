@@ -79,13 +79,12 @@
       overflow-y: auto;
     }
   }
-  @media(min-width: $screen-lg) {
+  @media(min-width: $screen-xl) {
     max-width: 25vw;
   }
-  @media(min-width: $screen-md) and (max-width: $screen-lg) {
+  @media(min-width: $screen-md) and (max-width: $screen-xl) {
     max-width: 33.333vw
   }
-
   @media(max-width: $screen-md) {
     flex: 1 0 auto;
     margin: auto;
@@ -144,10 +143,10 @@
   transition: opacity 1s $easeInOutQuad;
   opacity: 0;
 
-  @media(min-width: $screen-lg) {
+  @media(min-width: $screen-xl) {
     max-width: 75vw;
   }
-  @media(min-width: $screen-md) and (max-width: $screen-lg){
+  @media(min-width: $screen-md) and (max-width: $screen-xl){
     max-width: 66.666vw;
     margin: auto 0 auto auto;
   }
@@ -165,17 +164,17 @@
   flex-direction: column;
   background: $gradient-white;
   border-radius: $border-radius;
-  padding: 2rem 0 0rem;
+  /*padding: 2rem 0 0rem;*/
   margin-bottom: 4rem;
 
   @media(min-width: $screen-lg) {
-    min-height: calc(80vw - 4rem);
+    min-height: calc($window-height__sans-header - 4rem);
   }
   @media(min-width: $screen-md) {
-    min-height: calc(75vw - 4rem);
+    min-height: calc($window-height__sans-header - 4rem);
   }
   @media(max-width: $screen-md) {
-    min-height: calc(75vw - 6.875rem);
+    min-height: calc($window-height__sans-header - 6.875rem);
   }
 }
 
