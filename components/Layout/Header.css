@@ -80,7 +80,7 @@
     border-color: #fff transparent transparent transparent;
     transform: rotate(360deg);
   }
-  @media(max-width: $screen-sm){
+  @media(max-width: $screen-xs){
     max-width: 100%;
     margin-bottom: $arrow-size;
     margin-left: 0;
