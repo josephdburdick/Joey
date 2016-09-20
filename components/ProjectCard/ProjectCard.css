@@ -1,0 +1,69 @@
+@import "../../utils/variables.css";
+
+.project-card{
+  width: 310px;
+  height: 500px;
+  margin-bottom: 2rem;
+  border-radius: $border-radius;
+  @media(max-width: $screen-sm){
+    max-width: calc(50% - 1rem);
+  }
+  @media(max-width: $screen-xs){
+    display: flex;
+    min-width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.project-card--disabled .project-card--expand{
+  filter: grayscale(1);
+  opacity: .5;
+}
+.project-card--expand{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center center;
+  opacity: 1;
+  &:hover{
+    opacity: .25;
+  }
+}
+.project-card__info{
+  opacity: 0;
+  transition: opacity .25s ease-in;
+
+  min-height: 300px;
+  min-width: calc(100% - 2px);
+
+  background-color: rgba(255,255,255, .95);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.project-card__number{
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.6rem;
+  border-radius: 100%;
+  background-color: rgba(255,255,255,.85);
+  box-shadow: 0 0 0 1px #eee;
+  margin: 1rem auto;
+  text-align: center;
+}
+.project-card__title{
+  justify-content: center;
+}

@@ -1,0 +1,100 @@
+@import "../../utils/variables.css";
+
+.header{
+  z-index: 99;
+  background-color: $yellow;
+  color: #444;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  bottom:0;
+  width: 100vw;
+  &:before{
+    content: "";
+    position: fixed;
+    height: 4rem;
+    bottom: $header-height;
+
+    left: 0; right: 0;
+    background: $gradient-white;
+  }
+  @media(max-width: $screen-md){
+    display: block;
+  }
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  @media(max-width: $screen-sm){
+    padding: 1rem 1rem;
+  }
+  & > div + div{
+    padding-left: 2rem;
+  }
+}
+
+.logo{
+  max-width: 100px;
+  min-width: 140px;
+}
+
+.divider{
+  flex: 1;
+}
+
+.hidden--mobile{
+  @media(max-width: $screen-sm){
+    display: none;
+  }
+}
+
+
+.modal{
+  $arrow-size: 20px;
+  max-width: calc(600px - 4rem);
+  margin: auto 0 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  position: relative;
+
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -$arrow-size;
+    right: $arrow-size;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: $arrow-size 0 0 $arrow-size;
+    border-color: #fff transparent transparent transparent;
+    transform: rotate(360deg);
+  }
+  @media(max-width: $screen-sm){
+    margin-bottom: $arrow-size;
+  }
+}
+.modal ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+.modal ul li {
+  flex: 0 1 auto;
+}
+.modal ul li a{
+  display: block;
+}
+.btn-modal--open{
+  background-color: $pink;
+  color: rgb(224,241,64);
+}

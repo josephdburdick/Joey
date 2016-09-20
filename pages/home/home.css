@@ -1,0 +1,74 @@
+@import "../../utils/variables.css";
+
+$header-height: 70px;
+
+:global(.container){
+  max-width: 1200px;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  @media(max-width: $screen-md){
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.content {
+  display: flex;
+  height: calc(100vh - $header-height);
+}
+.content > section{
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  padding: 1rem 0;
+
+  @media(min-width: $screen-sm) and (max-width: $screen-md){
+    align-content: space-between;
+  }
+  @media(max-width: $screen-sm){
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+    height: $window-height__sans-header;
+  }
+}
+.slider{
+  @media(min-width: $screen-sm) and (max-width: $screen-md){
+    height: auto;
+  }
+  @media(max-width: $screen-md){
+    padding-top: 1rem;
+  }
+}
+
+.projects {
+  width: 100%;
+  position: relative;
+}
+
+.projects > div{
+  margin: auto 0;
+  width: 100%;
+  will-change: opacity;
+  transition: opacity 1s $easeInOutQuad;
+  opacity: 0;
+}
+
+.projects--mounted > div {
+  opacity: 1;
+}
+
+.project-card{
+  display: inline-flex;
+  width: 310px;
+  margin: 0 .5rem 2rem;
+
+  @media(min-width: $screen-md){
+    &:first-child{
+      margin-left: 2rem;
+    }
+    &:last-child{
+      margin-right: 2rem;
+    }
+  }
+}

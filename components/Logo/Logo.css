@@ -1,0 +1,14 @@
+.logo{
+  display: inline-flex;
+  height: 40px;
+  position:relative;
+  transition: filter .5s ease-out;
+
+}
+.logo:hover{
+  filter: invert(100%);
+}
+
+.logo svg{
+  width: 115px;
+}

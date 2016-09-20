@@ -1,0 +1,44 @@
+/*
+
+  JOEY
+  Variables
+*/
+
+
+/*
+
+  Breakpoints
+*/
+$screen-xs: 640px;
+$screen-sm: 768px;
+$screen-md: 1024px;
+$screen-lg: 1200px;
+$screen-xl: 1450px;
+
+/*
+
+  Easing
+*/
+$easeInOutQuad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1);
+
+/*
+
+  Dimension
+*/
+$header-height: 68px;
+$window-height__sans-header: calc(100vh - $header-height);
+
+
+$border-radius: 3px;
+
+/*
+
+  Color
+*/
+$gradient-white: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 75%,rgba(255,255,255,1) 100%);
+$yellow: rgb(205,220,57);
+$yellowRGB: 205,220,57;
+$pink: rgb(255, 64, 129);
+$pinkRGB: 255, 64, 129;
+$green: rgb(133, 220, 57);
