@@ -9,7 +9,7 @@ const config = {
   title: 'JOEY: The Work and Play of Joseph Burdick',        // Your website title
   url: 'http://j0ey.co',          // Your website URL
   project: 'joey-d7997',      // Firebase project. See README.md -> How to Deploy
-  trackingID: 'UA-XXXXX-Y',                 // Google Analytics Site's ID
+  trackingID: 'UA-42649535-1',                 // Google Analytics Site's ID
 };
 
 const tasks = new Map(); // The collection of automation tasks ('clean', 'build', 'publish', etc.)
