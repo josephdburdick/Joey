@@ -57,7 +57,7 @@
 
 .modal{
   $arrow-size: 20px;
-  max-width: calc(680px - 4rem);
+  max-width: calc(600px - 4rem);
   margin: auto 0 0 auto;
   padding: 2rem;
   background: white;
@@ -80,6 +80,19 @@
   @media(max-width: $screen-sm){
     margin-bottom: $arrow-size;
   }
+}
+.modal ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+.modal ul li {
+  flex: 0 1 auto;
+}
+.modal ul li a{
+  display: block;
 }
 .btn-modal--open{
   background-color: $pink;
