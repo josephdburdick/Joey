@@ -3,8 +3,13 @@
   height: 100vh;
 }
 :global(main){
+  position: fixed;
+  top: 0; right: 0;
+  left: 0; bottom: 0;
   background: #eee;
   background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50.555%,rgba(237,237,237,1) 50.56%,rgba(255,255,255,1) 100%);
+  transform: translate3d(0,0,0);
+  background-attachment: fixed;
 }
 
 :global(*) {
