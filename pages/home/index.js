@@ -30,7 +30,10 @@ class HomePage extends React.Component {
     /*
     This pushes the route to the address bar.
     */
-    history.push(event.currentTarget.pathname);
+    history.push({
+      pathname: event.currentTarget.pathname,
+      state: this.state
+    });
   };
 
   render() {
