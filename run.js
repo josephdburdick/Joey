@@ -95,45 +95,25 @@ tasks.set('publish', () => {
     .then(() => { setTimeout(() => process.exit()); });
 });
 
-// tasks.set('publish', () => {
-//   const remote = {
-//     url: 'https://github.com/josephdburdick/Joey.git', // TODO: Update deployment URL
-//     branch: 'gh-pages',
-//   };
-//   global.DEBUG = process.argv.includes('--debug') || false;
-//   const spawn = require('child_process').spawn;
-//   const opts = { cwd: path.resolve(__dirname, './public'), stdio: ['ignore', 'inherit', 'inherit'] };
-//   const git = (...args) => new Promise((resolve, reject) => {
-//     spawn('git', args, opts).on('close', code => {
-//       if (code === 0) {
-//         resolve();
-//       } else {
-//         reject(new Error(`git ${args.join(' ')} => ${code} (error)`));
-//       }
-//     });
-//   });
-//
-//   return Promise.resolve()
-//     .then(() => run('clean'))
-//     .then(() => git('init', '--quiet'))
-//     .then(() => git('config', '--get', 'remote.origin.url')
-//       .then(() => git('remote', 'set-url', 'origin', remote.url))
-//       .catch(() => git('remote', 'add', 'origin', remote.url))
-//     )
-//     .then(() => git('ls-remote', '--exit-code', remote.url, 'master')
-//       .then(() => Promise.resolve()
-//         .then(() => git('fetch', 'origin'))
-//         .then(() => git('reset', `origin/${remote.branch}`, '--hard'))
-//         .then(() => git('clean', '--force'))
-//       )
-//       .catch(() => Promise.resolve())
-//     )
-//     .then(() => run('build'))
-//     .then(() => git('add', '.', '--all'))
-//     .then(() => git('commit', '--message', new Date().toUTCString())
-//       .catch(() => Promise.resolve()))
-//     .then(() => git('push', 'origin', `HEAD:${remote.branch}`, '--force', '--set-upstream'));
-// });
+
+tasks.set('publish:github', () => {
+  const ghPages = require('gh-pages');
+  global.DEBUG = process.argv.includes('--debug') || false;
+  const publish = (dir) => new Promise((resolve, reject) => {
+    ghPages.publish(dir, {}, (err) => {
+      if (err) {
+        reject();
+      } else {
+        resolve();
+      }
+    });
+  });
+
+  return Promise.resolve()
+    .then(() => run('clean'))
+    .then(() => run('build'))
+    .then(() => publish(path.join(__dirname, 'public')));
+});
 
 //
 // Build website and launch it in a browser for testing (default)
