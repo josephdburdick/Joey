@@ -12,13 +12,18 @@
   min-width: 0;
   box-sizing: border-box;
   font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
+
   &:before, &:after{
     box-sizing: border-box;
   }
 }
-:global(p){
-  font-size: 15px;
+:global(html){
+  font-size: 100%;
 }
+:global(p){
+  font-size: 1rem;
+}
+
 .content {
   display: block;
   flex-direction: column;

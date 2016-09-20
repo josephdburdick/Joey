@@ -74,16 +74,16 @@
     flex-direction: column;
     justify-content: center;
     z-index: 50;
-    max-width: 33.333vmax;
+    max-width: 33.333vw;
     & > div {
       overflow-y: auto;
     }
   }
   @media(min-width: $screen-lg) {
-    max-width: 25vmax;
+    max-width: 25vw;
   }
   @media(min-width: $screen-md) and (max-width: $screen-lg) {
-    max-width: 33.333vmax
+    max-width: 33.333vw
   }
 
   @media(max-width: $screen-md) {
@@ -126,7 +126,9 @@
 .aside section+section {
   margin-top: 2rem;
 }
-
+:global(.section-body){
+  font-size: 1rem;
+}
 .heading {
   text-transform: uppercase;
   font-size: .85rem;
@@ -136,17 +138,17 @@
 }
 
 .slideshow {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
   position: relative;
   will-change: opacity;
   transition: opacity 1s $easeInOutQuad;
   opacity: 0;
 
   @media(min-width: $screen-lg) {
-    width: 75vmax;
+    max-width: 75vw;
   }
   @media(min-width: $screen-md) and (max-width: $screen-lg){
-    max-width: 66.666vmax;
+    max-width: 66.666vw;
     margin: auto 0 auto auto;
   }
 }
@@ -163,27 +165,23 @@
   flex-direction: column;
   background: $gradient-white;
   border-radius: $border-radius;
+  padding: 2rem 0 0rem;
+  margin-bottom: 4rem;
 
   @media(min-width: $screen-lg) {
-    min-height: calc(80vmin - 4rem);
-    height: auto;
-    padding: 2rem 0;
+    min-height: calc(80vw - 4rem);
   }
-
   @media(min-width: $screen-md) {
-    min-height: calc(75vmin - 4rem);
-    height: auto;
-    padding: 2rem 0;
+    min-height: calc(75vw - 4rem);
   }
   @media(max-width: $screen-md) {
-    height: auto;
-    min-height: calc(100vh - 6.875rem);
+    min-height: calc(75vw - 6.875rem);
   }
 }
 
 .slide img {
   margin: auto;
-  max-height: 80vmin;
+  max-height: 80vw;
   max-width: 100%;
   @media(max-width: $screen-lg) {
     max-width: 90%;
