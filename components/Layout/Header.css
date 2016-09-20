@@ -11,6 +11,8 @@
   position: fixed;
   bottom:0;
   width: 100vw;
+  justify-content: center;
+
   &:before{
     content: "";
     position: fixed;
