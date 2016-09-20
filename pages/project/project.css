@@ -144,11 +144,12 @@
   opacity: 0;
 
   @media(min-width: $screen-xl) {
-    max-width: 75vw;
+    max-width: calc(75vw - 2rem);
+    margin: auto 2rem auto auto;
   }
   @media(min-width: $screen-md) and (max-width: $screen-xl){
-    max-width: 66.666vw;
-    margin: auto 0 auto auto;
+    max-width: calc(66.666vw - 2rem);
+    margin: auto 2rem auto auto;
   }
 }
 .slideshow--mounted{
@@ -164,7 +165,6 @@
   flex-direction: column;
   background: $gradient-white;
   border-radius: $border-radius;
-  /*padding: 2rem 0 0rem;*/
   margin-bottom: 4rem;
 
   @media(min-width: $screen-lg) {
