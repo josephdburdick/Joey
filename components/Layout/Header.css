@@ -68,6 +68,7 @@
   background: white;
   border-radius: 10px;
   position: relative;
+  z-index: 50;
 
   &:after{
     content: '';
@@ -82,10 +83,12 @@
     border-color: #fff transparent transparent transparent;
     transform: rotate(360deg);
   }
+  @media(max-width: $screen-sm){
+    margin: auto .5rem $arrow-size auto;
+  }
   @media(max-width: $screen-xs){
     max-width: 100%;
-    margin-bottom: $arrow-size;
-    margin-left: 0;
+    margin: auto .5rem $arrow-size .5rem;
   }
 }
 .modal h2 {
