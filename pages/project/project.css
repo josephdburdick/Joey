@@ -145,11 +145,11 @@
 
   @media(min-width: $screen-xl) {
     max-width: calc(75vw - 2rem);
-    margin: auto 2rem auto auto;
+    margin: 2rem 2rem auto auto;
   }
   @media(min-width: $screen-md) and (max-width: $screen-xl){
     max-width: calc(66.666vw - 2rem);
-    margin: auto 2rem auto auto;
+    margin: 2rem 2rem auto auto;
   }
 }
 .slideshow--mounted{
