@@ -3,6 +3,7 @@
 $header-height: 70px;
 
 :global(.container){
+  display: flex;
   max-width: 1200px;
   padding-left: 4rem;
   padding-right: 4rem;
@@ -13,14 +14,16 @@ $header-height: 70px;
 }
 
 .content {
-  display: flex;
   height: calc(100vh - $header-height);
+  display: flex;
+  flex: 0 1 100%;
 }
 .content > section{
   display: flex;
   margin: auto;
   flex-direction: column;
   padding: 1rem 0;
+  flex: 0 1 auto;
 
   @media(min-width: $screen-sm) and (max-width: $screen-md){
     align-content: space-between;
