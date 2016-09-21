@@ -3,12 +3,8 @@
 :global(.btn-back) {
   z-index: 20;
   position: fixed;
-  top: 4rem;
-  right: 4rem;
-  @media(max-width: $screen-md) {
-    top: 2rem;
-    right: 2rem;
-  }
+  top: 2rem;
+  right: 2rem;
 }
 
 :global(.mdl-chip) {
@@ -98,7 +94,6 @@
 }
 
 .aside > div {
-  background: $gradient-white;
   border-radius: $border-radius;
   padding: 2rem;
   will-change: transform, opacity;
@@ -110,6 +105,7 @@
   }
   @media(max-width: $screen-md){
     transform: translateY(-10%);
+    background: $gradient-white;
   }
 }
 
@@ -152,6 +148,10 @@
     max-width: calc(66.666vw - 2rem);
     margin: 2rem 2rem auto auto;
   }
+  @media(max-width: $screen-md){
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
 }
 .slideshow--mounted{
   opacity: 1;
@@ -164,9 +164,9 @@
   min-height: calc($window-height__sans-header - 2rem);
   display: flex;
   flex-direction: column;
-  background: $gradient-white;
+  background: white;
   border-radius: $border-radius;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 
   @media(min-width: $screen-lg) {
     min-height: calc($window-height__sans-header - 4rem);
@@ -183,8 +183,15 @@
   margin: auto;
   max-height: 80vw;
   max-width: 100%;
+
+  @media(min-width: $screen-lg) {
+    padding: 4rem;
+  }
   @media(max-width: $screen-lg) {
     max-width: 90%;
     height: auto;
+  }
+  @media(min-width: $screen-md) {
+    padding: 2rem;
   }
 }

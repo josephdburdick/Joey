@@ -27,7 +27,7 @@ class Project extends React.Component {
           slide.split('.')[1]
         ].join(''))
         : slide;
-      return <div className={s.slide} key={i}><img src={project.slidesPath + imageUrl}/></div>
+      return <div className={`mdl-card mdl-shadow--2dp ${s.slide}`} key={i}><img src={project.slidesPath + imageUrl}/></div>
     });
     const renderProjectTags = project.tags.map((tag, i) => (
       <span className="mdl-chip" key={i}>
