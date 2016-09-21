@@ -18,10 +18,6 @@ slides:
   - slide-4.png
   - slide-5.png
 ---
-P. Diddy's media team BlueFlame used Studiografica to build Ciroc.com to help promote the
-brand, so I had the opportunity to build a site for a well known vodka brand. This project
-ran smoothly on iPads and used hash-bang address bar manipulation to seamlessly fade
-between different pages of the site. All code was written without a framework.
+P. Diddy's media team, BlueFlame, used Studiografica to build Ciroc.com to promote the brand, affording me the opportunity to build a site for a well known brand. The site runs smoothly on iPad and uses hash-bang address bar manipulation to seamlessly fade between different pages of the site. All code was written without a framework.
 
-My favorite part of this project was the drink detail view. When you clicked the next or previous
-button it would change the URL hash to keep it bookmarkable and the drinks would slide into view horizontally.
+My favorite part of this project is the drink detail view. When users click the next or previous button it changes the URL hash to keep it bookmarkable while the drinks slide into view horizontally.
