@@ -25,4 +25,4 @@ slides:
   - slide-10.png
   - slide-12.png
 ---
-As project manager I brought on visual designer Joseph Mueller and web developer Efrat Weidberg to create a site for Maureen Zarember using Joomla that was easy to look at and use for potential tribal art buyers. The site features a buyers-only section where Ms. Zarember can control what potential buyers see. I continue to handle work for Tambaran for front-end changes to the site and custom e-blasts for art festivals and gallery shows.
+As project manager I subcontracted visual designer Joseph Mueller and web developer Efrat Weidberg to assist in creating a Joomla-based site providing an elegant and easy to navigate site for potential tribal art buyers. The site features a buyers-only section where management can control what potential buyers see.
