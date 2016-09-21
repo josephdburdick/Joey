@@ -4,9 +4,7 @@ import Layout from '../../components/Layout';
 import s from './home.css';
 import {title, html} from './index.md';
 import history from '../../core/history.js';
-import Logo from '../../components/Logo/Logo';
 import Slider from '../../components/Slider/Slider';
-import Button from '../../components/Button/Button';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import projects from '../../core/projects';
 
