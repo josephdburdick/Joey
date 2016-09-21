@@ -45,7 +45,7 @@ class Project extends React.Component {
               </section>
               <section>
                 <div className={s.heading}>date</div>
-                <div className="section-body">{moment(new Date(project.date)).fromNow()}</div>
+                <div className="section-body">{moment(new Date(project.date)).format('MMMM YYYY')}</div>
               </section>
               <section>
                 <div className={s.heading}>agency</div>
