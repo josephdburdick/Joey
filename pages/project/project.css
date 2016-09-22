@@ -3,8 +3,8 @@
 :global(.btn-back) {
   position: fixed;
   z-index: 20;
-  top: 2rem;
-  right: 2rem;
+  top: 3rem;
+  right: 1rem;
 
   & > * + *{
     margin-left: 1rem;
@@ -13,7 +13,8 @@
     opacity: 0;
     display: inline-block;
     padding: .5rem 1rem;
-    background-color: rgba(255,2555,255,.25);
+    background-color: rgba(0,0,0,.25);
+    color: white;
     border-radius: $border-radius;
   }
   &:hover > span {
