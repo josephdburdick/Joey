@@ -7,7 +7,7 @@ date: 2012-05-01T0:02:03.284Z
 tags:
   - Project Management
   - Front-end Development
-logo: "logo.png"
+logo: logo.svg
 color: "#3f2627"
 slides:
   - slide-0.png
