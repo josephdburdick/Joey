@@ -6,7 +6,6 @@ import Link from '../../components/Link';
 import s from './project.css';
 import projects from '../../core/projects.js';
 import LazyLoad from 'react-lazyload';
-import MobileDetect from 'mobile-detect';
 
 class Project extends React.Component {
   componentDidMount() {
@@ -73,9 +72,6 @@ class Project extends React.Component {
         </div>
       </section>
     )
-  }
-  componentWillUnmount(){
-    this.refs.aside.classList.remove(s['aside--mounted']);
   }
 }
 
