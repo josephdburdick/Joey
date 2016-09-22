@@ -53,13 +53,6 @@
   flex: 1;
 }
 
-.hidden--mobile{
-  @media(max-width: $screen-sm){
-    display: none;
-  }
-}
-
-
 .modal{
   $arrow-size: 20px;
   max-width: calc(600px - 4rem);

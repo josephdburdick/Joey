@@ -53,7 +53,7 @@ class ProjectPage extends React.Component {
     return (
       <Layout className={s.content} ref={node => (this.root = node)}>
         <div className="btn-back">
-          <span>
+          <span className="hidden--sm">
             Next project: <Link to={nextProject.route}>{nextProject.title}</Link>
           </span>
           <Button href="/" colored accent ripple type="fab">

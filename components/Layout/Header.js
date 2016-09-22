@@ -65,11 +65,11 @@ class Header extends React.Component {
             limit={5}
             size="fixed_height"
             interval={5000} {...this.props} />
-          <div className={s['hidden--mobile']}>
+          <div className="hidden--sm">
             {name}<br/>
             {title}<br/>
           </div>
-          <div className={s['hidden--mobile']}>
+          <div className="hidden--sm">
             {hood}<br/>
             {city}
           </div>
