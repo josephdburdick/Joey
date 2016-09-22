@@ -8,7 +8,6 @@ tags:
   - Front-end Development
   - Project Management
   - Touch Sensitive
-
 logo: logo.svg
 color: "#8fa7d1"
 slides:

@@ -12,7 +12,7 @@ import wwglass from '../data/wwglass/wwglass.md';
 
 export default {
   aoany,
-  bluechairbay,
+  // bluechairbay,
   ciroc,
   citizen,
   davidsbridal,
