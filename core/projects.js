@@ -14,7 +14,7 @@ const projects = {
   previousProject(currentProject){
     const projectsCount = this.sorted().length;
     const currentProjectIndex = this.sorted().indexOf(currentProject);
-    const previousProject = !!this.sorted()[currentProjectIndex - 1] ? this.sorted()[currentProjectIndex - 1] : this.sorted()[projectsCount]
+    const previousProject = !!this.sorted()[currentProjectIndex - 1] ? this.sorted()[currentProjectIndex - 1] : this.sorted()[projectsCount - 1]
     return previousProject;
   },
   nextProject(currentProject){
