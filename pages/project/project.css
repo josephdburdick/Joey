@@ -19,6 +19,10 @@
   &:hover > span {
     opacity: 1;
   }
+  @media(max-width: $screen-sm){
+    top: 1rem;
+    right: 1rem;
+  }
 }
 .btn-next{
   position: fixed;

@@ -20,7 +20,7 @@
 
 :global(.hidden--sm){
   @media(max-width: $screen-sm){
-    display: none;
+    display: none !important;
   }
 }
 
