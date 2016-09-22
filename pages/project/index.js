@@ -55,10 +55,10 @@ class ProjectPage extends React.Component {
       <Layout className={s.content} ref={node => (this.root = node)}>
         <div className="btn-back">
           <span className="hidden--sm">
-            Previous project: <Link to={previousProject.route}>{previousProject.title}</Link>
+            Previous project: &nbsp;<Link to={previousProject.route}>{previousProject.title}</Link>
           </span>
           <span className="hidden--sm">
-            Next project: <Link to={nextProject.route}>{nextProject.title}</Link>
+            Next project: &nbsp;<Link to={nextProject.route}>{nextProject.title}</Link>
           </span>
           <Button href="/" colored accent ripple type="fab">
             <i className="material-icons">clear</i>
