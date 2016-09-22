@@ -23,19 +23,9 @@ class HomePage extends React.Component {
       this.refs.projects.classList.add(s['projects--mounted']);
     }, 200);
   }
-  projectCardClick = event => {
-    event.preventDefault();
-    /*
-    This pushes the route to the address bar.
-    */
-    history.push({
-      pathname: event.currentTarget.pathname,
-      state: this.state
-    });
-  };
 
   render() {
-    const renderSlides = projects.sorted().map((project, i) => <ProjectCard project={project} projectCardClick={this.projectCardClick} className={s['project-card']} key={i} {...this.props} />);
+    const renderSlides = projects.sorted().map((project, i) => <ProjectCard project={project} className={s['project-card']} key={i} {...this.props} />);
     return (
       <Layout className={s.content}>
         <section className={s.projects} ref="projects">

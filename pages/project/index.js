@@ -21,13 +21,10 @@ class ProjectPage extends React.Component {
     };
   }
 
-  projectCardClick = event => {
-    event.preventDefault();
-    history.push(event.currentTarget.pathname);
-  }
-
   componentWillMount() {
+    console.log(this.props);
     const md = new MobileDetect(window.navigator.userAgent);
+    console.log(md.mobile());
     this.setState({
       isHighDef: window.devicePixelRatio > 1,
       isMobile: !!md.mobile()
@@ -36,9 +33,10 @@ class ProjectPage extends React.Component {
 
   componentDidMount() {
     this._isMounted = true;
-    const {title} = projects.get(this.props.route.params.projectId);
+    const project = projects.get(this.props.route.params.projectId);
+    this.setState({ project });
 
-    document.title = `JOEY: ${title}`;
+    document.title = `JOEY: ${project.title}`;
     window.document.addEventListener('keyup', (e) => {
       if (e.keyCode === 27) {
         history.push({
@@ -51,11 +49,17 @@ class ProjectPage extends React.Component {
 
   render() {
     const project = projects.get(this.props.route.params.projectId);
+    const nextProject = projects.nextProject(project);
     return (
       <Layout className={s.content} ref={node => (this.root = node)}>
-        <Button href="/" colored accent ripple type="fab" className="btn-back" onClick={this.projectCardClick.bind(this)}>
-          <i className="material-icons">clear</i>
-        </Button>
+        <div className="btn-back">
+          <span>
+            Next project: <Link to={nextProject.route}>{nextProject.title}</Link>
+          </span>
+          <Button href="/" colored accent ripple type="fab">
+            <i className="material-icons">clear</i>
+          </Button>
+        </div>
         <Project project={project} />
       </Layout>
     )

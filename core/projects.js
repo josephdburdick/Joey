@@ -12,14 +12,16 @@ const projects = {
     return this.all[project] || false;
   },
   previousProject(currentProject){
+    const projectsCount = this.sorted().length;
     const currentProjectIndex = this.sorted().indexOf(currentProject);
-    const newIndex = !!(this.sorted()[currentProjectIndex - 1]) ? this.sorted().indexOf(this.sorted()[currentProjectIndex - 1]) : this.sorted().indexOf(this.sorted()[0]);
-    return this.sorted()[newIndex];
+    const previousProject = !!this.sorted()[currentProjectIndex - 1] ? this.sorted()[currentProjectIndex - 1] : this.sorted()[projectsCount]
+    return previousProject;
   },
   nextProject(currentProject){
+    const projectsCount = this.sorted().length;
     const currentProjectIndex = this.sorted().indexOf(currentProject);
-    const newIndex = !!(this.sorted()[currentProjectIndex + 1]) ? this.sorted().indexOf(this.sorted()[currentProjectIndex + 1]) : this.sorted().indexOf(this.sorted()[this.sorted().length]);
-    return this.sorted()[newIndex];
+    const nextProject = !!this.sorted()[currentProjectIndex + 1] ? this.sorted()[currentProjectIndex + 1] : this.sorted()[0]
+    return nextProject;
   }
 };
 

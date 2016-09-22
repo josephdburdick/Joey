@@ -5,7 +5,7 @@
 :global(main){
   display: flex;
   background: transparent;
-  
+
   &:before{
     content: "";
     position: fixed;
@@ -30,6 +30,9 @@
 }
 :global(html){
   font-size: 100%;
+}
+:global(a){
+  text-decoration: none;
 }
 :global(p){
   font-size: 1rem;
