@@ -4,9 +4,9 @@ title: Interactive Design & Development
 hood: Brooklyn
 city: New York City
 ---
-### Hi.<br>I'm Joseph Burdick, or forever according to Mom, Joey.
+#### Hi.<br>I'm Joseph Burdick.<br>Or forever according to Mom, Joey.<br><br>I make websites and web apps.
 
-I am a developer with over 17 years of experience and I currently live in Brooklyn, New York.
+I'm a developer with 17 years of experience and I currently reside in beautiful Brooklyn, New York.
 After developing a very popular social website in high school, I was hooked. Development is my passion and as a full-time technologist I love keeping up with the latest and greatest technology.
 
 Catch him on any of the social networks below!
