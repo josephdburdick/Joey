@@ -12,6 +12,7 @@ tags:
   - Touch Sensitive
 
 logo: "logo.png"
+color: "#6d060c"
 slides:
   - slide-0.png
   - slide-1.png

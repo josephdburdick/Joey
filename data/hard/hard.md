@@ -11,6 +11,7 @@ tags:
   - .NET Implementation
 
 logo: logo.png
+color: "#b12b39"
 slides:
   - slide-0.png
   - slide-1.png

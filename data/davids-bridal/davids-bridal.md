@@ -13,6 +13,7 @@ tags:
   - User Experience
 
 logo: "logo.png"
+color: "#3a2d27"
 slides:
   - slide-2.png
   - slide-0.png

@@ -10,6 +10,7 @@ tags:
   - Visual Design
 
 logo: logo.svg
+color: "#00bcf0"
 slides:
   - slide-0.png
   - slide-1.png

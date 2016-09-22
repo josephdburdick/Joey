@@ -64,6 +64,10 @@ class Project extends React.Component {
             </div>
           </aside>
           <div className={s.slideshow} ref="slideshow">
+            <div
+              className={`mdl-card mdl-shadow--2dp ${s.slide}`}
+              style={{backgroundColor: project.color}}>
+              <img src={project.route + '/' + project.logo} alt={`${project.title} logo`} width="350"/></div>
             {renderProjectSlides}
           </div>
         </div>

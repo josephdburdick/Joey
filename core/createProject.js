@@ -5,6 +5,7 @@ export function Project(project) {
   this.date = project.date;
   this.tags = project.tags;
   this.logo = project.logo;
+  this.color = project.color;
   this.html = project.html;
   this.agency = project.agency;
   this.slides = Object.values(project.slides);

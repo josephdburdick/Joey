@@ -13,6 +13,7 @@ tags:
   - Touch Interactive
 
 logo: logo.svg
+color: "#15222b"
 slides:
   - slide-0.png
   - slide-1.png

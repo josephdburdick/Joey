@@ -8,6 +8,7 @@ tags:
   - Project Management
   - Front-end Development
 logo: "logo.png"
+color: "#3f2627"
 slides:
   - slide-0.png
   - slide-1.png

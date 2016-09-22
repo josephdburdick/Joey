@@ -11,6 +11,7 @@ tags:
   - Front-end Development
 
 logo: logo.png
+color: "#433c3e"
 slides:
   - slide-0.png
   - slide-1.png

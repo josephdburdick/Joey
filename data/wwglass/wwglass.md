@@ -13,6 +13,7 @@ tags:
   - Touch
 
 logo: logo.png
+color: "#364661"
 slides:
   - slide-0.png
   - slide-1-1.png
