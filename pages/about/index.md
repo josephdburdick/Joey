@@ -9,7 +9,7 @@ city: New York City
 I'm a developer with 17 years of experience and I currently reside in beautiful Brooklyn, New York.
 After developing a very popular social website in high school, I was hooked. Development is my passion and as a full-time technologist I love keeping up with the latest and greatest technology.
 
-Catch him on any of the social networks below!
+Catch me on any of the social networks below!
 - [Github](https://www.github.com/josephdburdick)
 - [LinkedIn](https://www.linkedin.com/in/josephdburdick)
 - [AngelList](https://angel.co/josephdburdick)
