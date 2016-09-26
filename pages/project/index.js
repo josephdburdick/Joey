@@ -22,9 +22,7 @@ class ProjectPage extends React.Component {
   }
 
   componentWillMount() {
-    console.log(this.props);
     const md = new MobileDetect(window.navigator.userAgent);
-    console.log(md.mobile());
     this.setState({
       isHighDef: window.devicePixelRatio > 1,
       isMobile: !!md.mobile()
