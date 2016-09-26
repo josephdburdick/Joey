@@ -10,12 +10,8 @@
     "chunk": "main"
   },
   {
-    "path": "/about",
-    "page": "./pages/about",
-    "chunk": "main"
-  },
-  {
     "path": "/projects/:projectId",
-    "page": "./pages/project/index.js"
+    "page": "./pages/project/index.js",
+    "chunk": "main"
   }
 ]
