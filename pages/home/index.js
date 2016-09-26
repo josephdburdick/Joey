@@ -7,8 +7,7 @@ import history from '../../core/history.js';
 import Slider from '../../components/Slider/Slider';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import projects from '../../core/projects';
-
-const renderSlides = projects.sorted().map((project, i) => <ProjectCard project={project} className={s['project-card']} key={i} />);
+import MobileDetect from 'mobile-detect';
 
 class HomePage extends React.Component {
   constructor(props){
@@ -27,10 +26,17 @@ class HomePage extends React.Component {
   }
 
   render() {
+    const renderSlides = projects.sorted().map((project, i) => <ProjectCard project={project} className={s['project-card']} key={i} />);
+    const md = new MobileDetect(window.navigator.userAgent);
+
     return (
       <Layout className={s.content}>
         <section className={s.projects} ref="projects">
-          <Slider {...this.state } slides={ renderSlides } className={s.slider} />
+          <Slider
+            isMobile={!!md.mobile()}
+            isHighDef={window.devicePixelRatio > 1} 
+            slides={ renderSlides }
+            className={s.slider} />
         </section>
       </Layout>
     );

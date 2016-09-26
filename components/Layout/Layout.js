@@ -19,7 +19,7 @@ class Layout extends React.Component {
             </ReactCSSTransitionGroup>
           </main>
         </div>
-        <Header/>
+        <Header />
       </div>
     );
   }

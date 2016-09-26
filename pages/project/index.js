@@ -8,7 +8,6 @@ import projects from '../../core/projects.js';
 import Project from './Project';
 import LazyLoad from 'react-lazyload';
 import MobileDetect from 'mobile-detect';
-
 import history from '../../core/history';
 
 class ProjectPage extends React.Component {

@@ -19,19 +19,19 @@ import {
 class Header extends React.Component {
   constructor(props){
     super(props);
-    // this.state = {
-    //   isModalOpen: false
-    // }
+    this.state = {
+      isModalOpen: false
+    }
     this.toggleModal = this.toggleModal.bind(this);
   }
 
-  // toggleModal() {
-  //   this.setState({ isModalOpen: !this.state.isModalOpen });
-  // }
-  //
-  // componentDidMount() {
-  //   window.componentHandler.upgradeElement(this.root);
-  // }
+  toggleModal() {
+    this.setState({ isModalOpen: !this.state.isModalOpen });
+  }
+
+  componentDidMount() {
+    window.componentHandler.upgradeElement(this.root);
+  }
 
   render() {
     const renderModalToggleButton = this.state.isModalOpen ? (
@@ -56,10 +56,9 @@ class Header extends React.Component {
       <header className={cx([
         'mdl-layout__header',
         s.header
-      ])} ref="header">
+      ])} ref={node => (this.root = node)}>
         <div className={s.container}>
           <Logo
-            url=""
             className={s.logo}
             search="perfect loop"
             limit={5}
@@ -78,12 +77,9 @@ class Header extends React.Component {
             {renderModalToggleButton}
           </div>
         </div>
-        {/* <Modal
-          isOpen={this.state.isModalOpen}
-          transitionName="modal-anim"
-        >
+        <Modal isOpen={this.state.isModalOpen} transitionName="modal-anim">
           <div className={s.modal} dangerouslySetInnerHTML={{__html: html }} />
-        </Modal> */}
+        </Modal>
       </header>
     );
   }

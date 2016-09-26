@@ -15,20 +15,13 @@ class Slider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      windowWidth: 0,
-      isHighDef: null,
-      isMobile: null
+      windowWidth: this.props.windowWidth
     };
     this.handleResize = this.handleResize.bind(this);
   }
 
   componentDidMount() {
     this._isMounted = true;
-    this.setState({
-      isHighDef: window.devicePixelRatio > 1,
-      isMobile: 'ontouchstart' in document.documentElement,
-      windowWidth: window.innerWidth
-    });
     (() => {
       const throttle = (type, name, obj) => {
         obj = obj || window;
@@ -61,7 +54,7 @@ class Slider extends React.Component {
   }
 
   render() {
-    const renderScrollArea = !this.state.isMobile && this.state.windowWidth > 768 ? (
+    const renderScrollArea = !this.state.isMobile && window.innerWidth > 768 ? (
       <HorizontalScroll reverseScroll={true}>
         {this.props.slides}
       </HorizontalScroll>
