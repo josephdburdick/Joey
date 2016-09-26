@@ -8,6 +8,8 @@ import Slider from '../../components/Slider/Slider';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import projects from '../../core/projects';
 
+const renderSlides = projects.sorted().map((project, i) => <ProjectCard project={project} className={s['project-card']} key={i} />);
+
 class HomePage extends React.Component {
   constructor(props){
     super(props);
@@ -25,7 +27,6 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const renderSlides = projects.sorted().map((project, i) => <ProjectCard project={project} className={s['project-card']} key={i} {...this.props} />);
     return (
       <Layout className={s.content}>
         <section className={s.projects} ref="projects">
@@ -34,11 +35,6 @@ class HomePage extends React.Component {
       </Layout>
     );
   }
-
-  componentWillUnmount() {
-    this._isMounted = false;
-  }
-
 }
 
 export default HomePage;

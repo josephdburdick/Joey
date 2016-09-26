@@ -17,21 +17,21 @@ import {
 } from '../../pages/about/index.md';
 
 class Header extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      isModalOpen: false
-    }
+  constructor(props){
+    super(props);
+    // this.state = {
+    //   isModalOpen: false
+    // }
     this.toggleModal = this.toggleModal.bind(this);
   }
 
-  toggleModal() {
-    this.setState({ isModalOpen: !this.state.isModalOpen });
-  }
-
-  componentDidMount() {
-    window.componentHandler.upgradeElement(this.root);
-  }
+  // toggleModal() {
+  //   this.setState({ isModalOpen: !this.state.isModalOpen });
+  // }
+  //
+  // componentDidMount() {
+  //   window.componentHandler.upgradeElement(this.root);
+  // }
 
   render() {
     const renderModalToggleButton = this.state.isModalOpen ? (
@@ -56,7 +56,7 @@ class Header extends React.Component {
       <header className={cx([
         'mdl-layout__header',
         s.header
-      ])} ref={node => (this.root = node)}>
+      ])} ref="header">
         <div className={s.container}>
           <Logo
             url=""
@@ -78,12 +78,12 @@ class Header extends React.Component {
             {renderModalToggleButton}
           </div>
         </div>
-        <Modal
+        {/* <Modal
           isOpen={this.state.isModalOpen}
           transitionName="modal-anim"
         >
           <div className={s.modal} dangerouslySetInnerHTML={{__html: html }} />
-        </Modal>
+        </Modal> */}
       </header>
     );
   }
