@@ -215,6 +215,7 @@
   }
   @media(max-width: $screen-sm){
     padding: 0;
+    border-radius: 0px;
   }
 }
 
