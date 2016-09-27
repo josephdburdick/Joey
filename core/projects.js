@@ -1,5 +1,6 @@
 import projectsData from '../data/index.js';
 import { Project } from './createProject';
+import history from './history';
 
 const all = Object.values(projectsData).reduce((all, project) => {
   return { ...all, [project.name]: new Project(project)};
@@ -22,6 +23,11 @@ const projects = {
     const currentProjectIndex = this.sorted().indexOf(currentProject);
     const nextProject = !!this.sorted()[currentProjectIndex + 1] ? this.sorted()[currentProjectIndex + 1] : this.sorted()[0]
     return nextProject;
+  },
+  goRoute(event){
+    event.preventDefault();
+    const { pathname } = event.currentTarget;
+    history.push({pathname});
   }
 };
 

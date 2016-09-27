@@ -117,6 +117,7 @@
     flex: 1 0 auto;
     max-width: $screen-sm;
     margin: auto;
+    padding: 0rem;
   }
 }
 
@@ -179,6 +180,11 @@
     max-width: calc(66.666vw - 2rem);
     margin: 2rem 2rem auto auto;
   }
+  @media(max-width: $screen-sm){
+    padding: 0rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 .slideshow--mounted{
   opacity: 1;
@@ -206,6 +212,9 @@
   @media(max-width: $screen-md) {
     min-height: calc($window-height__sans-header - 6.875rem);
     padding: 1rem;
+  }
+  @media(max-width: $screen-sm){
+    padding: 0;
   }
 }
 

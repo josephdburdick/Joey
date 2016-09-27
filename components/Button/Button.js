@@ -3,7 +3,6 @@ import cx from 'classnames';
 import Link from '../Link';
 
 class Button extends React.Component {
-
   static propTypes = {
     component: PropTypes.oneOf([
       PropTypes.string,

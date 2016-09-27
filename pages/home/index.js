@@ -10,13 +10,6 @@ import projects from '../../core/projects';
 import MobileDetect from 'mobile-detect';
 
 class HomePage extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      isMobile: null,
-      isHighDef: null
-    }
-  }
   componentDidMount() {
     this._isMounted = true;
     document.title = title;
@@ -25,8 +18,14 @@ class HomePage extends React.Component {
     }, 200);
   }
 
+  goRoute(event){
+    event.preventDefault();
+    const { pathname } = event.currentTarget;
+    history.push({pathname})
+  }
+
   render() {
-    const renderSlides = projects.sorted().map((project, i) => <ProjectCard project={project} className={s['project-card']} key={i} />);
+    const renderSlides = projects.sorted().map((project, i) => <ProjectCard project={project} className={s['project-card']} key={i} goRoute={this.goRoute} />);
     const md = new MobileDetect(window.navigator.userAgent);
 
     return (
@@ -34,7 +33,7 @@ class HomePage extends React.Component {
         <section className={s.projects} ref="projects">
           <Slider
             isMobile={!!md.mobile()}
-            isHighDef={window.devicePixelRatio > 1} 
+            isHighDef={window.devicePixelRatio > 1}
             slides={ renderSlides }
             className={s.slider} />
         </section>

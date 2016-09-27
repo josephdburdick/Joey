@@ -6,7 +6,6 @@ import Button from '../../components/Button';
 import s from './project.css';
 import projects from '../../core/projects.js';
 import Project from './Project';
-import LazyLoad from 'react-lazyload';
 import MobileDetect from 'mobile-detect';
 import history from '../../core/history';
 
@@ -14,7 +13,6 @@ class ProjectPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      project: null,
       isHighDef: null,
       isMobile: null
     };
@@ -30,10 +28,9 @@ class ProjectPage extends React.Component {
 
   componentDidMount() {
     this._isMounted = true;
-    const project = projects.get(this.props.route.params.projectId);
-    this.setState({ project });
+    const { title } = projects.get(this.props.route.params.projectId);
 
-    document.title = `JOEY: ${project.title}`;
+    document.title = `JOEY: ${title}`;
     window.document.addEventListener('keyup', (e) => {
       if (e.keyCode === 27) {
         history.push({
@@ -42,6 +39,12 @@ class ProjectPage extends React.Component {
         })
       }
     });
+  }
+
+  goRoute(event){
+    event.preventDefault();
+    const { pathname } = event.currentTarget;
+    history.push({pathname})
   }
 
   render() {
@@ -57,11 +60,11 @@ class ProjectPage extends React.Component {
           <span className="hidden--sm">
             Next project: &nbsp;<Link to={nextProject.route}>{nextProject.title}</Link>
           </span>
-          <Button href="/" colored accent ripple type="fab">
+          <Button href="/" onClick={this.goRoute} className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
             <i className="material-icons">clear</i>
           </Button>
         </div>
-        <Project project={project} />
+        <Project project={projects.get(this.props.route.params.projectId)} goRoute={this.goRoute} />
       </Layout>
     )
   }
