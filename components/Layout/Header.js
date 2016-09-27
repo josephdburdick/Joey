@@ -7,7 +7,12 @@ import Button from '../Button';
 import cx from 'classnames';
 import s from './Header.css';
 import Logo from '../Logo/Logo';
-import {requestImage, setImageState} from '../Logo/logo-methods';
+import {
+  logoDefaults,
+  createLogoRequest,
+  requestLogoImage,
+  getLogoState
+} from '../Logo/logo-methods';
 import Modal from '../Modal/Modal';
 import {
   name,
@@ -21,13 +26,24 @@ class Header extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      isModalOpen: false
+      isModalOpen: false,
+      logo: {}
     }
     this.toggleModal = this.toggleModal.bind(this);
+    this.getLogoState = getLogoState.bind(this);
   }
 
   toggleModal() {
     this.setState({ isModalOpen: !this.state.isModalOpen });
+  }
+
+  componentWillMount() {
+    requestLogoImage(createLogoRequest({...logoDefaults}))
+      .then(({data}) => this.getLogoState({ gifs: data, ...logoDefaults}))
+      .then(logoState => {
+        this.setState({logo: logoState });
+        // console.log(logoState);
+      });
   }
 
   componentDidMount() {
@@ -35,13 +51,6 @@ class Header extends React.Component {
   }
 
   render() {
-    const logoData = requestImage({
-      search: "perfect loop",
-      limit: 5,
-      size: "fixed_height",
-      interval: 5000
-    });
-    console.log(logoData);
     const renderModalToggleButton = this.state.isModalOpen ? (
       <span className={cx([
         'mdl-chip mdl-chip--deletable',
@@ -66,12 +75,7 @@ class Header extends React.Component {
         s.header
       ])} ref={node => (this.root = node)}>
         <div className={s.container}>
-          {/* <Logo
-            className={s.logo}
-            search="perfect loop"
-            limit={5}
-            size="fixed_height"
-            interval={5000} {...this.props} /> */}
+          <Logo {...this.state.logo} />
           <div className="hidden--sm">
             {name}<br/>
             {title}<br/>
