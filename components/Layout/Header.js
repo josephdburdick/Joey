@@ -7,6 +7,7 @@ import Button from '../Button';
 import cx from 'classnames';
 import s from './Header.css';
 import Logo from '../Logo/Logo';
+import {requestImage, setImageState} from '../Logo/logo-methods';
 import Modal from '../Modal/Modal';
 import {
   name,
@@ -34,6 +35,13 @@ class Header extends React.Component {
   }
 
   render() {
+    const logoData = requestImage({
+      search: "perfect loop",
+      limit: 5,
+      size: "fixed_height",
+      interval: 5000
+    });
+    console.log(logoData);
     const renderModalToggleButton = this.state.isModalOpen ? (
       <span className={cx([
         'mdl-chip mdl-chip--deletable',
@@ -58,12 +66,12 @@ class Header extends React.Component {
         s.header
       ])} ref={node => (this.root = node)}>
         <div className={s.container}>
-          <Logo
+          {/* <Logo
             className={s.logo}
             search="perfect loop"
             limit={5}
             size="fixed_height"
-            interval={5000} {...this.props} />
+            interval={5000} {...this.props} /> */}
           <div className="hidden--sm">
             {name}<br/>
             {title}<br/>
