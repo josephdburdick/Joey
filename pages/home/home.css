@@ -17,6 +17,7 @@ $header-height: 70px;
   height: calc(100vh - $header-height);
   display: flex;
   flex: 0 1 100%;
+  width: 100vw;
 }
 .content > section{
   display: flex;

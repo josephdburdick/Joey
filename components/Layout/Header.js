@@ -17,8 +17,8 @@ import {
 } from '../../pages/about/index.md';
 
 class Header extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       isModalOpen: false
     }
@@ -59,7 +59,6 @@ class Header extends React.Component {
       ])} ref={node => (this.root = node)}>
         <div className={s.container}>
           <Logo
-            url=""
             className={s.logo}
             search="perfect loop"
             limit={5}
@@ -78,10 +77,7 @@ class Header extends React.Component {
             {renderModalToggleButton}
           </div>
         </div>
-        <Modal
-          isOpen={this.state.isModalOpen}
-          transitionName="modal-anim"
-        >
+        <Modal isOpen={this.state.isModalOpen} transitionName="modal-anim">
           <div className={s.modal} dangerouslySetInnerHTML={{__html: html }} />
         </Modal>
       </header>

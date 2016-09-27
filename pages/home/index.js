@@ -7,15 +7,9 @@ import history from '../../core/history.js';
 import Slider from '../../components/Slider/Slider';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import projects from '../../core/projects';
+import MobileDetect from 'mobile-detect';
 
 class HomePage extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      isMobile: null,
-      isHighDef: null
-    }
-  }
   componentDidMount() {
     this._isMounted = true;
     document.title = title;
@@ -24,21 +18,28 @@ class HomePage extends React.Component {
     }, 200);
   }
 
+  goRoute(event){
+    event.preventDefault();
+    const { pathname } = event.currentTarget;
+    history.push({pathname})
+  }
+
   render() {
-    const renderSlides = projects.sorted().map((project, i) => <ProjectCard project={project} className={s['project-card']} key={i} {...this.props} />);
+    const renderSlides = projects.sorted().map((project, i) => <ProjectCard project={project} className={s['project-card']} key={i} goRoute={this.goRoute} />);
+    const md = new MobileDetect(window.navigator.userAgent);
+
     return (
       <Layout className={s.content}>
         <section className={s.projects} ref="projects">
-          <Slider {...this.state } slides={ renderSlides } className={s.slider} />
+          <Slider
+            isMobile={!!md.mobile()}
+            isHighDef={window.devicePixelRatio > 1}
+            slides={ renderSlides }
+            className={s.slider} />
         </section>
       </Layout>
     );
   }
-
-  componentWillUnmount() {
-    this._isMounted = false;
-  }
-
 }
 
 export default HomePage;

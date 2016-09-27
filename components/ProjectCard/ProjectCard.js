@@ -3,18 +3,20 @@ import cx from 'classnames';
 import s from './ProjectCard.css';
 import Link from '../Link/Link';
 import Button from '../Button/Button';
+import history from '../../core/history';
+
 class ProjectCard extends React.Component{
   static propTypes = {
     className: PropTypes.string,
     project: PropTypes.object,
-    projectCardClick: PropTypes.func
+    goRoute: PropTypes.func
   }
   render(){
     const project = this.props.project;
     const projectNumber = ('0' + (project.order + 1)).slice(-2);
     const isActive = !!this.props.project.slides.length;
     const renderProjectCardButton = isActive ?
-      <Button href={project.route} accent ripple>View Project</Button> : <Button accent ripple disabled>Coming Soon</Button>;
+      <Button href={project.route} accent ripple onClick={this.props.goRoute}>View Project</Button> : <Button accent ripple disabled>Coming Soon</Button>;
     return (
       <div className={
         cx([
