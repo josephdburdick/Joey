@@ -13,7 +13,7 @@ class ProjectCard extends React.Component{
   }
   render(){
     const project = this.props.project;
-    const projectNumber = ('0' + (project.order + 1)).slice(-2);
+    const projectNumber = ('0' + (project.order)).slice(-2); // Hiding one project, temporarily commenting out `+ 1`
     const isActive = !!this.props.project.slides.length;
     const renderProjectCardButton = isActive ?
       <Button href={project.route} accent ripple onClick={this.props.goRoute}>View Project</Button> : <Button accent ripple disabled>Coming Soon</Button>;
