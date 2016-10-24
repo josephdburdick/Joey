@@ -38,7 +38,7 @@ export default class Modal extends React.Component {
           transitionName={this.props.transitionName}
           transitionEnterTimeout={this.props.transitionEnterTimeout}
           transitionLeaveTimeout={this.props.transitionLeaveTimeout}>
-          <div className="modal">
+          <div className="modal" onClick={this.props.toggleModal}>
             {this.props.children}
           </div>
         </ReactCSSTransitionGroup>

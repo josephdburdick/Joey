@@ -77,7 +77,7 @@ class Header extends React.Component {
             {renderModalToggleButton}
           </div>
         </div>
-        <Modal isOpen={this.state.isModalOpen} transitionName="modal-anim">
+        <Modal isOpen={this.state.isModalOpen} transitionName="modal-anim" onClick={this.toggleModal}>
           <div className={s.modal} dangerouslySetInnerHTML={{__html: html }} />
         </Modal>
       </header>
