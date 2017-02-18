@@ -11,10 +11,10 @@ class AboutPage extends React.Component {
 
   render() {
     return (
-      <Layout className={s.content}>
+      <div className={s.content}>
         <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
-      </Layout>
+      </div>
     );
   }
 

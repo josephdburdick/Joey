@@ -52,7 +52,7 @@ class ProjectPage extends React.Component {
     const previousProject = projects.previousProject(project);
     const nextProject = projects.nextProject(project);
     return (
-      <Layout className={s.content} ref={node => (this.root = node)}>
+      <div className={s.content} ref={node => (this.root = node)}>
         <div className="btn-back">
           <span className="hidden--sm">
             Previous project: &nbsp;<Link to={previousProject.route}>{previousProject.title}</Link>
@@ -65,7 +65,7 @@ class ProjectPage extends React.Component {
           </Button>
         </div>
         <Project project={projects.get(this.props.route.params.projectId)} goRoute={this.goRoute} />
-      </Layout>
+      </div>
     )
   }
 }

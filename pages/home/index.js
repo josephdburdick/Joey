@@ -29,7 +29,7 @@ class HomePage extends React.Component {
     const md = new MobileDetect(window.navigator.userAgent);
 
     return (
-      <Layout className={s.content}>
+      <div className={s.content}>
         <section className={s.projects} ref="projects">
           <Slider
             isMobile={!!md.mobile()}
@@ -37,7 +37,7 @@ class HomePage extends React.Component {
             slides={ renderSlides }
             className={s.slider} />
         </section>
-      </Layout>
+      </div>
     );
   }
 }
