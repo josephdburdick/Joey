@@ -107,9 +107,9 @@
     "clean": "node run clean",
     "build": "node run build",
     "build:debug": "node run build --debug",
-    "publish": "node run publish",
-    "publish:github": "node run publish:github",
-    "publish:debug": "node run publish --debug",
+    "deploy": "node run publish",
+    "deploy:github": "node run publish:github",
+    "deploy:debug": "node run publish --debug",
     "start": "node run"
   }
 }

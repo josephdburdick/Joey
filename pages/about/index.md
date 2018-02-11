@@ -7,16 +7,14 @@ city: New York City
 
 #### Hi.
 
-<br>I'm Joseph Burdick.
+I'm Joseph Burdick.
 
-<br>
+I make websites and web apps for clients big and small.
 
-<br>I make websites and web apps for clients big and small.
-
-I'm a developer with 17 years of experience and I currently reside in beautiful
-Brooklyn, New York. After developing a very popular social website in high
-school, I was hooked. Development is my passion and as a full-time technologist
-I love keeping up with the latest tech to solve problems efficiently.
+I'm a developer with 17 years of experience and I currently reside in beautiful Brooklyn, New York.
+After developing a very popular social website in high school, I was hooked. Development is my
+passion and as a full-time technologist I love keeping up with the latest tech to solve problems
+efficiently.
 
 Catch me on any of the social networks below!
 
@@ -25,5 +23,4 @@ Catch me on any of the social networks below!
 * [AngelList](https://angel.co/josephdburdick)
 * [Twitter](https://twitter.com/josephdburdick)
 
-Have a project in mind? Don't be shy,
-[say hello!](mailto:joe@presentday.io?subject=Hello!)
+Have a project in mind? Don't be shy, [say hello!](mailto:joe@presentday.io?subject=Hello!)
