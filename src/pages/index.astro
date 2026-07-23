@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { base } from '../lib/paths';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<Base title="JOEY — Interactive Design & Development">
+  <p class="masthead">
+    Joseph Burdick — interactive design &amp; development for clients big and
+    small, from Brooklyn, New York. Selected work below.
+  </p>
+
+  <div class="reel-wrap">
+    <div class="reel" id="reel" tabindex="0" aria-label="Selected projects">
+      {
+        projects.map((project) => (
+          <a
+            class="frame"
+            href={`${base}work/${project.id}/`}
+            style={`--brand: ${project.data.color}`}
+          >
+            <img
+              class="frame__bg"
+              src={`${base}projects/${project.data.name}/bg.jpg`}
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="frame__index">
+              {String(project.data.order).padStart(2, '0')}
+            </span>
+            <span class="frame__tags">{project.data.agency}</span>
+            <h2 class="frame__title">{project.data.title}</h2>
+          </a>
+        ))
+      }
+    </div>
+    <div class="reel-controls" aria-hidden="true">
+      <button type="button" data-dir="-1">&larr; Prev</button>
+      <button type="button" data-dir="1">Next &rarr;</button>
+    </div>
+  </div>
+</Base>
+
+<script>
+  const reel = document.getElementById('reel')!;
+  const step = () =>
+    (reel.querySelector<HTMLElement>('.frame')?.offsetWidth ?? 600) + 16;
+  document.querySelectorAll<HTMLButtonElement>('[data-dir]').forEach((btn) =>
+    btn.addEventListener('click', () =>
+      reel.scrollBy({ left: step() * Number(btn.dataset.dir), behavior: 'smooth' })
+    )
+  );
+</script>

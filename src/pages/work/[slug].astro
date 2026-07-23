@@ -1,0 +1,83 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { getSlides } from '../../lib/slides';
+import { base } from '../../lib/paths';
+
+export async function getStaticPaths() {
+  const projects = (await getCollection('projects')).sort(
+    (a, b) => a.data.order - b.data.order
+  );
+  return projects.map((project, i) => ({
+    params: { slug: project.id },
+    props: {
+      project,
+      prev: projects[i - 1] ?? null,
+      next: projects[i + 1] ?? null,
+    },
+  }));
+}
+
+const { project, prev, next } = Astro.props;
+const { data } = project;
+const { Content } = await render(project);
+const slides = getSlides(data.name, base);
+const assetDir = `${base}projects/${data.name}`;
+---
+
+<Base
+  title={`${data.title} — JOEY`}
+  description={`${data.title} — ${data.tags.join(', ')} by Joseph Burdick.`}
+>
+  <article style={`--brand: ${data.color}`}>
+    <div class="hero">
+      <img
+        class="hero__bg"
+        src={`${assetDir}/bg.jpg`}
+        alt=""
+        decoding="async"
+      />
+      <img class="hero__logo" src={`${assetDir}/${data.logo}`} alt="" />
+    </div>
+
+    <header class="project-head">
+      <h1>{data.title}</h1>
+      <p class="project-meta">
+        <span class="index">{String(data.order).padStart(2, '0')}</span>
+        <span>{data.agency}</span>
+        {data.tags.map((tag) => <span>{tag}</span>)}
+      </p>
+    </header>
+
+    <div class="project-body">
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+
+    {
+      slides.length > 0 && (
+        <div class="slides">
+          {slides.map((slide, i) => (
+            <img
+              src={slide.src}
+              srcset={slide.srcset}
+              alt={`${data.title} — screen ${i + 1}`}
+              loading="lazy"
+              decoding="async"
+            />
+          ))}
+        </div>
+      )
+    }
+
+    <nav class="project-pager" aria-label="Projects">
+      <span>
+        {prev && <a href={`${base}work/${prev.id}/`}>&larr; {prev.data.title}</a>}
+      </span>
+      <span>
+        {next && <a href={`${base}work/${next.id}/`}>{next.data.title} &rarr;</a>}
+      </span>
+    </nav>
+  </article>
+</Base>

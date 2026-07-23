@@ -1,0 +1,54 @@
+---
+import '@fontsource-variable/archivo/wdth.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '../styles/global.css';
+import { base } from '../lib/paths';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'Joseph Burdick — Freelance Designer / Developer in UX/UI design, branding & development.',
+} = Astro.props;
+
+const path = Astro.url.pathname;
+const current = (href: string) => (path === href ? 'page' : undefined);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href={`${base}favicon.ico`} sizes="32x32" />
+    <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
+    <link rel="canonical" href={new URL(path, Astro.site)} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href={base}>JOEY</a>
+      <nav class="site-nav" aria-label="Site">
+        <a href={base} aria-current={current(base)}>Work</a>
+        <a href={`${base}about/`} aria-current={current(`${base}about/`)}>About</a>
+        <a href="mailto:joe@presentday.io?subject=Hello!">Say hello</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <span>Joseph Burdick — Brooklyn, New York</span>
+      <span>
+        <a href="https://www.github.com/josephdburdick">GitHub</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/josephdburdick">LinkedIn</a>
+      </span>
+    </footer>
+  </body>
+</html>

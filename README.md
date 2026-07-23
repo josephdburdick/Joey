@@ -1,12 +1,33 @@
-#Joey 2016
-Joey is the work and play of Joseph D Burdick.
+# JOEY
 
-Under the hood, the site is a significant upgrade to the last live version which was deployed in 2014 and was powered by PHP and JSON. The content of the site pulling in content via Frontmatter / Markdown, into asynchronously-loaded views generated from JSON and powered by React Router. The React components loaded and injected with data from these container views are styled via PostCSS and rendered in the viewport.
+Portfolio of Joseph Burdick — interactive design & development, Brooklyn NY.
 
-TODO:
-- [ ] Add images to Blue Chair Bay Rum
-- [ ] Investigate pushState with async routes to prevent page losing it's scroll position
-- [ ] Lazyload project images
+Built with [Astro](https://astro.build): fully static, zero client-side
+JavaScript (except a few lines for the project reel's prev/next buttons), and
+deployed to GitHub Pages for free on every push to `master`.
 
-Credits: Joey is a fork of [React Static Boilerplate](https://github.com/kriasoft/react-static-boilerplate), an
-opinionated boilerplate and tooling for creating modern stand-alone web applications (aka [SPA](https://en.wikipedia.org/wiki/Single-page_application)s) for a serverless architecture.
+The 2016 React/webpack/Firebase version of this site is preserved on the
+[`v2016`](https://github.com/josephdburdick/Joey/tree/v2016) branch.
+
+## Develop
+
+```sh
+npm install
+npm run dev      # local dev server
+npm run build    # static build to dist/
+npm run preview  # preview the production build
+```
+
+## Content
+
+Projects are markdown files in `src/content/projects/` with frontmatter
+(`order`, `title`, `agency`, `tags`, `color`, `logo`). Imagery lives in
+`public/projects/<name>/` — `bg.jpg`, a logo, and a `slides/` directory whose
+contents are picked up automatically (with `@2x` retina versions when present).
+
+## Deploy
+
+`.github/workflows/deploy.yml` builds and publishes to GitHub Pages
+(Settings → Pages → Source: **GitHub Actions**). The site is served at
+`https://josephdburdick.github.io/Joey/`. To use a custom domain instead, add
+it in the Pages settings and set `base: '/'` in `astro.config.mjs`.
